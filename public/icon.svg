@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#2a241e"/>
+      <stop offset="60%" stop-color="#181512"/>
+      <stop offset="100%" stop-color="#0d0b09"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5d77f"/>
+      <stop offset="50%" stop-color="#c99738"/>
+      <stop offset="100%" stop-color="#8a5a1e"/>
+    </linearGradient>
+    <linearGradient id="bronze" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e2ba84"/>
+      <stop offset="100%" stop-color="#936738"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Circle / Base -->
+  <rect width="512" height="512" rx="100" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="236" fill="none" stroke="url(#gold)" stroke-width="3" stroke-opacity="0.35"/>
+  <circle cx="256" cy="256" r="216" fill="none" stroke="url(#gold)" stroke-width="1.5" stroke-dasharray="6,6" stroke-opacity="0.5"/>
+
+  <!-- Ancient Astrolabe / Celestial Coordinates Ring -->
+  <g transform="translate(256, 256)" stroke="url(#gold)" stroke-width="2" opacity="0.8">
+    <line x1="0" y1="-210" x2="0" y2="-195" />
+    <line x1="0" y1="195" x2="0" y2="210" />
+    <line x1="-210" y1="0" x2="-195" y2="0" />
+    <line x1="195" y1="0" x2="210" y2="0" />
+    <line x1="-148" y1="-148" x2="-138" y2="-138" />
+    <line x1="138" y1="138" x2="148" y2="148" />
+    <line x1="-148" y1="148" x2="-138" y2="138" />
+    <line x1="138" y1="-138" x2="148" y2="-148" />
+  </g>
+
+  <!-- Open Ancient Scroll / Manuscript Codex -->
+  <g filter="url(#glow)">
+    <!-- Left Scroll Rolled Edge -->
+    <path d="M120 160 C120 140, 140 140, 150 160 L150 350 C140 370, 120 370, 120 350 Z" fill="url(#bronze)" opacity="0.9"/>
+    <!-- Right Scroll Rolled Edge -->
+    <path d="M392 160 C392 140, 372 140, 362 160 L362 350 C372 370, 392 370, 392 350 Z" fill="url(#bronze)" opacity="0.9"/>
+
+    <!-- Central Parchment Open Pages -->
+    <path d="M148 160 C180 148, 220 156, 256 170 C292 156, 332 148, 364 160 L364 350 C332 338, 292 346, 256 360 C220 346, 180 338, 148 350 Z" fill="#201a14" stroke="url(#gold)" stroke-width="2.5"/>
+
+    <!-- Ancient Comparative Graph Nodes Inside Scroll -->
+    <g transform="translate(256, 250)">
+      <!-- Connecting Network Lines -->
+      <path d="M-60 -30 L0 -45 L60 -30 L45 35 L-45 35 Z" fill="none" stroke="url(#gold)" stroke-width="1.5" stroke-opacity="0.6"/>
+      <path d="M0 -45 L0 5" stroke="url(#gold)" stroke-width="1.5" stroke-opacity="0.6"/>
+      <path d="M-60 -30 L0 5 L60 -30" stroke="url(#gold)" stroke-width="1.5" stroke-opacity="0.6"/>
+      <path d="M-45 35 L0 5 L45 35" stroke="url(#gold)" stroke-width="1.5" stroke-opacity="0.6"/>
+
+      <!-- Node Circles with Ancient Symbols -->
+      <circle cx="0" cy="5" r="14" fill="#14110d" stroke="url(#gold)" stroke-width="2.5"/>
+      <circle cx="-60" cy="-30" r="10" fill="#14110d" stroke="url(#gold)" stroke-width="2"/>
+      <circle cx="60" cy="-30" r="10" fill="#14110d" stroke="url(#gold)" stroke-width="2"/>
+      <circle cx="0" cy="-45" r="9" fill="#14110d" stroke="url(#gold)" stroke-width="2"/>
+      <circle cx="-45" cy="35" r="9" fill="#14110d" stroke="url(#gold)" stroke-width="2"/>
+      <circle cx="45" cy="35" r="9" fill="#14110d" stroke="url(#gold)" stroke-width="2"/>
+
+      <!-- Center node star/glyph -->
+      <path d="M0 -3 L2 2 L-3 -1 L3 -1 L-2 2 Z" fill="url(#gold)"/>
+    </g>
+  </g>
+
+  <!-- Script text lines stylization -->
+  <line x1="175" y1="195" x2="225" y2="195" stroke="url(#gold)" stroke-width="1.5" stroke-opacity="0.4" stroke-linecap="round"/>
+  <line x1="175" y1="210" x2="215" y2="210" stroke="url(#gold)" stroke-width="1.5" stroke-opacity="0.3" stroke-linecap="round"/>
+  <line x1="287" y1="195" x2="337" y2="195" stroke="url(#gold)" stroke-width="1.5" stroke-opacity="0.4" stroke-linecap="round"/>
+  <line x1="297" y1="210" x2="337" y2="210" stroke="url(#gold)" stroke-width="1.5" stroke-opacity="0.3" stroke-linecap="round"/>
+
+  <!-- Inscription Banner at Bottom -->
+  <text x="256" y="415" text-anchor="middle" font-family="'Cinzel', 'Times New Roman', serif" font-size="24" letter-spacing="6" fill="url(#gold)" font-weight="bold">CHRONOS &amp; CANON</text>
+  <text x="256" y="438" text-anchor="middle" font-family="'Times New Roman', serif" font-size="12" letter-spacing="4" fill="#a48c68">ANCIENT TEXT ARCHIVE</text>
+</svg>

@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'EB Garamond', Georgia, Cambria, 'Times New Roman', Times, serif;
+    --font-display: 'Cinzel', 'Times New Roman', serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-hebrew: 'Noto Serif Hebrew', 'SBL Hebrew', 'Ezra SIL', 'David', serif;
+    --font-greek: 'Gentium Book Plus', 'EB Garamond', 'Noto Serif', serif;
+    --font-devanagari: 'Noto Serif Devanagari', 'Noto Sans Devanagari', 'Siddhanta', serif;
+    --font-ethiopic: 'Noto Serif Ethiopic', 'Noto Sans Ethiopic', serif;
+    --font-arabic: 'Noto Naskh Arabic', serif;
+  }
+
+  body {
+    font-family: var(--font-serif);
+    background-color: #100e0c;
+    color: #e4ddcf;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Dedicated script typography classes for authentic ancient rendering */
+.script-hebrew {
+  font-family: 'Noto Serif Hebrew', 'SBL Hebrew', 'Ezra SIL', serif;
+  direction: rtl;
+  text-align: right;
+  line-height: 2.1;
+  font-size: 1.15em;
+  letter-spacing: 0.02em;
+}
+
+.script-aramaic {
+  font-family: 'Noto Serif Hebrew', 'SBL Hebrew', serif;
+  direction: rtl;
+  text-align: right;
+  line-height: 2.1;
+  font-size: 1.15em;
+  letter-spacing: 0.02em;
+}
+
+.script-greek {
+  font-family: 'Gentium Book Plus', 'EB Garamond', 'Gentium Plus', 'Palatino Linotype', serif;
+  line-height: 1.85;
+  font-size: 1.05em;
+  letter-spacing: 0.015em;
+}
+
+.script-devanagari {
+  font-family: 'Noto Serif Devanagari', 'Noto Sans Devanagari', 'Siddhanta', serif;
+  line-height: 2.0;
+  font-size: 1.12em;
+  letter-spacing: 0.025em;
+}
+
+.script-ethiopic {
+  font-family: 'Noto Serif Ethiopic', 'Noto Sans Ethiopic', serif;
+  line-height: 1.95;
+  font-size: 1.1em;
+  letter-spacing: 0.03em;
+}
+
+.script-cuneiform {
+  font-family: 'Noto Sans Cuneiform', 'Santakku', 'Segoe UI Historic', 'Times New Roman', serif;
+  letter-spacing: 0.14em;
+  line-height: 1.9;
+  font-size: 1.1em;
+}
+
+.script-ugaritic {
+  font-family: 'Noto Sans Ugaritic', 'Aegean', 'Segoe UI Historic', 'Times New Roman', serif;
+  letter-spacing: 0.18em;
+  line-height: 1.9;
+  font-size: 1.15em;
+}
+
+.script-arabic {
+  font-family: 'Noto Naskh Arabic', serif;
+  direction: rtl;
+  text-align: right;
+  line-height: 2.1;
+  font-size: 1.15em;
+}
+
+.script-norse {
+  font-family: 'EB Garamond', Georgia, serif;
+  line-height: 1.75;
+  font-size: 1.05em;
+}
+
+.script-maya {
+  font-family: 'EB Garamond', Georgia, serif;
+  line-height: 1.75;
+  font-size: 1.05em;
+}
+
+.script-egyptian {
+  font-family: 'EB Garamond', Georgia, serif;
+  line-height: 1.8;
+  font-size: 1.05em;
+}
+
+.script-latin {
+  font-family: 'EB Garamond', Georgia, serif;
+  line-height: 1.75;
+  font-size: 1.05em;
+}
+
+/* Custom dark scrollbar for scholarly feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #141210;
+}
+::-webkit-scrollbar-thumb {
+  background: #362f27;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #54493c;
+}
+
+/* Archaeological accents and parchment glow */
+.parchment-border {
+  border-color: rgba(180, 140, 75, 0.2);
+}
+
+.gold-glow {
+  box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.15);
+}
