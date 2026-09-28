@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Chronos & Canon - Redirecting...</title>
+    <script type="text/javascript">
+      // Single Page Application redirect script for GitHub Pages
+      // Redirects 404s back to the SPA index.html with the route encoded
+      var pathSegmentsToKeep = 1; // 1 for https://<username>.github.io/<repo>/, 0 for custom domains
+      var l = window.location;
+      var repoName = l.pathname.split('/')[1];
+      var isProjectPage = l.hostname.endsWith('github.io') && repoName && repoName !== '';
+      
+      var base = isProjectPage ? '/' + repoName + '/' : '/';
+      var query = l.search ? (l.search.indexOf('?') === 0 ? '&' : '?') + l.search.slice(1) : '';
+      var path = l.pathname.slice(base.length);
+
+      window.location.replace(
+        base + '?redirect=' + encodeURIComponent(path + query + l.hash)
+      );
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to Chronos & Canon Archive...</p>
+  </body>
+</html>
