@@ -306,6 +306,39 @@ export interface Translations {
     featureSacrificeDesc: string;
   };
 
+  // Version Control & Client Updates
+  updates: {
+    modalTitle: string;
+    modalSubtitle: string;
+    currentVersion: string;
+    latestVersion: string;
+    buildDate: string;
+    codename: string;
+    statusUpToDate: string;
+    statusUpdateAvailable: string;
+    statusChecking: string;
+    statusOffline: string;
+    lastChecked: string;
+    neverChecked: string;
+    checkNowBtn: string;
+    updateNowBtn: string;
+    forceRefreshBtn: string;
+    offlineCacheStatus: string;
+    offlineCacheActive: string;
+    environment: string;
+    environmentPwa: string;
+    environmentBrowser: string;
+    bannerTitle: string;
+    bannerSubtitle: string;
+    bannerDismiss: string;
+    bannerUpdate: string;
+    changelogTitle: string;
+    viewChangelog: string;
+    versionHistory: string;
+    cleanResetNotice: string;
+    manualCheckSuccess: string;
+  };
+
   // Common UI
   common: {
     close: string;
@@ -321,6 +354,8 @@ export interface Translations {
     installApp: string;
     offlineReady: string;
     language: string;
+    version: string;
+    checkUpdates: string;
   };
 }
 
@@ -644,6 +679,37 @@ export const translations: Record<SupportedLanguage, Translations> = {
       featureSacrifice: 'Post-Deluge Sweet-Savor Sacrifice',
       featureSacrificeDesc: 'Upon disembarking, both Noah (Gen 8:20) and Utnapishtim offer sacrifices where the divine powers smell the "soothing aroma" and promise not to destroy humanity again.'
     },
+    updates: {
+      modalTitle: 'Archive Version & System Updates',
+      modalSubtitle: 'Progressive Web App client release management, offline cache status, and version control.',
+      currentVersion: 'Installed Version',
+      latestVersion: 'Latest Remote Release',
+      buildDate: 'Build Date',
+      codename: 'Codename',
+      statusUpToDate: 'Up to Date — Running Latest Release',
+      statusUpdateAvailable: 'New Update Available',
+      statusChecking: 'Checking remote archive repository...',
+      statusOffline: 'Offline Mode — Operating on cached local archive',
+      lastChecked: 'Last checked',
+      neverChecked: 'Never checked this session',
+      checkNowBtn: 'Check for Updates',
+      updateNowBtn: 'Update Now & Reload',
+      forceRefreshBtn: 'Hard Cache Reset',
+      offlineCacheStatus: 'Service Worker Cache',
+      offlineCacheActive: 'Active (Precaching enabled)',
+      environment: 'Runtime Environment',
+      environmentPwa: 'Standalone PWA (Home Screen / Desktop)',
+      environmentBrowser: 'Standard Web Browser',
+      bannerTitle: 'New Version Available',
+      bannerSubtitle: 'A new release of Chronos & Canon is available with updated textual apparatus and enhancements.',
+      bannerDismiss: 'Dismiss',
+      bannerUpdate: 'Update Now',
+      changelogTitle: 'Release History & Changelog',
+      viewChangelog: 'View What’s New',
+      versionHistory: 'Version History',
+      cleanResetNotice: 'Hard Cache Reset unregisters the service worker and clears offline caches in case of corrupted data.',
+      manualCheckSuccess: 'Update check complete: You are using the latest version of the archive.'
+    },
     common: {
       close: 'Close',
       cancel: 'Cancel',
@@ -657,7 +723,9 @@ export const translations: Record<SupportedLanguage, Translations> = {
       category: 'Category',
       installApp: 'Install App',
       offlineReady: 'Offline Archive Ready',
-      language: 'Language'
+      language: 'Language',
+      version: 'Version',
+      checkUpdates: 'Check for Updates'
     }
   },
 
@@ -980,6 +1048,37 @@ export const translations: Record<SupportedLanguage, Translations> = {
       featureSacrifice: 'Sacrificio Posdiluviano de Olor Agradable',
       featureSacrificeDesc: 'Al desembarcar, tanto Noé (Gén 8:20) como Utnapishtim ofrecen sacrificios donde los poderes divinos huelen el "aroma grato" y prometen no volver a exterminar a la humanidad.'
     },
+    updates: {
+      modalTitle: 'Versión del Archivo y Actualizaciones del Sistema',
+      modalSubtitle: 'Gestión de versiones del cliente PWA, estado de caché fuera de línea y control de actualizaciones.',
+      currentVersion: 'Versión Instalada',
+      latestVersion: 'Última Versión Remota',
+      buildDate: 'Fecha de Compilación',
+      codename: 'Nombre en Código',
+      statusUpToDate: 'Actualizado — Ejecutando la Última Versión',
+      statusUpdateAvailable: 'Nueva Actualización Disponible',
+      statusChecking: 'Comprobando repositorio remoto del archivo...',
+      statusOffline: 'Modo Fuera de Línea — Operando con archivo local en caché',
+      lastChecked: 'Última comprobación',
+      neverChecked: 'No comprobado en esta sesión',
+      checkNowBtn: 'Buscar Actualizaciones',
+      updateNowBtn: 'Actualizar Ahora y Recargar',
+      forceRefreshBtn: 'Restablecer Caché por Completo',
+      offlineCacheStatus: 'Caché de Service Worker',
+      offlineCacheActive: 'Activa (Precaché habilitado)',
+      environment: 'Entorno de Ejecución',
+      environmentPwa: 'PWA Independiente (Pantalla de Inicio / Escritorio)',
+      environmentBrowser: 'Navegador Web Estándar',
+      bannerTitle: 'Nueva Versión Disponible',
+      bannerSubtitle: 'Una nueva versión de Chronos & Canon está disponible con aparato textual actualizado y mejoras.',
+      bannerDismiss: 'Descartar',
+      bannerUpdate: 'Actualizar Ahora',
+      changelogTitle: 'Historial de Versiones y Cambios',
+      viewChangelog: 'Ver Novedades',
+      versionHistory: 'Historial de Versiones',
+      cleanResetNotice: 'El restablecimiento borra los service workers y vacía las cachés locales en caso de datos desincronizados.',
+      manualCheckSuccess: 'Comprobación finalizada: Ya dispone de la versión más reciente del archivo.'
+    },
     common: {
       close: 'Cerrar',
       cancel: 'Cancelar',
@@ -993,7 +1092,9 @@ export const translations: Record<SupportedLanguage, Translations> = {
       category: 'Categoría',
       installApp: 'Instalar Aplicación',
       offlineReady: 'Archivo Disponible Fuera de Línea',
-      language: 'Idioma'
+      language: 'Idioma',
+      version: 'Versión',
+      checkUpdates: 'Buscar Actualizaciones'
     }
   },
 
@@ -1316,6 +1417,37 @@ export const translations: Record<SupportedLanguage, Translations> = {
       featureSacrifice: 'Sacrifício Pós-Dilúvio de Aroma Agradável',
       featureSacrificeDesc: 'Ao desembarcar, tanto Noé (Gên 8:20) como Utnapishtim oferecem sacrifícios onde as divindades sentem o "aroma suave" e prometem nunca mais destruir a humanidade.'
     },
+    updates: {
+      modalTitle: 'Versão do Arquivo e Atualizações do Sistema',
+      modalSubtitle: 'Gerenciamento de versões do cliente PWA, estado do cache off-line e controle de atualizações.',
+      currentVersion: 'Versão Instalada',
+      latestVersion: 'Última Versão Remota',
+      buildDate: 'Data de Compilação',
+      codename: 'Codinome',
+      statusUpToDate: 'Atualizado — Executando a Versão Mais Recente',
+      statusUpdateAvailable: 'Nova Atualização Disponível',
+      statusChecking: 'Verificando repositório remoto do arquivo...',
+      statusOffline: 'Modo Off-line — Operando com arquivo local em cache',
+      lastChecked: 'Última verificação',
+      neverChecked: 'Não verificado nesta sessão',
+      checkNowBtn: 'Verificar Atualizações',
+      updateNowBtn: 'Atualizar Agora e Recarregar',
+      forceRefreshBtn: 'Redefinição Completa de Cache',
+      offlineCacheStatus: 'Cache do Service Worker',
+      offlineCacheActive: 'Ativo (Pré-cache habilitado)',
+      environment: 'Ambiente de Execução',
+      environmentPwa: 'PWA Autônomo (Tela Inicial / Desktop)',
+      environmentBrowser: 'Navegador Web Padrão',
+      bannerTitle: 'Nova Versão Disponível',
+      bannerSubtitle: 'Uma nova versão de Chronos & Canon está disponível com aparato textual atualizado e melhorias.',
+      bannerDismiss: 'Dispensar',
+      bannerUpdate: 'Atualizar Agora',
+      changelogTitle: 'Histórico de Versões e Mudanças',
+      viewChangelog: 'Ver Novidades',
+      versionHistory: 'Histórico de Versões',
+      cleanResetNotice: 'A redefinição limpa os service workers e esvazia caches locais em caso de inconsistência de dados.',
+      manualCheckSuccess: 'Verificação concluída: Você já está usando a versão mais recente do arquivo.'
+    },
     common: {
       close: 'Fechar',
       cancel: 'Cancelar',
@@ -1329,7 +1461,9 @@ export const translations: Record<SupportedLanguage, Translations> = {
       category: 'Categoria',
       installApp: 'Instalar Aplicativo',
       offlineReady: 'Arquivo Pronto Off-line',
-      language: 'Idioma'
+      language: 'Idioma',
+      version: 'Versão',
+      checkUpdates: 'Verificar Atualizações'
     }
   }
 };

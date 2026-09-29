@@ -1,0 +1,12 @@
+{
+  "version": "1.2.0",
+  "buildDate": "2026-09-29T12:00:00Z",
+  "codename": "Qumran & Uruk Edition",
+  "minSupportedVersion": "1.0.0",
+  "releaseNotes": [
+    "PWA Client-Side Version Control & Update Controller with auto and on-demand checking",
+    "Expanded README with exhaustive deployment, troubleshooting, and PWA versioning guides",
+    "Full Multilingual Localization across English, Spanish, and Portuguese",
+    "Offline caching enhancements with safe cache reset utilities"
+  ]
+}

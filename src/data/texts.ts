@@ -228,6 +228,40 @@ export const texts: TextItem[] = [
     manuscriptHistory: 'P115 preserves the infamous variant 616 for the number of the Beast instead of 666.',
     primaryManuscriptWitnesses: ['Papyrus 47', 'Papyrus 115', 'Codex Alexandrinus']
   },
+  {
+    id: 'matthew',
+    title: 'Gospel According to Matthew',
+    alternateTitles: ['Kata Maththaion', 'Evangelium secundum Matthaeum'],
+    cultureId: 'early_christian',
+    category: 'NEW TESTAMENT',
+    chronology: {
+      dateOfStorySetting: 'Roman Judea and Galilee (ca. 4 BCE – 33 CE)',
+      estimatedDateOfComposition: 'ca. 70–85 CE',
+      dateOfEarliestSurvivingManuscript: 'Papyrus 104 (ca. 175–200 CE); Papyrus 1, Papyrus 45; Codex Sinaiticus & Vaticanus (4th c. CE)',
+      numericCompositionBCE: 75
+    },
+    originalLanguage: 'Koine Greek (with Semitic/Aramaic substratum)',
+    summary: 'The foundational Synoptic Gospel linking Second Temple Jewish messianism with early Christian theology. Contains the pivotal fulfillment formula in Matthew 11:2–6 where Jesus answers John the Baptist\'s question with the constellation of messianic miracles (blind seeing, lame walking, lepers cleansed, deaf hearing, dead raised, and good news preached to the poor) found verbatim in the Dead Sea Scroll 4Q521.',
+    manuscriptHistory: 'Copiously attested across the earliest papyri (P1, P45, P64/67) and the great 4th-century uncial codices.',
+    primaryManuscriptWitnesses: ['Papyrus 104', 'Papyrus 64/67 (Magdalen Papyrus)', 'Codex Sinaiticus', 'Codex Vaticanus']
+  },
+  {
+    id: 'hebrews',
+    title: 'Epistle to the Hebrews',
+    alternateTitles: ['Pros Hebraious', 'Epistle to the Hebrews'],
+    cultureId: 'early_christian',
+    category: 'NEW TESTAMENT',
+    chronology: {
+      dateOfStorySetting: 'Late Second Temple period prior to the destruction of Jerusalem in 70 CE',
+      estimatedDateOfComposition: 'ca. 60–69 CE',
+      dateOfEarliestSurvivingManuscript: 'Papyrus 46 (Chester Beatty II, ca. 175–225 CE); Codex Vaticanus (ca. 325–350 CE)',
+      numericCompositionBCE: 65
+    },
+    originalLanguage: 'Literary Koine Greek (the highest stylistic prose in the New Testament)',
+    summary: 'A theological masterpiece exploring the heavenly sanctuary and high priesthood. In chapter 7, the author delivers an exegesis of Melchizedek (Gen 14, Ps 110), depicting him as eternal, without father or mother or genealogy, possessing an indestructible life—a conception that directly mirrors the exalted celestial Elohim Melchizedek revealed in the Dead Sea Scroll 11Q13.',
+    manuscriptHistory: 'Preserved prominently in Papyrus 46 (P46), where Hebrews directly follows Romans.',
+    primaryManuscriptWitnesses: ['Papyrus 46 (Chester Beatty II)', 'Papyrus 12', 'Codex Vaticanus']
+  },
 
   // --- SECOND TEMPLE, APOCRYPHA & PSEUDEPIGRAPHA ---
   {
@@ -880,5 +914,101 @@ export const texts: TextItem[] = [
     summary: 'Tablets V and VI of the Baal Cycle depict the supreme struggle between Baal (Hadad, storm god of rain and life) and Mot (the personification of Death, drought, and the underworld). Mot swallows Baal into his cavernous throat, causing cosmic mourning. The warrior goddess Anat confronts Mot, slaughters him with a blade, winnows him with a sieve, burns him with fire, grinds him with millstones, and sows him in the soil, sparking Baal\'s resurrection and the return of rain. Directly prefigures Isaiah 25:8 ("He will swallow up death forever").',
     manuscriptHistory: 'Scribed by the high priest Ilimilku of Shubanu during the reign of King Niqmaddu II of Ugarit; discovered by Claude Schaeffer in 1930.',
     primaryManuscriptWitnesses: ['KTU 1.5 (RS 2.[022] + RS 3.340)', 'KTU 1.6 (RS 2.[009] + RS 5.180)']
+  },
+  {
+    id: 'enuma_elish',
+    title: 'Enūma Eliš (The Babylonian Epic of Creation)',
+    cultureId: 'mesopotamian',
+    category: 'MESOPOTAMIAN',
+    chronology: {
+      dateOfStorySetting: 'Primordial theogony and creation of the universe',
+      estimatedDateOfComposition: 'ca. 1750–1100 BCE (First Dynasty of Babylon or Kassite / Nebuchadnezzar I era)',
+      dateOfEarliestSurvivingManuscript: 'Library of Ashurbanipal at Nineveh, Sultantepe, and Babylon tablets (ca. 7th–6th c. BCE)',
+      numericCompositionBCE: -1150
+    },
+    originalLanguage: 'Standard Babylonian (Akkadian cuneiform)',
+    summary: 'The seven-tablet national epic of Babylon celebrating the elevation of Marduk to supreme kingship over the pantheon. When the primordial saltwater sea-mother Tiamat spawns a brood of venomous monsters to destroy the younger gods, Marduk alone steps forward as champion. In Tablet IV, he ensnares Tiamat in his net, pierces her belly with an arrow, splits her carcass like a dried fish, and uses one half to roof the sky and the other to form the earth, setting the foundations of the deep (Apsu). Provides the foundational Near Eastern background for Genesis 1:2 (Tehom / deep) and biblical combat with Leviathan / Rahab.',
+    manuscriptHistory: 'Recited annually on the fourth day of the Babylonian Akitu (New Year) festival in the temple of Esagila. Discovered during British excavations at Kuyunjik (Nineveh) in 1849–1854.',
+    primaryManuscriptWitnesses: ['K. 3473 (British Museum Tablet IV)', 'Sultantepe tablets (STT)', 'Assur tablets (VAT)']
+  },
+  {
+    id: 'instruction_of_amenemope',
+    title: 'The Instruction of Amenemope (Papyrus BM 10474)',
+    cultureId: 'egyptian',
+    category: 'EGYPTIAN',
+    chronology: {
+      dateOfStorySetting: 'New Kingdom court scribal instruction',
+      estimatedDateOfComposition: 'ca. 1200–1075 BCE (Late Ramesside Period, 20th Dynasty)',
+      dateOfEarliestSurvivingManuscript: 'Papyrus British Museum EA 10474 (ca. 10th–9th century BCE, Thebes)',
+      numericCompositionBCE: -1100
+    },
+    originalLanguage: 'Late Egyptian Hieratic',
+    summary: 'A masterpiece of ancient Egyptian wisdom literature composed by Amenemope, son of Kanakht, overseer of the grain of Egypt. Arranged into thirty numbered chapters, it instructs the reader in inner integrity, restraint of the tongue, honesty in weights and measures, justice for the poor, and trust in divine providence over material wealth. In 1923, Egyptologist Adolf Erman demonstrated that Proverbs 22:17–24:22 directly translates, adapts, and restructures Amenemope\'s thirty chapters, including the explicit reference in Proverbs 22:20: "Have I not written for you thirty sayings of counsel and knowledge?"',
+    manuscriptHistory: 'Acquired in Thebes in 1888 by Sir E.A. Wallis Budge for the British Museum; fully published by Budge in 1923, sparking a revolution in biblical comparative wisdom studies.',
+    primaryManuscriptWitnesses: ['Papyrus BM EA 10474 (complete 28-page scroll)', 'Papyrus Stockholm 236']
+  },
+  {
+    id: 'pyramid_texts_unas',
+    title: 'The Pyramid Texts of King Unas (Utterance 273–274)',
+    cultureId: 'egyptian',
+    category: 'EGYPTIAN',
+    chronology: {
+      dateOfStorySetting: 'Pharaonic post-mortem apotheosis into the circumpolar stars',
+      estimatedDateOfComposition: 'ca. 2400–2350 BCE (Fifth Dynasty of the Old Kingdom)',
+      dateOfEarliestSurvivingManuscript: 'Subterranean antechamber and burial chamber walls of the Pyramid of Unas at Saqqara (ca. 2350 BCE)',
+      numericCompositionBCE: -2350
+    },
+    originalLanguage: 'Old Egyptian Hieroglyphic',
+    summary: 'The oldest known religious corpus in the world. Carved into the fine Tura limestone walls of the pyramid of Unas at Saqqara. Utterances 273–274, famously known as the "Cannibal Hymn", depict the deceased pharaoh ascending to the sky as a sovereign divine warrior who hunts, lassoes, butchers, and consumes the gods, absorbing their heka (magical power), wisdom, and immortal souls. Demonstrates the primordial Egyptian conception of the celestial realm, divine conflict, and royal divinization.',
+    manuscriptHistory: 'Discovered in 1881 by French archaeologist Gaston Maspero at Saqqara, establishing the antiquity of Egyptian funerary literature long predating the Coffin Texts and Book of the Dead.',
+    primaryManuscriptWitnesses: ['Pyramid of Unas at Saqqara (in situ inscriptions)', 'Pyramid of Teti', 'Pyramid of Pepi I']
+  },
+  {
+    id: 'hesiod_theogony',
+    title: 'Theogony of Hesiod (Titanomachy & Tartarus)',
+    cultureId: 'greco_roman',
+    category: 'GRECO-ROMAN',
+    chronology: {
+      dateOfStorySetting: 'Theogonic origin of the cosmos and battle for cosmic sovereignty',
+      estimatedDateOfComposition: 'ca. 730–700 BCE (Archaic Greece)',
+      dateOfEarliestSurvivingManuscript: 'Oxyrhynchus papyri (2nd c. BCE); medieval Byzantine manuscripts (Codex Laurentianus 32.16)',
+      numericCompositionBCE: -720
+    },
+    originalLanguage: 'Ancient Greek (Epic Dactylic Hexameter)',
+    summary: 'Hesiod\'s epic genealogy of the Greek gods. In the climax of the poem (lines 664–745), the Olympians led by Zeus wage a ten-year war against the elder generation of Titans. Aided by the Hundred-Handers (Hekatonkheires), Zeus strikes down the Titans with thunderbolts and casts them deep under the earth into misty Tartarus, a bronze-walled subterranean abyss surrounded by triple darkness as far beneath the underworld as earth is beneath heaven. Direct literary loan and conceptual precursor to 2 Peter 2:4 (tartarōsas) and 1 Enoch 10:4–12 where the rebel Watchers are bound in chains of gloom.',
+    manuscriptHistory: 'Composed by Hesiod of Ascra in Boeotia; preserved continuously in Greek education, philosophy, and Hellenistic literary papyri.',
+    primaryManuscriptWitnesses: ['Papyrus Oxyrhynchus 2091', 'Codex Laurentianus 32.16 (13th c. CE)']
+  },
+  {
+    id: '4q521_messianic',
+    title: '4Q521 (The Messianic Apocalypse)',
+    cultureId: 'dead_sea_scrolls',
+    category: 'DEAD SEA SCROLLS',
+    chronology: {
+      dateOfStorySetting: 'Eschatological dawn of the Messianic age',
+      estimatedDateOfComposition: 'ca. 100–80 BCE (Late Hasmonean / Early Roman era)',
+      dateOfEarliestSurvivingManuscript: 'Qumran Cave 4 manuscript 4Q521 (ca. 100–80 BCE, Rockefeller Museum / Israel Antiquities Authority)',
+      numericCompositionBCE: -90
+    },
+    originalLanguage: 'Qumran Hebrew',
+    summary: 'One of the most consequential Dead Sea Scrolls for understanding the historical emergence of early Christianity. Fragment 2 Column II declares that when God\'s Messiah arrives: "For the heavens and the earth will listen to his Messiah... He will release the captives, give sight to the blind, straighten the bent... and he will heal the wounded, and give life to the dead (yəḥayyeh mētīm), and bring good news to the poor." This identical constellation of messianic miracles is invoked verbatim by Jesus in Matthew 11:4–5 and Luke 7:22 as empirical proof of his messianic identity to John the Baptist\'s disciples.',
+    manuscriptHistory: 'Recovered from Cave 4 at Qumran in 1952; officially published in 1992 by Émile Puech in the Discoveries in the Judaean Desert (DJD) series.',
+    primaryManuscriptWitnesses: ['4Q521 (IAA 190.285 / PAM 43.604)']
+  },
+  {
+    id: '11q13_melchizedek',
+    title: '11Q13 (11QMelchizedek / The Heavenly Jubilee)',
+    cultureId: 'dead_sea_scrolls',
+    category: 'DEAD SEA SCROLLS',
+    chronology: {
+      dateOfStorySetting: 'Tenth Jubilee of release and cosmic Day of Atonement',
+      estimatedDateOfComposition: 'ca. 120–80 BCE',
+      dateOfEarliestSurvivingManuscript: 'Qumran Cave 11 scroll 11Q13 (ca. 75–50 BCE, Israel Museum, Jerusalem)',
+      numericCompositionBCE: -100
+    },
+    originalLanguage: 'Qumran Hebrew',
+    summary: 'An eschatological midrash that reinterprets Leviticus 25 (the Jubilee Year), Isaiah 61:1 ("to proclaim liberty to the captives"), and Psalm 82:1 ("God takes his stand in the divine assembly; in the midst of the gods he holds judgment"). In 11Q13, the mysterious biblical figure Melchizedek (Genesis 14, Psalm 110) is revealed as an exalted heavenly archangelic being, explicitly designated as "Elohim" who executes divine vengeance upon Belial and the spirits of his lot in the heavenly court. Provides the essential Second Temple theological bridge explaining why Hebrews 7 portrays Melchizedek as eternal, without father or mother or beginning of days.',
+    manuscriptHistory: 'Discovered in Cave 11 at Qumran in 1956; first published in 1965 by A.S. van der Woude.',
+    primaryManuscriptWitnesses: ['11Q13 (Shrine of the Book, Jerusalem)']
   }
 ];

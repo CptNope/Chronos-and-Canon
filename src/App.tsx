@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Navigation, AppView } from './components/Navigation';
 import { LanguageProvider, useLanguage } from './i18n/LanguageContext';
+import { PWAUpdateProvider } from './context/PWAUpdateContext';
 import { HomeDashboardView } from './components/views/HomeDashboardView';
 import { ExploreTextsView } from './components/views/ExploreTextsView';
 import { CompareView } from './components/views/CompareView';
@@ -15,8 +16,11 @@ import { ManuscriptsView } from './components/views/ManuscriptsView';
 import { ResearchAssistantView } from './components/views/ResearchAssistantView';
 import { DigitalLibraryView } from './components/views/DigitalLibraryView';
 import { OfflineIndicator } from './components/common/OfflineIndicator';
+import { UpdateNotificationBanner } from './components/common/UpdateNotificationBanner';
+import { VersionModal } from './components/common/VersionModal';
+import { APP_VERSION, APP_CODENAME } from './version';
 import { ResearchMode } from './types';
-import { Scroll, Shield, Heart } from 'lucide-react';
+import { Scroll, Shield, ShieldCheck } from 'lucide-react';
 
 function AppContent() {
   const { t } = useLanguage();
@@ -24,6 +28,7 @@ function AppContent() {
   const [researchMode, setResearchMode] = useState<ResearchMode>('COMPARATIVE');
   const [comparePassageIds, setComparePassageIds] = useState<string[]>(['gen_6_1_4', '1_enoch_6_1_6']);
   const [digitalLibraryFilterTextId, setDigitalLibraryFilterTextId] = useState<string | undefined>(undefined);
+  const [isVersionModalOpen, setIsVersionModalOpen] = useState(false);
 
   // Handle URL parameters for shareable comparisons and deep links
   useEffect(() => {
@@ -71,6 +76,7 @@ function AppContent() {
         }}
         researchMode={researchMode}
         onSetResearchMode={setResearchMode}
+        onOpenVersionModal={() => setIsVersionModalOpen(true)}
       />
 
       {/* Main Content Area */}
@@ -170,8 +176,15 @@ function AppContent() {
         )}
       </main>
 
-      {/* PWA Offline Indicator */}
+      {/* PWA Offline Indicator & Update Notification Banner */}
       <OfflineIndicator />
+      <UpdateNotificationBanner onOpenVersionModal={() => setIsVersionModalOpen(true)} />
+
+      {/* Version Control & Updates Modal */}
+      <VersionModal
+        isOpen={isVersionModalOpen}
+        onClose={() => setIsVersionModalOpen(false)}
+      />
 
       {/* Scholarly Footer */}
       <footer className="mt-auto border-t border-[#a48c68]/20 bg-[#0d0b09] py-8 text-xs text-[#8e806e]">
@@ -186,7 +199,7 @@ function AppContent() {
               <span>{t.appSubtitle}</span>
             </div>
 
-            <div className="flex items-center gap-4 text-[11px]">
+            <div className="flex items-center gap-3 sm:gap-4 text-[11px]">
               <button
                 onClick={() => {
                   setDigitalLibraryFilterTextId(undefined);
@@ -197,7 +210,18 @@ function AppContent() {
               >
                 <Shield className="w-3.5 h-3.5" /> {t.library.title}
               </button>
-              <span>{t.timeline.title}</span>
+
+              {/* Version & Update Trigger */}
+              <button
+                onClick={() => setIsVersionModalOpen(true)}
+                className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#16120e] hover:bg-[#201a14] border border-[#2b2218] hover:border-[#c99738]/40 text-[#a48c68] hover:text-[#f5d77f] font-mono text-[11px] transition"
+                title={`${t.updates.modalTitle} (v${APP_VERSION})`}
+              >
+                <ShieldCheck className="w-3.5 h-3.5 text-[#c99738]" />
+                <span>v{APP_VERSION}</span>
+                <span className="text-[#5a5043]">&bull;</span>
+                <span className="text-[10px] text-[#7d6f5e]">{t.common.checkUpdates}</span>
+              </button>
             </div>
           </div>
 
@@ -213,7 +237,9 @@ function AppContent() {
 export default function App() {
   return (
     <LanguageProvider>
-      <AppContent />
+      <PWAUpdateProvider>
+        <AppContent />
+      </PWAUpdateProvider>
     </LanguageProvider>
   );
 }

@@ -235,6 +235,66 @@ export const RELATIONSHIP_LOCALIZATIONS: Record<string, { es: LocalizedRelations
       title: 'O Apócrifo de João gnóstico e a reinterpretação dos Vigilantes',
       explanation: 'O Apócrifo de João reinterpreta o mito de Gênesis 6 e 1 Enoque: os anjos do demiurgo arconte Yaldabaoth descem às filhas dos homens para implantar o espírito contrafeito que aprisiona a humanidade no mundo material.'
     }
+  },
+  rel_tehom_tiamat: {
+    es: {
+      title: 'Tehom y Tiamat: El combate con las aguas del caos primordial',
+      explanation: 'El sustantivo hebreo Tehom (Génesis 1:2) es el cognado etimológico directo de la diosa babilónica Tiamat. La poesía bíblica (Salmo 74 e Isaías 51) conserva el mito de combate primordial (Chaoskampf) en el que Dios atraviesa al monstruo marino y fija los confines cósmicos, en paralelo con Marduk en Enuma Elish.'
+    },
+    pt: {
+      title: 'Tehom e Tiamat: O combate com as águas do caos primordial',
+      explanation: 'O substantivo hebraico Tehom (Gênesis 1:2) é o cognato etimológico direto da deusa babilônica Tiamat. A poesia bíblica (Salmo 74 e Isaías 51) preserva o mito de combate primordial (Chaoskampf) no qual Deus trespassa o monstro marinho e fixa os limites cósmicos, paralelamente a Marduk em Enuma Elish.'
+    }
+  },
+  rel_leviathan_lotan: {
+    es: {
+      title: 'Isaías 27:1 y la fórmula poética ugarítica de Lotán (KTU 1.5)',
+      explanation: 'Isaías 27:1 reproduce literalmente la fórmula cananea de Ras Shamra: "Leviatán serpiente veloz, Leviatán serpiente tortuosa" corresponde exactamente a "Lōtānu baṯnu barīḥu, baṯnu ʿaqallatānu" en el Ciclo ugarítico de Baal.'
+    },
+    pt: {
+      title: 'Isaías 27:1 e a fórmula poética ugarítica de Lotan (KTU 1.5)',
+      explanation: 'Isaías 27:1 reproduz literalmente a fórmula cananeia de Ras Shamra: "Leviatã serpente veloz, Leviatã serpente tortuosa" corresponde exatamente a "Lōtānu baṯnu barīḥu, baṯnu ʿaqallatānu" no Ciclo ugarítico de Baal.'
+    }
+  },
+  rel_proverbs_amenemope: {
+    es: {
+      title: 'Proverbios 22:17–24:22 adapta los Treinta Capítulos de Amenemope',
+      explanation: 'Demostrado por Adolf Erman en 1923: la sección central de Proverbios adapta directamente la Instrucción egipcia de Amenemope (Papiro BM 10474), estructurada en treinta capítulos éticos sobre la templanza y la justicia.'
+    },
+    pt: {
+      title: 'Provérbios 22:17–24:22 adapta os Trinta Capítulos de Amenemope',
+      explanation: 'Comprovado por Adolf Erman em 1923: a seção central de Provérbios adapta diretamente a Instrução egípcia de Amenemope (Papiro BM 10474), estruturada em trinta provérbios éticos sobre a moderação e a justiça.'
+    }
+  },
+  rel_melchizedek_psalm82: {
+    es: {
+      title: '11QMelquisedec reinterpreta el Salmo 82 como el Juicio del Jubileo Celeste',
+      explanation: 'En el manuscrito de Qumrán 11Q13, Melquisedec es identificado como el "Elohim" celeste del Salmo 82 que juzga y condena a Belial y sus espíritus en la asamblea divina, prefigurando la cristología de Hebreos 7.'
+    },
+    pt: {
+      title: '11QMelquisedeque reinterpreta o Salmo 82 como o Julgamento do Jubileu Celeste',
+      explanation: 'No manuscrito de Qumran 11Q13, Melquisedeque é identificado como o "Elohim" celeste do Salmo 82 que julga e condena Belial e seus espíritos na assembleia divina, prefigurando a cristologia de Hebreus 7.'
+    }
+  },
+  rel_messianic_4q521: {
+    es: {
+      title: '4Q521 y las señales del Mesías en Mateo 11 y Lucas 7',
+      explanation: 'El rollo de Qumrán 4Q521 preserva la síntesis mesiánica única de resucitar a los muertos, sanar a los heridos y anunciar buenas nuevas a los humildes, citada literalmente por Jesús como respuesta a Juan el Bautista.'
+    },
+    pt: {
+      title: '4Q521 e os sinais do Messias em Mateus 11 e Lucas 7',
+      explanation: 'O manuscrito de Qumran 4Q521 preserva a síntese messiânica única de ressuscitar os mortos, curar os feridos e anunciar boas-novas aos humildes, citada literalmente por Jesus como resposta a João Batista.'
+    }
+  },
+  rel_tartarus_2peter_hesiod: {
+    es: {
+      title: '2 Pedro 2:4 y el confinamiento en el Tártaro de Hesíodo',
+      explanation: 'El término griego único tartarōsas en 2 Pedro 2:4 toma prestada la terminología teogónica de Hesíodo (donde los Titanes son arrojados al Tártaro tenebroso) para describir el encierro de los Vigilantes de 1 Enoc.'
+    },
+    pt: {
+      title: '2 Pedro 2:4 e o confinamento no Tártaro de Hesíodo',
+      explanation: 'O termo grego único tartarōsas em 2 Pedro 2:4 adota a terminologia teogônica de Hesíodo (onde os Titãs são precipitados no Tártaro tenebroso) para descrever o encarceramento dos Vigilantes de 1 Enoque.'
+    }
   }
 };
 

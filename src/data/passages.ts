@@ -1294,5 +1294,459 @@ sól skein sunnan á salar steina,
     motifs: ['watchers_rebellion', 'forbidden_knowledge', 'giants', 'divine_human_offspring'],
     clickableTerms: ['yaldabaoth', 'archons', 'watchers', 'nephilim'],
     criticalApparatusNotes: 'Blends Genesis 6:1–4 with 1 Enoch 7–8 (angels teaching metalworking and cosmetics) into an esoteric metaphysical framework, showing how Second Temple Enochic traditions were adapted by early Christian Gnostics.'
+  },
+
+  // --- ENUMA ELISH (TABLET IV: SLAUGHTER OF TIAMAT & CREATION OF COSMOS) ---
+  {
+    id: 'enuma_elish_tablet_4',
+    textId: 'enuma_elish',
+    reference: 'Enūma Eliš (Tablet IV: lines 93–146)',
+    title: 'Marduk Splits Tiamat: Creation of Heaven and Earth from the Deep',
+    cultureId: 'mesopotamian',
+    chronology: {
+      dateOfStorySetting: 'Primordial cosmic battle prior to human creation',
+      estimatedDateOfComposition: 'ca. 12th–11th century BCE',
+      dateOfEarliestSurvivingManuscript: 'Kuyunjik / Nineveh cuneiform tablets (ca. 7th c. BCE, British Museum)',
+      numericCompositionBCE: -1150
+    },
+    originalLanguage: 'Standard Babylonian (Akkadian cuneiform)',
+    originalText: `[Akkadian cuneiform Tablet IV]:
+93. Ti-amat u Marduk marik ilāni it-te-en-gu-u
+94. ana šit-nu-ni it-qu-bu ana tam-ḫa-ri
+101. uš-par-ri-ir-ma be-lum sa-pa-ra-šu uš-al-mi-ši
+103. im-ḫul-la a-na pa-ni-ša uš-te-eṣ-bi-it
+129. i-ni-iḫ-ma be-lum ša-lam-tuš i-bar-ri
+137. i-ḫep-pi-ši-ma ki-ma nu-un maš-te-e a-na ši-ni-šu
+138. miš-lu-ša iš-kun-ma ša-ma-ma u-ṣa-al-lil
+139. iš-du-ud mar-ka-sa na-ṣi-ra u-ša-aṣ-bit
+140. me-e-ša la šu-ṣa-a šu-nu-ti um-ta-'-ir`,
+    transliteration: `Tīāmat u Marduk mālik ilāni ittengû, ana šitnuni itqubū ana tamḫāri... ušparrir-ma bēlum sapārašu ušalmīši... imḫulla ana pānīša uštēṣbit... inīḫ-ma bēlum šalamtuš ibarri, iḫeppīšī-ma kīma nūn maštê ana šinīšu; mišlūša iškun-ma šamāma uṣallil, išdud markasa nāṣira ušaṣbit, mêša lā šūṣâ šunūti umta''ir.`,
+    englishTranslation: `Tiamat and Marduk, champion of the gods, confronted each other; they drew near to battle, approaching the combat. The Lord spread out his net and enveloped her; the evil wind he unleashed full in her face. When she opened her mouth to swallow him, he drove in the evil wind so that her lips could not shut. The fierce winds filled her belly, her inner organs were seized, and she opened wide her mouth. He shot an arrow, it tore through her belly, cut through her insides, and split her heart. Having subdued her, he snuffed out her life; he cast down her carcass and stood upon it. The Lord paused to examine her dead body, to divide the monstrous lump and fashion artful works. He split her into two parts like a dried flat fish: one half of her he set up and stretched out as the heavens; he pulled down the bar and posted guards, commanding them not to let her waters escape.`,
+    translationAttribution: {
+      translator: 'L.W. King / Scholarly Standard Edition',
+      sourceWork: 'The Seven Tablets of Creation (Luzac\'s Semitic Text and Translation Series)',
+      year: '1902 / Public Domain',
+      license: 'Public Domain',
+      attributionNotice: 'Public Domain critical edition of the British Museum cuneiform tablets.'
+    },
+    motifs: ['chaoskampf', 'great_flood', 'creation_waters'],
+    clickableTerms: ['tiamat_tehom', 'lotan_leviathan'],
+    criticalApparatusNotes: 'Directly informs the West Semitic mythic memory of creation. The unarticulated Hebrew term Tehom (תְּהוֹם) in Genesis 1:2 is linguistically cognate with Tiamat. Psalm 74:13–17 and Job 26:12 ("By his power he stilled the sea; by his understanding he shattered Rahab") preserve the poetic combat imagery where God slays the sea monster and fixes the cosmic boundaries.'
+  },
+
+  // --- THE INSTRUCTION OF AMENEMOPE (PAPYRUS BM 10474, CHAPTER 1) ---
+  {
+    id: 'instruction_of_amenemope_ch1',
+    textId: 'instruction_of_amenemope',
+    reference: 'Instruction of Amenemope (BM 10474, Col. III:9–IV:12)',
+    title: 'The Thirty Chapters: Give Your Ear and Apply Your Heart',
+    cultureId: 'egyptian',
+    chronology: {
+      dateOfStorySetting: 'New Kingdom court scribal academy in Thebes',
+      estimatedDateOfComposition: 'ca. 1200–1075 BCE (20th Dynasty)',
+      dateOfEarliestSurvivingManuscript: 'Papyrus BM EA 10474 (ca. 10th c. BCE, British Museum)',
+      numericCompositionBCE: -1100
+    },
+    originalLanguage: 'Late Egyptian Hieratic',
+    originalText: `[Hieratic Papyrus BM 10474, col. III.9–IV.2]:
+dỉ=k msḏr=k sḏm=k nꜣ ḏd.t(w)=j, dỉ=k ḥꜣty=k r grg=sn;
+ꜣḫ n=k dỉ.t=sn m ḥꜣty=k, ḫpr ꜣd wꜣḥ=sn m ỉb=k;
+wn=sn m msnḥ m ẖ.t=k, m rḫ-ỉb wꜣḥ=sn m sp.ty=k...
+m-ỉr nhp r ỉtꜣ pꜣ šw, m-ỉr ḥnk r mꜣꜥ.t pꜣ ḥwrw...
+ỉs bn grg=j n=k mḏꜣ.t 30 n sḥr wꜥr.t?`,
+    transliteration: `di=k mesdjer=k sedjem=k na djed.t(w)=i, di=k haty=k r gereg=sen; akh n=k di.t=sen m haty=k, kheper ad wah=sen m ib=k; wn=sen m mesneh m khet=k, m rekh-ib wah=sen m septy=k... m-ir nehep r ita pa shu, m-ir henek r maa pa hwrw... is ben gereg=i n=k medjat 30 n seher wa'ret?`,
+    englishTranslation: `Give your ear and hear the words that are said; apply your heart to understand them. For it is good that you place them in your heart, so that they may rest within your bosom; let them act as a peg upon your tongue. ... Guard yourself from robbing the poor, and from being violent toward the weak. Do not lean upon the balance, nor falsify the weights, nor diminish the fractions of the grain-measure. ... Have I not written for you thirty chapters filled with counsel and knowledge, to reply to him who sent you with words of truth?`,
+    translationAttribution: {
+      translator: 'Francis Llewellyn Griffith / Adolf Erman',
+      sourceWork: 'The Journal of Egyptian Archaeology / Das Verhältniss des Buches der Sprüche zu der Lehre des Amenemope',
+      year: '1926 / Public Domain',
+      license: 'Public Domain',
+      attributionNotice: 'Authoritative scholarly English translation of Papyrus BM 10474.'
+    },
+    motifs: ['thirty_wisdom_sayings'],
+    clickableTerms: ['amenemope_sayings', 'maat'],
+    criticalApparatusNotes: 'Adolf Erman\'s demonstration in 1923 that Proverbs 22:17–24:22 is a direct Hebrew adaptation of Amenemope\'s thirty chapters remains one of the crowning discoveries of biblical archaeology. Proverbs 22:17–20 literally replicates the sequence: "Incline your ear and hear the words of the wise... Have I not written for you thirty sayings of counsel and knowledge?"'
+  },
+
+  // --- PROVERBS 22:17–21 (THE THIRTY SAYINGS OF THE WISE) ---
+  {
+    id: 'proverbs_22_17_21',
+    textId: 'proverbs',
+    reference: 'Proverbs 22:17–21',
+    title: 'The Thirty Sayings: The Hebrew Adaptation of Amenemope',
+    cultureId: 'hebrew_israelite',
+    chronology: {
+      dateOfStorySetting: 'Court of Solomon / Royal Scribal Guild in Jerusalem',
+      estimatedDateOfComposition: 'ca. 8th–7th century BCE (Hezekian redaction, Prov 25:1)',
+      dateOfEarliestSurvivingManuscript: '4QProv^b (Qumran, ca. 50 BCE); Aleppo & Leningrad Codices',
+      numericCompositionBCE: -700
+    },
+    originalLanguage: 'Biblical Hebrew',
+    originalText: `הַ֤ט אָזְנְךָ֗ וּ֭שְׁמַע דִּבְרֵ֣י חֲכָמִ֑ים וְ֝לִבְּךָ֗ תָּשִׁ֥ית לְדַעְתִּֽי׃ כִּֽי־נָ֭עִים כִּֽי־תִשְׁמְרֵ֣ם בְּבִטְנֶ֑ךָ יִכֹּ֥נוּ יַ֝חְדָּ֗ו עַל־שְׂפָתֶֽיךָ׃ ... הֲלֹ֤א כָתַ֣בְתִּֽי לְ֭ךָ שָׁלִישִׁ֑ים [קרי: שְׁלֹשִׁים] בְּמוֹעֵצֹ֣ת וָדָֽעַת׃ לְהוֹדִיעֲךָ֗ קֹ֭שְׁטְ אִמְרֵ֣י אֱמֶ֑ת לְהָשִׁ֥יב אֲמָרִ֥ים אֱ֝מֶ֗ת לְשֹׁלְחֶֽיךָ׃`,
+    transliteration: `Haṭ ʾoznəḵā ū-šəmaʿ divrē ḥăḵāmīm, wə-libbəḵā tāšīt lə-daʿtī: Kī-nāʿīm kī-ṯišmərēm bə-viṭneḵā, yikkōnū yaḥdāw ʿal-śəfāṯeḵā... Hălōʾ ḵāṯavtī ləḵā šəlōšīm [Qere] bə-mōʿēṣōt wā-ḏāʿat: Lə-hōḏīʿăḵā qōšṭ ʾimrē ʾĕmet, lə-hāšīv ʾămārīm ʾĕmet lə-šōləḥeḵā.`,
+    englishTranslation: `Incline your ear and hear the words of the wise, and apply your heart to my knowledge; for it will be pleasant if you keep them within your belly, if all of them are ready on your lips. So that your trust may be in the LORD, I have made them known to you today, even to you. Have I not written for you thirty sayings of counsel and knowledge, to make you know what is right and true, that you may give a true answer to those who sent you?`,
+    translationAttribution: {
+      translator: 'Scholarly Standard Translation (Revised Standard Version / JPS)',
+      sourceWork: 'The Holy Scriptures (Tanakh)',
+      year: '1917 / Public Domain',
+      license: 'Public Domain',
+      attributionNotice: 'Masoretic Text with critical Qere reading for "thirty".'
+    },
+    motifs: ['thirty_wisdom_sayings'],
+    clickableTerms: ['amenemope_sayings'],
+    criticalApparatusNotes: 'The consonantal text preserves ש-ל-ש-מ. The traditional Masoretic vocalization שָׁלִישִׁים (shalishim, "officers / excellent things") was corrected by scholars following Adolf Erman to שְׁלֹשִׁים (sheloshim, "thirty"), matching the thirty chapters of Amenemope. The passage continues in vv. 22–23 ("Do not rob the poor because he is poor, or crush the afflicted at the gate"), mirroring Amenemope Chapter 2.'
+  },
+
+  // --- PYRAMID TEXTS OF UNAS (UTTERANCES 273–274: THE CANNIBAL HYMN) ---
+  {
+    id: 'pyramid_texts_unas_cannibal',
+    textId: 'pyramid_texts_unas',
+    reference: 'Pyramid Texts (Utterance 273–274, §§393–414)',
+    title: 'The Cannibal Hymn: Royal Apotheosis and Divine Ascent',
+    cultureId: 'egyptian',
+    chronology: {
+      dateOfStorySetting: 'Fifth Dynasty royal celestial ascension',
+      estimatedDateOfComposition: 'ca. 2400–2350 BCE (Old Kingdom)',
+      dateOfEarliestSurvivingManuscript: 'Pyramid of Unas antechamber, Saqqara (in situ, ca. 2350 BCE)',
+      numericCompositionBCE: -2350
+    },
+    originalLanguage: 'Old Egyptian Hieroglyphic',
+    originalText: `[Pyramid of Unas, Antechamber East Wall, Spells 273–274]:
+jꜣw.t n.t p.t jwr, sbꜣ.w ꜣpd, pẖr.w r nṯr.w...
+Wnjs pj nṯr ꜥꜣ ʿnḫ m nṯr.w, wnmw jwꜥw.t=sn...
+ḫnms.w=sn m ḫꜣ.wt=sn, Wnjs wnmw rmṯ.w, ꜥnḫ m nṯr.w;
+ḥkꜣ.w=sn m ẖ.t=f, ꜣḫ.w=sn m ỉb=f.`,
+    transliteration: `iaw.t n.t p.t iwr, sbaw apd, pkhr.w r ntr.w... Wnis pi ntr aa ankh m ntr.w, wnmw iwa.w.t=sn... khnms.w=sn m kha.wt=sn, Wnis wnmw rmt.w, ankh m ntr.w; heka.w=sn m khet=f, akh.w=sn m ib=f.`,
+    englishTranslation: `The sky is cloud-covered, the stars rain down, the heavenly constellations tremble, the bones of the earth-gods quake, the planets stand still, when they see Unas dawning as a soul, as a god who lives on his fathers and feeds on his mothers! Unas is the lord of wisdom whose mother knows not his name. The glory of Unas is in the sky, his power is in the horizon, like that of Atum his father who begot him. Unas is he who eats their magic and swallows their spirits! Their big ones are for his morning meal, their middle-sized ones are for his evening meal, their little ones are for his night meal. He has taken the hearts of the gods; he has consumed the Red Crown, he has swallowed the White Crown! Unas feeds on the lungs of the wise, and is satisfied with living on their hearts and their magic. Behold, their soul is in Unas\'s belly, their spirits are within Unas!`,
+    translationAttribution: {
+      translator: 'James Henry Breasted / Samuel A.B. Mercer',
+      sourceWork: 'Development of Religion and Thought in Ancient Egypt / The Pyramid Texts in Translation',
+      year: '1912 / 1952 / Public Domain',
+      license: 'Public Domain',
+      attributionNotice: 'Old Kingdom classic translation of the earliest inscribed royal mortuary liturgies.'
+    },
+    motifs: ['divine_council', 'heroic_ages'],
+    clickableTerms: ['maat'],
+    criticalApparatusNotes: 'Representing the oldest known inscribed religious text in human history, the Cannibal Hymn displays the archaic concept of celestial predation, where divine status is achieved not through passive acceptance into heaven, but through violent conquering and assimilation of the pantheon\'s life-force (heka).'
+  },
+
+  // --- HESIOD'S THEOGONY (LINES 713–735: THE CASTING OF TITANS INTO TARTARUS) ---
+  {
+    id: 'hesiod_theogony_tartarus',
+    textId: 'hesiod_theogony',
+    reference: 'Hesiod Theogony (Lines 713–735)',
+    title: 'The Chaining of the Titans in Tartarus: The Classical Model of 2 Peter 2:4',
+    cultureId: 'greco_roman',
+    chronology: {
+      dateOfStorySetting: 'Primordial Titanomachy at the dawn of the Olympian order',
+      estimatedDateOfComposition: 'ca. 730–700 BCE',
+      dateOfEarliestSurvivingManuscript: 'Papyrus Oxyrhynchus 2091 (2nd c. BCE); medieval Byzantine MSS',
+      numericCompositionBCE: -720
+    },
+    originalLanguage: 'Ancient Greek',
+    originalText: `[Greek Theogony 713–735]:
+Τιτῆνας δ' αὐγοὺς ὑπὸ χθονὸς εὐρυοδείης
+πέμψαν καὶ δεσμοῖσιν ἐν ἀργαλέοισιν ἔδησαν
+χερσὶν νικήσαντες ὑπερθύμους περ ἐόντας,
+τόσσον ἔνερθ' ὑπὸ γῆς, ὅσον οὐρανός ἐστ' ἀπὸ γαίης·
+τόσσον γάρ τ' ἀπὸ γῆς ἐς Τάρταρον ἠερόεντα...
+τὸν πέρι χάλκεον ἕρκος ἐλήλαται· ἀμφὶ δέ μιν νὺξ
+τριστοιχεὶ κέχυται περὶ δειρήν· αὐτὰρ ὕπερθεν
+γῆς ῥίζαι πεφύασι καὶ ἀτρυγέτοιο θαλάσσης.`,
+    transliteration: `Titēnas d' augous hypo chthonos euryodeiēs pempsan kai desmoisin en argaleoisin edēsan chersin nikēsantes hyperthymous per eontas, tosson enerth' hypo gēs, hoson ouranos est' apo gaiēs; tosson gar t' apo gēs es Tartaron ēeroenta... ton peri chalkeon herkos elēlatai; amphi de min nyx tristoichei kechytai peri deirēn; autar hyperthen gēs rhizai pephyasi kai atrygetoio thalassēs.`,
+    englishTranslation: `And the Titans they hurled beneath the wide-wayed earth and bound them in painful bonds, having conquered them by the strength of their hands, proud though they were, as far beneath the earth as heaven is from earth; for so far is it from earth to misty Tartarus. ... Around it a bronze wall is driven, and night in triple folds is poured about its neck; while above it grow the roots of the earth and of the unfruitful sea. There the Titan gods are hidden beneath murky gloom by the will of Zeus the cloud-gatherer, in a dank place, at the furthest ends of the vast earth. They have no way out; Poseidon fixed gates of bronze upon it, and a wall runs all around it on every side.`,
+    translationAttribution: {
+      translator: 'Hugh G. Evelyn-White',
+      sourceWork: 'Hesiod, The Homeric Hymns and Homerica (Loeb Classical Library)',
+      year: '1914 / Public Domain',
+      license: 'Public Domain',
+      attributionNotice: 'Standard Loeb Classical Library public domain translation.'
+    },
+    motifs: ['tartarus_imprisonment', 'giants', 'watchers_rebellion'],
+    clickableTerms: ['tartarus', 'watchers'],
+    criticalApparatusNotes: 'Directly informs the New Testament theology of imprisoned celestial rebels. In 2 Peter 2:4, the author writes: "For if God did not spare angels when they sinned, but having cast them into Tartarus (ταρταρώσας, tartarōsas), committed them to chains of gloomy darkness to be kept until the judgment." The motif also parallels 1 Enoch 10:4–12 where Azazel is bound in Dudael beneath rough and jagged rocks in total darkness.'
+  },
+
+  // --- 4Q521 (THE MESSIANIC APOCALYPSE: RAISING THE DEAD & HEALING) ---
+  {
+    id: '4q521_messianic_apocalypse',
+    textId: '4q521_messianic',
+    reference: '4Q521 (Fragment 2, Column II:1–14)',
+    title: 'The Signs of the Messiah: Raising the Dead and Good News to the Poor',
+    cultureId: 'dead_sea_scrolls',
+    chronology: {
+      dateOfStorySetting: 'Second Temple eschatological expectation of the Messianic era',
+      estimatedDateOfComposition: 'ca. 100–80 BCE',
+      dateOfEarliestSurvivingManuscript: '4Q521 scroll fragments (ca. 100–80 BCE, Qumran Cave 4, Rockefeller Museum)',
+      numericCompositionBCE: -90
+    },
+    originalLanguage: 'Qumran Hebrew',
+    originalText: `[4Q521 Frg. 2 Col. II]:
+1. [כי השמי]ם והארץ ישמעו למשיחו
+2. [וכול אשר ב]ם לוא יסוגו ממצות קדושים
+5. כי יכבד את חסידים על כסא מלכות עד
+6. מתיר אסורים פוקח עורים זוקף כ[פופים]
+8. ורופ[א חללים] ומתים יחיה
+11. וענוים יבשר וד[לים ישביע] שוקקים ינהג`,
+    transliteration: `[Kī haš-šāmayi]m wə-hā-ʾāretz yišməʿū lim-šīḥō, [wə-ḵōl ʾăšer bā]-m lōʾ yāsōgū mim-miṣwat qədōšīm... Kī yəḵabbēd ʾet-ḥăsīḏīm ʿal-kisseʾ malḵūt ʿad... Mattīr ʾăsūrīm, pōqēaḥ ʿīwrīm, zōqēf kə[fūfīm]... Wə-rōf[ēʾ ḥălālīm] ū-mētīm yəḥayyeh, wə-ʿănāwīm yəbaśśēr wə-ḏ[allīm yaśbīaʿ], šōqəqīm yənāhēg.`,
+    englishTranslation: `For the heavens and the earth will listen to his Messiah, and all that is in them will not turn away from the commandments of the holy ones. ... For he will honor the pious upon the throne of an eternal kingdom, freeing prisoners, giving sight to the blind, straightening those who are bent double. ... And the Lord will accomplish glorious things that have never been: for he will heal the wounded, and give life to the dead, and bring good news to the poor, and satisfy the destitute, and lead the expelled.`,
+    translationAttribution: {
+      translator: 'Michael O. Wise, Martin G. Abegg Jr., Edward M. Cook / Émile Puech',
+      sourceWork: 'The Dead Sea Scrolls: A New Translation / Discoveries in the Judaean Desert',
+      year: '1996 / Scholarly Fair Use Translation',
+      license: 'Scholarly Fair Use Quotation',
+      attributionNotice: 'Standard critical reading of 4Q521 based on DJD reconstruction.'
+    },
+    motifs: ['messianic_signs', 'apocalypse'],
+    clickableTerms: ['adat_el', 'bene_haelohim'],
+    criticalApparatusNotes: 'Universally recognized as one of the most astonishing textual parallels between Qumran and the New Testament. When John the Baptist sends his disciples to ask Jesus "Are you the one who is to come, or should we look for another?", Jesus replies in Matthew 11:4–5 and Luke 7:22 with the exact catalog of deeds preserved in 4Q521: the blind receive sight, the lame walk, lepers are cleansed, the deaf hear, the dead are raised up, and the poor have good news preached to them.'
+  },
+
+  // --- 11Q13 (11QMELCHIZEDEK: THE HEAVENLY ELOHIM IN THE DIVINE ASSEMBLY) ---
+  {
+    id: '11q13_melchizedek_jubilee',
+    textId: '11q13_melchizedek',
+    reference: '11Q13 (11QMelchizedek, Column II:1–16)',
+    title: 'Melchizedek as Heavenly Elohim: The Jubilee Judgment of Psalm 82',
+    cultureId: 'dead_sea_scrolls',
+    chronology: {
+      dateOfStorySetting: 'The Tenth Jubilee and final Day of Atonement judgment',
+      estimatedDateOfComposition: 'ca. 120–80 BCE',
+      dateOfEarliestSurvivingManuscript: '11Q13 scroll fragments (ca. 75–50 BCE, Qumran Cave 11, Shrine of the Book)',
+      numericCompositionBCE: -100
+    },
+    originalLanguage: 'Qumran Hebrew',
+    originalText: `[11Q13 Col. II]:
+9. והמ[ה] נחלת מלכי צדק אשר י[שיבמה אליהמה]
+10. ואשר קרא דרור שמה לעזוב להם [משא כ]ול עונותיהמה
+11. ואשר אמר ... אלהים נצב בעדת אל בקרב אלהים ישפוט
+12. ועליו אמר ועליה למרום שובה אל ישפוט עמים
+13. ואשר אמר עד מתי תשפוטו עול ופני רשעים תשאו סלה
+14. פשרו על בליעל ועל רוחי גורלו אשר [סרו ממצות אל]
+15. ומלכי צדק יקום נק[ם] משפטי [אל] [וביום ההוא יצילמה מיד] בליעל`,
+    transliteration: `Wə-ham-[māh] naḥălat Malkī-Ṣedeq ʾăšer y[əšīvēmāh ʾălēyhemāh]... wə-ʾăšer qārāʾ dərōr šāmmāh la-ʿăzōv lāhem [maśśaʾ k]ōl ʿăwōnōtēyhemāh... wə-ʾăšer ʾāmar: ʾĔlōhīm niṣṣāv ba-ʿăḏat-ʾĒl, bə-qerev ʾĕlōhīm yišpōṭ; wə-ʿālāw ʾāmar: wə-ʿālēyhā lam-mārōm šūvāh, ʾĒl yišpōṭ ʿammīm... wə-ʾăšer ʾāmar: ʿad-mātay tišpəṭū-ʿāwel ū-fənē rəšāʿīm tiśśāʾū selāh? Pišrō ʿal-Bəliyyaʿal wə-ʿal-rūḥē gōrālō... ū-Malkī-Ṣedeq yāqūm nəq[am] mišpəṭē [ʾĒl, ū-vay-yōm ha-hūʾ yaṣṣīlēmmāh miy-yad] Bəliyyaʿal.`,
+    englishTranslation: `And this is the inheritance of Melchizedek, who will return them to what is rightfully theirs, and proclaim liberty to them, forgiving them the debt of all their iniquities. This shall take place in the first week of the Jubilee that follows nine Jubilees, on the Day of Atonement, the end of the tenth Jubilee. ... And concerning him, Scripture says: 'God (Elohim) has taken his place in the divine council (adat-El); in the midst of the gods (elohim) he holds judgment' (Psalm 82:1). And concerning him it says: 'Above it return on high; God will judge the peoples' (Psalm 7:7–8). And as for what it says: 'How long will you judge unjustly and show partiality to the wicked?' (Psalm 82:2), its interpretation concerns Belial and the spirits of his lot, who rebelled against God\'s commandments. But Melchizedek will execute the vengeance of the judgments of God, and on that day he will deliver them from the hand of Belial!`,
+    translationAttribution: {
+      translator: 'Florentino García Martínez / E.J.C. Tigchelaar',
+      sourceWork: 'The Dead Sea Scrolls Study Edition',
+      year: '1998 / Scholarly Fair Use Translation',
+      license: 'Scholarly Fair Use Quotation',
+      attributionNotice: 'Brill critical text edition of 11Q13.'
+    },
+    motifs: ['divine_council', 'messianic_signs', 'apocalypse'],
+    clickableTerms: ['melchizedek_elohim', 'adat_el', 'bene_haelohim'],
+    criticalApparatusNotes: '11QMelchizedek establishes the definitive historical link between Psalm 82 (the judgment of the corrupt heavenly gods) and the exalted priest-king Melchizedek. In this Second Temple text, Melchizedek is treated as the divine agent (Elohim) who carries out the divine decree. This background explains Hebrews 7, which depicts Melchizedek as superior to the Levitical priesthood and possessing an indestructible life.'
+  },
+
+  // --- ISAIAH 27:1 (LEVIATHAN THE TWISTING SERPENT) ---
+  {
+    id: 'isaiah_27_1_leviathan',
+    textId: 'isaiah',
+    reference: 'Isaiah 27:1',
+    title: 'Leviathan the Twisting Serpent: The Northwest Semitic Sea Dragon',
+    cultureId: 'hebrew_israelite',
+    chronology: {
+      dateOfStorySetting: 'Eschatological judgment of cosmic oppressors',
+      estimatedDateOfComposition: 'ca. 6th–5th century BCE (Isaiah Apocalypse, chs. 24–27)',
+      dateOfEarliestSurvivingManuscript: '1QIsa^a (Great Isaiah Scroll, ca. 125 BCE, Qumran Cave 1)',
+      numericCompositionBCE: -520
+    },
+    originalLanguage: 'Biblical Hebrew',
+    originalText: `בַּיּ֣וֹם הַה֡וּא יִפְקֹ֣ד יְהוָה֩ בְּחַרְב֨וֹ הַקָּשָׁ֜ה וְהַגְּדוֹלָ֣ה וְהַחֲזָקָ֗ה עַ֤ל לִוְיָתָן֙ נָחָ֣שׁ בָּרִ֔חַ וְעַל֙ לִוְיָתָ֔ן נָחָ֖שׁ עֲקַלָּת֑וֹן וְהָרַ֥ג אֶת־הַתַּנִּ֖ין אֲשֶׁ֥ר בַּיָּֽם׃`,
+    transliteration: `Bay-yōm ha-hūʾ yifqōḏ Yahweh bə-ḥarvō haq-qāšāh wə-hag-gəḏōlāh wə-ha-ḥăzāqāh ʿal Liwyātān nāḥāš bārīaḥ, wə-ʿal Liwyātān nāḥāš ʿăqallātōn, wə-hārag ʾet-hat-tannīn ʾăšer bay-yām.`,
+    englishTranslation: `In that day the LORD with his hard and great and strong sword will punish Leviathan the fleeing serpent, Leviathan the twisting serpent, and he will slay the dragon that is in the sea.`,
+    translationAttribution: {
+      translator: 'Scholarly Standard Translation (Revised Standard Version / JPS)',
+      sourceWork: 'The Holy Scriptures (Tanakh)',
+      year: '1917 / Public Domain',
+      license: 'Public Domain',
+      attributionNotice: 'Preserved intact in 1QIsa^a (Great Isaiah Scroll, Column XXI).'
+    },
+    motifs: ['chaoskampf'],
+    clickableTerms: ['lotan_leviathan', 'tiamat_tehom'],
+    criticalApparatusNotes: 'Compare verbatim with Ugaritic tablet KTU 1.5 I:1–3 from Ras Shamra (ca. 1300 BCE): "kī tamḫaṣ Lōtāna baṯna barīḥa, takalli baṯna ʿaqallatāna, šalyata dī šibʿati raʾašīma" ("When you smite Lotan the fleeing serpent, destroy the twisting serpent, the tyrant with seven heads"). The biblical poet reproduces the exact Canaanite formulaic poetry in Hebrew.'
+  },
+
+  // --- MATTHEW 11:2–6 (THE MESSIANIC MIRACLES & 4Q521) ---
+  {
+    id: 'matthew_11_4_6',
+    textId: 'matthew',
+    reference: 'Matthew 11:2–6',
+    title: 'The Messianic Credentials: Blind See, Dead Raised, Good News to the Poor',
+    cultureId: 'early_christian',
+    chronology: {
+      dateOfStorySetting: 'Ministry of Jesus in Galilee answering John the Baptist in prison',
+      estimatedDateOfComposition: 'ca. 70–85 CE',
+      dateOfEarliestSurvivingManuscript: 'Papyrus 104 (ca. 175–200 CE); Codex Sinaiticus & Vaticanus (4th c. CE)',
+      numericCompositionBCE: 75
+    },
+    originalLanguage: 'Koine Greek',
+    originalText: `Ὁ δὲ Ἰησοῦς ἀποκριθεὶς εἶπεν αὐτοῖς· Πορευθέντες ἀπαγγείλατε Ἰωάννῃ ἃ ἀκούετε καὶ βλέπετε· τυφλοὶ ἀναβλέπουσιν καὶ χωλοὶ περιπατοῦσιν, λεπροὶ καθαρίζονται καὶ κωφοὶ ἀκούουσιν, καὶ νεκροὶ ἐγείρονται καὶ πτωχοὶ εὐαγγελίζονται· καὶ μακάριός ἐστιν ὃς ἐὰν μὴ σκανδαλισθῇ ἐν ἐμοί.`,
+    transliteration: `Ho de Iēsous apokritheis eipen autois: Poreuthentes apangeilate Iōannē ha akouete kai blepete: typhloi anablepousin kai chōloi peripatousin, leproi katharizontai kai kōphoi akouousin, kai nekroi egeirontai kai ptōchoi euangelizontai; kai makarios estin hos ean mē skandalisthē en emoi.`,
+    englishTranslation: `And Jesus answered and said to them: 'Go and report to John what you hear and see: the blind receive sight, the lame walk, the lepers are cleansed, the deaf hear, the dead are raised up, and the poor have good news preached to them. And blessed is anyone who takes no offense at me.'`,
+    translationAttribution: {
+      translator: 'Scholarly Public Domain Greek NT Translation',
+      sourceWork: 'The New Testament in the Original Greek',
+      year: '1901',
+      license: 'Public Domain',
+      attributionNotice: 'Public Domain Koine Greek text conforming to Nestle-Aland critical base.'
+    },
+    motifs: ['messianic_signs'],
+    clickableTerms: ['bene_haelohim', 'adat_el'],
+    criticalApparatusNotes: 'Matches the exact formulaic cluster found in Dead Sea Scroll 4Q521 Fragment 2 Col. II: freeing captives, opening blind eyes, healing the wounded, raising the dead (yəḥayyeh mētīm), and preaching good news to the poor. Because the Hebrew Bible never explicitly links raising the dead to the Messiah, this shared cluster proves Jesus and Matthew operated within contemporary Palestinian sectarian messianic expectations.'
+  },
+
+  // --- HEBREWS 7:1–4, 15–17 (MELCHIZEDEK AND 11Q13) ---
+  {
+    id: 'hebrews_7_1_4_melchizedek',
+    textId: 'hebrews',
+    reference: 'Hebrews 7:1–4, 15–17',
+    title: 'Melchizedek Without Father, Mother, or Genealogy: The Eternal Priest-King',
+    cultureId: 'early_christian',
+    chronology: {
+      dateOfStorySetting: 'Apostolic theological exegesis of Genesis 14 and Psalm 110',
+      estimatedDateOfComposition: 'ca. 60–69 CE',
+      dateOfEarliestSurvivingManuscript: 'Papyrus 46 (Chester Beatty II, ca. 175–225 CE); Codex Vaticanus',
+      numericCompositionBCE: 65
+    },
+    originalLanguage: 'Literary Koine Greek',
+    originalText: `Οὗτος γὰρ ὁ Μελχισεδέκ, βασιλεὺς Σαλήμ, ἱερεὺς τοῦ θεοῦ τοῦ ὑψίστου... ἀπάτωρ, ἀμήτωρ, ἀγενεαλόγητος, μήτε ἀρχὴν ἡμερῶν μήτε ζωῆς τέλος ἔχων, ἀφωμοιωμένος δὲ τῷ υἱῷ τοῦ θεοῦ, μένει ἱερεὺς εἰς τὸ διηνεκές. Θεωρεῖτε δὲ πηλίκος οὗτος ᾧ καὶ δεκάτην Ἀβραὰμ ἔδωκεν ἐκ τῶν ἀκροθινίων ὁ πατριάρχης... κατὰ δύναμιν ζωῆς ἀκαταλύτου, μαρτυρεῖται γὰρ ὅτι Σὺ ἱερεὺς εἰς τὸν αἰῶνα κατὰ τὴν τάξιν Μελχισεδέκ.`,
+    transliteration: `Houtos gar ho Melchisedek, basileus Salēm, hiereus tou theou tou hypsistou... apatōr, amētōr, agenealogētos, mēte archēn hēmerōn mēte zōēs telos echōn, aphōmoiōmenos de tō huiō tou theou, menei hiereus eis to diēnekes. Theōreite de pēlikos houtos hō kai dekatēn Abraam edōken ek tōn akrothiniōn ho patriarchēs... kata dynamin zōēs akatalytou, martyreitai gar hoti Sy hiereus eis ton aiōna kata tēn taxin Melchisedek.`,
+    englishTranslation: `For this Melchizedek, king of Salem, priest of the Most High God... is without father, without mother, without genealogy, having neither beginning of days nor end of life, but resembling the Son of God, he remains a priest perpetually. Consider how great this man was, to whom even Abraham the patriarch gave a tenth of the spoils! ... having become a priest not according to a legal requirement concerning bodily descent, but by the power of an indestructible life. For it is attested of him: 'You are a priest forever, according to the order of Melchizedek.'`,
+    translationAttribution: {
+      translator: 'Scholarly Public Domain Translation (RV / ASV)',
+      sourceWork: 'The Epistles of the New Testament',
+      year: '1901',
+      license: 'Public Domain',
+      attributionNotice: 'Public Domain critical Greek text.'
+    },
+    motifs: ['divine_council', 'messianic_signs'],
+    clickableTerms: ['melchizedek_elohim', 'adat_el', 'bene_haelohim'],
+    criticalApparatusNotes: 'Historically elucidated by 11QMelchizedek (11Q13), where Melchizedek is explicitly called Elohim and identified with the divine judge of Psalm 82:1 who executes heavenly vengeance against Belial. The author of Hebrews draws upon this existing Second Temple exaltation tradition to present Jesus\' high priesthood as superior to Aaron.'
+  },
+
+  // --- ISAIAH 14:12–15 (HELEL BEN-SHAHAR / LUCIFER ON MOUNT ZAPHON) ---
+  {
+    id: 'isaiah_14_12_15_helel',
+    textId: 'isaiah',
+    reference: 'Isaiah 14:12–15',
+    title: 'Helel Ben-Shahar: The Fall of the Day Star from the Mount of Assembly',
+    cultureId: 'hebrew_israelite',
+    chronology: {
+      dateOfStorySetting: 'Prophetic mocking dirge against tyrannical cosmic rulers',
+      estimatedDateOfComposition: 'ca. 8th–7th century BCE',
+      dateOfEarliestSurvivingManuscript: '1QIsa^a (Great Isaiah Scroll, ca. 125 BCE, Qumran Cave 1)',
+      numericCompositionBCE: -720
+    },
+    originalLanguage: 'Biblical Hebrew',
+    originalText: `אֵ֣יךְ נָפַ֧לְתָּ מִשָּׁמַ֛יִם הֵילֵ֥ל בֶּן־שָׁ֑חַר נִגְדַּ֣עְתָּ לָאָ֔רֶץ חוֹלֵ֖שׁ עַל־גּוֹיִֽם׃ וְאַתָּ֞ה אָמַ֤רְתָּ בִֽלְבָבְךָ֙ הַשָּׁמַ֣יִם אֶֽעֱלֶ֔ה מִמַּ֥עַל לְכֽוֹכְבֵי־אֵ֖ל אָרִ֣ים כִּסְאִ֑י וְאֵשֵׁ֛ב בְּהַר־מוֹעֵ֖ד בְּיַרְכְּתֵ֥י צָפֽוֹן׃ אֶעֱלֶ֖ה עַל־בָּ֣מֳתֵי עָ֑ב אֶדַּמֶּ֖ה לְעֶלְיֽוֹן׃ אַ֧ךְ אֶל־שְׁא֛וֹל תּוּרָ֖ד אֶל־יַרְכְּתֵי־בֽוֹר׃`,
+    transliteration: `ʾĒk nāphaltā miš-šāmayim, Hēlēl ben-Šāḥar! Nigdaʿtā lā-ʾāretz, ḥōlēš ʿal-gōyīm! Wə-ʾattāh ʾāmartā viləvāvəḵā: Haš-šāmayim ʾeʿĕleh, mim-maʿal lə-ḵōḵəvē-ʾĒl ʾārīm kisʾī, wə-ʾēšēv bə-har-mōʿēd bə-yarkətē Ṣāfōn! ʾEʿĕleh ʿal-bāmŏtē ʿāv, ʾeddammeh lə-ʿElyōn! ʾAḵ ʾel-Šəʾōl tūrad, ʾel-yarkətē-vōr.`,
+    englishTranslation: `How you have fallen from heaven, O Day Star, son of the Dawn [Helel ben-Shahar]! How you are cut down to the ground, you who laid low the nations! You said in your heart: 'I will ascend to heaven; above the stars of El I will raise my throne on high; I will sit on the Mount of Assembly in the far reaches of Zaphon; I will ascend above the heights of the clouds; I will make myself like the Most High [Elyon]!' But you are brought down to Sheol, to the far recesses of the Pit.`,
+    translationAttribution: {
+      translator: 'Scholarly Standard Translation (Revised Standard Version / JPS)',
+      sourceWork: 'The Holy Scriptures (Tanakh)',
+      year: '1917 / Public Domain',
+      license: 'Public Domain',
+      attributionNotice: 'Preserved intact in 1QIsa^a (Great Isaiah Scroll, Column XII).'
+    },
+    motifs: ['watchers_rebellion', 'divine_council', 'sacred_mountains'],
+    clickableTerms: ['helel_ben_shahar', 'bene_haelohim', 'adat_el'],
+    criticalApparatusNotes: 'A cornerstone of Northwest Semitic comparative mythology. The Latin Vulgate translated Helel ben-Shahar as "Lucifer" (light-bearer). Modern Ugaritic discoveries revealed that this passage directly borrows the Canaanite myth of the god Athtar, who attempted to ascend the throne of the supreme storm-god Baal on Mount Zaphon (Mount Casius) but was inadequate and descended to rule the netherworld.'
+  },
+
+  // --- EZEKIEL 28:12–17 (THE FALLEN CHERUB IN EDEN ON THE HOLY MOUNTAIN) ---
+  {
+    id: 'ezekiel_28_12_17_cherub',
+    textId: 'ezekiel',
+    reference: 'Ezekiel 28:12–17',
+    title: 'The Anointed Guardian Cherub in Eden: The Fall from the Mountain of God',
+    cultureId: 'hebrew_israelite',
+    chronology: {
+      dateOfStorySetting: 'Exilic lamentation oracle against the prince of Tyre',
+      estimatedDateOfComposition: 'ca. 585–570 BCE',
+      dateOfEarliestSurvivingManuscript: '4QEzek^a (ca. 100 BCE); Papyrus 967 (Greek, ca. 200 CE); Aleppo Codex',
+      numericCompositionBCE: -575
+    },
+    originalLanguage: 'Biblical Hebrew',
+    originalText: `אַתָּה֙ חוֹתֵ֣ם תָּכְנִ֔ית מָלֵ֥א חָכְמָ֖ה וּכְלִ֥יל יֹֽפִי׃ בְּעֵ֨דֶן גַּן־אֱלֹהִ֜ים הָיִ֗יתָ כָּל־אֶ֤בֶן יְקָרָה֙ מְסֻכָ֣תֶךָ... אַתְּ־כְּר֗וּב מִמְשַׁח֙ הַסּוֹכֵ֔ךְ וּנְתַתִּ֕יךָ בְּהַ֥ר קֹ֛דֶשׁ אֱלֹהִ֖ים הָיִ֑יתָ בְּת֥וֹךְ אַבְנֵי־אֵ֖שׁ הִתְהַלָּֽכְתָּ׃ תָּמִ֤ים אַתָּה֙ בִּדְרָכֶ֔יךָ מִיּ֖וֹם הִבָּרְאָ֑ךְ עַד־נִמְצָ֥א עַוְלָ֖תָה בָּֽךְ... וָֽאֲחַלֶּלְךָ֩ מֵהַ֨ר אֱלֹהִ֥ים וָֽאַבֶּדְךָ֛ כְּר֥וּב הַסֹּכֵ֖ךְ מִתּ֥וֹךְ אַבְנֵי־אֵֽשׁ׃`,
+    transliteration: `ʾAttāh ḥōṯēm toḵnīt, mālēʾ ḥoḵmāh ū-ḵəlīl yōfī. Bə-ʿĒḏen gan-ʾĔlōhīm hāyīṯā; kol-ʾeven yəqārāh məsuḵāṯeḵā... ʾAt-kərūv mimšaḥ has-sōḵēḵ, ū-nəṯattīḵā bə-har qōḏeš ʾĔlōhīm hāyīṯā, bə-ṯōḵ ʾavnē-ʾēš hithallāḵtā. Tāmīm ʾattāh bi-ḏərāḵeḵā mī-yōm hibbārəʾāḵ ʿaḏ-nimṣāʾ ʿawlāṯāh bāḵ... wā-ʾaḥalləlḵā mē-har ʾĔlōhīm, wā-ʾaʾabbedḵā kərūv has-sōḵēḵ mit-tōḵ ʾavnē ʾēš.`,
+    englishTranslation: `You were the seal of perfection, full of wisdom and perfect in beauty. You were in Eden, the garden of God; every precious stone was your covering... You were an anointed guardian cherub; I placed you on the holy mountain of God; you walked in the midst of the stones of fire. You were blameless in your ways from the day you were created, until unrighteousness was found in you. ... So I cast you as a profane thing from the mountain of God, and I destroyed you, O guardian cherub, from the midst of the stones of fire. Your heart was proud because of your beauty; you corrupted your wisdom for the sake of your splendor.`,
+    translationAttribution: {
+      translator: 'Scholarly Standard Translation (RSV / JPS)',
+      sourceWork: 'The Book of Ezekiel',
+      year: '1917 / Public Domain',
+      license: 'Public Domain',
+      attributionNotice: 'Public Domain Masoretic Text.'
+    },
+    motifs: ['watchers_rebellion', 'sacred_mountains', 'divine_council'],
+    clickableTerms: ['bene_haelohim', 'adat_el', 'helel_ben_shahar'],
+    criticalApparatusNotes: 'Preserves an alternate, archaic West Semitic version of the Eden narrative where Eden is not merely an earthly orchard, but the cosmic divine mountain (har Elohim) surrounded by "stones of fire" (fiery angelic beings). The guardian cherub falls through hubris, forming a direct thematic bridge to the rebellion of the Watchers in 1 Enoch.'
+  },
+
+  // --- GENESIS 1:1–3 (BERESHIT & TEHOM) ---
+  {
+    id: 'genesis_1_1_3_creation',
+    textId: 'genesis',
+    reference: 'Genesis 1:1–3',
+    title: 'Bereshit: Creation, the Deep (Tehom), and the Divine Wind',
+    cultureId: 'hebrew_israelite',
+    chronology: {
+      dateOfStorySetting: 'The primordial beginning of the cosmos',
+      estimatedDateOfComposition: 'ca. 6th–5th century BCE (Priestly Cosmogony)',
+      dateOfEarliestSurvivingManuscript: '4QGen^b (ca. 150 BCE); Nash Papyrus; Aleppo Codex',
+      numericCompositionBCE: -550
+    },
+    originalLanguage: 'Biblical Hebrew',
+    originalText: `בְּרֵאשִׁ֖ית בָּרָ֣א אֱלֹהִ֑ים אֵ֥ת הַשָּׁמַ֖יִם וְאֵ֥ת הָאָֽרֶץ׃ וְהָאָ֗רֶץ הָיְתָ֥ה תֹ֙הוּ֙ וָבֹ֔הוּ וְחֹ֖שֶׁךְ עַל־פְּנֵ֣י תְה֑וֹם וְר֣וּחַ אֱלֹהִ֔ים מְרַחֶ֖פֶת עַל־פְּנֵ֥י הַמָּֽיִם׃ וַיֹּ֥אמֶר אֱלֹהִ֖ים יְהִ֣י א֑וֹר וַֽיְהִי־אֽוֹר׃`,
+    transliteration: `Bərēʾšīt bārāʾ ʾĔlōhīm ʾēt haš-šāmayim wə-ʾēt hā-ʾāretz. Wə-hā-ʾāretz hāyəṯāh tōhū wā-vōhū, wə-ḥōšeḵ ʿal-pənē Təhōm, wə-Rūaḥ ʾĔlōhīm məraḥefet ʿal-pənē ham-māyim. Wa-yōʾmer ʾĔlōhīm: Yəhī ʾōr; wa-yəhī-ʾōr.`,
+    englishTranslation: `In the beginning God created the heavens and the earth. Now the earth was formless and desolate, and darkness was over the surface of the deep [Tehom], and the Spirit of God was hovering over the surface of the waters. And God said, 'Let there be light,' and there was light.`,
+    translationAttribution: {
+      translator: 'Scholarly Standard Translation (Revised Standard Version / JPS)',
+      sourceWork: 'The Holy Scriptures (Tanakh)',
+      year: '1917 / Public Domain',
+      license: 'Public Domain',
+      attributionNotice: 'Public Domain Masoretic Text.'
+    },
+    motifs: ['creation_primordial_waters', 'chaoskampf'],
+    clickableTerms: ['tiamat_tehom', 'chaoskampf'],
+    criticalApparatusNotes: 'Linguistically cognate with Akkadian Tiamat. In Genesis 1:2, Tehom appears without the Hebrew definite article (acting as a proper name), preserving the deep cultural memory of the primordial watery chaos that precedes cosmic ordering.'
+  },
+
+  // --- ENUMA ELISH (TABLET I: LINES 1–9 PRIMORDIAL APSU & TIAMAT) ---
+  {
+    id: 'enuma_elish_tablet_1_apsu_tiamat',
+    textId: 'enuma_elish',
+    reference: 'Enūma Eliš (Tablet I: lines 1–9)',
+    title: 'When on High: The Primordial Commingling of Apsu and Tiamat',
+    cultureId: 'mesopotamian',
+    chronology: {
+      dateOfStorySetting: 'Primordial cosmic void before heavens or earth were named',
+      estimatedDateOfComposition: 'ca. 12th–11th century BCE',
+      dateOfEarliestSurvivingManuscript: 'Kuyunjik / Nineveh cuneiform tablets (ca. 7th c. BCE, British Museum)',
+      numericCompositionBCE: -1150
+    },
+    originalLanguage: 'Standard Babylonian (Akkadian cuneiform)',
+    originalText: `[Akkadian cuneiform Tablet I:1–9]:
+1. e-nu-ma e-liš la na-bu-ú ša-ma-mu
+2. šap-liš am-ma-tum šu-ma la zak-rat
+3. ZU.AB-ma reš-tu-ú za-ru-šu-un
+4. mu-um-mu Ti-amat mu-al-li-da-at gim-ri-šu-un
+5. A.MEŠ-šu-nu iš-te-niš i-ḫi-qu-u-ma
+6. gi-pa-ra la ki-iṣ-ṣu-ru su-sa-a la še-'-u
+7. e-nu-ma DINGIR.DINGIR la šu-pu-u ma-na-ma
+8. šu-ma la zuk-ku-ru ši-ma-a-ti la ši-na-ma
+9. ib-ba-nu-u-ma DINGIR.DINGIR qe-reb-šu-un`,
+    transliteration: `enūma eliš lā nabû šamāmū, šapliš ammatum šuma lā zakrat; Apsû-ma rēštû zārûšun, mummu Tiāmat muallidat gimrīšun; mêšunu ištēniš iḫīqū-ma, gipāra lā kiṣṣurū susâ lā še'û; enūma ilū lā šūpû manāma, šuma lā zukkurū šīmāti lā šīnā-ma; ibbanû-ma ilū qerebšun.`,
+    englishTranslation: `When on high the heavens had not yet been named, and below the earth held no name, and the primeval Apsu who begot them, and chaos Tiamat, she who bore them all, were mingling their waters together as one, when no pasture land had yet been formed and no reed marsh was to be seen; when none of the gods had yet been brought into being, nor named with a name, nor had their destinies been ordained—then in their midst the gods were created.`,
+    translationAttribution: {
+      translator: 'L.W. King',
+      sourceWork: 'The Seven Tablets of Creation',
+      year: '1902 / Public Domain',
+      license: 'Public Domain',
+      attributionNotice: 'Public Domain critical cuneiform edition (Luzac & Co.).'
+    },
+    motifs: ['creation_primordial_waters', 'chaoskampf'],
+    clickableTerms: ['tiamat_tehom', 'chaoskampf'],
+    criticalApparatusNotes: 'The foundational East Semitic cosmogonic opening. Shares with Genesis 1:1–2 the circumstantial temporal framework ("When... then...") and the premise of an undifferentiated primeval ocean before divine ordering divides salt water (Tiamat) from sweet water (Apsu).'
   }
 ];

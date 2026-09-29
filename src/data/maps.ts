@@ -447,5 +447,57 @@ export const mapLocations: MapLocation[] = [
     description: 'One of the oldest settlements in the world, capital of ancient Elam, and winter residence of the Persian Achaemenid emperors (Cyrus, Darius, Xerxes/Ahasuerus). Setting of the biblical books of Esther and Nehemiah, and locus of Daniel\'s vision along the Ulai canal. Where French archaeologists discovered the Stele of the Code of Hammurabi in 1901.',
     associatedTexts: ['code_of_hammurabi', 'daniel'],
     keyDiscoveries: ['Stele of the Code of Hammurabi (diorite stela brought as war trophy by Shutruk-Nahhunte, now in the Louvre)', 'Apadana Palace of Darius I with glazed brick Archers frieze', 'Victory Stele of Naram-Sin', 'Proto-Elamite and Linear Elamite tablets']
+  },
+  {
+    id: 'saqqara_unas',
+    name: 'Saqqara (Pyramid of Unas)',
+    ancientRegion: 'Memphite Necropolis / Lower Egypt',
+    modernCountry: 'Giza Governorate, Egypt',
+    coordinates: { lat: 29.8683, lng: 31.2167 },
+    cultureId: 'egyptian',
+    regionGroup: 'NEAR_EAST',
+    importance: 'Primary Excavation',
+    description: 'The royal burial ground of the Old Kingdom capital of Memphis. In 1881, Gaston Maspero entered the pyramid of Pharaoh Unas (last king of the 5th Dynasty, ca. 2350 BCE) and discovered the subterranean walls incised with green-pigmented hieroglyphs: the Pyramid Texts. These comprise the oldest surviving religious literature on earth, including the "Cannibal Hymn" of divine ascent.',
+    associatedTexts: ['pyramid_texts_unas', 'egyptian_book_of_the_dead'],
+    keyDiscoveries: ['In situ Pyramid Texts of Unas (first pyramid inscribed with ritual liturgies)', 'Step Pyramid of Djoser and Imhotep complex', 'Serapeum subterranean bull catacombs', 'Tomb of Ti and Mereruka']
+  },
+  {
+    id: 'eridu_tell_abu_shahrain',
+    name: 'Eridu (Tell Abu Shahrain)',
+    ancientRegion: 'Southern Sumer / Marshland Coast',
+    modernCountry: 'Dhi Qar Governorate, Iraq',
+    coordinates: { lat: 30.8158, lng: 45.9967 },
+    cultureId: 'mesopotamian',
+    regionGroup: 'NEAR_EAST',
+    importance: 'Mythological Axis',
+    description: 'According to the Sumerian King List, Eridu was the first city on earth where "kingship was lowered from heaven". Home to the temple of Enki (E-Abzu, "House of the Deep") and the legendary home of Adapa and the Seven Antediluvian Apkallu sages who brought arts and civilization before the Flood.',
+    associatedTexts: ['atrahasis', 'gilgamesh', 'enuma_elish'],
+    keyDiscoveries: ['18 superimposed temple strata spanning 5000 to 2000 BCE in Mound 1', 'Temple of Enki with sacred fish offerings', 'Sumerian King List cuneiform prisms', 'Archaic Ubaid period settlement']
+  },
+  {
+    id: 'hattusa_bogazkoy',
+    name: 'Hattusa (Boğazköy / Boğazkale)',
+    ancientRegion: 'Anatolian Plateau / Hatti',
+    modernCountry: 'Çorum Province, Turkey',
+    coordinates: { lat: 40.0197, lng: 34.6153 },
+    cultureId: 'canaanite_ugaritic',
+    regionGroup: 'NEAR_EAST',
+    importance: 'Primary Excavation',
+    description: 'The monumental fortified capital of the Hittite Empire (Late Bronze Age). Excavations yielded over 30,000 cuneiform tablets, including Hittite translations of the Epic of Gilgamesh, the Song of Kumarbi (the Hurrian theogony that directly inspired Hesiod\'s castration of Uranus), and the Egyptian-Hittite peace treaty with Ramesses II.',
+    associatedTexts: ['gilgamesh', 'hesiod_theogony'],
+    keyDiscoveries: ['Yazılıkaya open-air rock sanctuary with reliefs of the Hurrian/Hittite pantheon', 'Hittite version of the Epic of Gilgamesh preserving unique lines', 'Song of Kumarbi / Ullikummi cycle', 'Lion Gate and Sphinx Gate']
+  },
+  {
+    id: 'mount_helicon_ascra',
+    name: 'Mount Helicon & Ascra',
+    ancientRegion: 'Boeotia / Central Greece',
+    modernCountry: 'Boeotia, Greece',
+    coordinates: { lat: 38.3533, lng: 22.9772 },
+    cultureId: 'greco_roman',
+    regionGroup: 'MEDITERRANEAN',
+    importance: 'Mythological Axis',
+    description: 'The sacred mountain of the nine Muses in Greek mythology, featuring the sacred springs of Aganippe and Hippocrene. Homeland of the archaic epic poet Hesiod, who recounts in the opening of the Theogony that the Muses visited him as he pastured his sheep on the slopes of Helicon, breathing into him a divine voice to celebrate the Titans and the gods.',
+    associatedTexts: ['hesiod_theogony'],
+    keyDiscoveries: ['Sanctuary of the Muses (Valley of the Muses at Thespiae)', 'Inscriptions celebrating the Mouseia poetic festivals', 'Archaic defensive watchtowers of Ascra']
   }
 ];

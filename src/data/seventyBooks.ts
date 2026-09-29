@@ -215,6 +215,66 @@ export const seventyBooksCollection = {
       genre: 'Esoteric Wisdom',
       rationaleForInclusion: 'Eighteen non-canonical poetic psalms reflecting on the Roman desecration of the sanctuary, culminating in Psalm 17\'s renowned prayer for the Davidic Messiah.',
       coreThemes: ['The Davidic King-Messiah', 'Chastisement of the ungodly', 'Purification of Jerusalem from foreign defilement']
+    },
+    {
+      id: 'apocalypse_of_abraham',
+      title: 'Apocalypse of Abraham',
+      hebrewOrAramaicName: 'חזון אברהם',
+      approximateDateBCE: 'ca. 70–100 CE',
+      manuscriptWitnesses: 'Old Church Slavonic manuscripts (Codex Sylvester, 14th c.) translated from lost Greek/Hebrew original',
+      genre: 'Apocalyptic',
+      rationaleForInclusion: 'Abraham is guided by the archangel Yahoel up to the fiery heavenly throne of the Merkabah, encountering Azazel as an unclean winged bird of prey who is banished to the abyss of fire.',
+      coreThemes: ['Archangel Yahoel and the divine Ineffable Name', 'Banishment of Azazel', 'Ascent through the fire of the divine throne', 'Vision of world history']
+    },
+    {
+      id: 'life_of_adam_and_eve',
+      title: 'Life of Adam and Eve (Apocalypse of Moses)',
+      hebrewOrAramaicName: 'חיי אדם וחוה',
+      approximateDateBCE: 'ca. 100 BCE – 100 CE',
+      manuscriptWitnesses: 'Greek Apocalypse of Moses; Latin Vita Adae et Evae; Armenian and Slavonic versions',
+      genre: 'Patriarchal Testament',
+      rationaleForInclusion: 'Preserves the foundational tradition of the devil\'s original rebellion: Satan refused Michael\'s command to worship the newly created Adam as the image of God, precipitating his cosmic expulsion from the heavenly host.',
+      coreThemes: ['Satan refusing to worship the image of God', 'Quest for the oil of mercy from the Tree of Life', 'Archangel Michael\'s mediation']
+    },
+    {
+      id: 'copper_scroll_3q15',
+      title: 'The Copper Scroll (3Q15)',
+      hebrewOrAramaicName: 'מגילת הנחושת',
+      approximateDateBCE: 'ca. 25–70 CE',
+      manuscriptWitnesses: '3Q15 (Two rolled sheets of pure copper discovered in Cave 3 at Qumran, 1952)',
+      genre: 'Priestly / Halakhic',
+      rationaleForInclusion: 'Unlike all other leather/papyrus sectarian scrolls, this unique metallic document lists 64 secret underground hiding places containing immense stockpiles of gold, silver, consecrated temple vessels, and priestly tithes across Judea.',
+      coreThemes: ['Secret topographical inventory', 'Hidden temple treasures', 'Cryptic Greek letter codes', 'Priestly concealment during Roman war']
+    },
+    {
+      id: 'testament_of_abraham',
+      title: 'Testament of Abraham',
+      hebrewOrAramaicName: 'צוואת אברהם',
+      approximateDateBCE: 'ca. 1st–2nd century CE',
+      manuscriptWitnesses: 'Greek Recensions A and B; Coptic, Arabic, Ethiopic, Slavonic, and Romanian translations',
+      genre: 'Patriarchal Testament',
+      rationaleForInclusion: 'The archangel Michael takes Abraham on a celestial chariot tour to observe the judgment of souls. Abraham witnesses the psychostasia—the weighing of souls on the cosmic scales by Abel and the Recording Angel Dokiel.',
+      coreThemes: ['Chariot tour of the world and underworld', 'The narrow and broad gates', 'Psychostasia / Weighing of righteous and wicked deeds', 'Abel as initial judge of humankind']
+    },
+    {
+      id: '4q521_messianic_text',
+      title: 'The Messianic Apocalypse (4Q521)',
+      hebrewOrAramaicName: 'חזון משיחי (4Q521)',
+      approximateDateBCE: 'ca. 100–80 BCE',
+      manuscriptWitnesses: '4Q521 (Parchment fragments from Qumran Cave 4)',
+      genre: 'Apocalyptic',
+      rationaleForInclusion: 'Secret sectarian apocalypse detailing the unprecedented divine works of the Messianic era, including raising the dead to life and liberating the captive righteous, mirroring the secret knowledge reserved for the elect.',
+      coreThemes: ['Messiah crowned on eternal throne', 'Resurrection of the dead (yəḥayyeh mētīm)', 'Liberation of the poor and oppressed', 'Renewal of heaven and earth']
+    },
+    {
+      id: '3_enoch_sefer_hekhalot',
+      title: '3 Enoch (The Hebrew Book of Enoch / Sefer Hekhalot)',
+      hebrewOrAramaicName: 'ספר היכלות (ספר חנוך השלישי)',
+      approximateDateBCE: 'ca. 2nd–5th century CE (Merkabah mystical elaboration of Second Temple Enochic traditions)',
+      manuscriptWitnesses: 'Medieval Hebrew manuscripts (Bodleian, Vatican, British Library collections)',
+      genre: 'Angelology / Liturgy',
+      rationaleForInclusion: 'Rabbi Ishmael ascends to the highest heavenly palace (Hekhal) and meets Enoch, who has been transformed into Metatron, the Prince of the Presence (Sar ha-Panim) and the "Lesser YHWH", seated on a celestial throne of fire.',
+      coreThemes: ['Enoch transformed into Metatron', 'Thrones of fire and divine wheels (Ophannim)', 'The cosmic garment inscribed with the creation letters', 'The angelic Prince of the Divine Presence']
     }
   ]
 };

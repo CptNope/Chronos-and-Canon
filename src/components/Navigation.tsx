@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ResearchMode } from '../types';
 import { useLanguage } from '../i18n/LanguageContext';
+import { useAppUpdate } from '../context/PWAUpdateContext';
 import { PWAInstallButton } from './common/PWAInstallButton';
 import {
   BookOpen,
@@ -19,7 +20,8 @@ import {
   Compass,
   Library,
   ChevronDown,
-  Languages
+  Languages,
+  ShieldCheck
 } from 'lucide-react';
 
 export type AppView =
@@ -42,15 +44,18 @@ interface NavigationProps {
   onNavigate: (view: AppView) => void;
   researchMode: ResearchMode;
   onSetResearchMode: (mode: ResearchMode) => void;
+  onOpenVersionModal?: () => void;
 }
 
 export const Navigation: React.FC<NavigationProps> = ({
   currentView,
   onNavigate,
   researchMode,
-  onSetResearchMode
+  onSetResearchMode,
+  onOpenVersionModal
 }) => {
   const { t, language, setLanguage, languages } = useLanguage();
+  const { currentVersion, isUpdateAvailable } = useAppUpdate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [desktopMoreOpen, setDesktopMoreOpen] = useState(false);
 
@@ -205,6 +210,25 @@ export const Navigation: React.FC<NavigationProps> = ({
             {/* PWA Install Button */}
             <PWAInstallButton />
 
+            {/* Version Badge & Updates Button */}
+            {onOpenVersionModal && (
+              <button
+                onClick={onOpenVersionModal}
+                className={`hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded-lg border text-xs font-mono transition ${
+                  isUpdateAvailable
+                    ? 'bg-[#c99738]/20 border-[#c99738] text-[#f5d77f] font-bold animate-pulse shadow-xs'
+                    : 'bg-[#181411] border-[#382e22] text-[#a48c68] hover:text-[#f5d77f] hover:border-[#c99738]/50'
+                }`}
+                title={isUpdateAvailable ? t.updates.statusUpdateAvailable : `${t.common.version} v${currentVersion} (${t.common.checkUpdates})`}
+              >
+                <ShieldCheck className="w-3.5 h-3.5 text-[#c99738]" />
+                <span>v{currentVersion}</span>
+                {isUpdateAvailable && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#f5d77f] animate-ping" />
+                )}
+              </button>
+            )}
+
             {/* Mobile Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -254,6 +278,32 @@ export const Navigation: React.FC<NavigationProps> = ({
               </div>
             </div>
           </div>
+
+          {/* Version Check Row in Mobile Menu */}
+          {onOpenVersionModal && (
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenVersionModal();
+              }}
+              className="w-full flex items-center justify-between p-2.5 rounded-xl bg-[#1b1713] border border-[#2b231a] text-xs text-[#ded5c7] hover:bg-[#251e18] transition"
+            >
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-[#c99738]" />
+                <span className="font-semibold text-[#f5d77f]">{t.updates.modalTitle}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-mono text-[#a48c68]">v{currentVersion}</span>
+                {isUpdateAvailable ? (
+                  <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#c99738] text-[#12100e] animate-pulse">
+                    UPDATE
+                  </span>
+                ) : (
+                  <span className="text-[10px] text-[#34d399] font-medium">LATEST</span>
+                )}
+              </div>
+            </button>
+          )}
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {navItems.map(item => {

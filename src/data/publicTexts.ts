@@ -804,6 +804,46 @@ export const publicTextEditions: PublicTextEdition[] = [
       'Details Yaldabaoth and the archons creating the counterfeit spirit and mating with human women',
       'Free scholarly and open-access public edition'
     ]
+  },
+  {
+    id: 'pub_4q521_leon_levy',
+    textId: '4q521_messianic',
+    textTitle: '4Q521 (The Messianic Apocalypse)',
+    cultureId: 'dead_sea_scrolls',
+    category: 'DEAD SEA SCROLLS',
+    title: '4Q521 Fragment 2 Infrared Multispectral Facsimiles (IAA Plate 190)',
+    repositoryName: 'The Leon Levy Dead Sea Scrolls Digital Library',
+    url: 'https://www.deadseascrolls.org.il/explore-the-archive/search#q=4Q521',
+    editionType: 'High-Res Manuscript Facsimile',
+    language: 'Qumran Hebrew',
+    institution: 'Israel Antiquities Authority (IAA)',
+    isPublicDomainOrOpenAccess: true,
+    description: 'High-resolution 4K multispectral and infrared captures of 4Q521 Fragment 2, containing the famed Column II where the Messiah gives sight to the blind and raises the dead.',
+    highlightFeatures: [
+      'Exact IAA inventory numbers (IAA 190.285)',
+      'Infrared revelation of damaged consonantal text',
+      'Side-by-side comparative analysis with Matthew 11:2–6'
+    ]
+  },
+  {
+    id: 'pub_amenemope_british_museum',
+    textId: 'instruction_of_amenemope',
+    textTitle: 'The Instruction of Amenemope (Papyrus BM 10474)',
+    cultureId: 'egyptian',
+    category: 'EGYPTIAN',
+    title: 'Papyrus British Museum EA 10474 High-Resolution Facsimile',
+    repositoryName: 'The British Museum Digital Collections',
+    url: 'https://www.britishmuseum.org/collection/object/Y_EA10474',
+    editionType: 'High-Res Manuscript Facsimile',
+    language: 'Late Egyptian Hieratic',
+    institution: 'The British Museum (London)',
+    isPublicDomainOrOpenAccess: true,
+    description: 'Full digital photography of the complete 28-page hieratic scroll of Amenemope acquired in Thebes in 1888. Contains all thirty chapters adapted in Proverbs 22:17–24:22.',
+    highlightFeatures: [
+      'Complete 28-sheet high-res digital viewer',
+      'Curatorial provenance notes and transliteration bibliography',
+      'Open access for scholarly and public education'
+    ]
   }
 ];
 

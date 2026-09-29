@@ -199,12 +199,6 @@ export const PASSAGE_TRANSLATIONS: Record<string, LocalizedPassageText> = {
     esSource: 'El Descenso de Ishtar a los Infiernos / Nínive',
     ptSource: 'A Descida de Ishtar aos Infernos / Nínive'
   },
-  enuma_elish_tablet_4: {
-    es: `Marduk preparó el arco, ajustó la flecha a la cuerda; blandió la maza en su diestra. Frente a él colocó el relámpago; con fuego ardiente llenó su cuerpo. Hizo una red para envolver el vientre de Tiamat... Tiamat y Marduk, el más sabio de los dioses, avanzaron al combate; se trabaron en combate singular... El Señor extendió su red y la atrapó en ella; desató el Viento Maligno en su rostro. Cuando Tiamat abrió su boca para engullirlo, él hizo entrar el Viento Maligno para que no pudiera cerrar sus labios. Atravesó su corazón; la venció y segó su vida. Dividió su cuerpo como un pez seco en dos partes: con una mitad cubrió el cielo y fijó un cerrojo.`,
-    pt: `Marduk preparou o arco, ajustou a flecha à corda; empunhou a clava na sua mão direita. À sua frente colocou o relâmpago; de chamas ardentes encheu o seu corpo. Fez uma rede para encerrar as entranhas de Tiamat... Tiamat e Marduk, o campeão dos deuses, avançaram para o confronto; travaram combate singular... O Senhor estendeu a sua rede e envolveu-a nela; soprou o Vento Maligno contra o seu rosto. Quando Tiamat abriu a boca para o devorar, ele fez entrar o Viento Maligno de modo que ela não pôde fechar os lábios. Varou-lhe o coração; abateu-a e tirou-lhe a vida. Dividiu o seu corpo como um peixe seco em duas metades: com uma metade cobriu o céu e estabeleceu uma tranca.`,
-    esSource: 'Enûma Eliš (Tablilla IV / Cosmogonía Babilónica)',
-    ptSource: 'Enûma Eliš (Tábua IV / Cosmogonia Babilônica)'
-  },
 
   // --- SECOND TEMPLE, DEAD SEA SCROLLS & GNOSTIC ---
   jubilees_10_demons: {
@@ -300,6 +294,90 @@ export const PASSAGE_TRANSLATIONS: Record<string, LocalizedPassageText> = {
     pt: `E houve batalha no céu: Miguel e os seus anjos batalhavam contra o dragão; e batalhavam o dragão e os seus anjos; mas não prevaleceram, nem mais o seu lugar se achou nos céus. E foi precipitado o grande dragão, a antiga serpente, chamada o Diabo, e Satanás, que engana todo o mundo; ele foi precipitado na terra, e os seus anjos foram lançados com ele.`,
     esSource: 'Apocalipsis 12:7–9 (Guerra en el Cielo)',
     ptSource: 'Apocalipse 12:7–9 (Guerra nos Céus)'
+  },
+  enuma_elish_tablet_4: {
+    es: `Tiamat y Marduk, campeón de los dioses, se enfrentaron; se acercaron a la batalla, aproximándose al combate. El Señor extendió su red y la envolvió; desató el viento maligno de lleno contra su rostro. Cuando abrió su boca para tragarlo, él introdujo el viento maligno de modo que sus labios no pudieron cerrarse. Los vientos feroces llenaron su vientre, sus órganos internos fueron desgarrados y abrió ampliamente su boca. Disparó una flecha, atravesó su vientre, cortó sus entrañas y partió su corazón. Habiéndola sometido, extinguió su vida; arrojó su cadáver y se posó sobre él... El Señor se detuvo a examinar su cuerpo sin vida, para dividir el cuerpo monstruoso y crear obras artísticas. La partió en dos partes como un pez seco: una mitad la levantó y la extendió como los cielos; tiró del cerrojo y apostó guardianes, ordenándoles que no dejaran escapar sus aguas.`,
+    pt: `Tiamat e Marduk, campeão dos deuses, confrontaram-se; aproximaram-se da batalha, chegando ao combate. O Senhor estendeu a sua rede e a envolveu; desencadeou o vento maligno diretamente contra o seu rosto. Quando ela abriu a boca para engoli-lo, ele fez penetrar o vento feroz de modo que os seus lábios não pudessem se fechar. Os ventos violentos encheram-lhe o ventre, seus órgãos internos foram despedaçados e ela escancarou a boca. Ele disparou uma flecha que rasgou o seu ventre, cortou suas entranhas e fendeu o seu coração. Tendo-a subjugado, extinguiu-lhe a vida; abateu o seu cadáver e pôs-se de pé sobre ele... O Senhor deteve-se para contemplar o corpo inerte, para dividir a carcaça monstruosa e criar obras admiráveis. Fendeu-a em duas partes como um peixe seco: uma metade ergueu-a e estendeu-a como os céus; pôs trancas e posicionou guardas, ordenando-lhes que não deixassem as suas águas escapar.`,
+    esSource: 'Enūma Eliš Tablilla IV (Marduk divide a Tiamat)',
+    ptSource: 'Enūma Eliš Tábua IV (Marduk divide Tiamat)'
+  },
+  instruction_of_amenemope_ch1: {
+    es: `Inclina tu oído y escucha las palabras que se dicen; aplica tu corazón para comprenderlas. Pues es provechoso que las coloques en tu corazón, para que reposen dentro de tu pecho; que sirvan como cerrojo sobre tu lengua. ... Guárdate de robar al desvalido y de cometer violencia contra el débil. No te apoyes sobre la balanza ni falsees las pesas, ni disminuyas las fracciones de la medida de grano. ... ¿Acaso no he escrito para ti treinta capítulos llenos de consejo y conocimiento, para responder con palabras de verdad a aquel que te envía?`,
+    pt: `Inclina o teu ouvido e ouve as palavras que são ditas; aplica o teu coração para compreendê-las. Pois é proveitoso que as guardes no teu coração, para que repousem no teu peito; que sirvam como ferrolho sobre a tua língua. ... Guarda-te de espoliar o desvalido e de usar de violência contra o fraco. Não te apoies sobre a balança nem falseies os pesos, nem diminuas as frações da medida de cereais. ... Acaso não escrevi para ti trinta capítulos repletos de conselho e conhecimento, para responder com palavras de verdade àquele que te enviou?`,
+    esSource: 'Instrucción de Amenemope Capítulo 1 (Papiro BM 10474)',
+    ptSource: 'Instrução de Amenemope Capítulo 1 (Papiro BM 10474)'
+  },
+  proverbs_22_17_21: {
+    es: `Inclina tu oído y oye las palabras de los sabios, y aplica tu corazón a mi sabiduría; porque es cosa deleitable si las guardares dentro de ti; si juntamente se afirmaren sobre tus labios. Para que tu confianza sea en Jehová, te las he hecho saber hoy a ti también. ¿No te he escrito treinta dichos de consejos y de ciencia, para hacerte saber la certidumbre de las palabras de verdad, a fin de que vuelvas palabras de verdad a los que te enviaron?`,
+    pt: `Inclina o teu ouvido, e ouve as palavras dos sábios, e aplica o teu coração ao meu conhecimento; porque é coisa suave se as guardares no teu íntimo; se todas elas se fixarem nos teus lábios. Para que a tua confiança esteja no SENHOR, te fiz saber hoje, sim, a ti mesmo. Porventura não te escrevi trinta provérbios de conselhos e de ciência, para te fazer saber a certeza das palavras da verdade, e assim possas responder palavras de verdade aos que te enviarem?`,
+    esSource: 'Proverbios 22:17–21 (Los Treinta Dichos)',
+    ptSource: 'Provérbios 22:17–21 (Os Trinta Provérbios)'
+  },
+  pyramid_texts_unas_cannibal: {
+    es: `El cielo está cubierto de nubes, las estrellas caen como lluvia, las constelaciones celestiales tiemblan, los huesos de los dioses de la tierra se estremecen, los planetas se detienen al contemplar a Unas apareciendo como alma, como un dios que vive de sus padres y se nutre de sus madres. Unas es el señor de la sabiduría cuya madre no conoce su nombre. La gloria de Unas está en el cielo, su poder en el horizonte... ¡Unas es quien devora la magia de los dioses y traga sus espíritus! Sus grandes son para su desayuno, sus medianos para su comida de la tarde y sus pequeños para su cena nocturna. ¡Ha tomado los corazones de los dioses, ha ingerido la Corona Roja y devorado la Corona Blanca! Unas se alimenta de los pulmones de los sabios y vive de sus corazones y su poder supremo. ¡He aquí que las almas de los dioses habitan en el vientre de Unas!`,
+    pt: `O céu cobre-se de nuvens, as estrelas caem como chuva, as constelações celestes estremecem, os ossos dos deuses da terra tremem, os planetas detêm-se ao contemplar Unas surgindo como alma, como um deus que vive de seus pais e alimenta-se de suas mães. Unas é o senhor da sabedoria cuja mãe ignora o seu nome. A glória de Unas está no céu, seu poder no horizonte... Unas é aquele que devora a magia dos deuses e engole os seus espíritos! Os grandes são para a sua refeição matinal, os medianos para o seu jantar e os pequenos para a ceia noturna. Tomou os corações dos deuses, tragou a Coroa Vermelha e engoliu a Coroa Branca! Unas alimenta-se dos pulmões dos sábios e vive de seus corações e de sua magia suprema. Eis que as almas dos deuses repousam no ventre de Unas!`,
+    esSource: 'Textos de las Pirámides de Unas (Himno Caníbal, Saqqara)',
+    ptSource: 'Textos das Pirâmides de Unas (Hino Canibal, Saqqara)'
+  },
+  hesiod_theogony_tartarus: {
+    es: `Y a los Titanes los precipitaron bajo la tierra de anchos caminos y los ataron con penosas cadenas tras vencerlos con la fuerza de sus brazos, a pesar de su soberbia, tan hondo bajo la tierra como lejos está el cielo de la tierra; pues tal es la distancia de la tierra al Tártaro tenebroso... En torno a él se extiende una muralla de bronce, y una noche de triples pliegues se derrama alrededor de su garganta; mientras por encima crecen las raíces de la tierra y del mar estéril. Allí los dioses Titanes yacen ocultos bajo la oscuridad sombría por la voluntad de Zeus amontonador de nubes, en un paraje húmedo, en los confines remotos de la vasta tierra. No tienen salida posible; Poseidón fijó puertas de bronce sobre él y un muro corre por todos sus flancos.`,
+    pt: `E aos Titãs precipitaram-nos sob a terra de amplas veredas e ataram-nos com dolorosas correntes, tendo-os vencido pela força de seus braços, não obstante a sua soberba, tão fundo sob a terra quanto longe está o céu da terra; pois tal é a distância da terra ao Tártaro tenebroso... Ao redor dele estende-se uma muralha de bronze, e uma noite de tríplices dobras derrama-se ao redor da sua garganta; enquanto acima brotam as raízes da terra e do mar estéril. Ali os deuses Titãs jazem ocultos sob a escuridão sombria pela vontade de Zeus que ajunta as nuvens, num lugar lúgubre, nos confins remotos da vasta terra. Não há para eles saída alguma; Posídon fixou portas de bronze sobre ele e uma muralha ergue-se por todos os lados.`,
+    esSource: 'Hesíodo, Teogonía 713–735 (El Encierro de los Titanes en el Tártaro)',
+    ptSource: 'Hesíodo, Teogonia 713–735 (O Aprisionamento dos Titãs no Tártaro)'
+  },
+  '4q521_messianic_apocalypse': {
+    es: `Pues los cielos y la tierra escucharán a su Mesías, y todo lo que hay en ellos no se apartará de los preceptos de los santos... Pues honrará a los piadosos sobre el trono del reino eterno, liberando a los cautivos, dando vista a los ciegos, enderezando a los encorvados... Y el Señor realizará obras gloriosas como nunca antes han existido: sanará a los heridos, y a los muertos dará vida (yəḥayyeh mētīm), y anunciará buenas nuevas a los humildes, y saciará a los necesitados, y guiará a los desterrados.`,
+    pt: `Pois os céus e a terra ouvirão o seu Messias, e tudo o que neles há não se desviará dos preceitos dos santos... Pois honrará os piedosos sobre o trono do reino eterno, libertando os cativos, dando vista aos cegos, endireitando os encurvados... E o Senhor realizará maravilhas gloriosas jamais vistas: curará os feridos, dará vida aos mortos (yəḥayyeh mētīm), e anunciará boas-novas aos humildes, saciará os indigentes e guiará os banidos.`,
+    esSource: 'Manuscrito de Qumrán 4Q521 (Apocalipsis Mesiánico)',
+    ptSource: 'Manuscrito de Qumran 4Q521 (Apocalipse Messiânico)'
+  },
+  '11q13_melchizedek_jubilee': {
+    es: `Y esta es la heredad de Melquisedec, quien los restituirá a lo que por derecho les pertenece y proclamará libertad para ellos, perdonándoles la carga de todas sus iniquidades... Y acerca de él dice la Escritura: 'Dios (Elohim) se levanta en la asamblea divina; en medio de los dioses juzga' (Salmo 82:1)... Y en cuanto a lo que dice: '¿Hasta cuándo juzgaréis injustamente y aceptaréis las personas de los impíos?' (Salmo 82:2), su interpretación atañe a Belial y a los espíritus de su lote... Mas Melquisedec ejecutará la venganza de los juicios de Dios, y en aquel día los librará de la mano de Belial.`,
+    pt: `E esta é a herança de Melquisedeque, que os restituirá ao que lhes pertence por direito e proclamará liberdade para eles, perdoando-lhes a carga de todas as suas iniquidades... E a respeito dele diz a Escritura: 'Deus (Elohim) assiste na congregação divina; no meio dos deuses ele julga' (Salmo 82:1)... E quanto ao que diz: 'Até quando julgareis injustamente e tomareis o partido dos ímpios?' (Salmo 82:2), a sua interpretação refere-se a Belial e aos espíritos de sua sorte... Mas Melquisedeque executará a vingança dos juízos de Deus, e naquele dia os livrará da mão de Belial.`,
+    esSource: 'Manuscrito de Qumrán 11Q13 (11QMelquisedec / El Jubileo Celeste)',
+    ptSource: 'Manuscrito de Qumran 11Q13 (11QMelquisedeque / O Jubileu Celeste)'
+  },
+  isaiah_27_1_leviathan: {
+    es: `En aquel día Jehová castigará con su espada dura, grande y fuerte, a Leviatán, serpiente veloz, y a Leviatán, serpiente tortuosa; y matará al dragón que está en el mar.`,
+    pt: `Naquele dia o SENHOR castigará com a sua dura espada, grande e forte, o leviatã, a serpente veloz, e o leviatã, a serpente tortuosa, e matará o dragão que está no mar.`,
+    esSource: 'Isaías 27:1 (Leviatán la Serpiente Tortuosa)',
+    ptSource: 'Isaías 27:1 (Leviatã a Serpente Tortuosa)'
+  },
+  matthew_11_4_6: {
+    es: `Respondiendo Jesús, les dijo: 'Id, y haced saber a Juan las cosas que oís y veis: Los ciegos ven, los cojos andan, los leprosos son limpiados, los sordos oyen, los muertos son resucitados, y a los pobres es anunciado el evangelio; y bienaventurado es el que no halle tropiezo en mí.'`,
+    pt: `E Jesus, respondendo, disse-lhes: 'Ide, e anunciai a João as coisas que ouvis e vedes: Os cegos veem, e os coxos andam; os leprosos são limpos, e os surdos ouvem; os mortos são ressuscitados, e aos pobres é anunciado o evangelho. E bem-aventurado é aquele que não se escandalizar de mim.'`,
+    esSource: 'Mateo 11:4–6 (Los Signos Mesiánicos en respuesta a Juan el Bautista)',
+    ptSource: 'Mateus 11:4–6 (Os Sinais Messiânicos em resposta a João Batista)'
+  },
+  hebrews_7_1_4_melchizedek: {
+    es: `Porque este Melquisedec, rey de Salem, sacerdote del Dios Altísimo... sin padre, sin madre, sin genealogía; que ni tiene principio de días, ni fin de vida, sino hecho semejante al Hijo de Dios, permanece sacerdote para siempre. Considerad, pues, cuán grande era éste, a quien aun Abraham el patriarca dio diezmos del botín... constituido no conforme a la ley del mandamiento acerca de la descendencia, sino según el poder de una vida indestructible. Pues se da testimonio de él: 'Tú eres sacerdote para siempre, según el orden de Melquisedec.'`,
+    pt: `Porque este Melquisedeque, rei de Salém, sacerdote do Deus Altíssimo... sem pai, sem mãe, sem genealogia, não tendo princípio de dias nem fim de vida, mas sendo feito semelhante ao Filho de Deus, permanece sacerdote para sempre. Considerai, pois, quão grande era este, a quem até o patriarca Abraão deu os dízimos dos despojos... constituído não segundo a lei do mandamento carnal, mas segundo a virtude da vida incorruptível. Porque dele assim se testifica: 'Tu és sacerdote eternamente, segundo a ordem de Melquisedeque.'`,
+    esSource: 'Hebreos 7:1–4, 15–17 (Melquisedec y el Sacerdocio Indestructible)',
+    ptSource: 'Hebreus 7:1–4, 15–17 (Melquisedeque e o Sacerdócio Indestrutível)'
+  },
+  isaiah_14_12_15_helel: {
+    es: `¡Cómo caíste del cielo, oh Lucero [Helel], hijo de la mañana! Cortado fuiste por tierra, tú que debilitabas a las naciones. Tú que decías en tu corazón: 'Subiré al cielo; en lo alto, junto a las estrellas de Dios, levantaré mi trono, y en el monte del testimonio me sentaré, a los lados del norte; sobre las alturas de las nubes subiré, y seré semejante al Altísimo.' Mas tú derribado eres hasta el Seol, a los lados del abismo.`,
+    pt: `Como caíste do céu, ó estrela da manhã [Helel], filho da alva! Como foste cortado por terra, tu que debilitavas as nações! E tu dizias no teu coração: 'Eu subirei ao céu, acima das estrelas de Deus exaltarei o meu trono, e no monte da congregação me assentarei, aos lados do norte; subirei sobre as alturas das nuvens, e serei semelhante ao Altíssimo.' E, contudo, levado serás ao Seol, ao mais profundo do abismo.`,
+    esSource: 'Isaías 14:12–15 (Helel ben Shajar y el Monte Safón)',
+    ptSource: 'Isaías 14:12–15 (Helel ben Shahar e o Monte Zaphon)'
+  },
+  ezekiel_28_12_17_cherub: {
+    es: `Tú eras el sello de la perfección, lleno de sabiduría, y acabado de hermosura. En Edén, en el huerto de Dios estuviste; de toda piedra preciosa era tu vestidura... Tú, querubín grande, protector, yo te puse en el santo monte de Dios, allí estuviste; en medio de las piedras de fuego te paseabas. Perfecto eras en todos tus caminos desde el día que fuiste creado, hasta que se halló en ti maldad... por lo que yo te eché del monte de Dios, y te arrojé de entre las piedras del fuego, oh querubín protector.`,
+    pt: `Tu eras o selo da medida, cheio de sabedoria e perfeito em formosura. Estiveste no Éden, jardim de Deus; de toda a pedra preciosa era a tua cobertura... Tu eras o querubim ungido para cobrir, e te estabeleci; no monte santo de Deus estavas, no meio das pedras afogueadas andavas. Perfeito eras nos teus caminhos desde o dia em que foste criado, até que se achou iniquidade em ti... por isso te lancei, profanado, fora do monte de Deus, e te fiz perecer, ó querubim protetor, do meio das pedras afogueadas.`,
+    esSource: 'Ezequiel 28:12–17 (El Querubín Protector en el Monte Santo de Dios)',
+    ptSource: 'Ezequiel 28:12–17 (O Querubim Protetor no Monte Santo de Deus)'
+  },
+  genesis_1_1_3_creation: {
+    es: `En el principio creó Dios los cielos y la tierra. Y la tierra estaba desordenada y vacía, y las tinieblas estaban sobre la faz del abismo [Tehom], y el Espíritu de Dios se movía sobre la faz de las aguas. Y dijo Dios: Sea la luz; y fue la luz.`,
+    pt: `No princípio criou Deus os céus e a terra. E a terra era sem forma e vazia; e havia trevas sobre a face do abismo [Tehom]; e o Espírito de Deus se movia sobre a face das águas. E disse Deus: Haja luz; e houve luz.`,
+    esSource: 'Génesis 1:1–3 (Bereshit, Tehom y el Espíritu sobre las Aguas)',
+    ptSource: 'Gênesis 1:1–3 (Bereshit, Tehom e o Espírito sobre as Águas)'
+  },
+  enuma_elish_tablet_1_apsu_tiamat: {
+    es: `Cuando en lo alto los cielos aún no habían sido nombrados, y abajo la tierra firme no tenía nombre, y el primordial Apsu, su progenitor, y la madre Tiamat, que los concibió a todos, mezclaban sus aguas conjuntamente, sin que aún hubiera campos de cañas ni marismas a la vista; cuando ninguno de los dioses había sido manifestado, ni llamados por su nombre, ni decretados sus destinos: entonces en su seno fueron engendrados los dioses.`,
+    pt: `Quando no alto os céus ainda não haviam sido nomeados, e abaixo a terra firme não tinha nome, e o primordial Apsu, o seu progenitor, e a mãe Tiamat, que a todos gerou, misturavam as suas águas conjuntamente, sem que ainda existissem canaviais nem pântanos à vista; quando nenhum dos deuses havia sido manifestado, nem chamados por seu nome, nem fixados os seus destinos: então no seu seio foram criados os deuses.`,
+    esSource: 'Enūma Eliš Tablilla I (Apsu y Tiamat en las Aguas Primordiales)',
+    ptSource: 'Enūma Eliš Tábua I (Apsu e Tiamat nas Águas Primordiais)'
   }
 };
 

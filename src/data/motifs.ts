@@ -224,5 +224,59 @@ export const motifs: Motif[] = [
       'Roman: King Numa Pompilius receiving divine legislation in the sacred grove from the nymph Egeria'
     ],
     scholarlyDebate: 'The structural and legal parallels between the Code of Hammurabi and the Covenant Code (Exodus 21–23) demonstrate that ancient Israel formulated its covenant laws utilizing shared Northwest and East Semitic legal forms, adapted to a monotheistic theological framework.'
+  },
+  {
+    id: 'chaoskampf',
+    name: 'Chaoskampf: Combat with the Primordial Sea Monster',
+    category: 'COSMOLOGY',
+    description: 'The divine warrior vanquishing the multi-headed serpentine dragon of the primordial ocean to establish order, sovereign kingship, and cosmic stability.',
+    biblicalParallels: ['Psalm 74:13–17', 'Psalm 89:9–10 (crushing Rahab)', 'Isaiah 27:1 (Leviathan the twisting serpent)', 'Isaiah 51:9–10', 'Job 26:12–13', 'Job 41:1–34', 'Revelation 12:3–9 (seven-headed dragon)'],
+    crossCulturalParallels: [
+      'Mesopotamian: Enuma Elish (Marduk slaying Tiamat and splitting her carcass)',
+      'Ugaritic: Baal Cycle KTU 1.5 & KTU 1.3 (Baal smiting Lotan / Ltn the seven-headed twisting serpent, and Yam the prince of the sea)',
+      'Hittite: Myth of Illuyanka (Storm god Teshub defeating the dragon Illuyanka)',
+      'Greek: Zeus slaying the hundred-headed serpent Typhon; Apollo slaying Python',
+      'Vedic: Indra slaying the serpent-dragon Vritra to release the cosmic waters'
+    ],
+    scholarlyDebate: 'Hermann Gunkel\'s 1895 landmark work Schöpfung und Chaos demonstrated that biblical creation theology was not conceived in a cultural vacuum, but actively transformed the ancient Semitic combat myth (Chaoskampf). The biblical writers demythologized Tehom in Genesis 1 while retaining vivid mythic imagery in Psalms, Job, and Isaiah.'
+  },
+  {
+    id: 'thirty_wisdom_sayings',
+    name: 'The Thirty Precepts of Wisdom & Self-Restraint',
+    category: 'RITUAL & WISDOM',
+    description: 'Anthologies of thirty concise ethical maxims teaching inner tranquility, restraint of the tongue, honesty in trade, defense of the weak, and trust in divine providence.',
+    biblicalParallels: ['Proverbs 22:17–24:22 ("Have I not written for you thirty sayings of counsel and knowledge?")'],
+    crossCulturalParallels: [
+      'Egyptian: The Instruction of Amenemope (Papyrus BM 10474, exactly 30 numbered chapters)',
+      'Egyptian: Instruction of Ptahhotep (precepts of the silent, humble courtier)',
+      'Mesopotamian: Instructions of Shuruppak (antediluvian father-to-son counsel)'
+    ],
+    scholarlyDebate: 'Adolf Erman\'s 1923 discovery of the verbal correspondence between Proverbs 22:17ff and Amenemope demonstrated direct literary borrowing between ancient Egyptian scribal schools and the Solomonic / Hezekian royal court in Jerusalem, revealing the international cosmopolitan nature of biblical wisdom literature.'
+  },
+  {
+    id: 'messianic_signs',
+    name: 'Signs of the Messianic Age: Healing & Resurrection',
+    category: 'ESCHATOLOGY',
+    description: 'The concrete physical miracles identifying the authentic Messiah: opening blind eyes, unstopping deaf ears, raising the dead to life, and proclaiming liberation to the poor.',
+    biblicalParallels: ['Isaiah 35:5–6', 'Isaiah 61:1–2', 'Matthew 11:2–6', 'Luke 7:18–23', 'Luke 4:18–19'],
+    crossCulturalParallels: [
+      'Dead Sea Scrolls: 4Q521 (The Messianic Apocalypse) Fragment 2 Column II ("He will heal the wounded, give life to the dead, bring good news to the poor")',
+      'Dead Sea Scrolls: 11QMelchizedek (11Q13, proclamation of jubilee liberty by the heavenly Elohim)',
+      'Second Temple Apocalyptic: 2 Baruch 73–74 (eschatological removal of disease, wild beasts, and grief)'
+    ],
+    scholarlyDebate: 'Because the Hebrew Bible never explicitly states that the Messiah will raise the dead (Isaiah 26:19 and Daniel 12:2 describe general resurrection but do not link it to the Messiah), Jesus\' answer to John the Baptist in Matthew 11:4–5 was previously seen as an anomaly. The discovery of 4Q521 in Cave 4 proved that 1st-century Palestinian Judaism held this exact messianic synthesis.'
+  },
+  {
+    id: 'tartarus_imprisonment',
+    name: 'Tartarus & Imprisonment of Rebel Divinities',
+    category: 'ESCHATOLOGY',
+    description: 'The confinement of celestial rebels and divine transgressors in a subterranean abyss of darkness, bound in chains until cosmic day of judgment.',
+    biblicalParallels: ['2 Peter 2:4 (tartarōsas)', 'Jude 6 ("kept in eternal bonds under darkness")', 'Revelation 20:1–3 (angel binding the dragon in the abyss for 1,000 years)'],
+    crossCulturalParallels: [
+      '1 Enoch 10:4–12 (Raphael binding Asael/Azazel in Dudael; Michael binding Shemihazah in the valleys of the earth for 70 generations)',
+      'Greek: Hesiod Theogony 713–735 (Zeus casting the Titans into Tartarus surrounded by a bronze wall and triple darkness)',
+      'Homer: Iliad 8.13–16 (deepest pit beneath earth, iron gates and bronze threshold)'
+    ],
+    scholarlyDebate: 'The adoption of the Greek technical term tartarōsas in 2 Peter 2:4 represents the highest degree of cross-cultural conceptual integration in the New Testament: Judeo-Enochic Watcher theology expressed through Hesiodic mythological vocabulary.'
   }
 ];
