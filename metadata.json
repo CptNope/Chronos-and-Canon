@@ -2,5 +2,7 @@
   "name": "Chronos & Canon: Ancient Text Comparative Archive",
   "description": "A scholarly interactive archive and relationship explorer for ancient religious, mythological, apocryphal, and historical texts across global cultures.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
