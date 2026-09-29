@@ -1,3 +1,5 @@
+export type SupportedLanguage = 'en' | 'es' | 'pt';
+
 export type RelationshipType =
   | 'DIRECT QUOTATION'
   | 'TEXTUAL DEPENDENCE'
@@ -112,6 +114,8 @@ export interface Passage {
   originalText?: string;
   transliteration?: string;
   englishTranslation: string;
+  spanishTranslation?: string;
+  portugueseTranslation?: string;
   translationAttribution: {
     translator: string;
     sourceWork: string;

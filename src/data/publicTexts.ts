@@ -644,6 +644,166 @@ export const publicTextEditions: PublicTextEdition[] = [
       'Classical commentators discussing lost scriptural sources',
       'Word-by-word grammatical interlinear'
     ]
+  },
+  {
+    id: 'pub_hammurabi_avalon_yale',
+    textId: 'code_of_hammurabi',
+    textTitle: 'The Code of Hammurabi',
+    cultureId: 'mesopotamian',
+    category: 'MESOPOTAMIAN',
+    title: 'The Code of Hammurabi: Translation by L.W. King',
+    repositoryName: 'The Avalon Project (Yale Law School)',
+    url: 'https://avalon.law.yale.edu/ancient/hamframe.asp',
+    editionType: 'Open-Access Translation',
+    language: 'English (from Old Babylonian Akkadian)',
+    institution: 'Yale Law School Lillian Goldman Law Library',
+    isPublicDomainOrOpenAccess: true,
+    description: 'Complete digital text of the 282 laws of the Code of Hammurabi with prologue and epilogue, hosted by Yale Law School\'s legal history archive.',
+    highlightFeatures: [
+      'Full legal corpus divided by subject: family, property, commerce, lex talionis',
+      'Cross-referenced with biblical Hebrew legal codes (Exodus 21)',
+      'Free scholarly and educational open access'
+    ]
+  },
+  {
+    id: 'pub_louvre_hammurabi_stele',
+    textId: 'code_of_hammurabi',
+    textTitle: 'The Code of Hammurabi',
+    cultureId: 'mesopotamian',
+    category: 'MESOPOTAMIAN',
+    title: 'Stele of the Code of Hammurabi (Louvre Museum Sb 8)',
+    repositoryName: 'Musée du Louvre Collections Online',
+    url: 'https://collections.louvre.fr/en/ark:/53355/cl010174436',
+    editionType: 'Museum Specimen & 3D Scan',
+    language: 'Old Babylonian Cuneiform on Black Diorite',
+    institution: 'Musée du Louvre, Paris (Department of Near Eastern Antiquities)',
+    isPublicDomainOrOpenAccess: true,
+    description: 'High-resolution photography, archaeological provenance, and epigraphic notes for the original 2.25-meter black diorite stele discovered at Susa in 1901.',
+    highlightFeatures: [
+      'Ultra-high-definition zoomable imagery of the cuneiform inscription',
+      'Detailed iconography of King Hammurabi receiving laws from the sun god Shamash',
+      'Full curatorial and archaeological cataloging dossier'
+    ]
+  },
+  {
+    id: 'pub_perseus_hesiod_works_days',
+    textId: 'hesiod_works_days',
+    textTitle: 'Works and Days (The Five Ages of Humanity)',
+    cultureId: 'greco_roman',
+    category: 'CLASSICAL',
+    title: 'Hesiod, Works and Days: Greek Text & English Translation',
+    repositoryName: 'Perseus Digital Library',
+    url: 'https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0132',
+    editionType: 'Critical Scholarly Edition',
+    language: 'Ancient Greek & English (with Morphological Analysis)',
+    institution: 'Tufts University Department of Classical Studies',
+    isPublicDomainOrOpenAccess: true,
+    description: 'Interactive critical edition of Hesiod\'s Works and Days. Every Greek word is clickable, linking to Liddell-Scott-Jones (LSJ) lexicon definitions, grammatical parsing, and frequency stats.',
+    highlightFeatures: [
+      'Interactive Greek text linked to LSJ Greek-English Lexicon',
+      'Parallel English translation by Hugh G. Evelyn-White',
+      'Includes the Five Ages of Humanity (lines 109–201)'
+    ]
+  },
+  {
+    id: 'pub_british_museum_papyrus_ani',
+    textId: 'egyptian_book_of_dead',
+    textTitle: 'The Book of the Dead (Papyrus of Ani, Spell 125)',
+    cultureId: 'egyptian',
+    category: 'EGYPTIAN',
+    title: 'The Papyrus of Ani (EA 10470) - Complete High-Res Scroll',
+    repositoryName: 'The British Museum Digital Collections',
+    url: 'https://www.britishmuseum.org/collection/object/Y_EA10470-3',
+    editionType: 'High-Res Manuscript Facsimile',
+    language: 'Middle Egyptian Cursive Hieroglyphs',
+    institution: 'The British Museum, London (Department of Egypt and Sudan)',
+    isPublicDomainOrOpenAccess: true,
+    description: 'Complete high-resolution digital scans of Sheet 3 of the Papyrus of Ani, showing the famous Psychostasia vignette where Ani\'s heart is weighed against the feather of Ma\'at before Osiris.',
+    highlightFeatures: [
+      'Gigapixel-resolution photography of the original 19th Dynasty papyrus',
+      'The definitive visual depiction of ancient Near Eastern post-mortem judgment',
+      'Transcription of Spell 125 (Declaration of Innocence)'
+    ]
+  },
+  {
+    id: 'pub_dss_1qs_community_rule',
+    textId: 'community_rule_1qs',
+    textTitle: 'The Community Rule (1QS - Serekh ha-Yahad)',
+    cultureId: 'dead_sea_scrolls',
+    category: 'DEAD_SEA_SCROLLS',
+    title: 'The Community Rule Scroll (1QS) - Digital Dead Sea Scrolls',
+    repositoryName: 'The Leon Levy Dead Sea Scrolls Digital Library',
+    url: 'https://www.deadseascrolls.org.il/explore-the-archive/search#q=1QS',
+    editionType: 'High-Res Manuscript Facsimile',
+    language: 'Biblical Hebrew (Qumran Scribal Script)',
+    institution: 'Israel Antiquities Authority & The Israel Museum, Jerusalem',
+    isPublicDomainOrOpenAccess: true,
+    description: 'Multispectral infrared photographic scans of the complete 11-column Community Rule scroll found in Cave 1. Includes Columns III and IV preserving the Treatise on the Two Spirits.',
+    highlightFeatures: [
+      'Infrared and full-spectrum color images at 1200 DPI',
+      'Interactive transcription with English translation overlay',
+      'Direct witness to Jewish sectarian dualism (Prince of Lights vs Angel of Darkness)'
+    ]
+  },
+  {
+    id: 'pub_sefaria_psalm_82',
+    textId: 'psalm_82',
+    textTitle: 'Psalm 82 (God Presiding in the Divine Assembly)',
+    cultureId: 'hebrew_israelite',
+    category: 'HEBREW_BIBLE',
+    title: 'Psalms 82: Masoretic Hebrew Text with Interlinear & Medieval Commentaries',
+    repositoryName: 'Sefaria',
+    url: 'https://www.sefaria.org/Psalms.82?lang=bi',
+    editionType: 'Original Script & Interlinear',
+    language: 'Biblical Hebrew & English (Vocalized with Cantillation)',
+    institution: 'Sefaria Open Source Library',
+    isPublicDomainOrOpenAccess: true,
+    description: 'Complete vocalized Hebrew text of Psalm 82 with cantillation marks, accompanied by word-by-word grammatical breakdowns and classical commentaries (Rashi, Ibn Ezra, Radak).',
+    highlightFeatures: [
+      'Full vocalized Hebrew text: אֱלֹהִים נִצָּב בַּעֲדַת־אֵל',
+      'Medieval and modern scholarly commentaries on the "gods" in the assembly',
+      'Free open-access digital reader'
+    ]
+  },
+  {
+    id: 'pub_sefaria_deuteronomy_32',
+    textId: 'deuteronomy_32',
+    textTitle: 'The Song of Moses (Deuteronomy 32:8–9)',
+    cultureId: 'hebrew_israelite',
+    category: 'HEBREW_BIBLE',
+    title: 'Deuteronomy 32: Ha\'azinu (Song of Moses)',
+    repositoryName: 'Sefaria',
+    url: 'https://www.sefaria.org/Deuteronomy.32.8?lang=bi',
+    editionType: 'Original Script & Interlinear',
+    language: 'Biblical Hebrew & English',
+    institution: 'Sefaria',
+    isPublicDomainOrOpenAccess: true,
+    description: 'Hebrew poetic text of Deuteronomy 32:8–9 with Masoretic cantillation, cross-references, and commentary notes detailing the textual divergence with Qumran 4QDeut^j ("sons of God").',
+    highlightFeatures: [
+      'Archaic Hebrew poetic structure displayed in traditional Torah layout',
+      'Direct textual links to Septuagint and Dead Sea Scroll variants',
+      'Morphological word-by-word grammar'
+    ]
+  },
+  {
+    id: 'pub_gnostic_apocryphon_of_john',
+    textId: 'apocryphon_of_john',
+    textTitle: 'The Apocryphon of John (Secret Revelation of John)',
+    cultureId: 'second_temple_jewish',
+    category: 'SECOND_TEMPLE',
+    title: 'The Apocryphon of John (Nag Hammadi Codex II, 1): English Translation',
+    repositoryName: 'The Gnostic Society Library',
+    url: 'http://www.gnosis.org/naghamm/apocjn.html',
+    editionType: 'Open-Access Translation',
+    language: 'English (from Sahidic Coptic)',
+    institution: 'The Gnostic Society / James M. Robinson Archive',
+    isPublicDomainOrOpenAccess: true,
+    description: 'Authoritative English translation of the Long Version of the Apocryphon of John from Nag Hammadi Codex II, translated by Frederik Wisse. Includes the Gnostic retelling of the Watchers and Nephilim.',
+    highlightFeatures: [
+      'Full text of the flagship Sethian Gnostic revelatory treatise',
+      'Details Yaldabaoth and the archons creating the counterfeit spirit and mating with human women',
+      'Free scholarly and open-access public edition'
+    ]
   }
 ];
 

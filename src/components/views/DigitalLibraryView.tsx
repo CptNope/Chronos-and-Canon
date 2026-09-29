@@ -3,6 +3,7 @@ import { publicTextEditions, publicRepositoriesInfo } from '../../data/publicTex
 import { cultures } from '../../data/cultures';
 import { texts } from '../../data/texts';
 import { PublicTextEdition } from '../../types';
+import { useLanguage } from '../../i18n/LanguageContext';
 import {
   ExternalLink,
   BookOpen,
@@ -30,6 +31,7 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
   onSelectText,
   initialFilterTextId
 }) => {
+  const { t, language } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCulture, setSelectedCulture] = useState<string>('ALL');
   const [selectedEditionType, setSelectedEditionType] = useState<string>('ALL');
@@ -99,13 +101,13 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
           <div>
             <div className="flex items-center gap-2 text-xs font-semibold text-[#c99738] uppercase tracking-wider">
               <Library className="w-4 h-4 text-[#c99738]" />
-              Open-Access Primary Sources &amp; Digital Repositories
+              {language === 'es' ? 'Fuentes Primarias de Acceso Abierto' : language === 'pt' ? 'Fontes Primárias de Acesso Aberto' : 'Open-Access Primary Sources & Digital Repositories'}
             </div>
             <h1 className="text-2xl md:text-4xl font-bold font-display text-[#f5d77f] mt-1.5">
-              Publicly Available Ancient Texts &amp; Facsimiles
+              {t.library.title}
             </h1>
             <p className="text-sm md:text-base text-[#b8ad9e] mt-1.5 max-w-3xl leading-relaxed">
-              Direct access to free, peer-reviewed, and institutional digital editions of the texts catalogued in this comparative archive. Examine ultra-high-resolution multispectral Dead Sea Scrolls, cuneiform clay tablets from Nineveh, polytonic Greek codices, and Mayan hieroglyphic manuscripts without paywalls.
+              {t.library.subtitle}
             </p>
           </div>
 
@@ -120,7 +122,7 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
               }`}
             >
               <BookOpen className="w-3.5 h-3.5" />
-              <span>Catalogued Editions ({publicTextEditions.length})</span>
+              <span>{language === 'es' ? 'Ediciones Catalogadas' : language === 'pt' ? 'Edições Catalogadas' : 'Catalogued Editions'} ({publicTextEditions.length})</span>
             </button>
             <button
               onClick={() => setActiveTab('REPOSITORIES')}
@@ -131,7 +133,7 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
               }`}
             >
               <Globe className="w-3.5 h-3.5" />
-              <span>Partner Repositories ({publicRepositoriesInfo.length})</span>
+              <span>{language === 'es' ? 'Repositorios Oficiales' : language === 'pt' ? 'Repositórios Oficiais' : 'Partner Repositories'} ({publicRepositoriesInfo.length})</span>
             </button>
           </div>
         </div>

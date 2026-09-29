@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ResearchMode } from '../types';
+import { useLanguage } from '../i18n/LanguageContext';
 import { PWAInstallButton } from './common/PWAInstallButton';
 import {
   BookOpen,
@@ -17,7 +18,8 @@ import {
   FileArchive,
   Compass,
   Library,
-  ChevronDown
+  ChevronDown,
+  Languages
 } from 'lucide-react';
 
 export type AppView =
@@ -48,23 +50,24 @@ export const Navigation: React.FC<NavigationProps> = ({
   researchMode,
   onSetResearchMode
 }) => {
+  const { t, language, setLanguage, languages } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [desktopMoreOpen, setDesktopMoreOpen] = useState(false);
 
   const navItems: { view: AppView; label: string; icon: React.ComponentType<{ className?: string }> }[] = [
-    { view: 'HOME', label: 'Dashboard', icon: Compass },
-    { view: 'EXPLORE_TEXTS', label: 'Explore Texts', icon: BookOpen },
-    { view: 'DIGITAL_LIBRARY', label: 'Public Texts', icon: Library },
-    { view: 'COMPARE', label: 'Compare', icon: GitCompare },
-    { view: 'GRAPH', label: 'Graph', icon: Network },
-    { view: 'TIMELINE', label: 'Timeline', icon: Clock },
-    { view: 'MAP', label: 'World Map', icon: Globe },
-    { view: 'MOTIFS', label: 'Motifs', icon: Layers },
-    { view: 'SEVENTY_BOOKS', label: '70 Books', icon: Scroll },
-    { view: 'GENESIS_6', label: 'Genesis 6', icon: Sparkles },
-    { view: 'FLOOD', label: 'Flood Study', icon: Waves },
-    { view: 'MANUSCRIPTS', label: 'Manuscripts', icon: FileArchive },
-    { view: 'ASSISTANT', label: 'AI Assistant', icon: MessageSquare }
+    { view: 'HOME', label: t.nav.dashboard, icon: Compass },
+    { view: 'EXPLORE_TEXTS', label: t.nav.exploreTexts, icon: BookOpen },
+    { view: 'DIGITAL_LIBRARY', label: t.nav.digitalLibrary, icon: Library },
+    { view: 'COMPARE', label: t.nav.compare, icon: GitCompare },
+    { view: 'GRAPH', label: t.nav.graph, icon: Network },
+    { view: 'TIMELINE', label: t.nav.timeline, icon: Clock },
+    { view: 'MAP', label: t.nav.worldMap, icon: Globe },
+    { view: 'MOTIFS', label: t.nav.motifs, icon: Layers },
+    { view: 'SEVENTY_BOOKS', label: t.nav.seventyBooks, icon: Scroll },
+    { view: 'GENESIS_6', label: t.nav.genesis6, icon: Sparkles },
+    { view: 'FLOOD', label: t.nav.floodStudy, icon: Waves },
+    { view: 'MANUSCRIPTS', label: t.nav.manuscripts, icon: FileArchive },
+    { view: 'ASSISTANT', label: t.nav.assistant, icon: MessageSquare }
   ];
 
   const handleNav = (view: AppView) => {
@@ -86,10 +89,10 @@ export const Navigation: React.FC<NavigationProps> = ({
             </div>
             <div>
               <span className="text-base sm:text-lg font-bold font-display text-[#f5d77f] tracking-wide block leading-none">
-                CHRONOS &amp; CANON
+                {t.appName}
               </span>
               <span className="text-[10px] text-[#a48c68] font-mono tracking-wider block mt-0.5 uppercase">
-                Ancient Comparative Archive
+                {t.appSubtitle}
               </span>
             </div>
           </div>
@@ -128,7 +131,7 @@ export const Navigation: React.FC<NavigationProps> = ({
                     : 'text-[#b8ad9e] hover:text-[#f5d77f] hover:bg-[#201a14]'
                 }`}
               >
-                <span>More Studies</span>
+                <span>{t.nav.moreStudies}</span>
                 <ChevronDown className={`w-3 h-3 transition-transform ${desktopMoreOpen ? 'rotate-180 text-[#f5d77f]' : ''}`} />
               </button>
 
@@ -163,8 +166,27 @@ export const Navigation: React.FC<NavigationProps> = ({
             </div>
           </nav>
 
-          {/* Right Header: Research Mode Badge, Install, Mobile Menu */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          {/* Right Header: Language Switcher, Research Mode Badge, Install, Mobile Menu */}
+          <div className="flex items-center gap-2 sm:gap-2.5">
+            {/* Language Selector (EN | ES | PT) */}
+            <div className="flex items-center rounded-lg bg-[#1a1512] border border-[#3d3224] p-0.5 text-[11px] font-semibold">
+              <Languages className="w-3.5 h-3.5 text-[#c99738] ml-1.5 mr-1" />
+              {languages.map(l => (
+                <button
+                  key={l.code}
+                  onClick={() => setLanguage(l.code)}
+                  className={`px-1.5 py-0.5 rounded transition ${
+                    language === l.code
+                      ? 'bg-[#c99738] text-[#12100e] font-bold shadow-xs'
+                      : 'text-[#a48c68] hover:text-[#f5d77f]'
+                  }`}
+                  title={`${l.label} (${l.flag})`}
+                >
+                  {l.flag}
+                </button>
+              ))}
+            </div>
+
             {/* Research Mode Dropdown/Pill */}
             <div className="hidden sm:flex items-center text-xs">
               <select
@@ -173,10 +195,10 @@ export const Navigation: React.FC<NavigationProps> = ({
                 className="px-2.5 py-1 rounded-lg bg-[#1c1713] border border-[#3d3224] text-[11px] font-semibold text-[#f5d77f] focus:outline-none focus:border-[#c99738]"
                 title="Filter relationship rigor mode"
               >
-                <option value="SCHOLARLY">Scholarly Mode</option>
-                <option value="COMPARATIVE">Comparative Mode</option>
-                <option value="EXPLORATORY">Exploratory Mode</option>
-                <option value="SPECULATIVE">Speculative Mode</option>
+                <option value="SCHOLARLY">{t.modes.scholarly}</option>
+                <option value="COMPARATIVE">{t.modes.comparative}</option>
+                <option value="EXPLORATORY">{t.modes.exploratory}</option>
+                <option value="SPECULATIVE">{t.modes.speculative}</option>
               </select>
             </div>
 
@@ -198,19 +220,38 @@ export const Navigation: React.FC<NavigationProps> = ({
       {mobileMenuOpen && (
         <div className="xl:hidden bg-[#161310] border-b border-[#a48c68]/30 px-4 pt-3 pb-6 space-y-3 animate-fade-in shadow-2xl">
           <div className="flex items-center justify-between pb-2 border-b border-[#2d251d]">
-            <span className="text-xs uppercase font-semibold text-[#a48c68]">Select Research Module</span>
-            <div className="flex items-center gap-1.5 text-xs">
-              <span className="text-[10px] text-[#8e806e]">Mode:</span>
-              <select
-                value={researchMode}
-                onChange={e => onSetResearchMode(e.target.value as ResearchMode)}
-                className="px-2 py-0.5 rounded bg-[#201a14] border border-[#3b3226] text-xs text-[#f5d77f]"
-              >
-                <option value="SCHOLARLY">Scholarly</option>
-                <option value="COMPARATIVE">Comparative</option>
-                <option value="EXPLORATORY">Exploratory</option>
-                <option value="SPECULATIVE">Speculative</option>
-              </select>
+            <span className="text-xs uppercase font-semibold text-[#a48c68]">{t.nav.selectModule}</span>
+            <div className="flex items-center gap-2">
+              {/* Mobile Language Selector */}
+              <div className="flex items-center rounded bg-[#201a14] border border-[#3b3226] p-0.5 text-xs font-semibold">
+                {languages.map(l => (
+                  <button
+                    key={l.code}
+                    onClick={() => setLanguage(l.code)}
+                    className={`px-1.5 py-0.5 rounded transition ${
+                      language === l.code
+                        ? 'bg-[#c99738] text-[#12100e] font-bold'
+                        : 'text-[#a48c68]'
+                    }`}
+                  >
+                    {l.flag}
+                  </button>
+                ))}
+              </div>
+
+              <div className="flex items-center gap-1 text-xs">
+                <span className="text-[10px] text-[#8e806e]">{t.nav.modeLabel}</span>
+                <select
+                  value={researchMode}
+                  onChange={e => onSetResearchMode(e.target.value as ResearchMode)}
+                  className="px-2 py-0.5 rounded bg-[#201a14] border border-[#3b3226] text-xs text-[#f5d77f]"
+                >
+                  <option value="SCHOLARLY">{t.modes.scholarly}</option>
+                  <option value="COMPARATIVE">{t.modes.comparative}</option>
+                  <option value="EXPLORATORY">{t.modes.exploratory}</option>
+                  <option value="SPECULATIVE">{t.modes.speculative}</option>
+                </select>
+              </div>
             </div>
           </div>
 

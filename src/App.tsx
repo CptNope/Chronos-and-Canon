@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Navigation, AppView } from './components/Navigation';
+import { LanguageProvider, useLanguage } from './i18n/LanguageContext';
 import { HomeDashboardView } from './components/views/HomeDashboardView';
 import { ExploreTextsView } from './components/views/ExploreTextsView';
 import { CompareView } from './components/views/CompareView';
@@ -17,7 +18,8 @@ import { OfflineIndicator } from './components/common/OfflineIndicator';
 import { ResearchMode } from './types';
 import { Scroll, Shield, Heart } from 'lucide-react';
 
-export default function App() {
+function AppContent() {
+  const { t } = useLanguage();
   const [currentView, setCurrentView] = useState<AppView>('HOME');
   const [researchMode, setResearchMode] = useState<ResearchMode>('COMPARATIVE');
   const [comparePassageIds, setComparePassageIds] = useState<string[]>(['gen_6_1_4', '1_enoch_6_1_6']);
@@ -178,10 +180,10 @@ export default function App() {
             <div className="flex items-center gap-2">
               <Scroll className="w-4 h-4 text-[#c99738]" />
               <span className="font-display font-bold text-[#f5d77f]">
-                CHRONOS &amp; CANON ARCHIVE
+                {t.appName}
               </span>
               <span className="text-[#5a5043]">&bull;</span>
-              <span>Scholarly Ancient Text Relationship Matrix</span>
+              <span>{t.appSubtitle}</span>
             </div>
 
             <div className="flex items-center gap-4 text-[11px]">
@@ -193,17 +195,25 @@ export default function App() {
                 }}
                 className="flex items-center gap-1 text-[#34d399] hover:text-[#6ee7b7] hover:underline transition"
               >
-                <Shield className="w-3.5 h-3.5" /> Public Domain &amp; Open Access Digital Library
+                <Shield className="w-3.5 h-3.5" /> {t.library.title}
               </button>
-              <span>Three-Tier Chronological Separation</span>
+              <span>{t.timeline.title}</span>
             </div>
           </div>
 
           <p className="text-[11px] leading-relaxed text-[#695d4f] border-t border-[#1c1813] pt-4 text-center sm:text-left">
-            This research database distinguishes direct manuscript and textual dependence from scholarly parallels, shared mythological motifs, and later speculative interpretations. Designed for rigorous independent inquiry.
+            {t.dashboard.heroSubtitle}
           </p>
         </div>
       </footer>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   );
 }

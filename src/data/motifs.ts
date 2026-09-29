@@ -172,5 +172,57 @@ export const motifs: Motif[] = [
       'Hindu: Mount Meru (sacred cosmic mountain at the center of the universe)'
     ],
     scholarlyDebate: 'Psalm 48:2 explicitly proclaims Mount Zion to be "the peaks of Zaphon (yarkəte tzaphon)" — intentionally applying the exact Ugaritic mythological title of Baal\'s storm-mountain to Jerusalem.'
+  },
+  {
+    id: 'cosmic_scales_judgment',
+    name: 'Cosmic Scales & The Weighing of the Heart',
+    category: 'ESCHATOLOGY',
+    description: 'Post-mortem or apocalyptic judgment depicted through balances where the deceased\'s deeds, soul, or heart are weighed against cosmic truth, moral order, or light.',
+    biblicalParallels: ['Job 31:6 ("Let me be weighed in just balances")', 'Psalm 62:9 ("In the balances they go up")', 'Proverbs 16:2', 'Daniel 5:27 ("Tekel: you have been weighed in the balances and found wanting")'],
+    crossCulturalParallels: [
+      'Egyptian: Book of the Dead Spell 125 (Weighing of the Heart / psychostasia against the feather of Ma\'at before Osiris and 42 assessor gods)',
+      'Greek: Psychostasia in the Iliad (Zeus lifting golden scales to determine the fate of Achilles and Hector)',
+      'Persian: Zoroastrian judgment at the Chinvat Bridge (Rashnu holding golden scales to weigh righteous vs wicked deeds)'
+    ],
+    scholarlyDebate: 'Daniel 5:27 adapts the long-standing international motif of the judicial balance, well-known from Egyptian psychostasia and West Semitic royal ideology, to declare divine judgment upon the Neo-Babylonian empire.'
+  },
+  {
+    id: 'two_ways_two_spirits',
+    name: 'The Two Spirits & Cosmic Dualism',
+    category: 'DIVINE BEINGS',
+    description: 'The cosmos and human soul divided between two contending forces: the Spirit of Light/Truth and the Spirit of Darkness/Deceit, governed by archangelic and demonic leaders.',
+    biblicalParallels: ['Deuteronomy 30:15–20 (Life and Death, Blessing and Curse)', 'Matthew 7:13–14 (Wide and Narrow Gates)', 'John 1:5, 8:12', 'Ephesians 6:12', '1 John 4:6 (Spirit of Truth and spirit of falsehood)'],
+    crossCulturalParallels: [
+      'Dead Sea Scrolls: 1QS III.13–IV.26 (Treatise on the Two Spirits: Prince of Lights vs Angel of Darkness)',
+      'Persian: Zoroastrian Gathas (Ahura Mazda / Spenta Mainyu vs Angra Mainyu / Ahriman)',
+      'Early Christian Didache 1–6 (The Doctrine of the Two Ways: The Way of Life and the Way of Death)'
+    ],
+    scholarlyDebate: 'Dead Sea Scrolls scholarship (e.g., Dupont-Sommer, Collins) strongly supports Iranian/Zoroastrian influence during the Achaemenid Persian period on the development of Qumran dualism in the Community Rule (1QS).'
+  },
+  {
+    id: 'origin_of_demons',
+    name: 'Origin of Demons from the Giants',
+    category: 'DIVINE BEINGS',
+    description: 'The theological explanation that malevolent demons and evil spirits are the disembodied souls of the perished hybrid giants (Nephilim) that roam the earth tormenting humans.',
+    biblicalParallels: ['Matthew 8:28–34 (Legion asking "Have you come here to torment us before the time?")'],
+    crossCulturalParallels: [
+      '1 Enoch 15:8–12 ("And now the giants, who were born from the spirit and flesh, shall be called evil spirits upon the earth... evil spirits have come out from their bodies")',
+      'Jubilees 10:1–11 (Noah praying against the demons corrupting his sons; Prince Mastema retaining one-tenth to execute judgment)',
+      'Justin Martyr (2 Apology 5), Athenagoras (Embassy 24–25), and Tertullian affirming this Second Temple angelology'
+    ],
+    scholarlyDebate: 'This Second Temple doctrine solved the biblical problem of where demons originated (since Genesis 1 contains no demonic creation). It explains why the Gerasene demons in the Gospels plead not to be cast into the abyss before the appointed time.'
+  },
+  {
+    id: 'lawgiver_on_mountain',
+    name: 'The Lawgiver & Divine Juridical Revelation',
+    category: 'RITUAL & WISDOM',
+    description: 'The sovereign or prophet ascending the sacred mountain or entering the presence of the solar/storm deity to receive divine codes inscribed on stone or stelae.',
+    biblicalParallels: ['Exodus 19–24 (Moses at Mount Sinai receiving the Decalogue and Covenant Code)', 'Exodus 34:1–4'],
+    crossCulturalParallels: [
+      'Mesopotamian: Code of Hammurabi stela (Hammurabi standing reverently before Shamash, sun god and lord of justice, who hands him the measuring rod and ring of kingship)',
+      'Greek: Minos ascending Mount Ida every nine years to converse with Zeus and receive laws for Crete',
+      'Roman: King Numa Pompilius receiving divine legislation in the sacred grove from the nymph Egeria'
+    ],
+    scholarlyDebate: 'The structural and legal parallels between the Code of Hammurabi and the Covenant Code (Exodus 21–23) demonstrate that ancient Israel formulated its covenant laws utilizing shared Northwest and East Semitic legal forms, adapted to a monotheistic theological framework.'
   }
 ];

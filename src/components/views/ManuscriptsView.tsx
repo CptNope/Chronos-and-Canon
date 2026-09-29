@@ -3,6 +3,7 @@ import { manuscripts } from '../../data/manuscripts';
 import { texts } from '../../data/texts';
 import { Manuscript } from '../../types';
 import { getLanguageMeta } from '../../utils/scriptHelper';
+import { useLanguage } from '../../i18n/LanguageContext';
 import { FileArchive, ShieldAlert, CheckCircle, ExternalLink, Calendar, MapPin, Sparkles, Languages } from 'lucide-react';
 
 interface ManuscriptsViewProps {
@@ -10,6 +11,7 @@ interface ManuscriptsViewProps {
 }
 
 export const ManuscriptsView: React.FC<ManuscriptsViewProps> = ({ onSelectAssociatedText }) => {
+  const { t, language } = useLanguage();
   const [selectedManuscriptId, setSelectedManuscriptId] = useState<string>(manuscripts[0].id);
 
   const selectedMS = manuscripts.find(m => m.id === selectedManuscriptId) || manuscripts[0];
@@ -20,23 +22,31 @@ export const ManuscriptsView: React.FC<ManuscriptsViewProps> = ({ onSelectAssoci
       <div className="p-6 md:p-8 rounded-2xl bg-[#161311] border border-[#a48c68]/20 shadow-2xl space-y-4">
         <div className="flex items-center gap-2 text-xs font-semibold text-[#c99738] uppercase tracking-wider">
           <FileArchive className="w-4 h-4" />
-          Paleography, Epigraphy &amp; Physical Witnesses
+          {language === 'es' ? 'Paleografía, Epigrafía y Testigos Físicos' : language === 'pt' ? 'Paleografia, Epigrafia e Testemunhos Físicos' : 'Paleography, Epigraphy & Physical Witnesses'}
         </div>
         <h1 className="text-2xl md:text-4xl font-bold font-display text-[#f5d77f]">
-          Surviving Ancient Manuscripts &amp; Physical Evidence
+          {language === 'es' ? 'Manuscritos Antiguos Conservados y Evidencia Física' : language === 'pt' ? 'Manuscritos Antigos Sobreviventes e Evidência Física' : 'Surviving Ancient Manuscripts & Physical Evidence'}
         </h1>
         <p className="text-sm text-[#b8ad9e] max-w-3xl leading-relaxed">
-          Examine the authentic physical witnesses upon which ancient textual scholarship rests: Dead Sea Scrolls parchment, cuneiform clay tablets, ancient papyri, and medieval codices.
+          {language === 'es'
+            ? 'Examine los testigos físicos auténticos en los que descansa la erudición textual antigua: pergaminos del Mar Muerto, tablillas de arcilla cuneiformes, papiros egipcios y códices bíblicos medievales.'
+            : language === 'pt'
+            ? 'Examine os testemunhos físicos autênticos sobre os quais assenta a erudição textual antiga: pergaminhos do Mar Morto, tábuas de argila cuneiformes, papiros egípcios e códices bíblicos medievais.'
+            : 'Examine the authentic physical witnesses upon which ancient textual scholarship rests: Dead Sea Scrolls parchment, cuneiform clay tablets, ancient papyri, and medieval codices.'}
         </p>
 
         {/* Legal / Copyright Distinction Box */}
         <div className="p-4 rounded-xl bg-amber-950/25 border border-amber-600/30 text-amber-200/90 text-xs leading-relaxed space-y-1">
           <div className="flex items-center gap-1.5 font-bold uppercase tracking-wider text-amber-400">
             <ShieldAlert className="w-4 h-4 text-amber-400 flex-shrink-0" />
-            Copyright &amp; Intellectual Property Integrity Protocol
+            {language === 'es' ? 'Protocolo de Integridad de Propiedad Intelectual' : language === 'pt' ? 'Protocolo de Integridade de Direitos Autorais' : 'Copyright & Intellectual Property Integrity Protocol'}
           </div>
           <p>
-            Ancient inscriptions, clay tablets, and biblical manuscripts are universally in the public domain. However, modern scholarly editions, critical apparatuses, conjectural reconstructions, infrared multispectral photographs, and modern copyrighted English translations are protected by copyright. This platform strictly respects intellectual property laws by using authentic public-domain and academic open-access translations.
+            {language === 'es'
+              ? 'Las inscripciones antiguas, tablillas de arcilla y manuscritos bíblicos están universalmente en el dominio público. Esta plataforma respeta estrictamente las normas legales empleando ediciones de dominio público y de acceso abierto académico.'
+              : language === 'pt'
+              ? 'As inscrições antigas, tábuas de argila e manuscritos bíblicos estão universalmente no domínio público. Esta plataforma respeita estritamente as normas legais empregando edições de domínio público e de acesso aberto acadêmico.'
+              : 'Ancient inscriptions, clay tablets, and biblical manuscripts are universally in the public domain. However, modern copyrighted English translations are protected by copyright. This platform strictly respects intellectual property laws by using authentic public-domain and academic open-access translations.'}
           </p>
         </div>
       </div>
@@ -46,8 +56,8 @@ export const ManuscriptsView: React.FC<ManuscriptsViewProps> = ({ onSelectAssoci
         {/* Manuscript List */}
         <div className="lg:col-span-5 space-y-2 max-h-[750px] overflow-y-auto pr-1">
           <div className="text-xs uppercase tracking-wider text-[#a48c68] font-semibold px-2 mb-2 flex items-center justify-between">
-            <span>Catalogued Artifacts ({manuscripts.length})</span>
-            <span className="text-[10px] text-[#c99738]">Physical Artifacts</span>
+            <span>{language === 'es' ? 'Artefactos Catalogados' : language === 'pt' ? 'Artefatos Catalogados' : 'Catalogued Artifacts'} ({manuscripts.length})</span>
+            <span className="text-[10px] text-[#c99738]">{language === 'es' ? 'Testigos Físicos' : language === 'pt' ? 'Testemunhos Físicos' : 'Physical Artifacts'}</span>
           </div>
 
           {manuscripts.map(ms => {
@@ -105,14 +115,14 @@ export const ManuscriptsView: React.FC<ManuscriptsViewProps> = ({ onSelectAssoci
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
               <div className="p-3 rounded-xl bg-[#1b1713] border border-[#2b241c] space-y-1">
                 <div className="text-[10px] uppercase font-bold text-[#c99738] flex items-center gap-1">
-                  <Calendar className="w-3 h-3" /> Paleographical Date
+                  <Calendar className="w-3 h-3" /> {language === 'es' ? 'Fecha Paleográfica' : language === 'pt' ? 'Data Paleográfica' : 'Paleographical Date'}
                 </div>
                 <div className="text-[#e8e2d5] font-serif">{selectedMS.approximateDate}</div>
               </div>
 
               <div className="p-3 rounded-xl bg-[#1b1713] border border-[#2b241c] space-y-1">
                 <div className="text-[10px] uppercase font-bold text-[#60a5fa] flex items-center gap-1">
-                  <MapPin className="w-3 h-3" /> Archaeological Provenance
+                  <MapPin className="w-3 h-3" /> {language === 'es' ? 'Procedencia Arqueológica' : language === 'pt' ? 'Proveniência Arqueológica' : 'Archaeological Provenance'}
                 </div>
                 <div className="text-[#e8e2d5] font-serif">{selectedMS.provenance}</div>
               </div>
@@ -123,17 +133,17 @@ export const ManuscriptsView: React.FC<ManuscriptsViewProps> = ({ onSelectAssoci
                 return (
                   <div className="p-3 rounded-xl bg-[#1b1713] border border-[#2b241c] space-y-1 sm:col-span-2">
                     <div className="text-[10px] uppercase font-bold text-[#c99738] flex items-center gap-1">
-                      <Languages className="w-3 h-3" /> Language &amp; Ancient Epigraphic Script
+                      <Languages className="w-3 h-3" /> {language === 'es' ? 'Idioma y Escritura Epigráfica' : language === 'pt' ? 'Idioma e Escrita Epigráfica' : 'Language & Ancient Epigraphic Script'}
                     </div>
                     <div className="flex items-center gap-2">
                       <span className={`px-2 py-0.5 rounded text-[11px] font-semibold border ${langMeta.badgeBg} ${langMeta.badgeText}`}>
                         {selectedMS.language}
                       </span>
                       <span className="text-xs text-[#b8ad9e]">
-                        Script: <strong className="text-[#f5d77f]">{langMeta.scriptName}</strong>
+                        {language === 'es' ? 'Escritura:' : language === 'pt' ? 'Escrita:' : 'Script:'} <strong className="text-[#f5d77f]">{langMeta.scriptName}</strong>
                       </span>
                       <span className="text-[10px] text-[#786c5c] font-mono lowercase">
-                        ({langMeta.isRtl ? 'Right-to-Left' : 'Left-to-Right'})
+                        ({langMeta.isRtl ? 'RTL' : 'LTR'})
                       </span>
                     </div>
                   </div>
@@ -142,7 +152,7 @@ export const ManuscriptsView: React.FC<ManuscriptsViewProps> = ({ onSelectAssoci
 
               <div className="p-3 rounded-xl bg-[#1b1713] border border-[#2b241c] space-y-1 sm:col-span-2">
                 <div className="text-[10px] uppercase font-bold text-[#a48c68]">
-                  Current Repository
+                  {language === 'es' ? 'Repositorio Actual' : language === 'pt' ? 'Repositório Atual' : 'Current Repository'}
                 </div>
                 <div className="text-[#ded5c7]">{selectedMS.currentRepository}</div>
               </div>
@@ -151,7 +161,7 @@ export const ManuscriptsView: React.FC<ManuscriptsViewProps> = ({ onSelectAssoci
             {/* Description */}
             <div className="space-y-1.5 pt-2 border-t border-[#29221b]">
               <h4 className="text-xs uppercase tracking-wider font-semibold text-[#c99738]">
-                Historical &amp; Textual Significance
+                {language === 'es' ? 'Significado Histórico y Textual' : language === 'pt' ? 'Significado Histórico e Textual' : 'Historical & Textual Significance'}
               </h4>
               <p className="text-xs text-[#ded5c7] leading-relaxed">
                 {selectedMS.description}
@@ -162,7 +172,7 @@ export const ManuscriptsView: React.FC<ManuscriptsViewProps> = ({ onSelectAssoci
             <div className="p-3.5 rounded-xl bg-[#13110e] border border-[#29221b] text-[11px] text-[#a48c68] space-y-1">
               <div className="font-semibold uppercase tracking-wider text-[#d4af37] flex items-center gap-1">
                 <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
-                License &amp; Legal Permissions
+                {language === 'es' ? 'Licencia y Permisos' : language === 'pt' ? 'Licença e Permissões' : 'License & Legal Permissions'}
               </div>
               <p>{selectedMS.licenseRightsNote}</p>
             </div>
@@ -170,7 +180,7 @@ export const ManuscriptsView: React.FC<ManuscriptsViewProps> = ({ onSelectAssoci
             {/* Associated Texts */}
             <div className="space-y-2 pt-2 border-t border-[#29221b]">
               <h4 className="text-xs uppercase tracking-wider font-semibold text-[#a48c68]">
-                Associated Canonical / Extracanonical Works
+                {language === 'es' ? 'Obras Canónicas y Extracanónicas Asociadas' : language === 'pt' ? 'Obras Canônicas e Extracanônicas Associadas' : 'Associated Canonical / Extracanonical Works'}
               </h4>
               <div className="flex flex-wrap gap-2">
                 {selectedMS.associatedTexts.map(tId => {

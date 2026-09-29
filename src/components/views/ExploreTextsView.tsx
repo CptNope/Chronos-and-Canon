@@ -6,6 +6,8 @@ import { TextItem, Passage } from '../../types';
 import { AncientTermModal } from '../common/AncientTermModal';
 import { getLanguageMeta } from '../../utils/scriptHelper';
 import { publicTextEditions } from '../../data/publicTexts';
+import { useLanguage } from '../../i18n/LanguageContext';
+import { getPassageText } from '../../utils/passageTranslationHelper';
 import { BookOpen, Search, Calendar, FileText, ArrowRight, Sparkles, AlertCircle, ExternalLink, Library } from 'lucide-react';
 
 interface ExploreTextsViewProps {
@@ -17,6 +19,7 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
   onSelectPassageForCompare,
   onNavigateToDigitalLibrary
 }) => {
+  const { t, language } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState<string>('ALL');
   const [selectedCulture, setSelectedCulture] = useState<string>('ALL');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -419,18 +422,26 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
                       );
                     })()}
 
-                    {/* English Translation */}
-                    {(readingMode === 'SIDE_BY_SIDE' || readingMode === 'ENGLISH_ONLY') && (
-                      <div className={`p-4 rounded-xl bg-[#1a1613] border border-[#2d251d] space-y-2 ${readingMode === 'ENGLISH_ONLY' ? 'md:col-span-2' : ''}`}>
-                        <div className="flex items-center justify-between text-[11px] text-[#c99738] font-mono border-b border-[#2b241c] pb-1.5">
-                          <span>English Translation</span>
-                          <span className="text-[10px] text-[#8e806e]">{passage.translationAttribution.license}</span>
+                    {/* Localized Translation (EN | ES | PT) */}
+                    {(readingMode === 'SIDE_BY_SIDE' || readingMode === 'ENGLISH_ONLY') && (() => {
+                      const localized = getPassageText(passage, language);
+                      return (
+                        <div className={`p-4 rounded-xl bg-[#1a1613] border border-[#2d251d] space-y-2 ${readingMode === 'ENGLISH_ONLY' ? 'md:col-span-2' : ''}`}>
+                          <div className="flex items-center justify-between text-[11px] text-[#c99738] font-mono border-b border-[#2b241c] pb-1.5">
+                            <span>{t.compare.translation} ({localized.languageName})</span>
+                            <span className="text-[10px] text-[#8e806e]">{passage.translationAttribution.license}</span>
+                          </div>
+                          <p className="text-sm md:text-base leading-relaxed text-[#e8e2d5] font-serif">
+                            {localized.text}
+                          </p>
+                          {localized.isLocalized && (
+                            <div className="text-[10px] text-[#34d399] font-mono pt-1">
+                              ✓ {localized.sourceAttribution}
+                            </div>
+                          )}
                         </div>
-                        <p className="text-sm md:text-base leading-relaxed text-[#e8e2d5] font-serif">
-                          {passage.englishTranslation}
-                        </p>
-                      </div>
-                    )}
+                      );
+                    })()}
                   </div>
 
                   {/* Critical Apparatus / Translation Attribution */}

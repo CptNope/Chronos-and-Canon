@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { seventyBooksCollection, SeventyBookCandidate } from '../../data/seventyBooks';
+import { useLanguage } from '../../i18n/LanguageContext';
 import { Scroll, AlertTriangle, BookOpen, Sparkles, Filter, ShieldCheck, CheckCircle } from 'lucide-react';
 
 interface SeventyBooksViewProps {
@@ -7,10 +8,19 @@ interface SeventyBooksViewProps {
 }
 
 export const SeventyBooksView: React.FC<SeventyBooksViewProps> = ({ onSelectCandidateText }) => {
+  const { t, language } = useLanguage();
   const [selectedGenre, setSelectedGenre] = useState<string>('ALL');
   const [activeCandidateId, setActiveCandidateId] = useState<string>(seventyBooksCollection.candidates[0].id);
 
-  const genres = ['ALL', 'Apocalyptic', 'Priestly / Halakhic', 'Angelology / Liturgy', 'Patriarchal Testament', 'Esoteric Wisdom', 'Calendrical / Astronomical'];
+  const genres = [
+    { id: 'ALL', label: t.explore.allCategories },
+    { id: 'Apocalyptic', label: language === 'es' ? 'Apocalíptico' : language === 'pt' ? 'Apocalíptico' : 'Apocalyptic' },
+    { id: 'Priestly / Halakhic', label: language === 'es' ? 'Sacerdotal / Halájico' : language === 'pt' ? 'Sacerdotal / Haláquico' : 'Priestly / Halakhic' },
+    { id: 'Angelology / Liturgy', label: language === 'es' ? 'Angelología / Liturgia' : language === 'pt' ? 'Angelologia / Liturgia' : 'Angelology / Liturgy' },
+    { id: 'Patriarchal Testament', label: language === 'es' ? 'Testamento Patriarcal' : language === 'pt' ? 'Testamento Patriarcal' : 'Patriarchal Testament' },
+    { id: 'Esoteric Wisdom', label: language === 'es' ? 'Sabiduría Esotérica' : language === 'pt' ? 'Sabedoria Esotérica' : 'Esoteric Wisdom' },
+    { id: 'Calendrical / Astronomical', label: language === 'es' ? 'Calendárico / Astronómico' : language === 'pt' ? 'Calendárico / Astronômico' : 'Calendrical / Astronomical' }
+  ];
 
   const filteredCandidates = selectedGenre === 'ALL'
     ? seventyBooksCollection.candidates
@@ -24,15 +34,15 @@ export const SeventyBooksView: React.FC<SeventyBooksViewProps> = ({ onSelectCand
       <div className="p-6 md:p-8 rounded-2xl bg-[#161311] border border-[#a48c68]/20 shadow-2xl space-y-4">
         <div className="flex items-center gap-2 text-xs font-semibold text-[#c99738] uppercase tracking-wider">
           <Scroll className="w-4 h-4" />
-          Second Temple Esoteric Library
+          {language === 'es' ? 'Biblioteca Esotérica del Segundo Templo' : language === 'pt' ? 'Biblioteca Esotérica do Segundo Templo' : 'Second Temple Esoteric Library'}
         </div>
 
         <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
           <h1 className="text-2xl md:text-4xl font-bold font-display text-[#f5d77f]">
-            {seventyBooksCollection.title}
+            {language === 'es' ? 'Los 70 Libros para los Sabios (2 Esdras 14)' : language === 'pt' ? 'Os 70 Livros para os Sábios (2 Esdras 14)' : seventyBooksCollection.title}
           </h1>
           <span className="text-xs font-mono text-[#a48c68]">
-            Source: {seventyBooksCollection.biblicalSource}
+            {language === 'es' ? 'Fuente:' : language === 'pt' ? 'Fonte:' : 'Source:'} {seventyBooksCollection.biblicalSource}
           </span>
         </div>
 
@@ -45,7 +55,11 @@ export const SeventyBooksView: React.FC<SeventyBooksViewProps> = ({ onSelectCand
         <div className="p-4 rounded-xl bg-amber-950/30 border border-amber-600/40 text-amber-200 text-xs leading-relaxed space-y-1.5">
           <div className="flex items-center gap-2 font-bold uppercase tracking-wider text-amber-400">
             <AlertTriangle className="w-4 h-4 text-amber-400 flex-shrink-0" />
-            Scholarly Disclaimer: Historical Reconstruction &amp; Exploratory Hypothesis
+            {language === 'es'
+              ? 'Descargo de Responsabilidad: Reconstrucción Histórica e Hipótesis Exploratoria'
+              : language === 'pt'
+              ? 'Isenção de Responsabilidade: Reconstrução Histórica e Hipótese Exploratória'
+              : 'Scholarly Disclaimer: Historical Reconstruction & Exploratory Hypothesis'}
           </div>
           <p>
             {seventyBooksCollection.scholarlyDisclaimer}
@@ -60,15 +74,15 @@ export const SeventyBooksView: React.FC<SeventyBooksViewProps> = ({ onSelectCand
         <div className="pt-2 flex items-center gap-1.5 overflow-x-auto pb-1 text-xs">
           {genres.map(genre => (
             <button
-              key={genre}
-              onClick={() => setSelectedGenre(genre)}
+              key={genre.id}
+              onClick={() => setSelectedGenre(genre.id)}
               className={`px-3 py-1 rounded-full whitespace-nowrap transition ${
-                selectedGenre === genre
+                selectedGenre === genre.id
                   ? 'bg-[#c99738]/20 border border-[#c99738] text-[#f5d77f] font-semibold'
                   : 'bg-[#1e1a16] border border-[#322a20] text-[#a48c68] hover:border-[#63533e]'
               }`}
             >
-              {genre}
+              {genre.label}
             </button>
           ))}
         </div>
@@ -79,8 +93,8 @@ export const SeventyBooksView: React.FC<SeventyBooksViewProps> = ({ onSelectCand
         {/* Left Candidate List */}
         <div className="lg:col-span-5 space-y-2 max-h-[750px] overflow-y-auto pr-1">
           <div className="text-xs uppercase tracking-wider text-[#a48c68] font-semibold px-2 mb-2 flex items-center justify-between">
-            <span>Exploratory Candidates ({filteredCandidates.length})</span>
-            <span className="text-[10px] text-[#c99738]">Second Temple Corpus</span>
+            <span>{language === 'es' ? 'Candidatos Exploratorios' : language === 'pt' ? 'Candidatos Exploratórios' : 'Exploratory Candidates'} ({filteredCandidates.length})</span>
+            <span className="text-[10px] text-[#c99738]">Corpus</span>
           </div>
 
           {filteredCandidates.map(candidate => {
@@ -150,7 +164,7 @@ export const SeventyBooksView: React.FC<SeventyBooksViewProps> = ({ onSelectCand
             <div className="space-y-2">
               <h4 className="text-xs uppercase tracking-wider font-semibold text-[#c99738] flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5" />
-                Rationale for Classification as Esoteric / Initiatory Work
+                {language === 'es' ? 'Justificación de Clasificación como Obra Esotérica / Iniciática' : language === 'pt' ? 'Justificativa de Classificação como Obra Esotérica / Iniciática' : 'Rationale for Classification as Esoteric / Initiatory Work'}
               </h4>
               <div className="p-4 rounded-xl bg-[#1b1713] border border-[#2b241c] text-xs text-[#ded5c7] leading-relaxed">
                 {activeCandidate.rationaleForInclusion}
@@ -160,7 +174,7 @@ export const SeventyBooksView: React.FC<SeventyBooksViewProps> = ({ onSelectCand
             {/* Manuscript Witnesses */}
             <div className="space-y-1.5 pt-2 border-t border-[#29221b]">
               <h4 className="text-xs uppercase tracking-wider font-semibold text-[#a48c68]">
-                Archaeological &amp; Manuscript Witnesses
+                {language === 'es' ? 'Testigos Arqueológicos y Manuscritos' : language === 'pt' ? 'Testemunhos Arqueológicos e Manuscritos' : 'Archaeological & Manuscript Witnesses'}
               </h4>
               <p className="text-xs font-mono text-[#b8ad9e]">
                 {activeCandidate.manuscriptWitnesses}
@@ -171,7 +185,7 @@ export const SeventyBooksView: React.FC<SeventyBooksViewProps> = ({ onSelectCand
             <div className="space-y-2 pt-2 border-t border-[#29221b]">
               <h4 className="text-xs uppercase tracking-wider font-semibold text-[#60a5fa] flex items-center gap-1.5">
                 <CheckCircle className="w-3.5 h-3.5" />
-                Core Esoteric Themes
+                {language === 'es' ? 'Temas Esotéricos Centrales' : language === 'pt' ? 'Temas Esotéricos Centrais' : 'Core Esoteric Themes'}
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {activeCandidate.coreThemes.map((theme, i) => (

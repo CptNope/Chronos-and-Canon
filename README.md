@@ -316,6 +316,7 @@ If you must stay on the `main` branch with "Deploy from a branch":
 
 ## Key Features in the Archive
 
+- **Multilingual Support (EN / ES / PT)**: Full application localization across **English**, **Español** (Spanish), and **Português** (Portuguese) with interactive language toggles and localized translations for primary passages (Genesis 6, 1 Enoch, Psalm 82, Deuteronomy 32, Gilgamesh, Hammurabi, Baal Cycle, etc.).
 - **Tripartite Chronological Differentiation**: Strict separation between:
   1. *Primary / Contemporaneous Witnesses* (Epigraphic tablets, Qumran Dead Sea Scrolls, Ugaritic tablets).
   2. *Secondary Literary Transmission* (Medieval Masoretic codices, Septuagint translations, Patristic collections).

@@ -6,6 +6,8 @@ import { motifs } from '../../data/motifs';
 import { ancientTerms } from '../../data/terms';
 import { EvidenceLevel, ResearchMode, Relationship } from '../../types';
 import { EvidenceBadge } from '../common/EvidenceBadge';
+import { useLanguage } from '../../i18n/LanguageContext';
+import { getLocalizedRelationship } from '../../utils/relationshipTranslationHelper';
 import { Network, Search, Filter, ZoomIn, ZoomOut, RotateCcw, Info, Sparkles, BookOpen } from 'lucide-react';
 
 interface GraphNodeInternal {
@@ -42,6 +44,7 @@ export const GraphView: React.FC<GraphViewProps> = ({
   onSetResearchMode,
   onSelectPassage
 }) => {
+  const { t, language } = useLanguage();
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>('gen_6_1_4');
   const [selectedLinkId, setSelectedLinkId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -498,7 +501,7 @@ export const GraphView: React.FC<GraphViewProps> = ({
 
           {/* Floating Instructions */}
           <div className="absolute bottom-3 left-3 px-3 py-1.5 rounded-lg bg-[#14120f]/80 backdrop-blur-sm border border-[#2d251d] text-[11px] text-[#a48c68] pointer-events-none">
-            Click any node or connection line to reveal evidentiary details &bull; Drag canvas to pan
+            {t.graph.clickNodeHint} &bull; Drag canvas to pan
           </div>
         </div>
 
@@ -506,46 +509,51 @@ export const GraphView: React.FC<GraphViewProps> = ({
         <div className="lg:col-span-4 p-6 rounded-2xl bg-[#151210] border border-[#a48c68]/30 shadow-xl space-y-5 max-h-[650px] overflow-y-auto text-left">
           {selectedLink ? (
             /* Selected Connection Detail */
-            <div className="space-y-4">
-              <div className="flex items-center justify-between pb-3 border-b border-[#2d251d]">
-                <div className="text-xs uppercase tracking-wider font-semibold text-[#c99738] flex items-center gap-1.5">
-                  <Info className="w-3.5 h-3.5" />
-                  Connection Dossier
+            (() => {
+              const loc = getLocalizedRelationship(selectedLink, language);
+              return (
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between pb-3 border-b border-[#2d251d]">
+                    <div className="text-xs uppercase tracking-wider font-semibold text-[#c99738] flex items-center gap-1.5">
+                      <Info className="w-3.5 h-3.5" />
+                      {t.graph.connectionDetails}
+                    </div>
+                    <button
+                      onClick={() => setSelectedLinkId(null)}
+                      className="text-xs text-[#a48c68] hover:text-white"
+                    >
+                      &larr; {language === 'es' ? 'Volver al Nodo' : language === 'pt' ? 'Voltar ao Nó' : 'Back to Node'}
+                    </button>
+                  </div>
+
+                  <div>
+                    <EvidenceBadge level={selectedLink.evidenceLevel} relationshipType={selectedLink.relationshipType as any} />
+                    <h3 className="text-lg font-bold font-display text-[#f5d77f] mt-2">
+                      {loc.title}
+                    </h3>
+                  </div>
+
+                  <div className="p-3.5 rounded-xl bg-[#1b1713] border border-[#2b231a] text-xs text-[#ded5c7] leading-relaxed">
+                    {loc.explanation}
+                  </div>
+
+                  {selectedLink.citations && selectedLink.citations.length > 0 && (
+                    <div className="space-y-2">
+                      <h4 className="text-xs uppercase tracking-wider font-semibold text-[#a48c68]">
+                        {t.graph.citations}
+                      </h4>
+                      <ul className="space-y-1 text-xs text-[#9c8e7e]">
+                        {selectedLink.citations.map((cite, i) => (
+                          <li key={i} className="p-2 rounded bg-[#100e0c] border border-[#241e17] font-mono text-[11px]">
+                            {cite}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
-                <button
-                  onClick={() => setSelectedLinkId(null)}
-                  className="text-xs text-[#a48c68] hover:text-white"
-                >
-                  Back to Node
-                </button>
-              </div>
-
-              <div>
-                <EvidenceBadge level={selectedLink.evidenceLevel} relationshipType={selectedLink.relationshipType as any} />
-                <h3 className="text-lg font-bold font-display text-[#f5d77f] mt-2">
-                  {selectedLink.title}
-                </h3>
-              </div>
-
-              <div className="p-3.5 rounded-xl bg-[#1b1713] border border-[#2b231a] text-xs text-[#ded5c7] leading-relaxed">
-                {selectedLink.explanation}
-              </div>
-
-              {selectedLink.citations && selectedLink.citations.length > 0 && (
-                <div className="space-y-2">
-                  <h4 className="text-xs uppercase tracking-wider font-semibold text-[#a48c68]">
-                    Scholarly References &amp; Peer Citations
-                  </h4>
-                  <ul className="space-y-1 text-xs text-[#9c8e7e]">
-                    {selectedLink.citations.map((cite, i) => (
-                      <li key={i} className="p-2 rounded bg-[#100e0c] border border-[#241e17] font-mono text-[11px]">
-                        {cite}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
+              );
+            })()
           ) : selectedNode ? (
             /* Selected Node Detail */
             <div className="space-y-4">
@@ -565,26 +573,31 @@ export const GraphView: React.FC<GraphViewProps> = ({
                   className="w-full py-2 rounded-lg bg-[#25201a] hover:bg-[#342b22] border border-[#c99738]/40 text-xs font-semibold text-[#f5d77f] transition flex items-center justify-center gap-1.5"
                 >
                   <BookOpen className="w-3.5 h-3.5" />
-                  <span>Open in Parallel Compare Viewer</span>
+                  <span>{t.explore.viewInCompare}</span>
                 </button>
               )}
 
               {/* Outgoing & Incoming Relationships */}
               <div className="space-y-2.5">
                 <div className="text-xs uppercase tracking-wider font-semibold text-[#a48c68] flex items-center justify-between">
-                  <span>Documented Connections ({connectedLinks.length})</span>
+                  <span>{language === 'es' ? 'Conexiones Documentadas' : language === 'pt' ? 'Conexões Documentadas' : 'Documented Connections'} ({connectedLinks.length})</span>
                   <span className="text-[10px] text-[#c99738]">{researchMode} Mode</span>
                 </div>
 
                 {connectedLinks.length === 0 ? (
                   <p className="text-xs text-[#8e806e] italic">
-                    No connections meet the threshold for {researchMode} mode. Try switching to Comparative or Exploratory mode.
+                    {language === 'es'
+                      ? `Ninguna conexión cumple con el umbral para el modo ${researchMode}. Intente cambiar a modo Comparativo o Exploratorio.`
+                      : language === 'pt'
+                      ? `Nenhuma conexão atinge o limiar para o modo ${researchMode}. Tente mudar para o modo Comparativo ou Exploratório.`
+                      : `No connections meet the threshold for ${researchMode} mode. Try switching to Comparative or Exploratory mode.`}
                   </p>
                 ) : (
                   <div className="space-y-2">
                     {connectedLinks.map(link => {
                       const otherNodeId = link.source === selectedNode.id ? link.target : link.source;
                       const otherNode = nodes.find(n => n.id === otherNodeId);
+                      const locLink = getLocalizedRelationship(link, language);
                       return (
                         <div
                           key={link.id}
@@ -598,10 +611,10 @@ export const GraphView: React.FC<GraphViewProps> = ({
                             <EvidenceBadge level={link.evidenceLevel} />
                           </div>
                           <div className="text-[11px] text-[#c99738] font-mono">
-                            {link.relationshipType}
+                            {(t.relationshipTypes as Record<string, string>)[link.relationshipType] || link.relationshipType}
                           </div>
                           <p className="text-xs text-[#a49989] line-clamp-2 leading-relaxed">
-                            {link.explanation}
+                            {locLink.explanation || locLink.title}
                           </p>
                         </div>
                       );
@@ -612,7 +625,11 @@ export const GraphView: React.FC<GraphViewProps> = ({
             </div>
           ) : (
             <div className="p-8 text-center text-sm text-[#8e806e]">
-              Select any node in the network to inspect its ancient textual links and scholarly evidence level.
+              {language === 'es'
+                ? 'Seleccione cualquier nodo en la red para inspeccionar sus vínculos textuales antiguos y nivel de evidencia académica.'
+                : language === 'pt'
+                ? 'Selecione qualquer nó na rede para inspecionar seus vínculos textuais antigos e nível de evidência acadêmica.'
+                : 'Select any node in the network to inspect its ancient textual links and scholarly evidence level.'}
             </div>
           )}
         </div>

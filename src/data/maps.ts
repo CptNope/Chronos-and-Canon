@@ -380,5 +380,72 @@ export const mapLocations: MapLocation[] = [
     description: 'The colossal pre-Aztec metropolis along the Avenue of the Dead, centered on the Pyramid of the Sun, Pyramid of the Moon, and Temple of the Feathered Serpent (Quetzalcoatl). Revered by the later Aztecs as the primordial mythological locus where the gods gathered in cosmic darkness to birth the Fifth Sun through self-sacrifice.',
     associatedTexts: [],
     keyDiscoveries: ['Pyramid of the Sun and subterranean artificial caves', 'Temple of the Feathered Serpent burials', 'Polychrome frescoes of the Water Goddess and Tlalocan paradise']
+  },
+
+  // --- ANATOLIA, EGYPT & NEAR EAST EXPANSIONS ---
+  {
+    id: 'hattusa_bogazkale',
+    name: 'Hattusa (Boğazkale / Boğazköy)',
+    ancientRegion: 'Central Anatolia (Hittite Empire)',
+    modernCountry: 'Çorum Province, Turkey',
+    coordinates: { lat: 40.0197, lng: 34.6153 },
+    cultureId: 'canaanite_ugaritic',
+    regionGroup: 'NEAR_EAST',
+    importance: 'Primary Excavation',
+    description: 'Capital of the Late Bronze Age Hittite Empire. Excavations yielded over 30,000 cuneiform tablets including the Kumarbi Cycle (Kingship in Heaven) that provided the direct mythic prototype for Hesiod\'s Theogony (Ouranos-Kronos-Zeus), as well as international suzerainty treaties whose covenant structure mirrors Deuteronomy.',
+    associatedTexts: ['deuteronomy', 'hesiod_works_days'],
+    keyDiscoveries: ['Lion Gate and King\'s Gate fortifications', 'Yazılıkaya open-air rock sanctuary depicting 63 deities', 'Treaty of Kadesh (earliest parity peace treaty, ca. 1259 BCE)', 'Song of Kumarbi / Song of Ullikummi cuneiform tablets']
+  },
+  {
+    id: 'elephantine_island',
+    name: 'Elephantine Island (Yeb)',
+    ancientRegion: 'First Cataract of the Nile (Upper Egypt)',
+    modernCountry: 'Aswan, Egypt',
+    coordinates: { lat: 24.0864, lng: 32.8872 },
+    cultureId: 'hebrew_israelite',
+    regionGroup: 'NEAR_EAST',
+    importance: 'Archival Discovery',
+    description: 'Ancient frontier fortress and trading settlement on the Nile housing a community of Jewish mercenary soldiers under Persian rule in the 5th century BCE. The community had its own functioning Temple of Yahu (Yahweh), offering animal sacrifices and corresponding with the high priest in Jerusalem and the governor of Samaria.',
+    associatedTexts: ['deuteronomy', 'ezra'],
+    keyDiscoveries: ['Elephantine Aramaic Papyri (including Passover letter and petition to rebuild temple)', 'Ahiqar wisdom proverbs in Aramaic', 'Temple of Yahu foundation remains adjacent to the Egyptian temple of Khnum']
+  },
+  {
+    id: 'nag_hammadi_caves',
+    name: 'Nag Hammadi (Jabal al-Tarif Cliffs)',
+    ancientRegion: 'Upper Egypt / Thebaid',
+    modernCountry: 'Qena Governorate, Egypt',
+    coordinates: { lat: 26.0489, lng: 32.2414 },
+    cultureId: 'second_temple_jewish',
+    regionGroup: 'NEAR_EAST',
+    importance: 'Archival Discovery',
+    description: 'Site where a local farmer named Muhammad \'Ali al-Samman discovered a sealed red earthenware jar in December 1945 containing 13 leather-bound papyrus codices (52 tractates). These preserved the lost library of early Christian Gnostic literature, including the Apocryphon of John, Gospel of Thomas, and Hypostasis of the Archons.',
+    associatedTexts: ['apocryphon_of_john', '1_enoch'],
+    keyDiscoveries: ['13 Coptic leather-bound papyrus codices (now in Coptic Museum, Cairo)', 'Gospel of Thomas complete text', 'Apocryphon of John / Secret Revelation', 'Treatise on the Resurrection']
+  },
+  {
+    id: 'mari_tell_hariri',
+    name: 'Mari (Tell Hariri)',
+    ancientRegion: 'Middle Euphrates Basin',
+    modernCountry: 'Deir ez-Zor Governorate, Syria',
+    coordinates: { lat: 34.5492, lng: 40.8906 },
+    cultureId: 'mesopotamian',
+    regionGroup: 'NEAR_EAST',
+    importance: 'Primary Excavation',
+    description: 'Major Bronze Age royal city excavated by André Parrot, featuring the colossal 300-room Royal Palace of Zimri-Lim and a royal archive of over 25,000 cuneiform tablets. The texts preserve Northwest Semitic linguistic forms, prophetic ecstasy reports matching biblical prophecy, and tribal customs closely illuminating the Genesis patriarchs.',
+    associatedTexts: ['genesis', 'code_of_hammurabi'],
+    keyDiscoveries: ['Royal Palace of Zimri-Lim with colorful investiture frescoes', 'Letters of prophetic dreams and oracles (apilu and muhhu prophets)', 'Banqueting and diplomatic treaty tablets between Mari, Babylon, and Yamhad']
+  },
+  {
+    id: 'susa_shushan',
+    name: 'Susa (Shushan the Citadel)',
+    ancientRegion: 'Elam / Susiana Plain',
+    modernCountry: 'Khuzestan Province, Iran',
+    coordinates: { lat: 32.1892, lng: 48.2436 },
+    cultureId: 'persian_zoroastrian',
+    regionGroup: 'ASIA_PERSIA',
+    importance: 'Ancient Capital',
+    description: 'One of the oldest settlements in the world, capital of ancient Elam, and winter residence of the Persian Achaemenid emperors (Cyrus, Darius, Xerxes/Ahasuerus). Setting of the biblical books of Esther and Nehemiah, and locus of Daniel\'s vision along the Ulai canal. Where French archaeologists discovered the Stele of the Code of Hammurabi in 1901.',
+    associatedTexts: ['code_of_hammurabi', 'daniel'],
+    keyDiscoveries: ['Stele of the Code of Hammurabi (diorite stela brought as war trophy by Shutruk-Nahhunte, now in the Louvre)', 'Apadana Palace of Darius I with glazed brick Archers frieze', 'Victory Stele of Naram-Sin', 'Proto-Elamite and Linear Elamite tablets']
   }
 ];

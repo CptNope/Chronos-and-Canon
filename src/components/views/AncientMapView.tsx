@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { mapLocations, MapLocation } from '../../data/maps';
 import { cultures } from '../../data/cultures';
 import { texts } from '../../data/texts';
+import { useLanguage } from '../../i18n/LanguageContext';
 import {
   MapPin,
   Compass,
@@ -85,6 +86,7 @@ const REGION_BOUNDS: Record<RegionPreset, RegionBounds> = {
 };
 
 export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) => {
+  const { t, language } = useLanguage();
   const [selectedLocationId, setSelectedLocationId] = useState<string>('qumran_caves');
   const [selectedRegion, setSelectedRegion] = useState<RegionPreset>('FERTILE_CRESCENT');
   const [filterCulture, setFilterCulture] = useState<string>('ALL');
@@ -201,13 +203,13 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
           <div>
             <div className="flex items-center gap-2 text-xs font-semibold text-[#c99738] uppercase tracking-wider">
               <Compass className="w-4 h-4" />
-              Archaeological Cartography &amp; Excavation Provenance
+              {language === 'es' ? 'Cartografía Arqueológica y Procedencia' : language === 'pt' ? 'Cartografia Arqueológica e Proveniência' : 'Archaeological Cartography & Excavation Provenance'}
             </div>
             <h1 className="text-2xl md:text-3xl font-bold font-display text-[#f5d77f] mt-1">
-              Ancient World Atlas
+              {t.map.title}
             </h1>
             <p className="text-sm text-[#b8ad9e] mt-1 max-w-3xl">
-              Discover the exact geographical coordinates and excavation contexts where the Dead Sea Scrolls, Ugaritic tablets, Mesopotamian libraries, and primeval epics were unearthed.
+              {t.map.subtitle}
             </p>
           </div>
 
@@ -223,7 +225,7 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
                 }`}
               >
                 <Globe className="w-3.5 h-3.5" />
-                <span>Interactive Map</span>
+                <span>{language === 'es' ? 'Mapa Interactivo' : language === 'pt' ? 'Mapa Interativo' : 'Interactive Map'}</span>
               </button>
               <button
                 onClick={() => setActiveTab('DIRECTORY')}
@@ -234,7 +236,7 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
                 }`}
               >
                 <FolderOpen className="w-3.5 h-3.5" />
-                <span>Site Directory ({filteredLocations.length})</span>
+                <span>{language === 'es' ? 'Directorio de Sitios' : language === 'pt' ? 'Diretório de Sítios' : 'Site Directory'} ({filteredLocations.length})</span>
               </button>
             </div>
           </div>

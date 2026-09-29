@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppView } from '../Navigation';
 import { EvidenceBadge } from '../common/EvidenceBadge';
+import { useLanguage } from '../../i18n/LanguageContext';
 import {
   BookOpen,
   GitCompare,
@@ -30,44 +31,45 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
   onNavigate,
   onOpenCompare
 }) => {
+  const { t } = useLanguage();
   const featuredConnections = [
     {
       id: 'feat_gen6_enoch',
-      title: 'GENESIS 6 ↔ 1 ENOCH',
-      subtitle: 'From the "sons of God" to the Watcher tradition on Mount Hermon',
+      title: t.featured.gen6Title,
+      subtitle: t.featured.gen6Subtitle,
       evidenceLevel: 'DOCUMENTED' as const,
       relationshipType: 'EXPANDED TRADITION' as const,
-      description: 'The cryptic four-verse vignette of Genesis 6:1–4 is expanded in 1 Enoch into a full apocalyptic narrative detailing 200 fallen angels, illicit metallurgical and astronomical arts, and the devastating birth of giant offspring.',
+      description: t.featured.gen6Desc,
       passageIds: ['gen_6_1_4', '1_enoch_6_1_6'],
       viewTarget: 'GENESIS_6' as AppView
     },
     {
       id: 'feat_jude_enoch',
-      title: 'JUDE ↔ 1 ENOCH',
-      subtitle: 'A New Testament author explicitly cites Enochic apocalyptic prophecy',
+      title: t.featured.judeTitle,
+      subtitle: t.featured.judeSubtitle,
       evidenceLevel: 'DOCUMENTED' as const,
       relationshipType: 'DIRECT QUOTATION' as const,
-      description: 'Jude 14–15 directly attributes a prophecy to "Enoch, the seventh from Adam" and quotes 1 Enoch 1:9 verbatim, alongside invoking the angels bound in everlasting chains under darkness (v. 6).',
+      description: t.featured.judeDesc,
       passageIds: ['jude_6_and_14_15', '1_enoch_1_9'],
       viewTarget: 'COMPARE' as AppView
     },
     {
       id: 'feat_flood_near_east',
-      title: 'NOAH ↔ GILGAMESH ↔ ATRAHASIS',
-      subtitle: 'Compare ancient Near Eastern Flood traditions & structural dependencies',
+      title: t.featured.floodTitle,
+      subtitle: t.featured.floodSubtitle,
       evidenceLevel: 'STRONG' as const,
       relationshipType: 'TEXTUAL DEPENDENCE' as const,
-      description: 'Genesis 6–9, Gilgamesh Tablet XI, and Atrahasis Tablet III share bitumen pitch caulking, exact cubit dimensional ratios, mountain grounding (Ararat / Nimush), bird release tests, and post-flood sacrifices.',
+      description: t.featured.floodDesc,
       passageIds: ['gilgamesh_tablet_11_flood', 'atrahasis_tablet_3_flood'],
       viewTarget: 'FLOOD' as AppView
     },
     {
       id: 'feat_rephaim_ugarit',
-      title: 'NEPHILIM ↔ ANAKIM ↔ REPHAIM ↔ RPUM',
-      subtitle: 'Trace biblical giant clans to Late Bronze Age Ugaritic royal ancestor cults',
+      title: t.featured.rephaimTitle,
+      subtitle: t.featured.rephaimSubtitle,
       evidenceLevel: 'DOCUMENTED' as const,
       relationshipType: 'HISTORICAL CONNECTION' as const,
-      description: 'Og king of Bashan, "the remnant of the Rephaim" ruling at Ashtaroth and Edrei, directly mirrors Ugaritic tablet KTU 1.108 where the divine Rapiu (rpu mlk) sits enthroned at Ashtaroth and Edrei.',
+      description: t.featured.rephaimDesc,
       passageIds: ['deut_2_and_3', 'joshua_12_4', 'ugaritic_ktu_1_108'],
       viewTarget: 'GENESIS_6' as AppView
     }
@@ -76,87 +78,87 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
   const primaryModules: { view: AppView; title: string; desc: string; icon: React.ComponentType<{ className?: string }>; tag: string }[] = [
     {
       view: 'EXPLORE_TEXTS',
-      title: 'Explore Ancient Texts',
-      desc: 'Browse Hebrew Bible, Second Temple, Mesopotamian, Ugaritic, Classical, and Global works with tripartite chronological distinction.',
+      title: t.modules.explore.title,
+      desc: t.modules.explore.desc,
       icon: BookOpen,
-      tag: 'Text Corpus'
+      tag: t.modules.explore.tag
     },
     {
       view: 'DIGITAL_LIBRARY',
-      title: 'Public Texts & Digital Archives',
-      desc: 'Direct links to free, open-access editions: multispectral Dead Sea Scrolls, British Museum cuneiform 3D scans, Sefaria, and Perseus.',
+      title: t.modules.library.title,
+      desc: t.modules.library.desc,
       icon: Library,
-      tag: 'Open Access'
+      tag: t.modules.library.tag
     },
     {
       view: 'COMPARE',
-      title: 'Compare Passages',
-      desc: 'Side-by-side parallel reader for 2 to 4 ancient texts with original languages, transliterations, and clickable linguistic terms.',
+      title: t.modules.compare.title,
+      desc: t.modules.compare.desc,
       icon: GitCompare,
-      tag: 'Multi-Reader'
+      tag: t.modules.compare.tag
     },
     {
       view: 'GRAPH',
-      title: 'Relationship Graph',
-      desc: 'Dynamic interactive network mapping citations, expansions, and cross-cultural motifs with selectable evidentiary rigor.',
+      title: t.modules.graph.title,
+      desc: t.modules.graph.desc,
       icon: Network,
-      tag: 'Evidence Map'
+      tag: t.modules.graph.tag
     },
     {
       view: 'TIMELINE',
-      title: 'Chronological Stratigraphy',
-      desc: 'Strict separation of Story Setting vs Estimated Date of Composition vs Earliest Physical Manuscript Witness.',
+      title: t.modules.timeline.title,
+      desc: t.modules.timeline.desc,
       icon: Clock,
-      tag: 'Chronology'
+      tag: t.modules.timeline.tag
     },
     {
       view: 'MAP',
-      title: 'Ancient World Atlas',
-      desc: 'Explore archaeological discovery sites, tablet finds, and ancient geographical centers from Qumran to Nineveh and Mesoamerica.',
+      title: t.modules.map.title,
+      desc: t.modules.map.desc,
       icon: Globe,
-      tag: 'Geography'
+      tag: t.modules.map.tag
     },
     {
       view: 'MOTIFS',
-      title: 'Cross-Cultural Motifs',
-      desc: 'Discover 25+ universal motifs: Chaoskampf, Sacred Mountains, Divine Councils, Cosmic Trees, and Heroic Ages.',
+      title: t.modules.motifs.title,
+      desc: t.modules.motifs.desc,
       icon: Layers,
-      tag: 'Archetypes'
+      tag: t.modules.motifs.tag
     },
     {
       view: 'SEVENTY_BOOKS',
-      title: 'The 70 Books for the Wise',
-      desc: 'Exploratory reconstruction of the 70 esoteric Second Temple apocalyptic works described in 2 Esdras 14.',
+      title: t.modules.seventyBooks.title,
+      desc: t.modules.seventyBooks.desc,
       icon: Scroll,
-      tag: 'Special Collection'
+      tag: t.modules.seventyBooks.tag
     },
     {
       view: 'GENESIS_6',
-      title: 'Genesis 6 / Watchers Study',
-      desc: 'Flagship deep-dive connecting Sons of God, Nephilim, Anakim, Rephaim, Og of Bashan, Ugaritic rpum, Jude, and Hesiod.',
+      title: t.modules.genesis6.title,
+      desc: t.modules.genesis6.desc,
       icon: Sparkles,
-      tag: 'Flagship Study'
+      tag: t.modules.genesis6.tag
     },
     {
       view: 'FLOOD',
-      title: 'Great Flood Traditions',
-      desc: 'Systematic comparative analysis of Genesis, Gilgamesh, Atrahasis, Vedic Manu, and Maya Popol Vuh deluge accounts.',
+      title: t.modules.flood.title,
+      desc: t.modules.flood.desc,
       icon: Waves,
-      tag: 'Flagship Study'
+      tag: t.modules.flood.tag
     },
     {
       view: 'MANUSCRIPTS',
-      title: 'Surviving Manuscripts',
-      desc: 'Physical witnesses, paleography, dates, provenance, and copyright distinctions for Dead Sea Scrolls and ancient codices.',
+      title: t.modules.manuscripts.title,
+      desc: t.modules.manuscripts.desc,
       icon: FileArchive,
-      tag: 'Paleography'
+      tag: t.modules.manuscripts.tag
     },
     {
       view: 'ASSISTANT',
-      title: 'AI Research Assistant',
-      desc: 'Ask complex comparative questions grounded strictly in primary sources and peer-reviewed relationship evidence levels.',
+      title: t.modules.assistant.title,
+      desc: t.modules.assistant.desc,
       icon: MessageSquare,
-      tag: 'AI Epigraphy'
+      tag: t.modules.assistant.tag
     }
   ];
 
@@ -176,15 +178,15 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
         <div className="relative z-10 max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2a2219] border border-[#c99738]/40 text-xs font-semibold text-[#f5d77f] uppercase tracking-wider">
             <Compass className="w-3.5 h-3.5 text-[#c99738]" />
-            Scholarly Comparative Textual Platform
+            {t.archiveBadge}
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-extrabold font-display text-[#f5d77f] tracking-tight leading-tight">
-            Investigate Ancient Textual Relationships for Yourself
+            {t.dashboard.heroTitle}
           </h1>
 
           <p className="text-base sm:text-lg text-[#ded5c7] leading-relaxed font-serif">
-            Discover direct literary dependence, shared Northwest Semitic roots, and cross-cultural archetypes across Hebrew Bible, Second Temple, Dead Sea Scrolls, Mesopotamian, Ugaritic, Classical, and Global traditions—with honest evidentiary classifications.
+            {t.dashboard.heroSubtitle}
           </p>
 
           <div className="pt-2 flex flex-wrap items-center gap-3">
@@ -192,14 +194,14 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
               onClick={() => onNavigate('GENESIS_6')}
               className="px-5 py-2.5 rounded-xl bg-[#c99738] hover:bg-[#dbab4c] text-[#12100e] text-xs sm:text-sm font-bold transition shadow-lg flex items-center gap-2"
             >
-              <span>Explore Genesis 6 Flagship Study</span>
+              <span>{t.dashboard.exploreArchiveBtn}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
             <button
               onClick={() => onNavigate('GRAPH')}
               className="px-5 py-2.5 rounded-xl bg-[#201a14] hover:bg-[#2b241c] border border-[#a48c68]/40 text-[#f5d77f] text-xs sm:text-sm font-semibold transition"
             >
-              Interactive Relationship Graph
+              {t.dashboard.graphNetworkBtn}
             </button>
           </div>
         </div>
@@ -210,10 +212,10 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-xl sm:text-2xl font-bold font-display text-[#f5d77f]">
-              Featured Comparative Discoveries
+              {t.dashboard.featuredHeading}
             </h2>
             <p className="text-xs text-[#a48c68]">
-              High-impact textual connections demonstrating primary evidence levels
+              {t.dashboard.featuredSubheading}
             </p>
           </div>
         </div>
@@ -228,7 +230,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
               <div className="flex items-center justify-between">
                 <EvidenceBadge level={feat.evidenceLevel} relationshipType={feat.relationshipType} />
                 <span className="text-xs text-[#c99738] group-hover:translate-x-1 transition-transform flex items-center gap-1 font-semibold">
-                  Compare <ChevronRight className="w-3.5 h-3.5" />
+                  {t.dashboard.compareAction} <ChevronRight className="w-3.5 h-3.5" />
                 </span>
               </div>
 
@@ -252,10 +254,10 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
       <div className="space-y-4 text-left">
         <div>
           <h2 className="text-xl sm:text-2xl font-bold font-display text-[#f5d77f]">
-            Research &amp; Exploration Modules
+            {t.dashboard.modulesHeading}
           </h2>
           <p className="text-xs text-[#a48c68]">
-            Navigate directly to any section of the ancient textual database
+            {t.dashboard.modulesSubheading}
           </p>
         </div>
 

@@ -1,15 +1,25 @@
 import React, { useState } from 'react';
 import { motifs } from '../../data/motifs';
 import { Motif } from '../../types';
+import { useLanguage } from '../../i18n/LanguageContext';
 import { Layers, Sparkles, BookOpen, Globe, HelpCircle } from 'lucide-react';
 
 export const MotifHubView: React.FC = () => {
+  const { t, language } = useLanguage();
   const [selectedMotifId, setSelectedMotifId] = useState<string>(motifs[0].id);
   const [categoryFilter, setCategoryFilter] = useState<string>('ALL');
 
   const selectedMotif = motifs.find(m => m.id === selectedMotifId) || motifs[0];
 
-  const categories = ['ALL', 'PRIMEVAL HISTORY', 'DIVINE BEINGS', 'COSMOLOGY', 'ESCHATOLOGY', 'RITUAL & WISDOM', 'SACRED SPACE'];
+  const categories = [
+    { id: 'ALL', label: t.motifs.allCategories },
+    { id: 'PRIMEVAL HISTORY', label: language === 'es' ? 'Historia Primordial' : language === 'pt' ? 'História Primordial' : 'Primeval History' },
+    { id: 'DIVINE BEINGS', label: language === 'es' ? 'Seres Divinos' : language === 'pt' ? 'Seres Divinos' : 'Divine Beings' },
+    { id: 'COSMOLOGY', label: language === 'es' ? 'Cosmología' : language === 'pt' ? 'Cosmologia' : 'Cosmology' },
+    { id: 'ESCHATOLOGY', label: language === 'es' ? 'Escatología' : language === 'pt' ? 'Escatologia' : 'Eschatology' },
+    { id: 'RITUAL & WISDOM', label: language === 'es' ? 'Ritual y Sabiduría' : language === 'pt' ? 'Ritual e Sabedoria' : 'Ritual & Wisdom' },
+    { id: 'SACRED SPACE', label: language === 'es' ? 'Espacio Sagrado' : language === 'pt' ? 'Espaço Sagrado' : 'Sacred Space' }
+  ];
 
   const filteredMotifs = categoryFilter === 'ALL'
     ? motifs
@@ -23,13 +33,13 @@ export const MotifHubView: React.FC = () => {
           <div>
             <div className="flex items-center gap-2 text-xs font-semibold text-[#c99738] uppercase tracking-wider">
               <Layers className="w-4 h-4" />
-              Comparative Mythology &amp; Cross-Cultural Motifs
+              {language === 'es' ? 'Mitología Comparada y Motivos Interculturales' : language === 'pt' ? 'Mitologia Comparada e Motivos Transculturais' : 'Comparative Mythology & Cross-Cultural Motifs'}
             </div>
             <h1 className="text-2xl md:text-3xl font-bold font-display text-[#f5d77f] mt-1">
-              Ancient Motif Hub &amp; Archetypes
+              {t.motifs.title}
             </h1>
             <p className="text-sm text-[#b8ad9e] mt-1 max-w-3xl">
-              Examine shared patterns across ancient civilizations—from Great Floods and Chaoskampf to Watcher rebellions, cosmic trees, and divine councils—while maintaining critical boundary distinctions.
+              {t.motifs.subtitle}
             </p>
           </div>
         </div>
@@ -38,15 +48,15 @@ export const MotifHubView: React.FC = () => {
         <div className="pt-2 flex items-center gap-1.5 overflow-x-auto pb-1 text-xs">
           {categories.map(cat => (
             <button
-              key={cat}
-              onClick={() => setCategoryFilter(cat)}
+              key={cat.id}
+              onClick={() => setCategoryFilter(cat.id)}
               className={`px-3 py-1 rounded-full whitespace-nowrap transition ${
-                categoryFilter === cat
+                categoryFilter === cat.id
                   ? 'bg-[#c99738]/20 border border-[#c99738] text-[#f5d77f] font-semibold'
                   : 'bg-[#1e1a16] border border-[#322a20] text-[#a48c68] hover:border-[#63533e]'
               }`}
             >
-              {cat}
+              {cat.label}
             </button>
           ))}
         </div>
@@ -57,7 +67,7 @@ export const MotifHubView: React.FC = () => {
         {/* Motif Selector List */}
         <div className="lg:col-span-4 space-y-2 max-h-[700px] overflow-y-auto pr-1">
           <div className="text-xs uppercase tracking-wider text-[#a48c68] font-semibold px-2 mb-2">
-            Catalogued Motifs ({filteredMotifs.length})
+            {language === 'es' ? 'Motivos Catalogados' : language === 'pt' ? 'Motivos Catalogados' : 'Catalogued Motifs'} ({filteredMotifs.length})
           </div>
           {filteredMotifs.map(motif => {
             const isSelected = motif.id === selectedMotif.id;
@@ -90,7 +100,7 @@ export const MotifHubView: React.FC = () => {
           <div className="p-6 rounded-2xl bg-[#161311] border border-[#a48c68]/30 shadow-xl space-y-5 text-left">
             <div>
               <span className="text-xs font-bold uppercase px-2.5 py-0.5 rounded bg-[#201a14] text-[#c99738] border border-[#c99738]/30">
-                {selectedMotif.category} &bull; Comparative Archetype
+                {selectedMotif.category} &bull; {language === 'es' ? 'Arquetipo Comparativo' : language === 'pt' ? 'Arquétipo Comparativo' : 'Comparative Archetype'}
               </span>
               <h2 className="text-2xl md:text-3xl font-bold font-display text-[#f5d77f] mt-1.5">
                 {selectedMotif.name}
@@ -104,7 +114,7 @@ export const MotifHubView: React.FC = () => {
             <div className="space-y-2 pt-3 border-t border-[#2d251d]">
               <h4 className="text-xs uppercase tracking-wider font-semibold text-[#c99738] flex items-center gap-1.5">
                 <BookOpen className="w-3.5 h-3.5" />
-                Biblical, Second Temple &amp; Jewish Textual Witnesses
+                {t.motifs.biblicalParallels}
               </h4>
               <div className="flex flex-wrap gap-2">
                 {selectedMotif.biblicalParallels.map((ref, idx) => (
@@ -122,7 +132,7 @@ export const MotifHubView: React.FC = () => {
             <div className="space-y-2 pt-3 border-t border-[#2d251d]">
               <h4 className="text-xs uppercase tracking-wider font-semibold text-[#60a5fa] flex items-center gap-1.5">
                 <Globe className="w-3.5 h-3.5" />
-                Ancient Near Eastern &amp; Global Comparative Parallels
+                {t.motifs.crossCulturalParallels}
               </h4>
               <div className="space-y-2">
                 {selectedMotif.crossCulturalParallels.map((par, idx) => (
@@ -138,7 +148,7 @@ export const MotifHubView: React.FC = () => {
             <div className="p-4 rounded-xl bg-[#14120f] border border-[#3a3025] space-y-2">
               <div className="text-xs uppercase tracking-wider font-semibold text-[#f5d77f] flex items-center gap-1.5">
                 <HelpCircle className="w-3.5 h-3.5 text-[#c99738]" />
-                Evidentiary Limits &amp; Scholarly Consensus
+                {t.motifs.scholarlyDebate}
               </div>
               <p className="text-xs text-[#c8beaf] leading-relaxed">
                 {selectedMotif.scholarlyDebate}

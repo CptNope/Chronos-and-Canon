@@ -1004,5 +1004,295 @@ sól skein sunnan á salar steina,
     motifs: ['divine_councils'],
     clickableTerms: ['son_of_man'],
     criticalApparatusNotes: 'Universally recognized in patristic and modern scholarship as the ancient pseudepigraphal source behind Jude 9 in the New Testament.'
+  },
+
+  // --- DEUTERONOMY 32:8–9 (SONS OF GOD / 4QDEUT^J) ---
+  {
+    id: 'deut_32_8_9',
+    textId: 'deuteronomy_32',
+    reference: 'Deuteronomy 32:8–9 (Song of Moses)',
+    title: 'The Division of the Nations According to the Sons of God',
+    cultureId: 'hebrew_israelite',
+    chronology: {
+      dateOfStorySetting: 'Plains of Moab (Farewell discourse of Moses)',
+      estimatedDateOfComposition: 'ca. 9th–8th century BCE (archaic poetic stratum)',
+      dateOfEarliestSurvivingManuscript: '4QDeut^j (4Q37) and 4QDeut^q (4Q44) from Qumran (ca. 100 BCE); Septuagint Greek (3rd c. BCE)',
+      numericCompositionBCE: -750
+    },
+    originalLanguage: 'Archaic Biblical Hebrew (Qumran 4QDeut^j reading)',
+    originalText: `בְּהַנְחֵל עֶלְיוֹן גּוֹיִם בְּהַפְרִידוֹ בְּנֵי אָדָם יַצֵּב גְּבֻלֹת עַמִּים לְמִסְפַּר בְּנֵי אֱלֹהִים׃ כִּי חֵלֶק יְהוָה עַמּוֹ יַעֲקֹב חֶבֶל נַחֲלָתוֹ׃`,
+    transliteration: `Bə-hanḥēl ʿElyōn gōyīm, bə-hafrīdō bənē ʾādām, yaṣṣēv gəvulōt ʿammīm lə-mispar bənē ʾĔlōhīm. Kī ḥēleq Yahweh ʿammō, Yaʿaqōv ḥevel naḥălātō.`,
+    englishTranslation: `When the Most High (Elyon) gave the nations their inheritance, when he divided humanity, he set the boundaries of the peoples according to the number of the sons of God (bene Elohim). But Yahweh's portion is his people, Jacob his allotted heritage.`,
+    translationAttribution: {
+      translator: 'Critical Scholarly Reconstruction based on 4QDeut^j and LXX',
+      sourceWork: 'The Dead Sea Scrolls Bible (Abegg, Flint, Ulrich)',
+      year: '1999',
+      license: 'Scholarly Fair Use Quotation',
+      attributionNotice: 'Restores the original archaic Hebrew reading confirmed by Dead Sea Scroll 4QDeut^j and the Septuagint (κατὰ ἀριθμὸν ἀγγέλων θεοῦ).'
+    },
+    motifs: ['divine_council', 'sacred_mountains'],
+    clickableTerms: ['elyon', 'bene_haelohim'],
+    criticalApparatusNotes: 'One of the most consequential textual discoveries from Qumran. The medieval Masoretic Text reads "sons of Israel" (לְמִסְפַּר בְּנֵי יִשְׂרָאֵל), whereas Dead Sea Scrolls 4QDeut^j and 4QDeut^q read "sons of God" (בני אלוהים), exactly matching the Septuagint. Emanuel Tov and Frank Moore Cross established that the Masoretic tradition sanitized the polytheistic/council terminology.'
+  },
+
+  // --- PSALM 82:1–8 (DIVINE ASSEMBLY) ---
+  {
+    id: 'psalm_82_1_8',
+    textId: 'psalm_82',
+    reference: 'Psalm 82:1–8',
+    title: 'Elohim Presiding in the Council of El and Judging the Gods',
+    cultureId: 'hebrew_israelite',
+    chronology: {
+      dateOfStorySetting: 'Heavenly Divine Council Assembly',
+      estimatedDateOfComposition: 'ca. 8th–6th century BCE',
+      dateOfEarliestSurvivingManuscript: '11QPs^a from Qumran; Aleppo Codex; Leningrad Codex',
+      numericCompositionBCE: -700
+    },
+    originalLanguage: 'Biblical Hebrew',
+    originalText: `אֱלֹהִים נִצָּב בַּעֲדַת־אֵל בְּקֶרֶב אֱלֹהִים יִשְׁפֹּט׃ עַד־מָתַי תִּשְׁפְּטוּ־עָוֶל וּפְנֵי רְשָׁעִים תִּשְׂאוּ־סֶלָה׃ ... אֲ‍נִי־אָמַרְתִּי אֱלֹהִים אַתֶּם וּבְנֵי עֶלְיוֹן כֻּלְּכֶם׃ אָכֵן כְּאָדָם תְּמוּתוּן וּכְאַחַד הַשָּׂרִים תִּפֹּלוּ׃ קוּמָה אֱלֹהִים שָׁפְטָה הָאָרֶץ כִּי־אַתָּה תִנְחַל בְּכָל־הַגּוֹיִם׃`,
+    transliteration: `ʾĔlōhīm niṣṣāv ba-ʿădat-ʾĒl, bə-qerev ʾĕlōhīm yišpōṭ: ʿAd-mātay tišpəṭū-ʿāwel ū-fənē rəšāʿīm tiśʾū-selāh?... ʾĂnī-ʾāmartī ʾĕlōhīm ʾattem ū-vənē ʿElyōn kulləkem: ʾĀkēn kə-ʾādām təmūtūn ū-kə-ʾaḥad haś-śārīm tippōlū. Qūmāh ʾĔlōhīm šofṭāh hā-ʾāretz, kī-ʾattāh tinḥal bə-kol-hag-gōyīm.`,
+    englishTranslation: `God stands in the assembly of El; in the midst of the gods he renders judgment: 'How long will you judge unjustly and show partiality to the wicked? Defend the weak and the orphan; uphold the cause of the poor and the oppressed!' ... 'I said, You are gods, and all of you sons of the Most High (bene Elyon). Nevertheless, like mortals you shall die, and fall like any prince.' Arise, O God, judge the earth, for you shall inherit all the nations!`,
+    translationAttribution: {
+      translator: 'Scholarly Translation (conforming to Masoretic Text and NRSV)',
+      sourceWork: 'The Holy Scriptures / Psalter',
+      year: '1989',
+      license: 'Public Domain',
+      attributionNotice: 'Masoretic Hebrew Text (BHS) and Dead Sea Scrolls Psalter evidence.'
+    },
+    motifs: ['divine_council'],
+    clickableTerms: ['elyon', 'bene_haelohim'],
+    criticalApparatusNotes: 'Directly replicates Northwest Semitic council terminology: עֲדַת־אֵל (adat-El) is identical to the Ugaritic phr mʿd / ʿdt ʾilm (assembly of El). Demonstrates the transition from monolatrous council theology to universal monotheism.'
+  },
+
+  // --- BAAL CYCLE: DEATH & RESURRECTION (KTU 1.6) ---
+  {
+    id: 'baal_vs_mot',
+    textId: 'baal_death_mot',
+    reference: 'Baal Cycle (KTU 1.6:II.30–37)',
+    title: 'Anat Cleaving Mot (Death) and Baal\'s Cosmic Resurgence',
+    cultureId: 'canaanite_ugaritic',
+    chronology: {
+      dateOfStorySetting: 'Primeval seasonal myth of drought and cosmic resurrection',
+      estimatedDateOfComposition: 'ca. 1350–1200 BCE',
+      dateOfEarliestSurvivingManuscript: 'Ras Shamra cuneiform clay tablets KTU 1.6 (Damascus Museum RS 2.[009])',
+      numericCompositionBCE: -1250
+    },
+    originalLanguage: 'Ugaritic cuneiform',
+    originalText: `𐎚𐎜𐎃𐎄 𐎎𐎚 𐎁𐎐 𐎛𐎍𐎎 𐎁𐎃𐎗𐎁 𐎚𐎁𐎖𐎓𐎐𐎐 𐎁𐎉𐎗𐎃 𐎚𐎄𐎗𐎹𐎐𐎐 𐎁𐎛𐎌𐎚 𐎚𐎌𐎗𐎔𐎐𐎐 𐎁𐎗𐎊𐎎 𐎚𐎉𐎈𐎐𐎐 𐎁𐎌𐎄 𐎚𐎄𐎗𐎓𐎐𐎐`,
+    transliteration: `Tiʾḫadu Mōta bina ʾilīma; bi-ḫarbi tibqaʿunanni, bi-ḫaṭri tidrayunanni, bi-ʾišati tišrupunanni, bi-raḥayimi tiṭḥanunanni, bi-šadē tidraʿunanni.`,
+    englishTranslation: `She seized Mot (Death), the son of El; with a sword she cleaved him; with a sieve she winnowed him; with fire she burned him; with millstones she ground him; in the field she sowed him! His flesh the birds ate; his limbs the fowl devoured. Piece by piece was scattered... Then the heavens rained oil, and the ravines ran with honey! And I knew that Mighty Baal was alive, that the Prince, Lord of the Earth, existed!`,
+    translationAttribution: {
+      translator: 'Michael D. Coogan and Mark S. Smith',
+      sourceWork: 'Stories from Ancient Canaan',
+      year: '2012',
+      license: 'Scholarly Fair Use Quotation',
+      attributionNotice: 'Westminster John Knox Press scholarly translation of Ras Shamra tablets.'
+    },
+    motifs: ['chaoskampf', 'underworld_descent'],
+    clickableTerms: ['lotan', 'sheol'],
+    criticalApparatusNotes: 'Mot (Death) is depicted with a cosmic appetite that swallows gods and men alive. Isaiah 25:8 deliberately reverses this Canaanite mythology: "He will swallow up death [Mot] forever (billa ha-mavet la-netzah)", which Paul quotes in 1 Cor 15:54 ("Death is swallowed up in victory").'
+  },
+
+  // --- THE CODE OF HAMMURABI (LEX TALIONIS) ---
+  {
+    id: 'code_of_hammurabi_lex',
+    textId: 'code_of_hammurabi',
+    reference: 'Code of Hammurabi (§§196–200 & Epilogue)',
+    title: 'Lex Talionis and the Sun God of Justice (Shamash)',
+    cultureId: 'mesopotamian',
+    chronology: {
+      dateOfStorySetting: 'Reign of Hammurabi of Babylon (ca. 1792–1750 BCE)',
+      estimatedDateOfComposition: 'ca. 1754 BCE',
+      dateOfEarliestSurvivingManuscript: 'Diorite Stele from Susa (Louvre Sb 8, 18th c. BCE)',
+      numericCompositionBCE: -1754
+    },
+    originalLanguage: 'Old Babylonian Akkadian cuneiform',
+    originalText: `[Akkadian Cuneiform §§196–200]: šumma awīlum īn mār awīlim uḫtappid, īnšu uḫappadū. šumma eṣemti awīlim išteber, eṣemtīšu išebbirū...`,
+    transliteration: `šumma awīlum īn mār awīlim uḫtappid, īnšu uḫappadū. šumma eṣemti awīlim išteber, eṣemtīšu išebbirū. šumma šin prestige awīlim išteber, šinnašu išebbirū.`,
+    englishTranslation: `If a citizen has destroyed the eye of another citizen, they shall destroy his eye. If he has broken the bone of a citizen, they shall break his bone. If he has knocked out the tooth of a citizen of his own rank, they shall knock out his tooth. ... That the strong might not injure the weak, that the orphan and widow might have justice, I inscribed my precious words upon my stele before the statue of myself as the king of justice, in the presence of Shamash, the great judge of heaven and earth.`,
+    translationAttribution: {
+      translator: 'L.W. King',
+      sourceWork: 'The Code of Hammurabi',
+      year: '1910',
+      license: 'Public Domain',
+      attributionNotice: 'Classic critical edition of the Susa stele (Louvre Museum).'
+    },
+    motifs: ['lawgiver_on_mountain'],
+    clickableTerms: ['maat'],
+    criticalApparatusNotes: 'Matches the exact syntactical phrasing and legal formula of Exodus 21:23–25 ("eye for eye, tooth for tooth, hand for hand, foot for foot"). Both formulate case law (casuistic form: "if a person does X, then Y shall happen") rooted in ancient Near Eastern customary jurisprudence.'
+  },
+
+  // --- DESCENT OF ISHTAR TO THE NETHERWORLD ---
+  {
+    id: 'ishtar_netherworld_descent',
+    textId: 'ishtar_descent',
+    reference: 'Descent of Ishtar (Lines 1–15 & 40–50)',
+    title: 'The Seven Gates of the Land of No Return (Irkalla)',
+    cultureId: 'mesopotamian',
+    chronology: {
+      dateOfStorySetting: 'Primordial netherworld journey',
+      estimatedDateOfComposition: 'ca. 1200 BCE (Standard Babylonian version)',
+      dateOfEarliestSurvivingManuscript: 'Cuneiform tablets from Ashurbanipal\'s Library at Nineveh (K. 162)',
+      numericCompositionBCE: -1200
+    },
+    originalLanguage: 'Standard Babylonian Akkadian',
+    originalText: `ana māt lā tāri qaqqar E-reš-kī-gal, Ištar mārat Sîn uznīša iškun... ana bīt e-ṭe-e šubat Irkalla, ana bīti ša ēribūšu lā uṣṣû...`,
+    transliteration: `ana māt lā tāri qaqqar Ereškīgal, Ištar mārat Sîn uznīša iškun... ana bīt eṭê šubat Irkalla, ana bīti ša ēribūšu lā uṣṣû, ana ḫarrāni ša alaktāša lā tārat...`,
+    englishTranslation: `To the Land of No Return, the realm of Ereshkigal, Ishtar daughter of Sin set her mind. The goddess set her mind to the dark house, the dwelling of Irkalla; to the house from which he who enters never departs; on the road whose path turns not back; to the house where those who enter are deprived of light, where dust is their sustenance and clay their food, where they see no light and dwell in darkness, clothed like birds in wings of feathers, where dust lies thick upon door and bolt.`,
+    translationAttribution: {
+      translator: 'E.A. Wallis Budge',
+      sourceWork: 'The Babylonian Legends of the Creation and the Fight between Bel and the Dragon',
+      year: '1921',
+      license: 'Public Domain',
+      attributionNotice: 'British Museum classic translation of Nineveh tablet K. 162.'
+    },
+    motifs: ['underworld_descent'],
+    clickableTerms: ['sheol', 'tartarus'],
+    criticalApparatusNotes: 'Provides the vivid Mesopotamian blueprint for the Hebrew underworld of Sheol (Job 10:21–22 "land of darkness and deep shadow... from which I shall not return"). In both, the dead dwell as inert shades eating dust in subterranean gloom.'
+  },
+
+  // --- HESIOD: WORKS AND DAYS (THE FIVE AGES) ---
+  {
+    id: 'hesiod_five_ages',
+    textId: 'hesiod_works_days',
+    reference: 'Hesiod Works and Days (Lines 109–130)',
+    title: 'The Golden and Silver Races of Declining Humanity',
+    cultureId: 'greco_roman',
+    chronology: {
+      dateOfStorySetting: 'Cosmic history from Kronos to the present Iron Age',
+      estimatedDateOfComposition: 'ca. 700 BCE',
+      dateOfEarliestSurvivingManuscript: 'Hellenistic papyri and medieval Byzantine codices',
+      numericCompositionBCE: -700
+    },
+    originalLanguage: 'Ancient Epic Greek',
+    originalText: `Χρύσεον μὲν πρώτιστα γένος μερόπων ἀνθρώπων ἀθάνατοι ποίησαν Ὀλύμπια δώματ᾽ ἔχοντες... οἳ μὲν ἐπὶ Κρόνου ἦσαν, ὅτ᾽ οὐρανῷ ἐμβασίλευεν· ὥστε θεοὶ δ᾽ ἔζωον ἀκηδέα θυμὸν ἔχοντες... Δεύτερον αὖτε γένος πολὺ χειρότερον μετόπισθεν ἀργύρεον ποίησαν Ὀλύμπια δώματ᾽ ἔχοντες...`,
+    transliteration: `Chryseon men prōtista genos meropōn anthrōpōn athanatoi poiēsan Olympia dōmat' echontes... hoi men epi Kronou ēsan, hot' ouranōi embasileuen; hōste theoi d' ezōon akēdea thymon echontes... Deuteron aute genos poly cheiroteron metopisthen argyreon poiēsan Olympia dōmat' echontes...`,
+    englishTranslation: `First of all, the deathless gods who dwell on Olympus created a Golden race of mortal men. These lived in the time of Kronos when he was king in heaven; and they lived like gods without sorrow of heart, remote from toil and grief. Miserable old age did not rest upon them... and they died as though subdued by sleep. ... Afterwards, those who dwell on Olympus made a second generation, far worse, of Silver, neither in stature like the golden race nor in mind. A child was brought up by his mother a hundred years, playing as a mere babe... and when they were grown, they lived only a short time in sorrows because of their foolishness.`,
+    translationAttribution: {
+      translator: 'Hugh G. Evelyn-White',
+      sourceWork: 'Hesiod, The Homeric Hymns and Homerica (Loeb Classical Library)',
+      year: '1914',
+      license: 'Public Domain',
+      attributionNotice: 'Harvard University Press classic Loeb edition.'
+    },
+    motifs: ['heroic_ages'],
+    clickableTerms: ['titans', 'gibborim'],
+    criticalApparatusNotes: 'Matches the metal sequence of the four-kingdom vision in Daniel 2:31–45 (Gold, Silver, Bronze, Iron, Clay). Demonstrates an ancient pan-Mediterranean and Near Eastern historiographical model of cosmic decline.'
+  },
+
+  // --- JUBILEES 10:1–11 (BINDING OF DEMONS & MASTEMA) ---
+  {
+    id: 'jubilees_10_demons',
+    textId: 'jubilees_demons',
+    reference: 'Book of Jubilees 10:1–11',
+    title: 'The Spirits of the Drowned Nephilim and Prince Mastema',
+    cultureId: 'second_temple_jewish',
+    chronology: {
+      dateOfStorySetting: 'Post-flood era of Noah and his grandsons',
+      estimatedDateOfComposition: 'ca. 160–150 BCE',
+      dateOfEarliestSurvivingManuscript: 'Qumran Cave 4 Hebrew scrolls (4Q216); Ge\'ez manuscripts (EMML 4437)',
+      numericCompositionBCE: -150
+    },
+    originalLanguage: 'Ge\'ez (translated from Hebrew Vorlage)',
+    originalText: `[Ge'ez Jubilees 10:3, 8]: ወጸለየ ኖኅ ቅድመ እግዚአብሔር አምላኩ... ወመጽአ መልአከ እግዚአብሔር ወነገረነ ከመ ንእስሮሙ... ወመጽአ መስቴማ መልአከ መናፍስት ወይቤ እግዚእ ፈጣሪ ይትረፉ እምኔሆሙ ቅድሜየ...`,
+    transliteration: `Wa-ṣallaya Nōḫ qədma ʾƎgziʾabḥēr ʾAmlāku... Wa-maṣʾa Mastēmā malʾaka manāfəst wa-yəbē: ʾƎgzīʾ faṭārī, yətrafū ʾəmnēhōmu qədmēya...`,
+    englishTranslation: `And in the third week of this jubilee, the unclean demons began to lead astray the children of the sons of Noah, and to blind and destroy them. And Noah prayed before the Lord his God: 'God of the spirits of all flesh, let not evil spirits rule over them... let them be shut up in the place of condemnation, and let them not destroy your servant's sons!' And the Lord commanded us to bind all of them. But the chief of the spirits, Mastema, came and said: 'Lord, Creator, let some of them remain before me, and let them listen to my voice and do all that I shall say to them; for if some of them are not left to me, I shall not be able to execute the power of my will on the sons of men, for these are for corruption and leading astray before my judgment!' And God commanded: 'Let the tenth part of them remain before him, and let nine parts descend into the place of condemnation.'`,
+    translationAttribution: {
+      translator: 'R.H. Charles',
+      sourceWork: 'The Apocrypha and Pseudepigrapha of the Old Testament, Vol. II',
+      year: '1913',
+      license: 'Public Domain',
+      attributionNotice: 'Clarendon Press classic critical translation.'
+    },
+    motifs: ['origin_of_demons', 'watchers_rebellion', 'giants'],
+    clickableTerms: ['mastema', 'nephilim', 'watchers'],
+    criticalApparatusNotes: 'Fundamental Second Temple text establishing that demons are the disembodied spirits of the drowned Nephilim. Explains New Testament passages where demons roam waterless places (Matt 12:43) and plead not to be sent to the abyss before the appointed time (Luke 8:31).'
+  },
+
+  // --- COMMUNITY RULE: TWO SPIRITS (1QS III.17–25) ---
+  {
+    id: 'community_rule_two_spirits',
+    textId: 'community_rule_1qs',
+    reference: 'Community Rule (1QS III.17–25)',
+    title: 'The Treatise on the Two Spirits: Prince of Lights and Angel of Darkness',
+    cultureId: 'dead_sea_scrolls',
+    chronology: {
+      dateOfStorySetting: 'Eschatological cosmic dualism in the Judean Wilderness',
+      estimatedDateOfComposition: 'ca. 120–100 BCE',
+      dateOfEarliestSurvivingManuscript: '1QS from Qumran Cave 1 (ca. 100–75 BCE, Shrine of the Book)',
+      numericCompositionBCE: -100
+    },
+    originalLanguage: 'Late Biblical Hebrew',
+    originalText: `הוּא בָרָא אֱנוֹשׁ לְמֶמְשֶׁלֶת תֵּבֵל וַיָּשֶׂם לוֹ שְׁתֵּי רוּחוֹת לְהִתְהַלֵּךְ בָּם עַד מוֹעֵד פְּקֻדָּתוֹ: הֵמָּה רוּחוֹת הָאֱמֶת וְהָעָוֶל: בִּמְעוֹן אוֹר תּוֹלְדוֹת הָאֱמֶת וּמִמְּקוֹר חֹשֶׁךְ תּוֹלְדוֹת הָעָוֶל: בְּיַד שַׂר אוֹרִים מֶמְשֶׁלֶת כָּל בְּנֵי צֶדֶק... וּבְיַד מַלְאַךְ חֹשֶׁךְ כָּל מֶמְשֶׁלֶת בְּנֵי עָוֶל...`,
+    transliteration: `Hūʾ vārāʾ ʾĕnōš lə-memšelet tēvēl, wa-yāśem lō šətē rūḥōt lə-hithallēk bām ʿad mōʿēd pəquddātō: hēmmāh rūḥōt hā-ʾĕmet wə-hā-ʿāwel. Bimʿōn ʾōr tōlədōt hā-ʾĕmet, ū-mi-məqōr ḥōšek tōlədōt hā-ʿāwel. Bə-yad Śar ʾŌrīm memšelet kol bənē ṣedeq... ū-və-yad Malʾak Ḥōšek kol memšelet bənē ʿāwel...`,
+    englishTranslation: `He created humanity to have dominion over the world, and designed for him two spirits, so that he might walk in them until the appointed time of his visitation: they are the spirits of Truth and Injustice. In the spring of Light are the generations of Truth, and from the well of Darkness are the generations of Injustice. The Prince of Lights rules over all the children of righteousness, and in the paths of light they walk; but the Angel of Darkness rules over all the dominion of the children of injustice, and in the paths of darkness they walk.`,
+    translationAttribution: {
+      translator: 'Geza Vermes',
+      sourceWork: 'The Complete Dead Sea Scrolls in English',
+      year: '1997 / Scholarly Fair Use Quotation',
+      license: 'Scholarly Fair Use Quotation',
+      attributionNotice: 'Penguin Classics standard translation of the Qumran manuscripts.'
+    },
+    motifs: ['two_ways_two_spirits'],
+    clickableTerms: ['archons', 'mastema'],
+    criticalApparatusNotes: 'Reflects Persian Zoroastrian dualistic influence (Spenta Mainyu vs Angra Mainyu) synthesized into monotheistic Jewish covenant theology. Directly parallels the Johannine contrast between light and darkness (John 1:5, 8:12) and 1 John 4:6 ("the Spirit of Truth and the spirit of deception").'
+  },
+
+  // --- EGYPTIAN BOOK OF THE DEAD: SPELL 125 (WEIGHING OF THE HEART) ---
+  {
+    id: 'egyptian_weighing_heart',
+    textId: 'egyptian_book_of_dead',
+    reference: 'Papyrus of Ani (Book of the Dead Spell 125)',
+    title: 'The Psychostasia: Weighing the Heart Against the Feather of Ma\'at',
+    cultureId: 'egyptian',
+    chronology: {
+      dateOfStorySetting: 'Post-mortem Hall of the Two Truths before Osiris',
+      estimatedDateOfComposition: 'ca. 1550–1250 BCE',
+      dateOfEarliestSurvivingManuscript: 'Papyrus of Ani (BM EA 10470, ca. 1250 BCE, 19th Dynasty)',
+      numericCompositionBCE: -1250
+    },
+    originalLanguage: 'Middle Egyptian Hieroglyphic',
+    originalText: `jb=j n mwt=j, jb=j n ḫprw=j, m ʿḥʿ r=j m mtrw, m ṯsf r=j m ḏAḏA.t, m jr rqw r=k r=j m-bAH jr.y-mḫA.t...`,
+    transliteration: `jb=j n mwt=j, jb=j n ḫprw=j, m ʿḥʿ r=j m mtrw, m ṯsf r=j m ḏAḏA.t, m jr rqw r=k r=j m-bAH jr.y-mḫA.t...`,
+    englishTranslation: `O my heart which I received from my mother! O my heart of my diverse ages! Stand not up as a witness against me! Confront me not before the judges! Cause not my name to stink before the great court of Osiris! Speak no falsehood against me in the presence of the Great God, the Lord of the West! Lo, you are the ka which is in my body, the protector who makes my limbs sound. Behold, Thoth speaks: 'Hear this verdict! The heart of Osiris Ani has indeed been weighed, and his soul has stood as witness for him. His score has been found true on the Great Balance; no sin of his has been discovered; he was not greedy of offerings in the temples!'`,
+    translationAttribution: {
+      translator: 'E.A. Wallis Budge',
+      sourceWork: 'The Egyptian Book of the Dead (The Papyrus of Ani in the British Museum)',
+      year: '1895',
+      license: 'Public Domain',
+      attributionNotice: 'British Museum classic hieroglyphic edition.'
+    },
+    motifs: ['cosmic_scales_judgment'],
+    clickableTerms: ['maat'],
+    criticalApparatusNotes: 'The visual balance where the heart is weighed against the ostrich feather of Ma\'at is the supreme ancient icon of moral accountability, reflected directly in biblical texts: Daniel 5:27 ("Tekel: you have been weighed in the balances and found wanting") and Job 31:6 ("Let me be weighed on a just balance, that God may know my integrity").'
+  },
+
+  // --- APOCRYPHON OF JOHN (NAG HAMMADI NHC II, 1) ---
+  {
+    id: 'apocryphon_of_john_passage',
+    textId: 'apocryphon_of_john',
+    reference: 'Apocryphon of John (NHC II, 1:29:15–30:10)',
+    title: 'Yaldabaoth and the Counterfeit Spirit: The Gnostic Genesis 6',
+    cultureId: 'second_temple_jewish',
+    chronology: {
+      dateOfStorySetting: 'Primordial cosmic corruption and origin of matter',
+      estimatedDateOfComposition: 'ca. 120–150 CE',
+      dateOfEarliestSurvivingManuscript: 'Nag Hammadi Codex II (ca. 350 CE, Coptic Museum, Cairo)',
+      numericCompositionBCE: 140
+    },
+    originalLanguage: 'Sahidic Coptic',
+    originalText: `[Coptic NHC II, 1:29]: ⲁⲩⲱ ⲛ̅ⲧⲉⲣⲉ ⲡⲁⲣⲭⲱⲛ ⲛⲁⲩ ϫⲉ ⲁⲩϫⲓⲥⲉ ⲉϩⲟⲩⲛ ⲉⲣⲟϥ... ⲁϥⲧⲁⲙⲓⲟ ⲛ̅ⲟⲩⲡⲛⲉⲩⲙⲁ ⲛ̅ⲁⲛⲧⲓⲙⲓⲙⲟⲛ... ⲁⲩϫⲓ ⲛ̅ϩⲉⲛϩⲓⲟⲙⲉ ⲁⲩϫⲡⲟ ⲛ̅ϩⲉⲛϣⲏⲣⲉ ⲉⲩⲟ ⲛ̅ⲅⲓⲅⲁⲥ...`,
+    transliteration: `Auō ntere parxōn nau je aujise ehoun erof... aftamio n-oupneuma n-antimimon... auji n-henhiome aujpo n-henshēre euo n-gigas...`,
+    englishTranslation: `And when the chief archon (Yaldabaoth) saw that human beings were exalted above him in thought, he took counsel with his authorities (archons). They created fate (heimarmene), and bound the gods of the heavens, angels, demons, and human beings with measures, seasons, and times. Then the chief archon repented of all that had come into being through him. And he sent his angels to the daughters of men, so that they might take them for themselves and raise up offspring for their pleasure. And they brought gold, silver, copper, iron, and all kinds of craft to humanity, leading them astray into darkness. And their angels took women and begat children out of darkness, giants who oppressed humanity; and they created the counterfeit spirit (antimimon pneuma) which blinds the human heart to the transcendent Light.`,
+    translationAttribution: {
+      translator: 'Frederik Wisse',
+      sourceWork: 'The Nag Hammadi Library in English (ed. James M. Robinson)',
+      year: '1988 / Scholarly Fair Use Quotation',
+      license: 'Scholarly Fair Use Quotation',
+      attributionNotice: 'Harper & Row authoritative translation of the Coptic Gnostic codices.'
+    },
+    motifs: ['watchers_rebellion', 'forbidden_knowledge', 'giants', 'divine_human_offspring'],
+    clickableTerms: ['yaldabaoth', 'archons', 'watchers', 'nephilim'],
+    criticalApparatusNotes: 'Blends Genesis 6:1–4 with 1 Enoch 7–8 (angels teaching metalworking and cosmetics) into an esoteric metaphysical framework, showing how Second Temple Enochic traditions were adapted by early Christian Gnostics.'
   }
 ];

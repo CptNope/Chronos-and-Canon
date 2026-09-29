@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { texts } from '../../data/texts';
 import { manuscripts } from '../../data/manuscripts';
+import { useLanguage } from '../../i18n/LanguageContext';
 import { Clock, Calendar, Filter, Sparkles, AlertCircle } from 'lucide-react';
 
 export const TimelineView: React.FC = () => {
+  const { t, language } = useLanguage();
   const [timelineGrouping, setTimelineGrouping] = useState<'COMPOSITION' | 'SETTING' | 'MANUSCRIPT'>('COMPOSITION');
   const [filterCategory, setFilterCategory] = useState<string>('ALL');
 
@@ -22,13 +24,13 @@ export const TimelineView: React.FC = () => {
           <div>
             <div className="flex items-center gap-2 text-xs font-semibold text-[#c99738] uppercase tracking-wider">
               <Clock className="w-4 h-4" />
-              Chronological Stratigraphy
+              {t.timeline.title}
             </div>
             <h1 className="text-2xl md:text-3xl font-bold font-display text-[#f5d77f] mt-1">
-              Ancient Text &amp; Manuscript Timeline
+              {language === 'es' ? 'Cronología de Textos y Manuscritos Antiguos' : language === 'pt' ? 'Linha do Tempo de Textos e Manuscritos Antigos' : 'Ancient Text & Manuscript Timeline'}
             </h1>
             <p className="text-sm text-[#b8ad9e] mt-1 max-w-3xl">
-              Strict historical distinction between when a narrative is set, when the text was composed, and when our earliest physical manuscript witness was written.
+              {t.timeline.subtitle}
             </p>
           </div>
 
@@ -42,7 +44,7 @@ export const TimelineView: React.FC = () => {
                   : 'text-[#a48c68] hover:text-[#e8e2d5]'
               }`}
             >
-              By Composition Date
+              {language === 'es' ? 'Por Fecha de Composición' : language === 'pt' ? 'Por Data de Composição' : 'By Composition Date'}
             </button>
             <button
               onClick={() => setTimelineGrouping('SETTING')}
@@ -52,7 +54,7 @@ export const TimelineView: React.FC = () => {
                   : 'text-[#a48c68] hover:text-[#e8e2d5]'
               }`}
             >
-              By Story Setting
+              {language === 'es' ? 'Por Escenario del Relato' : language === 'pt' ? 'Por Cenário do Relato' : 'By Story Setting'}
             </button>
           </div>
         </div>
@@ -61,10 +63,18 @@ export const TimelineView: React.FC = () => {
         <div className="p-4 rounded-xl bg-amber-950/25 border border-amber-600/30 text-amber-200/90 text-xs leading-relaxed space-y-1">
           <div className="flex items-center gap-2 font-bold uppercase tracking-wider text-amber-300">
             <AlertCircle className="w-4 h-4 text-amber-400" />
-            Scholarly Method: The Fallacy of Collapsing Setting into Composition
+            {language === 'es'
+              ? 'Método Académico: La falacia de colapsar el escenario narrativo en la fecha de composición'
+              : language === 'pt'
+              ? 'Método Acadêmico: A falácia de colapsar o cenário narrativo na data de composição'
+              : 'Scholarly Method: The Fallacy of Collapsing Setting into Composition'}
           </div>
           <p>
-            Ancient pseudepigrapha and mythological works (such as 1 Enoch, Jubilees, or Atrahasis) frequently frame their narratives in primeval or antediluvian times ("Claimed Setting"). However, critical scholarship dates their actual written codification to specific historical crises (Hellenistic, Exilic, or Late Bronze Age), while our physical manuscript witnesses may date centuries later still (e.g., Qumran scrolls or medieval codices).
+            {language === 'es'
+              ? 'Las obras seudoepigráficas y mitológicas antiguas (como 1 Enoc, Jubileos o Atrahasis) con frecuencia sitúan sus relatos en tiempos primordiales o prediluvianos ("Escenario del Relato"). Sin embargo, la crítica textual e histórica sitúa su composición redactada en crisis históricas precisas (época helenística, exilio o Bronce Tardío), mientras que nuestros manuscritos físicos sobrevivientes pueden datar de siglos más tarde todavía.'
+              : language === 'pt'
+              ? 'As obras pseudoepígrafas e mitológicas antigas (como 1 Enoque, Jubileus ou Atrahasis) frequentemente situam as suas narrativas em tempos primordiais ou pré-diluvianos ("Cenário do Relato"). Contudo, a crítica textual e histórica data a sua composição real em crises históricas específicas, ao passo que os nossos manuscritos físicos sobreviventes podem datar de séculos mais tarde ainda.'
+              : 'Ancient pseudepigrapha and mythological works (such as 1 Enoch, Jubilees, or Atrahasis) frequently frame their narratives in primeval or antediluvian times ("Claimed Setting"). However, critical scholarship dates their actual written codification to specific historical crises, while our physical manuscript witnesses may date centuries later still.'}
           </p>
         </div>
       </div>
@@ -104,7 +114,7 @@ export const TimelineView: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-2">
                 <div className="p-3 rounded-xl bg-[#1b1713] border border-[#2b241c] space-y-1">
                   <div className="text-[10px] uppercase font-bold text-[#c99738]">
-                    1. Claimed Setting
+                    {language === 'es' ? '1. Escenario del Relato' : language === 'pt' ? '1. Cenário do Relato' : '1. Claimed Setting'}
                   </div>
                   <div className="text-xs text-[#e8e2d5] font-serif">
                     {text.chronology.dateOfStorySetting}
@@ -113,7 +123,7 @@ export const TimelineView: React.FC = () => {
 
                 <div className="p-3 rounded-xl bg-[#1b1713] border border-[#2b241c] space-y-1">
                   <div className="text-[10px] uppercase font-bold text-[#60a5fa]">
-                    2. Estimated Composition
+                    {language === 'es' ? '2. Composición Estimada' : language === 'pt' ? '2. Composição Estimada' : '2. Estimated Composition'}
                   </div>
                   <div className="text-xs text-[#e8e2d5] font-serif">
                     {text.chronology.estimatedDateOfComposition}
@@ -122,7 +132,7 @@ export const TimelineView: React.FC = () => {
 
                 <div className="p-3 rounded-xl bg-[#1b1713] border border-[#2b241c] space-y-1">
                   <div className="text-[10px] uppercase font-bold text-[#34d399]">
-                    3. Earliest Surviving MS
+                    {language === 'es' ? '3. Manuscrito Más Antiguo' : language === 'pt' ? '3. Manuscrito Mais Antigo' : '3. Earliest Surviving MS'}
                   </div>
                   <div className="text-xs text-[#e8e2d5] font-serif">
                     {text.chronology.dateOfEarliestSurvivingManuscript}
@@ -132,7 +142,9 @@ export const TimelineView: React.FC = () => {
 
               {/* Physical Witnesses */}
               <div className="pt-2 text-xs text-[#8e806e] flex items-center gap-1.5 flex-wrap">
-                <strong className="text-[#a48c68]">Primary Witness Scrolls:</strong>
+                <strong className="text-[#a48c68]">
+                  {language === 'es' ? 'Testigos Manuscritos Primarios:' : language === 'pt' ? 'Testemunhos Manuscritos Primários:' : 'Primary Witness Scrolls:'}
+                </strong>
                 {text.primaryManuscriptWitnesses.map((witness, i) => (
                   <span key={i} className="px-2 py-0.5 rounded bg-[#100e0c] border border-[#262019] text-[#b8ad9e] font-mono text-[11px]">
                     {witness}

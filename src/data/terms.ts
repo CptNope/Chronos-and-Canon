@@ -252,5 +252,89 @@ export const ancientTerms: AncientTerm[] = [
     etymology: "From K'iche' root xib' (\"to fear, frighten\") + -al + -b'a (\"place\").",
     scholarlyNotes: 'The watery subterranean underworld entered through caves, where the Twelve Lords of Death test visitors in the Dark House, Razor House, Cold House, Jaguar House, and Bat House. The Hero Twins descend into Xibalba to avenge their father and ultimately triumph over death.',
     relatedTerms: ['sheol', 'tartarus']
+  },
+  {
+    id: 'apkallu',
+    term: 'Apkallu (Seven Sages)',
+    originalScript: '𒉣𒈨 (abgal / apkallu)',
+    language: 'Akkadian & Sumerian',
+    transliteration: 'apkallū (Sumerian: abgal)',
+    literalMeaning: 'Wise ones / Sages / Masters of crafts and cosmic secrets',
+    occurrences: ['Uruk King List', 'Epic of Erra', 'Berosus Babyloniaca', 'Bit Meseri ritual tablets'],
+    etymology: 'From Sumerian ab (water) + gal (great) = "master of the subterranean fresh waters (Apsu)".',
+    scholarlyNotes: 'The seven antediluvian sages sent by Enki/Ea to teach civilization, writing, and sciences to humanity before the flood. Several post-flood apkallu were said to be two-thirds divine and one-third human, and incurred divine wrath. Modern Assyriologists (e.g., Helge Kvanvig, Amar Annus) have proven that the biblical/Enochic polemic of the Watchers teaching illicit sciences was formulated directly against the Mesopotamian veneration of the apkallu.',
+    relatedTerms: ['watchers', 'gibborim']
+  },
+  {
+    id: 'lotan',
+    term: 'Lotan (Lītanu / Leviathan)',
+    originalScript: '𐎍𐎚𐎐',
+    language: 'Ugaritic',
+    transliteration: 'lōtānu / lītanu',
+    literalMeaning: 'The Coiled / Twisting One; Primeval Seven-Headed Sea Serpent',
+    occurrences: ['KTU 1.5:I.1–3', 'KTU 1.3:III.40–42', 'Isaiah 27:1', 'Psalm 74:14'],
+    etymology: 'Direct linguistic predecessor and exact etymological cognate of Hebrew לִוְיָתָן (Liwyātān / Leviathan), from root l-w-y ("to twist, coil, turn").',
+    scholarlyNotes: 'In the Ugaritic Baal Cycle, Mot mocks Baal for defeating "Lotan, the fleeing serpent (ltn btn brh), the twisting serpent (btn ʿqltn), the tyrant with seven heads (slyt d.sbʿt rasm)". Isaiah 27:1 quotes this Canaanite poetic couplet almost verbatim in Hebrew ("In that day the LORD with his hard and great and strong sword will punish Leviathan the fleeing serpent [liwyatan nahash bariah], Leviathan the twisting serpent [liwyatan nahash aqallaton]").',
+    relatedTerms: ['chaoskampf', 'tiamat']
+  },
+  {
+    id: 'mastema',
+    term: 'Prince Mastema',
+    originalScript: 'מַשְׂטֵמָה',
+    language: 'Biblical Hebrew & Ge\'ez',
+    transliteration: 'maśṭēmāh',
+    literalMeaning: 'Hostility, Enmity, Animosity, Malice',
+    occurrences: ['Hosea 9:7–8', 'Book of Jubilees 10:8, 11:5, 17:16, 48:2', 'Community Rule (1QS)', 'Damascus Document (CD)'],
+    etymology: 'Abstract noun formed from the Hebrew root שָׂטַם (śatam, "to cherish animosity, persecute, bear a grudge"), related to the root שָׂטָן (śatan, "adversary").',
+    scholarlyNotes: 'In the Book of Jubilees, Mastema is the leader of the evil spirits (the disembodied souls of the drowned Nephilim). When Noah prays for God to bind all demons, Mastema successfully requests that one-tenth of them remain under his command to execute divine tests and punishments upon corrupt humanity. This bridges the Old Testament accuser figure with the developed New Testament concept of Satan as "prince of this world".',
+    relatedTerms: ['origin_of_demons', 'watchers']
+  },
+  {
+    id: 'maat',
+    term: 'Ma\'at (Truth & Cosmic Balance)',
+    originalScript: '𓐙𓌃𓏏𓆄 (mꜣʿt)',
+    language: 'Ancient Egyptian',
+    transliteration: 'mꜣʿt (Maat)',
+    literalMeaning: 'Truth, Justice, Righteousness, Cosmic Order, Harmony',
+    occurrences: ['Book of the Dead Spell 125', 'Maxims of Ptahhotep', 'Tomb of Rekhmire'],
+    etymology: 'Derived from the Egyptian root mꜣʿ ("to be true, straight, upright, just"). Represented visually by the ostrich feather.',
+    scholarlyNotes: 'The foundational ethical and cosmic concept in Egyptian religion. In the afterlife Hall of the Two Truths, the heart (jb) of the deceased was placed on the balance against the feather of Ma\'at. If the heart was heavy with sin, the soul was devoured by Ammit; if balanced, the soul entered the Field of Reeds. Parallels the biblical concepts of tzedakah (righteousness) and mishpat (justice).',
+    relatedTerms: ['cosmic_scales_judgment']
+  },
+  {
+    id: 'tartaroo',
+    term: 'Tartaroō (Cast into Tartarus)',
+    originalScript: 'ταρταρόω',
+    language: 'Ancient Greek',
+    transliteration: 'tartaroō',
+    literalMeaning: 'To cast down into Tartarus; to incarcerate in the subterranean abyss',
+    occurrences: ['2 Peter 2:4', 'Hesiod Theogony 717–721', 'Iliad VIII.13'],
+    etymology: 'Verbal derivative of the mythological place-name Τάρταρος (Tartaros), the deepest subterranean abyss below Hades where the vanquished Titans were chained.',
+    scholarlyNotes: 'Appears only once in the entire Bible (a hapax legomenon in 2 Peter 2:4: "For if God did not spare angels when they sinned, but cast them into Tartarus [tartarōsas] and committed them to chains of gloomy darkness..."). Demonstrates how early Christian Greek authors utilized Hellenistic classical mythic vocabulary to communicate Jewish apocalyptic traditions regarding the fallen Watchers.',
+    relatedTerms: ['titans', 'watchers', 'sheol']
+  },
+  {
+    id: 'yaldabaoth',
+    term: 'Yaldabaoth (The Demiurge)',
+    originalScript: 'ⲒⲀⲖⲆⲀⲂⲀⲰⲐ',
+    language: 'Coptic (from Greek/Aramaic)',
+    transliteration: 'Yaldabaōth',
+    literalMeaning: 'Debated: "Child of Chaos" (Aramaic Yalda Bahoth) or corruption of Yahweh Sabaoth',
+    occurrences: ['Apocryphon of John (NHC II, 1)', 'Hypostasis of the Archons (NHC II, 4)', 'On the Origin of the World'],
+    etymology: 'Likely derived from Aramaic יַלְדָּא בָהוּתָא (yalda bahuta, "child of formlessness/chaos") or an intentional polemical distortion of Yahweh Elohei Tzevaot.',
+    scholarlyNotes: 'In Sethian Gnostic texts from Nag Hammadi, Yaldabaoth is the lion-faced, serpentine demiurge born of Sophia\'s fallen desire. Blind to the transcendent pleroma above him, he boastfully proclaims: "I am God, and there is no other god beside me!" (quoting Isaiah 45:5). He creates the archons and physical cosmos, and in Gnostic retellings sends angels to breed with human women to trap the divine spark in flesh.',
+    relatedTerms: ['archons', 'watchers']
+  },
+  {
+    id: 'archons',
+    term: 'Archons (Cosmic Rulers)',
+    originalScript: 'Ἄρχοντες',
+    language: 'Ancient Greek & Coptic',
+    transliteration: 'Árchontes',
+    literalMeaning: 'Rulers, Princes, Planetary Regents, World-Governing Powers',
+    occurrences: ['1 Corinthians 2:6–8 ("rulers of this age")', 'Ephesians 6:12 ("cosmic powers over this present darkness")', 'Nag Hammadi Library (Hypostasis of the Archons)'],
+    etymology: 'From Greek ἄρχω (archō, "to rule, begin, lead"). Plural noun archontes.',
+    scholarlyNotes: 'In Hellenistic astrology and Gnostic theology, the demonic or lesser rulers of the planetary spheres who maintain cosmic fate (heimarmene) and enslave human souls in materiality. Directly related to Paul\'s language in Ephesians 6:12 and Colossians 2:15 regarding principalities and powers, as well as the 70 shepherd-rulers of 1 Enoch 89–90.',
+    relatedTerms: ['yaldabaoth', 'bene_haelohim']
   }
 ];

@@ -278,5 +278,130 @@ export const relationships: Relationship[] = [
     scholarlyExplanation: 'In the Book of the Heavenly Cow (inscribed in the tomb of Seti I and Tutankhamun\'s shrine), humanity rebels against the supreme god Ra, who sends his celestial Eye (Hathor-Sekhmet) to exterminate mankind. Seeing the slaughter, the deity repents and releases an inundation of red liquid to halt the destruction and save the human remnant, mirroring the moral judgment and divine sorrow motifs of Genesis 6:5–7.',
     motifs: ['great_flood', 'destruction_recreation_humanity'],
     citations: ['Lichtheim, Miriam (1976) Ancient Egyptian Literature, Vol. II', 'Hornung, Erik (1982) Der ägyptische Mythos von der Himmelskuh']
+  },
+
+  // --- NEW EXPANDED SCHOLARLY RELATIONSHIPS ---
+  {
+    id: 'rel_deut32_divinecouncil_ugarit',
+    sourceTextId: 'deuteronomy_32',
+    targetTextId: 'baal_cycle',
+    sourcePassageId: 'deut_32_8_9',
+    relationshipType: 'SHARED TRADITION',
+    evidenceLevel: 'DOCUMENTED',
+    title: 'Deuteronomy 32:8–9 and the Ugaritic Assembly of El',
+    scholarlyExplanation: 'The 4QDeut^j and Septuagint reading of Deuteronomy 32:8 ("when Elyon divided mankind, he set the boundaries of the peoples according to the number of the sons of God") reflects the exact administrative tier of the Northwest Semitic pantheon attested at Ugarit, where the 70 sons of El (bn ʾil) governed the distinct nations, with Yahweh receiving Israel as his portion.',
+    motifs: ['divine_council'],
+    citations: ['Smith, Mark S. (2001) The Origins of Biblical Monotheism', 'Heiser, Michael S. (2001) Deuteronomy 32:8 and the Sons of God']
+  },
+  {
+    id: 'rel_psalm82_council_of_el',
+    sourceTextId: 'psalm_82',
+    targetTextId: 'deuteronomy_32',
+    sourcePassageId: 'psalm_82_1_8',
+    targetPassageId: 'deut_32_8_9',
+    relationshipType: 'EXPANDED TRADITION',
+    evidenceLevel: 'DOCUMENTED',
+    title: 'Psalm 82 Passes Judgment on the Council Gods of Deuteronomy 32',
+    scholarlyExplanation: 'Psalm 82 directly addresses the celestial beings appointed over the nations in Deuteronomy 32:8. Because they judged unjustly and oppressed the weak, Elohim strips them of their divine immortality ("I said, You are gods... nevertheless, like mortals you shall die") and reclaims universal sovereignty over all nations.',
+    motifs: ['divine_council'],
+    citations: ['Cross, Frank Moore (1973) Canaanite Myth and Hebrew Epic', 'Tsevat, Matitiahu (1969) God and the Gods in Assembly']
+  },
+  {
+    id: 'rel_baal_mot_isaiah25_death',
+    sourceTextId: 'baal_death_mot',
+    targetTextId: 'isaiah',
+    sourcePassageId: 'baal_vs_mot',
+    relationshipType: 'SHARED MOTIF',
+    evidenceLevel: 'STRONG',
+    title: 'Yahweh Swallows Mot (Death): Isaiah 25:8 and the Baal Cycle',
+    scholarlyExplanation: 'In Ugaritic myth, Mot (Death) boasts of his insatiable appetite: "My throat is the throat of a lion in the waste... Baal entered my innards." In Isaiah 25:8, the biblical author executes an intentional theological reversal using the exact same root: "Yahweh will swallow up Death [Mot] forever" (billa ha-mavet la-netzah), celebrated by Paul in 1 Corinthians 15:54.',
+    motifs: ['chaoskampf', 'underworld_descent'],
+    citations: ['Pardee, Dennis (2002) Ritual and Cult at Ugarit', 'Day, John (1985) God\'s Conflict with the Dragon and the Sea']
+  },
+  {
+    id: 'rel_hammurabi_covenant_code',
+    sourceTextId: 'code_of_hammurabi',
+    targetTextId: 'exodus',
+    sourcePassageId: 'code_of_hammurabi_lex',
+    relationshipType: 'TEXTUAL DEPENDENCE',
+    evidenceLevel: 'DOCUMENTED',
+    title: 'The Code of Hammurabi and the Biblical Covenant Code (Exodus 21)',
+    scholarlyExplanation: 'The Covenant Code of Exodus 21–22 shares specific legal formulations with the Code of Hammurabi (§§196–200), including identical casuistic conditional syntax ("if a man strikes..."), the lex talionis ("eye for eye, tooth for tooth"), laws regarding the goring ox (Exod 21:28 vs CH §250–251), and penalties for striking a pregnant woman.',
+    motifs: ['lawgiver_on_mountain'],
+    citations: ['Wright, David P. (2009) Inventing God\'s Law: How the Covenant Code Used the Code of Hammurabi', 'Finkelstein, J.J. (1981) The Ox That Gored']
+  },
+  {
+    id: 'rel_hesiod_daniel2_metals',
+    sourceTextId: 'hesiod_works_days',
+    targetTextId: 'daniel',
+    sourcePassageId: 'hesiod_five_ages',
+    relationshipType: 'SHARED MOTIF',
+    evidenceLevel: 'COMPARATIVE',
+    title: 'Hesiod\'s Metal Ages and the Great Statue of Daniel 2',
+    scholarlyExplanation: 'Both Hesiod\'s Works and Days (Gold, Silver, Bronze, Heroes, Iron) and Daniel 2:31–45 (Head of Gold, Chest of Silver, Thighs of Bronze, Legs of Iron, Feet of Iron and Clay) utilize the pan-ancient metallurgical schema to represent successive world empires in descending moral and qualitative dignity.',
+    motifs: ['heroic_ages'],
+    citations: ['Collins, John J. (1993) Daniel (Hermeneia)', 'West, M.L. (1978) Hesiod: Works and Days']
+  },
+  {
+    id: 'rel_jubilees_demons_enoch',
+    sourceTextId: 'jubilees_demons',
+    targetTextId: '1_enoch',
+    sourcePassageId: 'jubilees_10_demons',
+    targetPassageId: '1_enoch_7_1_5',
+    relationshipType: 'EXPANDED TRADITION',
+    evidenceLevel: 'DOCUMENTED',
+    title: 'Jubilees 10 Explains Demonology from the Souls of Drowned Nephilim',
+    scholarlyExplanation: 'Jubilees 10 synthesizes 1 Enoch 15 (which reveals that evil spirits emerge from the slaughtered bodies of the giants) into a coherent post-flood demonology where Prince Mastema commands one-tenth of the roaming spirits to test human righteousness.',
+    motifs: ['origin_of_demons', 'giants', 'watchers_rebellion'],
+    citations: ['VanderKam, James C. (2001) The Book of Jubilees', 'Reed, Annette Yoshiko (2005) Fallen Angels and the History of Judaism and Christianity']
+  },
+  {
+    id: 'rel_1qs_two_spirits_persian',
+    sourceTextId: 'community_rule_1qs',
+    targetTextId: 'vendidad_avesta',
+    sourcePassageId: 'community_rule_two_spirits',
+    relationshipType: 'HISTORICAL CONNECTION',
+    evidenceLevel: 'STRONG',
+    title: 'Dead Sea Scrolls Two Spirits (1QS) and Zoroastrian Dualism',
+    scholarlyExplanation: 'The Treatise on the Two Spirits in 1QS III–IV (Prince of Lights vs Angel of Darkness) bears striking structural, psychological, and cosmological affinities with the Gathic Zoroastrian cosmic division between Spenta Mainyu (Holy Spirit) and Angra Mainyu (Destructive Spirit), developed during Jewish contact with the Persian Empire.',
+    motifs: ['two_ways_two_spirits'],
+    citations: ['Shaked, Shaul (1994) Dualism in Transformation: Varieties of Religion in Sasanian Iran', 'Collins, John J. (1997) Apocalypticism in the Dead Sea Scrolls']
+  },
+  {
+    id: 'rel_book_of_dead_daniel5_scales',
+    sourceTextId: 'egyptian_book_of_dead',
+    targetTextId: 'daniel',
+    sourcePassageId: 'egyptian_weighing_heart',
+    relationshipType: 'SHARED MOTIF',
+    evidenceLevel: 'COMPARATIVE',
+    title: 'The Egyptian Psychostasia and the Weighing of Belshazzar (Daniel 5)',
+    scholarlyExplanation: 'The enigmatic writing on the wall in Daniel 5:27—"Tekel: you have been weighed on the balances and found wanting"—employs the universal ancient metaphor of post-mortem moral weighing made world-famous by the Egyptian Book of the Dead (Spell 125).',
+    motifs: ['cosmic_scales_judgment'],
+    citations: ['Glanville, S.R.K. (1955) The Instructions of \'Onchsheshonqy', 'Newsom, Carol A. (2014) Daniel: A Commentary (OTL)']
+  },
+  {
+    id: 'rel_ishtar_descent_sheol',
+    sourceTextId: 'ishtar_descent',
+    targetTextId: 'isaiah',
+    sourcePassageId: 'ishtar_netherworld_descent',
+    relationshipType: 'PARALLEL NARRATIVE',
+    evidenceLevel: 'COMPARATIVE',
+    title: 'The Land of No Return and Biblical Sheol (Isaiah 14 & Job 10)',
+    scholarlyExplanation: 'The depiction of Irkalla / Kur in the Descent of Ishtar as a gloomy subterranean city of gates, dust, and inert departed royalty mirrors the description of Sheol in Isaiah 14:9–11 and Job 10:21–22, showing a common Semitic conception of the afterlife prior to the emergence of bodily resurrection theology.',
+    motifs: ['underworld_descent'],
+    citations: ['Horowitz, Wayne (1998) Mesopotamian Cosmic Geography', 'Johnston, Philip S. (2002) Shades of Sheol']
+  },
+  {
+    id: 'rel_apocryphon_john_enoch_watchers',
+    sourceTextId: 'apocryphon_of_john',
+    targetTextId: '1_enoch',
+    sourcePassageId: 'apocryphon_of_john_passage',
+    targetPassageId: '1_enoch_6_1_6',
+    relationshipType: 'LATER INTERPRETATION',
+    evidenceLevel: 'DOCUMENTED',
+    title: 'The Secret Revelation of John Adapts the Enochic Watcher Narrative',
+    scholarlyExplanation: 'In the Apocryphon of John (NHC II, 1), the Sethian Gnostic author directly adapts the narrative of 1 Enoch 6–8 (angels mating with women, teaching metals, and siring giants), but reinterprets the celestial beings as archons sent by the blind demiurge Yaldabaoth to create the "counterfeit spirit" to trap the divine luminous spark.',
+    motifs: ['watchers_rebellion', 'forbidden_knowledge', 'giants'],
+    citations: ['Pearson, Birger A. (1990) Gnosticism, Judaism, and Egyptian Christianity', 'Williams, Michael A. (1996) Rethinking "Gnosticism"']
   }
 ];

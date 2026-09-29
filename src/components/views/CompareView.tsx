@@ -1,17 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { passages } from '../../data/passages';
 import { texts } from '../../data/texts';
-import { Passage } from '../../types';
+import { Passage, SupportedLanguage } from '../../types';
 import { AncientTermModal } from '../common/AncientTermModal';
 import { getLanguageMeta } from '../../utils/scriptHelper';
-import { GitCompare, Plus, Trash2, Sparkles, Copy, Check, Share2, Bookmark } from 'lucide-react';
+import { useLanguage } from '../../i18n/LanguageContext';
+import { getPassageText } from '../../utils/passageTranslationHelper';
+import { GitCompare, Plus, Trash2, Sparkles, Copy, Check, Share2, Bookmark, Globe } from 'lucide-react';
 
 interface CompareViewProps {
   initialPassageIds?: string[];
 }
 
 export const CompareView: React.FC<CompareViewProps> = ({ initialPassageIds = ['gen_6_1_4', '1_enoch_6_1_6'] }) => {
+  const { t, language } = useLanguage();
   const [selectedPassageIds, setSelectedPassageIds] = useState<string[]>(initialPassageIds);
+  const [passageLanguages, setPassageLanguages] = useState<Record<string, SupportedLanguage>>({});
+
+  useEffect(() => {
+    if (initialPassageIds && initialPassageIds.length > 0) {
+      setSelectedPassageIds(initialPassageIds);
+    }
+  }, [initialPassageIds]);
   const [selectedTermId, setSelectedTermId] = useState<string | null>(null);
   const [copiedLink, setCopiedLink] = useState(false);
   const [savedFavorites, setSavedFavorites] = useState<string[]>([]);
@@ -65,13 +75,13 @@ export const CompareView: React.FC<CompareViewProps> = ({ initialPassageIds = ['
           <div>
             <div className="flex items-center gap-2 text-xs font-semibold text-[#c99738] uppercase tracking-wider">
               <GitCompare className="w-4 h-4" />
-              Comparative Exegesis &amp; Parallel Analysis
+              {t.compare.title}
             </div>
             <h1 className="text-2xl md:text-3xl font-bold font-display text-[#f5d77f] mt-1">
-              Multi-Passage Parallel Viewer
+              {t.compare.title}
             </h1>
             <p className="text-sm text-[#b8ad9e] mt-1">
-              Compare 2 to 4 ancient passages simultaneously with original languages, transliterations, critical apparatus, and shared linguistic motifs.
+              {t.compare.subtitle}
             </p>
           </div>
 
@@ -92,7 +102,7 @@ export const CompareView: React.FC<CompareViewProps> = ({ initialPassageIds = ['
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#201a14] hover:bg-[#2b241c] border border-[#382f23] text-xs font-medium text-[#e8e2d5] transition"
             >
               {copiedLink ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Share2 className="w-3.5 h-3.5" />}
-              <span>{copiedLink ? 'Link Copied!' : 'Share Comparison'}</span>
+              <span>{copiedLink ? t.common.copied : t.common.share}</span>
             </button>
           </div>
         </div>
@@ -249,15 +259,50 @@ export const CompareView: React.FC<CompareViewProps> = ({ initialPassageIds = ['
                   )}
                 </div>
 
-                {/* English Translation */}
-                <div className="p-3.5 rounded-xl bg-[#191512] border border-[#29221b] space-y-1.5">
-                  <div className="text-[10px] font-mono text-[#c99738] uppercase font-semibold">
-                    English Translation ({passage.translationAttribution.license})
-                  </div>
-                  <p className="text-sm font-serif text-[#e4dbcc] leading-relaxed">
-                    "{passage.englishTranslation}"
-                  </p>
-                </div>
+                {/* Multilingual Translation Card (EN | ES | PT) */}
+                {(() => {
+                  const activeColLang = passageLanguages[passage.id] || language;
+                  const localized = getPassageText(passage, activeColLang);
+
+                  return (
+                    <div className="p-3.5 rounded-xl bg-[#191512] border border-[#29221b] space-y-2">
+                      <div className="flex items-center justify-between text-[10px] font-mono text-[#c99738] uppercase font-semibold">
+                        <span className="flex items-center gap-1.5">
+                          <Globe className="w-3 h-3 text-[#c99738]" />
+                          {t.compare.translation} ({localized.languageName})
+                        </span>
+
+                        {/* Column-level translation switch (EN | ES | PT) */}
+                        <div className="flex items-center gap-0.5 bg-[#120f0d] p-0.5 rounded border border-[#2d241c]">
+                          {(['en', 'es', 'pt'] as SupportedLanguage[]).map(lCode => (
+                            <button
+                              key={lCode}
+                              onClick={() => setPassageLanguages(prev => ({ ...prev, [passage.id]: lCode }))}
+                              className={`px-1.5 py-0.2 rounded text-[9px] font-bold uppercase transition ${
+                                activeColLang === lCode
+                                  ? 'bg-[#c99738] text-[#12100e]'
+                                  : 'text-[#8e806e] hover:text-[#e8e2d5]'
+                              }`}
+                              title={`Switch to ${lCode.toUpperCase()}`}
+                            >
+                              {lCode}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      <p className="text-sm font-serif text-[#e4dbcc] leading-relaxed">
+                        "{localized.text}"
+                      </p>
+
+                      {localized.isLocalized && (
+                        <div className="text-[10px] text-[#34d399] font-mono pt-1">
+                          ✓ {localized.sourceAttribution}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })()}
               </div>
 
               {/* Attribution Footer */}

@@ -720,5 +720,165 @@ export const texts: TextItem[] = [
     summary: 'The sacred narrative of the K\'iche\' Maya: creation from the calm primordial waters by Sovereign Plumed Serpent and Heart of Sky; failed creations of mud people and wooden effigies destroyed by a deluge of black resin; and the eventual successful creation of human beings from yellow and white maize.',
     manuscriptHistory: 'Preserved secretly in Chichicastenango until transcribed by Dominican priest Ximénez; now at the Newberry Library.',
     primaryManuscriptWitnesses: ['Ayer MS 1515 (Newberry Library)']
+  },
+  {
+    id: 'code_of_hammurabi',
+    title: 'The Code of Hammurabi',
+    cultureId: 'mesopotamian',
+    category: 'MESOPOTAMIAN',
+    chronology: {
+      dateOfStorySetting: 'Old Babylonian Empire (Reign of Hammurabi of Babylon, ca. 1792–1750 BCE)',
+      estimatedDateOfComposition: 'ca. 1754 BCE',
+      dateOfEarliestSurvivingManuscript: 'Diorite Stele found at Susa (Louvre Sb 8, 18th c. BCE); clay tablet copies from Nineveh and Sippar',
+      numericCompositionBCE: -1754
+    },
+    originalLanguage: 'Old Babylonian (Akkadian cuneiform)',
+    summary: 'Monumental 2.25-meter black diorite stele containing 282 law provisions framed by a poetic prologue and epilogue. King Hammurabi is depicted standing before Shamash, god of justice, receiving the insignia of royal righteousness. Establishes lex talionis ("an eye for an eye"), negligence laws, and liability parallels that directly anticipate the biblical Covenant Code of Exodus 21–23.',
+    manuscriptHistory: 'Erected in Sippar or Babylon, carried off as a trophy of war to Susa by the Elamite king Shutruk-Nahhunte in the 12th century BCE, where it was discovered by Jacques de Morgan in 1901.',
+    primaryManuscriptWitnesses: ['Stele of Hammurabi (Louvre Museum Sb 8)', 'Neo-Assyrian tablet copies from Ashurbanipal\'s Library']
+  },
+  {
+    id: 'ishtar_descent',
+    title: 'The Descent of Ishtar to the Netherworld',
+    cultureId: 'mesopotamian',
+    category: 'MESOPOTAMIAN',
+    chronology: {
+      dateOfStorySetting: 'Primordial mythological era',
+      estimatedDateOfComposition: 'ca. 1300–1100 BCE (Standard Babylonian recension based on Sumerian Inanna\'s Descent ca. 2000 BCE)',
+      dateOfEarliestSurvivingManuscript: 'Nineveh (Ashurbanipal Library) and Ashur cuneiform tablets (7th c. BCE)',
+      numericCompositionBCE: -1200
+    },
+    originalLanguage: 'Standard Babylonian Akkadian',
+    summary: 'Ishtar, the Queen of Heaven and goddess of love and war, journeys down into the dark subterranean realm of the dead (Erset la tari, "Land of No Return"), ruled by her hostile sister Ereshkigal. At each of the seven gates, the gatekeeper Neti strips her of royal regalia and power until she arrives naked and powerless. Her death brings all earthly reproduction to a halt until Ea creates an emissary to revive her.',
+    manuscriptHistory: 'Adapted from the earlier Sumerian poem of Inanna\'s Descent; preserved on tablets discovered at Nineveh and Ashur.',
+    primaryManuscriptWitnesses: ['K. 162 + Sm. 983 (British Museum, Nineveh)', 'VAT 8901 (Vorderasiatisches Museum Berlin, Ashur)']
+  },
+  {
+    id: 'egyptian_book_of_dead',
+    title: 'The Book of the Dead (Papyrus of Ani, Spell 125)',
+    cultureId: 'egyptian',
+    category: 'EGYPTIAN',
+    chronology: {
+      dateOfStorySetting: 'Post-mortem journey through the Duat (Netherworld)',
+      estimatedDateOfComposition: 'ca. 1550–1250 BCE (New Kingdom collection drawing on Coffin Texts)',
+      dateOfEarliestSurvivingManuscript: 'Papyrus of Ani (British Museum EA 10470, 19th Dynasty, ca. 1250 BCE)',
+      numericCompositionBCE: -1250
+    },
+    originalLanguage: 'Middle Egyptian (Hieroglyphic & Cursive Hieroglyphs)',
+    summary: 'The master collection of funerary liturgies and spells designed to guide the deceased through the underworld. Spell 125 portrays the pivotal judgment scene in the Hall of the Two Truths: Ani recites the Negative Confession before 42 divine assessors, and his heart (jb) is weighed in the divine scales against the feather of Ma\'at (Truth/Justice) by Anubis and Horus while Thoth records the verdict.',
+    manuscriptHistory: 'Acquired in Luxor in 1888 by E.A. Wallis Budge for the British Museum; 78-foot continuous illustrated papyrus scroll in exceptional preservation.',
+    primaryManuscriptWitnesses: ['Papyrus of Ani (BM EA 10470)', 'Papyrus of Hunefer (BM EA 9901)']
+  },
+  {
+    id: 'hesiod_works_days',
+    title: 'Works and Days (The Five Ages of Humanity)',
+    cultureId: 'greco_roman',
+    category: 'GRECO-ROMAN',
+    chronology: {
+      dateOfStorySetting: 'Primeval origins through the decaying Iron Age',
+      estimatedDateOfComposition: 'ca. 700 BCE',
+      dateOfEarliestSurvivingManuscript: 'Oxyrhynchus and Flinders Petrie papyri (3rd c. BCE–2nd c. CE); medieval Byzantine manuscripts',
+      numericCompositionBCE: -700
+    },
+    originalLanguage: 'Ancient Epic Greek (Dactylic Hexameter)',
+    summary: 'Didactic epic by Hesiod outlining the history of humanity divided into five successive declining epochs: the Golden Age under Kronos (sorrowless, death like sleep), the Silver Age (infantile and impious), the Bronze Age (terrible giants of ash trees loving warfare), the Heroic Age of Demigods (Thebes and Troy), and the contemporary corrupt Iron Age of ceaseless toil and moral collapse. Shares the metal-sequence historiography with Daniel 2.',
+    manuscriptHistory: 'Formed the curriculum of classical Greek education alongside Homer.',
+    primaryManuscriptWitnesses: ['Papyrus Oxyrhynchus 2091', 'Codex Laurentianus 31.9 (Florence)']
+  },
+  {
+    id: 'community_rule_1qs',
+    title: 'The Community Rule (1QS - Serekh ha-Yahad)',
+    cultureId: 'dead_sea_scrolls',
+    category: 'DEAD SEA SCROLLS',
+    chronology: {
+      dateOfStorySetting: 'Sectarian wilderness retreat awaiting the eschatological confrontation',
+      estimatedDateOfComposition: 'ca. 120–100 BCE',
+      dateOfEarliestSurvivingManuscript: '1QS (Qumran Cave 1, ca. 100–75 BCE, Shrine of the Book, Jerusalem)',
+      numericCompositionBCE: -100
+    },
+    originalLanguage: 'Late Biblical Hebrew',
+    summary: 'The charter document and disciplinary code of the Qumran Yahad community. Columns III.13–IV.26 contain the famous "Treatise on the Two Spirits", detailing how God created humanity to walk according to two conflicting spiritual principles: the Spirit of Truth (under the Prince of Lights) and the Spirit of Injustice (under the Angel of Darkness). Directly illuminates New Testament Johannine and Pauline theology of light vs darkness.',
+    manuscriptHistory: 'Discovered in Cave 1 at Qumran in 1947 by Bedouin shepherds, fully preserved wrapped in linen inside an intact ceramic jar.',
+    primaryManuscriptWitnesses: ['1QS (Cave 1 complete scroll)', '4Q255–264 (Cave 4 fragmentary copies)']
+  },
+  {
+    id: 'jubilees_demons',
+    title: 'The Book of Jubilees (Chapter 10: Binding of the Demons)',
+    cultureId: 'second_temple_jewish',
+    category: 'SECOND TEMPLE',
+    chronology: {
+      dateOfStorySetting: 'Post-flood generations of Noah',
+      estimatedDateOfComposition: 'ca. 160–150 BCE',
+      dateOfEarliestSurvivingManuscript: 'Qumran Hebrew scrolls 4Q216–224 (ca. 125–50 BCE); complete Ge\'ez manuscripts in Ethiopia',
+      numericCompositionBCE: -150
+    },
+    originalLanguage: 'Hebrew (surviving in complete Ge\'ez translation)',
+    summary: 'Chapter 10 recounts that after the Deluge, unclean demons (the spirits of the drowned Nephilim) began to lead astray and torment Noah\'s grandchildren. Noah prayed for deliverance, and God dispatched angels to bind them in the place of condemnation. However, Prince Mastema intervened, requesting that one-tenth of the demons remain at his command to test human free will. Provides the direct theological foundation for New Testament demonology.',
+    manuscriptHistory: 'Held canonical status at Qumran (at least 15 copies found) and remains canonical in the Ethiopian Orthodox Tewahedo Church.',
+    primaryManuscriptWitnesses: ['4Q216 (4QJub^a ar/heb)', 'EMML 4437 (Addis Ababa)']
+  },
+  {
+    id: 'psalm_82',
+    title: 'Psalm 82 (God Presiding in the Divine Assembly)',
+    cultureId: 'hebrew_israelite',
+    category: 'HEBREW BIBLE',
+    chronology: {
+      dateOfStorySetting: 'Heavenly Divine Council deliberation',
+      estimatedDateOfComposition: 'ca. 8th–6th century BCE',
+      dateOfEarliestSurvivingManuscript: '4QPsalms scrolls from Qumran (1st c. BCE); Aleppo and Leningrad Codices (10th/11th c. CE)',
+      numericCompositionBCE: -700
+    },
+    originalLanguage: 'Biblical Hebrew',
+    summary: 'A dramatic divine trial scene: Elohim takes his stand in the divine council (adat-El) and renders judgment among the gods (elohim): "How long will you judge unjustly and show partiality to the wicked?" He pronounces their cosmic sentence: "You are gods, sons of the Most High, all of you; nevertheless, like mortals you shall die, and fall like any prince." Quoted by Jesus in John 10:34.',
+    manuscriptHistory: 'Preserved in the Asaph collection of the Hebrew Psalter.',
+    primaryManuscriptWitnesses: ['11QPs^a', 'Aleppo Codex', 'Codex Leningradensis']
+  },
+  {
+    id: 'deuteronomy_32',
+    title: 'The Song of Moses (Deuteronomy 32:8–9)',
+    cultureId: 'hebrew_israelite',
+    category: 'HEBREW BIBLE',
+    chronology: {
+      dateOfStorySetting: 'Plains of Moab at the threshold of Canaan',
+      estimatedDateOfComposition: 'Archaic poetic stratum (ca. 9th–8th century BCE)',
+      dateOfEarliestSurvivingManuscript: '4QDeut^j and 4QDeut^q from Qumran (ca. 100 BCE); Septuagint Greek papyri',
+      numericCompositionBCE: -750
+    },
+    originalLanguage: 'Archaic Biblical Hebrew',
+    summary: 'The archaic poem Deuteronomy 32 preserves the famous theological crux in verses 8–9: in the Dead Sea Scrolls (4QDeut^j) and Septuagint, the Most High (Elyon) fixes the boundaries of the nations according to the number of the "sons of God" (bene elohim / aggelōn theou), while allocating Israel to Yahweh. The medieval Masoretic Text altered this reading to "sons of Israel" (bene yisrael) to avoid polytheistic implications.',
+    manuscriptHistory: 'The Qumran discovery of 4QDeut^j in Cave 4 settled a centuries-long debate, proving the Septuagint preserved an authentic archaic Hebrew textual Vorlage.',
+    primaryManuscriptWitnesses: ['4Q44 (4QDeut^q)', '4Q37 (4QDeut^j)', 'Codex Vaticanus Greek B']
+  },
+  {
+    id: 'apocryphon_of_john',
+    title: 'The Apocryphon of John (Secret Revelation of John)',
+    cultureId: 'second_temple_jewish',
+    category: 'SECOND TEMPLE',
+    chronology: {
+      dateOfStorySetting: 'Post-resurrection revelation on the Mount of Olives',
+      estimatedDateOfComposition: 'ca. 120–150 CE (attested by Irenaeus in Adversus Haereses I.29 ca. 180 CE)',
+      dateOfEarliestSurvivingManuscript: 'Nag Hammadi Codices II, III, IV and Berlin Codex 8502 (4th c. CE)',
+      numericCompositionBCE: 140
+    },
+    originalLanguage: 'Sahidic Coptic (translated from lost Greek original)',
+    summary: 'The central text of Sethian Gnosticism. Re-narrates Genesis through an esoteric cosmological lens: the arrogant demiurge Yaldabaoth creates the archons and physical cosmos, claiming to be the sole God. In its commentary on Genesis 6, the archons send angels who take women of earth, produce giants, and create the "counterfeit spirit" (antimimon pneuma) to ensnare humanity in material forgetfulness.',
+    manuscriptHistory: 'Four surviving copies found among the Nag Hammadi codices in 1945 and the Berlin Gnostic Papyrus.',
+    primaryManuscriptWitnesses: ['NHC II, 1', 'NHC III, 1', 'NHC IV, 1', 'Berlin Papyrus BG 8502, 2']
+  },
+  {
+    id: 'baal_death_mot',
+    title: 'The Baal Cycle: Combat with Mot (Death) & Resurgence',
+    cultureId: 'canaanite_ugaritic',
+    category: 'CANAANITE / UGARITIC',
+    chronology: {
+      dateOfStorySetting: 'Mythic cycle of fertility, drought, and cosmic kingship',
+      estimatedDateOfComposition: 'ca. 1350–1200 BCE',
+      dateOfEarliestSurvivingManuscript: 'Ras Shamra cuneiform tablets KTU 1.5–1.6 (Louvre / National Museum of Damascus)',
+      numericCompositionBCE: -1250
+    },
+    originalLanguage: 'Ugaritic cuneiform',
+    summary: 'Tablets V and VI of the Baal Cycle depict the supreme struggle between Baal (Hadad, storm god of rain and life) and Mot (the personification of Death, drought, and the underworld). Mot swallows Baal into his cavernous throat, causing cosmic mourning. The warrior goddess Anat confronts Mot, slaughters him with a blade, winnows him with a sieve, burns him with fire, grinds him with millstones, and sows him in the soil, sparking Baal\'s resurrection and the return of rain. Directly prefigures Isaiah 25:8 ("He will swallow up death forever").',
+    manuscriptHistory: 'Scribed by the high priest Ilimilku of Shubanu during the reign of King Niqmaddu II of Ugarit; discovered by Claude Schaeffer in 1930.',
+    primaryManuscriptWitnesses: ['KTU 1.5 (RS 2.[022] + RS 3.340)', 'KTU 1.6 (RS 2.[009] + RS 5.180)']
   }
 ];
