@@ -4,6 +4,7 @@ import { cultures } from '../../data/cultures';
 import { texts } from '../../data/texts';
 import { PublicTextEdition } from '../../types';
 import { useLanguage } from '../../i18n/LanguageContext';
+import { getUiTranslations } from '../../i18n/uiTranslations';
 import {
   ExternalLink,
   BookOpen,
@@ -32,6 +33,7 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
   initialFilterTextId
 }) => {
   const { t, language } = useLanguage();
+  const ui = getUiTranslations(language);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCulture, setSelectedCulture] = useState<string>('ALL');
   const [selectedEditionType, setSelectedEditionType] = useState<string>('ALL');
@@ -98,10 +100,10 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
       {/* Top Banner & Orientation */}
       <div className="p-6 md:p-8 rounded-2xl bg-[#161311] border border-[#a48c68]/30 shadow-xl space-y-4 text-left">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-          <div>
+          <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 text-xs font-semibold text-[#c99738] uppercase tracking-wider">
-              <Library className="w-4 h-4 text-[#c99738]" />
-              {language === 'es' ? 'Fuentes Primarias de Acceso Abierto' : language === 'pt' ? 'Fontes Primárias de Acesso Aberto' : 'Open-Access Primary Sources & Digital Repositories'}
+              <Library className="w-4 h-4 text-[#c99738] flex-shrink-0" />
+              <span>{ui.library.badge}</span>
             </div>
             <h1 className="text-2xl md:text-4xl font-bold font-display text-[#f5d77f] mt-1.5">
               {t.library.title}
@@ -112,7 +114,7 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
           </div>
 
           {/* Tab Selector */}
-          <div className="flex p-1 rounded-xl bg-[#201a14] border border-[#3b3226] self-start lg:self-center">
+          <div className="flex p-1 rounded-xl bg-[#201a14] border border-[#3b3226] self-start lg:self-center flex-shrink-0">
             <button
               onClick={() => setActiveTab('EDITIONS')}
               className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-semibold transition ${
@@ -122,7 +124,7 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
               }`}
             >
               <BookOpen className="w-3.5 h-3.5" />
-              <span>{language === 'es' ? 'Ediciones Catalogadas' : language === 'pt' ? 'Edições Catalogadas' : 'Catalogued Editions'} ({publicTextEditions.length})</span>
+              <span>{ui.library.tabEditions(publicTextEditions.length)}</span>
             </button>
             <button
               onClick={() => setActiveTab('REPOSITORIES')}
@@ -133,7 +135,7 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
               }`}
             >
               <Globe className="w-3.5 h-3.5" />
-              <span>{language === 'es' ? 'Repositorios Oficiales' : language === 'pt' ? 'Repositórios Oficiais' : 'Partner Repositories'} ({publicRepositoriesInfo.length})</span>
+              <span>{ui.library.tabRepositories(publicRepositoriesInfo.length)}</span>
             </button>
           </div>
         </div>
@@ -142,10 +144,10 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
         <div className="pt-3 border-t border-[#29221b] flex flex-wrap items-center justify-between gap-2 text-xs text-[#8e806e]">
           <div className="flex items-center gap-2 text-[#c99738]">
             <ShieldCheck className="w-4 h-4" />
-            <span className="font-medium">All links point to permanent, trusted academic institutions and public domain digital archives.</span>
+            <span className="font-medium">{ui.library.integrityNote}</span>
           </div>
           <div className="text-[11px] text-[#a48c68]">
-            Includes IAA, Sefaria, British Museum, Oxford ETCSL, Tufts Perseus, and Newberry Library.
+            {ui.library.institutionsNote}
           </div>
         </div>
       </div>
@@ -162,7 +164,7 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
                 <Search className="absolute left-3 top-2.5 w-4 h-4 text-[#a48c68]" />
                 <input
                   type="text"
-                  placeholder="Search by text title, repository, artifact code, or keyword (e.g. 1 Enoch, 4Q201, Gilgamesh, Sefaria)..."
+                  placeholder={ui.library.searchPlaceholder}
                   value={searchQuery}
                   onChange={e => setSearchQuery(e.target.value)}
                   className="w-full pl-9 pr-4 py-2 rounded-lg bg-[#110f0d] border border-[#3b3226] text-xs text-[#e8e2d5] placeholder-[#7d6f5d] focus:outline-none focus:border-[#c99738]"
@@ -175,7 +177,7 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
                 onChange={e => setSelectedCulture(e.target.value)}
                 className="px-3 py-2 rounded-lg bg-[#110f0d] border border-[#3b3226] text-xs text-[#e8e2d5] focus:outline-none focus:border-[#c99738]"
               >
-                <option value="ALL">All Traditions ({publicTextEditions.length})</option>
+                <option value="ALL">{ui.library.allTraditions(publicTextEditions.length)}</option>
                 {cultures.map(c => {
                   const count = publicTextEditions.filter(p => p.cultureId === c.id).length;
                   return (
@@ -192,12 +194,12 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
                 onChange={e => setSelectedEditionType(e.target.value)}
                 className="px-3 py-2 rounded-lg bg-[#110f0d] border border-[#3b3226] text-xs text-[#e8e2d5] focus:outline-none focus:border-[#c99738]"
               >
-                <option value="ALL">All Format Types</option>
-                <option value="High-Res Manuscript Facsimile">High-Res Manuscript Facsimiles</option>
-                <option value="Original Script & Interlinear">Original Script &amp; Interlinear</option>
-                <option value="Critical Scholarly Edition">Critical Scholarly Editions</option>
-                <option value="Open-Access Translation">Open-Access Complete Translations</option>
-                <option value="Museum Specimen & 3D Scan">Museum Specimens &amp; 3D Scans</option>
+                <option value="ALL">{ui.library.allFormatTypes}</option>
+                <option value="High-Res Manuscript Facsimile">{ui.library.editionTypes['High-Res Manuscript Facsimile'] || 'High-Res Manuscript Facsimiles'}</option>
+                <option value="Original Script & Interlinear">{ui.library.editionTypes['Original Script & Interlinear'] || 'Original Script & Interlinear'}</option>
+                <option value="Critical Scholarly Edition">{ui.library.editionTypes['Critical Scholarly Edition'] || 'Critical Scholarly Editions'}</option>
+                <option value="Open-Access Translation">{ui.library.editionTypes['Open-Access Translation'] || 'Open-Access Complete Translations'}</option>
+                <option value="Museum Specimen & 3D Scan">{ui.library.editionTypes['Museum Specimen & 3D Scan'] || 'Museum Specimens & 3D Scans'}</option>
               </select>
 
               {/* Institution Filter */}
@@ -206,7 +208,7 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
                 onChange={e => setSelectedInstitution(e.target.value)}
                 className="px-3 py-2 rounded-lg bg-[#110f0d] border border-[#3b3226] text-xs text-[#e8e2d5] focus:outline-none focus:border-[#c99738]"
               >
-                <option value="ALL">All Institutions</option>
+                <option value="ALL">{ui.library.allInstitutions}</option>
                 <option value="Israel Antiquities Authority">Dead Sea Scrolls / IAA</option>
                 <option value="Sefaria">Sefaria</option>
                 <option value="British Museum">The British Museum</option>
@@ -221,8 +223,7 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
             {/* Active Filters Pill Bar */}
             <div className="flex items-center justify-between text-xs text-[#a48c68] pt-1">
               <div>
-                Showing <strong className="text-[#f5d77f]">{filteredEditions.length}</strong> of{' '}
-                {publicTextEditions.length} publicly available editions
+                <strong className="text-[#f5d77f]">{ui.library.showingEditions(filteredEditions.length, publicTextEditions.length)}</strong>
               </div>
               {(selectedCulture !== 'ALL' || selectedEditionType !== 'ALL' || selectedInstitution !== 'ALL' || searchQuery) && (
                 <button
@@ -234,7 +235,7 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
                   }}
                   className="text-[#c99738] hover:underline"
                 >
-                  Reset All Filters
+                  {ui.library.resetFilters}
                 </button>
               )}
             </div>
@@ -244,7 +245,6 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {filteredEditions.map(item => {
               const culture = cultures.find(c => c.id === item.cultureId);
-              const parentText = texts.find(t => t.id === item.textId);
 
               return (
                 <div
@@ -256,7 +256,7 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <div className="flex flex-wrap items-center gap-1.5">
                         <span className={`text-[10px] font-bold uppercase px-2 py-0.5 rounded border ${getEditionTypeBadge(item.editionType)}`}>
-                          {item.editionType}
+                          {ui.library.editionTypes[item.editionType] || item.editionType}
                         </span>
                         <span className="text-[10px] px-2 py-0.5 rounded bg-[#201a14] border border-[#382f24] text-[#a48c68]">
                           {item.language}
@@ -270,7 +270,7 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
                     {/* Title & Parent Text */}
                     <div>
                       <div className="text-xs text-[#a48c68] font-mono uppercase tracking-wider">
-                        Linked Corpus: <span className="text-[#e8e2d5] font-semibold">{item.textTitle}</span>
+                        {ui.library.linkedCorpus} <span className="text-[#e8e2d5] font-semibold">{item.textTitle}</span>
                       </div>
                       <h3 className="text-lg font-bold font-display text-[#f5d77f] group-hover:text-white transition mt-0.5">
                         {item.title}
@@ -290,7 +290,7 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
                     <div className="space-y-1.5 pt-2 border-t border-[#262019]">
                       <div className="text-[10px] uppercase font-bold text-[#a48c68] tracking-wider flex items-center gap-1">
                         <Sparkles className="w-3 h-3 text-[#c99738]" />
-                        Edition Features:
+                        {ui.library.editionFeatures}
                       </div>
                       <ul className="space-y-1 text-[11px] text-[#ded5c7]">
                         {item.highlightFeatures.map((feat, idx) => (
@@ -312,7 +312,7 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
                       rel="noopener noreferrer"
                       className="px-4 py-2 rounded-xl bg-[#c99738] hover:bg-[#dbab4c] text-[#12100e] text-xs font-bold transition shadow flex items-center gap-1.5"
                     >
-                      <span>Open Public Archive</span>
+                      <span>{ui.library.openPublicArchive}</span>
                       <ExternalLink className="w-3.5 h-3.5" />
                     </a>
 
@@ -323,7 +323,7 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
                         className="px-3 py-2 rounded-xl bg-[#201a14] hover:bg-[#2b241c] border border-[#3b3226] text-[#f5d77f] text-xs font-medium transition flex items-center gap-1.5"
                       >
                         <BookOpen className="w-3.5 h-3.5 text-[#c99738]" />
-                        <span>Compare in App</span>
+                        <span>{ui.library.compareInApp}</span>
                       </button>
                     )}
                   </div>
@@ -335,8 +335,8 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
           {filteredEditions.length === 0 && (
             <div className="p-12 text-center rounded-2xl bg-[#161311] border border-dashed border-[#362f27] space-y-3">
               <Search className="w-8 h-8 text-[#a48c68] mx-auto opacity-50" />
-              <div className="text-sm font-semibold text-[#f5d77f]">No public editions match your active filters.</div>
-              <p className="text-xs text-[#8e806e]">Try clearing your search query or selecting "All Traditions" above.</p>
+              <div className="text-sm font-semibold text-[#f5d77f]">{ui.library.noEditionsMatch}</div>
+              <p className="text-xs text-[#8e806e]">{ui.library.tryClearingSearch}</p>
               <button
                 onClick={() => {
                   setSelectedCulture('ALL');
@@ -346,7 +346,7 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
                 }}
                 className="px-4 py-2 rounded-lg bg-[#201a14] border border-[#c99738]/40 text-xs font-semibold text-[#c99738] hover:bg-[#2b231a] transition"
               >
-                Reset Search Filters
+                {ui.library.resetSearch}
               </button>
             </div>
           )}
@@ -358,10 +358,10 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
         <div className="space-y-6 text-left">
           <div className="p-6 rounded-2xl bg-[#161311] border border-[#a48c68]/20 space-y-2">
             <h2 className="text-xl font-bold font-display text-[#f5d77f]">
-              Primary Open-Access Institutional Repositories
+              {ui.library.repositoriesTitle}
             </h2>
             <p className="text-xs text-[#b8ad9e] leading-relaxed">
-              These digital archives and university humanities initiatives host high-resolution photographic facsimiles, cuneiform transliterations, and open-access editions of the primary literature referenced throughout the Chronos &amp; Canon database.
+              {ui.library.repositoriesSubtitle}
             </p>
           </div>
 
@@ -374,7 +374,7 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-[#201a14] text-[#c99738] border border-[#c99738]/30">
-                      Primary Institutional Host
+                      {ui.library.primaryHost}
                     </span>
                     <span className="text-xs font-mono text-[#8e806e]">
                       {repo.institution}
@@ -390,20 +390,20 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
                   </p>
 
                   <div className="pt-2 text-xs">
-                    <strong className="text-[#a48c68]">Archival Focus:</strong>{' '}
+                    <strong className="text-[#a48c68]">{ui.library.archivalFocus}</strong>{' '}
                     <span className="text-[#f5d77f] font-mono text-[11px]">{repo.focusArea}</span>
                   </div>
                 </div>
 
                 <div className="pt-4 border-t border-[#29221b] flex items-center justify-between">
-                  <span className="text-[11px] text-[#8e806e]">Free / Open Access</span>
+                  <span className="text-[11px] text-[#8e806e]">{ui.library.freeAccess}</span>
                   <a
                     href={repo.website}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3.5 py-1.5 rounded-xl bg-[#c99738] hover:bg-[#dbab4c] text-[#12100e] text-xs font-bold transition flex items-center gap-1.5 shadow"
                   >
-                    <span>Visit Repository</span>
+                    <span>{ui.library.visitRepository}</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 </div>
@@ -417,12 +417,13 @@ export const DigitalLibraryView: React.FC<DigitalLibraryViewProps> = ({
       <div className="p-6 rounded-2xl bg-[#14110e] border border-[#2e261d] text-left space-y-2">
         <div className="flex items-center gap-2 text-xs uppercase font-bold text-[#c99738]">
           <Info className="w-4 h-4" />
-          Note on Public Domain vs. Copyrighted Modern Critical Editions
+          {ui.library.noteCopyrightTitle}
         </div>
         <p className="text-xs text-[#a49989] leading-relaxed">
-          The links in this directory connect directly to primary photographic facsimiles (e.g., Israel Antiquities Authority multispectral plates, British Museum 3D scans) and peer-reviewed open-access scholarly databases (Sefaria, Perseus Digital Library, Oxford ETCSL, GRETIL). Where full English translations are hosted online, they utilize historic public-domain critical milestones (such as R.H. Charles for 1 Enoch and Jubilees, George Smith/Thompson for Gilgamesh, or Ralph Griffith for the Rigveda). For 21st-century copyrighted academic translations and commentaries (such as the <em>Hermeneia</em> series by George Nickelsburg or Anchor Yale Bible), readers are encouraged to consult university libraries or academic publishing platforms.
+          {ui.library.noteCopyrightBody}
         </p>
       </div>
     </div>
   );
 };
+

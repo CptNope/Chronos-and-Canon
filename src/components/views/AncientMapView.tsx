@@ -3,6 +3,7 @@ import { mapLocations, MapLocation } from '../../data/maps';
 import { cultures } from '../../data/cultures';
 import { texts } from '../../data/texts';
 import { useLanguage } from '../../i18n/LanguageContext';
+import { getUiTranslations } from '../../i18n/uiTranslations';
 import {
   MapPin,
   Compass,
@@ -87,6 +88,7 @@ const REGION_BOUNDS: Record<RegionPreset, RegionBounds> = {
 
 export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) => {
   const { t, language } = useLanguage();
+  const ui = getUiTranslations(language);
   const [selectedLocationId, setSelectedLocationId] = useState<string>('qumran_caves');
   const [selectedRegion, setSelectedRegion] = useState<RegionPreset>('FERTILE_CRESCENT');
   const [filterCulture, setFilterCulture] = useState<string>('ALL');
@@ -203,7 +205,7 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
           <div>
             <div className="flex items-center gap-2 text-xs font-semibold text-[#c99738] uppercase tracking-wider">
               <Compass className="w-4 h-4" />
-              {language === 'es' ? 'Cartografía Arqueológica y Procedencia' : language === 'pt' ? 'Cartografia Arqueológica e Proveniência' : 'Archaeological Cartography & Excavation Provenance'}
+              {ui.map.headerTag}
             </div>
             <h1 className="text-2xl md:text-3xl font-bold font-display text-[#f5d77f] mt-1">
               {t.map.title}
@@ -225,7 +227,7 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
                 }`}
               >
                 <Globe className="w-3.5 h-3.5" />
-                <span>{language === 'es' ? 'Mapa Interactivo' : language === 'pt' ? 'Mapa Interativo' : 'Interactive Map'}</span>
+                <span>{ui.map.tabMap}</span>
               </button>
               <button
                 onClick={() => setActiveTab('DIRECTORY')}
@@ -236,7 +238,7 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
                 }`}
               >
                 <FolderOpen className="w-3.5 h-3.5" />
-                <span>{language === 'es' ? 'Directorio de Sitios' : language === 'pt' ? 'Diretório de Sítios' : 'Site Directory'} ({filteredLocations.length})</span>
+                <span>{ui.map.tabDirectory(filteredLocations.length)}</span>
               </button>
             </div>
           </div>
@@ -245,7 +247,7 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
         {/* Region Preset Bar */}
         <div className="pt-3 border-t border-[#29221b] flex flex-wrap items-center justify-between gap-2">
           <div className="flex flex-wrap items-center gap-1.5">
-            <span className="text-[11px] font-semibold text-[#a48c68] uppercase mr-1">Region Focus:</span>
+            <span className="text-[11px] font-semibold text-[#a48c68] uppercase mr-1">{ui.map.regionFocus}</span>
             <button
               onClick={() => setSelectedRegion('FERTILE_CRESCENT')}
               className={`px-2.5 py-1 rounded-lg text-xs font-medium transition ${
@@ -254,7 +256,7 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
                   : 'bg-[#1e1915] text-[#b8ad9e] hover:bg-[#2c241d] border border-[#362f27]'
               }`}
             >
-              Fertile Crescent &amp; Levant
+              {ui.map.regionNames.FERTILE_CRESCENT || 'Fertile Crescent & Levant'}
             </button>
             <button
               onClick={() => setSelectedRegion('MEDITERRANEAN')}
@@ -264,7 +266,7 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
                   : 'bg-[#1e1915] text-[#b8ad9e] hover:bg-[#2c241d] border border-[#362f27]'
               }`}
             >
-              Mediterranean &amp; Greece
+              {ui.map.regionNames.MEDITERRANEAN || 'Mediterranean & Greece'}
             </button>
             <button
               onClick={() => setSelectedRegion('ASIA_PERSIA')}
@@ -274,7 +276,7 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
                   : 'bg-[#1e1915] text-[#b8ad9e] hover:bg-[#2c241d] border border-[#362f27]'
               }`}
             >
-              Persia &amp; Indus-Sarasvati
+              {ui.map.regionNames.ASIA_PERSIA || 'Persia & Indus-Sarasvati'}
             </button>
             <button
               onClick={() => setSelectedRegion('MESOAMERICA')}
@@ -284,7 +286,7 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
                   : 'bg-[#1e1915] text-[#b8ad9e] hover:bg-[#2c241d] border border-[#362f27]'
               }`}
             >
-              Mesoamerica
+              {ui.map.regionNames.MESOAMERICA || 'Mesoamerica'}
             </button>
             <button
               onClick={() => setSelectedRegion('NORTH_EUROPE')}
@@ -294,7 +296,7 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
                   : 'bg-[#1e1915] text-[#b8ad9e] hover:bg-[#2c241d] border border-[#362f27]'
               }`}
             >
-              Northern Europe
+              {ui.map.regionNames.NORTH_EUROPE || 'Northern Europe'}
             </button>
             <button
               onClick={() => setSelectedRegion('GLOBAL')}
@@ -304,12 +306,12 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
                   : 'bg-[#1e1915] text-[#b8ad9e] hover:bg-[#2c241d] border border-[#362f27]'
               }`}
             >
-              Global Overview
+              {ui.map.regionNames.GLOBAL || 'Global Overview'}
             </button>
           </div>
 
           <div className="text-xs text-[#8e806e]">
-            Viewing: <strong className="text-[#f5d77f]">{REGION_BOUNDS[selectedRegion].name}</strong>
+            {ui.map.viewingRegion(ui.map.regionNames[selectedRegion] || REGION_BOUNDS[selectedRegion].name)}
           </div>
         </div>
 
@@ -319,7 +321,7 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
             <Search className="absolute left-3 top-2.5 w-3.5 h-3.5 text-[#a48c68]" />
             <input
               type="text"
-              placeholder="Search site name, modern country, or discovery (e.g. Qumran, Gilgamesh, Dolmen)..."
+              placeholder={ui.map.searchPlaceholder}
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
               className="w-full pl-9 pr-3 py-1.5 rounded-lg bg-[#1a1714] border border-[#3b3226] text-xs text-[#e8e2d5] placeholder-[#7d6f5d] focus:outline-none focus:border-[#c99738]"
@@ -327,13 +329,13 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-xs text-[#a48c68]">Tradition:</span>
+            <span className="text-xs text-[#a48c68]">{ui.map.traditionLabel}</span>
             <select
               value={filterCulture}
               onChange={e => setFilterCulture(e.target.value)}
               className="px-2.5 py-1.5 rounded-lg bg-[#1a1714] border border-[#3b3226] text-xs text-[#e8e2d5] focus:outline-none focus:border-[#c99738]"
             >
-              <option value="ALL">All Traditions ({mapLocations.length})</option>
+              <option value="ALL">{ui.explore.allTraditions} ({mapLocations.length})</option>
               {cultures.map(c => {
                 const count = mapLocations.filter(m => m.cultureId === c.id).length;
                 return (
@@ -346,17 +348,17 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-xs text-[#a48c68]">Type:</span>
+            <span className="text-xs text-[#a48c68]">{ui.map.typeLabel}</span>
             <select
               value={filterImportance}
               onChange={e => setFilterImportance(e.target.value)}
               className="px-2.5 py-1.5 rounded-lg bg-[#1a1714] border border-[#3b3226] text-xs text-[#e8e2d5] focus:outline-none focus:border-[#c99738]"
             >
-              <option value="ALL">All Excavation Types</option>
-              <option value="Primary Excavation">Primary Excavation</option>
-              <option value="Archival Discovery">Archival Discovery</option>
-              <option value="Ancient Capital">Ancient Capital</option>
-              <option value="Mythological Axis">Mythological Axis</option>
+              <option value="ALL">{ui.map.allExcavationTypes}</option>
+              <option value="Primary Excavation">{ui.map.excavationTypes['Primary Excavation'] || 'Primary Excavation'}</option>
+              <option value="Archival Discovery">{ui.map.excavationTypes['Archival Discovery'] || 'Archival Discovery'}</option>
+              <option value="Ancient Capital">{ui.map.excavationTypes['Ancient Capital'] || 'Ancient Capital'}</option>
+              <option value="Mythological Axis">{ui.map.excavationTypes['Mythological Axis'] || 'Mythological Axis'}</option>
             </select>
           </div>
         </div>
@@ -372,10 +374,10 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
               <div className="px-3 py-1.5 rounded-xl bg-[#161311]/90 backdrop-blur-md border border-[#2b241c] text-xs shadow-lg pointer-events-auto flex items-center gap-2">
                 <Compass className="w-4 h-4 text-[#c99738]" />
                 <span className="font-semibold text-[#f5d77f] font-display">
-                  {REGION_BOUNDS[selectedRegion].name}
+                  {ui.map.regionNames[selectedRegion] || REGION_BOUNDS[selectedRegion].name}
                 </span>
                 <span className="text-[#8e806e] text-[11px]">
-                  ({filteredLocations.length} sites in dataset)
+                  {ui.map.sitesCountBadge(filteredLocations.length)}
                 </span>
               </div>
 
@@ -384,21 +386,21 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
                 <button
                   onClick={() => setZoomScale(prev => Math.min(prev + 0.25, 2.2))}
                   className="p-1.5 rounded-lg text-[#a48c68] hover:text-[#f5d77f] hover:bg-[#201a14] transition"
-                  title="Zoom In"
+                  title={ui.map.zoomIn}
                 >
                   <ZoomIn className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() => setZoomScale(prev => Math.max(prev - 0.25, 0.75))}
                   className="p-1.5 rounded-lg text-[#a48c68] hover:text-[#f5d77f] hover:bg-[#201a14] transition"
-                  title="Zoom Out"
+                  title={ui.map.zoomOut}
                 >
                   <ZoomOut className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() => setZoomScale(1)}
                   className="p-1.5 rounded-lg text-[#a48c68] hover:text-[#f5d77f] hover:bg-[#201a14] transition"
-                  title="Reset Zoom"
+                  title={ui.map.resetZoom}
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
                 </button>
@@ -715,23 +717,23 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
             <div className="pt-2 border-t border-[#29221b] flex flex-wrap items-center justify-between gap-2 text-xs text-[#8e806e] px-2">
               <div className="flex items-center gap-3">
                 <span className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#c99738]" /> Hebrew / Israelite
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#c99738]" /> {ui.map.legendHebrew}
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#f5d77f]" /> Dead Sea Scrolls
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#f5d77f]" /> {ui.map.legendDeadSea}
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#c084fc]" /> Mesopotamian
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#c084fc]" /> {ui.map.legendMesopotamian}
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#fb923c]" /> Ugaritic
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#fb923c]" /> {ui.map.legendUgaritic}
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#38bdf8]" /> Greco-Roman
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#38bdf8]" /> {ui.map.legendGrecoRoman}
                 </span>
               </div>
               <div className="text-[11px] text-[#a48c68]">
-                Click marker or select below to examine excavation findings
+                {ui.map.legendHint}
               </div>
             </div>
           </div>
@@ -741,7 +743,7 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
             <div className="pb-3 border-b border-[#2d251d]">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-bold uppercase px-2.5 py-0.5 rounded bg-[#201a14] text-[#c99738] border border-[#c99738]/30">
-                  {selectedLocation.importance}
+                  {ui.map.excavationTypes[selectedLocation.importance] || selectedLocation.importance}
                 </span>
                 <span className="text-xs font-mono text-[#8e806e]">
                   {selectedLocation.coordinates.lat.toFixed(2)}°N, {selectedLocation.coordinates.lng.toFixed(2)}°E
@@ -763,7 +765,7 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
             <div className="space-y-2 pt-2 border-t border-[#29221b]">
               <h4 className="text-xs uppercase tracking-wider font-semibold text-[#c99738] flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5" />
-                Excavation Finds &amp; Primary Manuscripts
+                {ui.map.excavationFinds}
               </h4>
               <ul className="space-y-1.5 text-xs text-[#b8ad9e]">
                 {selectedLocation.keyDiscoveries.map((disc, idx) => (
@@ -779,12 +781,12 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
             <div className="space-y-2 pt-2 border-t border-[#29221b]">
               <h4 className="text-xs uppercase tracking-wider font-semibold text-[#a48c68] flex items-center gap-1.5">
                 <BookOpen className="w-3.5 h-3.5 text-[#c99738]" />
-                Corpus Works Linked to this Site
+                {ui.map.corpusWorks}
               </h4>
               <div className="flex flex-wrap gap-1.5">
                 {selectedLocation.associatedTexts.length === 0 ? (
                   <span className="text-xs text-[#8e806e] italic">
-                    Historical context preserved through epigraphic and archaeological inscriptions.
+                    {ui.map.noWorksNotice}
                   </span>
                 ) : (
                   selectedLocation.associatedTexts.map(tId => {
@@ -809,8 +811,8 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
         /* DIRECTORY VIEW: Filterable Archaeological Sites Grid */
         <div className="space-y-4">
           <div className="flex items-center justify-between text-xs text-[#a48c68] px-1">
-            <span>Showing {filteredLocations.length} catalogued excavation sites</span>
-            <span>Sorted by archaeological significance</span>
+            <span>{ui.map.showingSites(filteredLocations.length)}</span>
+            <span>{ui.map.sortedBySignificance}</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -832,7 +834,7 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
                       <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-[#201a14] text-[#c99738] border border-[#c99738]/30">
-                        {site.importance}
+                        {ui.map.excavationTypes[site.importance] || site.importance}
                       </span>
                       <span className="text-[11px] font-mono text-[#8e806e]">
                         {site.coordinates.lat.toFixed(1)}°N, {site.coordinates.lng.toFixed(1)}°E
@@ -857,7 +859,7 @@ export const AncientMapView: React.FC<AncientMapViewProps> = ({ onSelectText }) 
                       {culture?.name || site.cultureId}
                     </span>
                     <span className="flex items-center gap-1 text-[#f5d77f] font-semibold text-[11px]">
-                      <span>View on Map</span>
+                      <span>{ui.map.viewOnMap}</span>
                       <ChevronRight className="w-3.5 h-3.5" />
                     </span>
                   </div>

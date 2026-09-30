@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { texts } from '../../data/texts';
 import { manuscripts } from '../../data/manuscripts';
 import { useLanguage } from '../../i18n/LanguageContext';
+import { getUiTranslations } from '../../i18n/uiTranslations';
 import { Clock, Calendar, Filter, Sparkles, AlertCircle } from 'lucide-react';
 
 export const TimelineView: React.FC = () => {
   const { t, language } = useLanguage();
+  const ui = getUiTranslations(language);
   const [timelineGrouping, setTimelineGrouping] = useState<'COMPOSITION' | 'SETTING' | 'MANUSCRIPT'>('COMPOSITION');
   const [filterCategory, setFilterCategory] = useState<string>('ALL');
 
@@ -94,7 +96,7 @@ export const TimelineView: React.FC = () => {
                     {text.chronology.estimatedDateOfComposition.split('(')[0]}
                   </span>
                   <span className="text-xs uppercase tracking-wider px-2 py-0.5 rounded bg-[#2a2219] text-[#a48c68]">
-                    {text.category}
+                    {ui.categories[text.category] || text.category}
                   </span>
                 </div>
                 <span className="text-xs text-[#a48c68] font-mono">

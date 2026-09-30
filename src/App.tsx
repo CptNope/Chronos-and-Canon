@@ -80,7 +80,7 @@ function AppContent() {
       />
 
       {/* Main Content Area */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="flex-1 max-w-7xl 2xl:max-w-[1550px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {currentView === 'HOME' && (
           <HomeDashboardView
             onNavigate={view => {

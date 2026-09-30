@@ -1,91 +1,289 @@
 # Chronos & Canon: Ancient Text Comparative Archive
 
-> A scholarly interactive archive and relationship explorer for ancient religious, mythological, apocryphal, and historical texts across global cultures. Built as an offline-first Progressive Web App (PWA) with client-side version control and automatic update management.
+> An advanced, open-access scholarly comparative platform and interactive relationship explorer connecting Mesopotamian cuneiform literature, Ugaritic poetry, Biblical Hebrew & Aramaic corpora, the Dead Sea Scrolls, classical Greek texts, and apocryphal traditions. Built as an offline-first Progressive Web App (PWA) with client-side semantic version control, dual-channel update management, and a full trilingual scholarly apparatus (English, Spanish, Portuguese).
+
+[![Live Application](https://img.shields.io/badge/Live%20App-GitHub%20Pages-c99738?style=for-the-badge&logo=github)](https://cptnope.github.io/Chronos-and-Canon/)
+[![PWA Offline First](https://img.shields.io/badge/PWA-Offline%20First-2ea44f?style=for-the-badge&logo=pwa)](https://cptnope.github.io/Chronos-and-Canon/)
+[![Languages](https://img.shields.io/badge/Languages-EN%20%7C%20ES%20%7C%20PT-blue?style=for-the-badge)](https://cptnope.github.io/Chronos-and-Canon/)
+[![Version](https://img.shields.io/badge/Version-v1.3.0-8a2be2?style=for-the-badge)](https://cptnope.github.io/Chronos-and-Canon/)
+[![License](https://img.shields.io/badge/License-MIT%20%2F%20Scholarly%20Open%20Access-orange?style=for-the-badge)](https://cptnope.github.io/Chronos-and-Canon/)
+
+---
+
+### 🌐 Live Production Application
+Access the production deployment directly at:
+**[https://cptnope.github.io/Chronos-and-Canon/](https://cptnope.github.io/Chronos-and-Canon/)**
 
 ---
 
 ## Table of Contents
-- [System Architecture & Capabilities](#system-architecture--capabilities)
-- [Client-Side PWA Version Control & Update Controller](#client-side-pwa-version-control--update-controller)
+- [1. Executive Overview & Scholarly Purpose](#1-executive-overview--scholarly-purpose)
+- [2. How Everything Works: Architectural Deep Dive](#2-how-everything-works-architectural-deep-dive)
+  - [2.1 Data Architecture & Relational Typology](#21-data-architecture--relational-typology)
+  - [2.2 The Evidentiary Rigor Engine](#22-the-evidentiary-rigor-engine)
+  - [2.3 Internationalization (i18n) & Sacred Script Preservation](#23-internationalization-i18n--sacred-script-preservation)
+  - [2.4 URL Routing & Shareable State Management](#24-url-routing--shareable-state-management)
+  - [2.5 Responsive Layout & Adaptive Typography](#25-responsive-layout--adaptive-typography)
+- [3. The 13 Core Research Modules](#3-the-13-core-research-modules)
+  - [Module 1: Home Dashboard & Editorial Showcase (`HomeDashboardView`)](#module-1-home-dashboard--editorial-showcase-homedashboardview)
+  - [Module 2: Explore Texts & Synoptic Reader (`ExploreTextsView`)](#module-2-explore-texts--synoptic-reader-exploretextsview)
+  - [Module 3: Digital Library & Curated Editions (`DigitalLibraryView`)](#module-3-digital-library--curated-editions-digitallibraryview)
+  - [Module 4: Synoptic Text Comparison Engine (`CompareView`)](#module-4-synoptic-text-comparison-engine-compareview)
+  - [Module 5: Interactive Evidence Graph (`GraphView`)](#module-5-interactive-evidence-graph-graphview)
+  - [Module 6: Multi-Millennial Chronological Timeline (`TimelineView`)](#module-6-multi-millennial-chronological-timeline-timelineview)
+  - [Module 7: Archaeological Cartography & Excavations (`AncientMapView`)](#module-7-archaeological-cartography--excavations-ancientmapview)
+  - [Module 8: Cross-Cultural Thematic Motifs (`MotifHubView`)](#module-8-cross-cultural-thematic-motifs-motifhubview)
+  - [Module 9: The Lost 70 Books & 2 Esdras 14 (`SeventyBooksView`)](#module-9-the-lost-70-books--2-esdras-14-seventybooksview)
+  - [Module 10: Genesis 6, The Watchers & Giants Dossier (`Genesis6StudyView`)](#module-10-genesis-6-the-watchers--giants-dossier-genesis6studyview)
+  - [Module 11: Great Deluge Comparative Matrix (`FloodStudyView`)](#module-11-great-deluge-comparative-matrix-floodstudyview)
+  - [Module 12: Manuscript Facsimiles & Cuneiform Tablets (`ManuscriptsView`)](#module-12-manuscript-facsimiles--cuneiform-tablets-manuscriptsview)
+  - [Module 13: Epigraphical Research Assistant (`ResearchAssistantView`)](#module-13-epigraphical-research-assistant-researchassistantview)
+- [4. Client-Side PWA Version Control & Update Controller](#4-client-side-pwa-version-control--update-controller)
   - [The Challenge: Service Workers & Stale Cache in PWAs](#the-challenge-service-workers--stale-cache-in-pwas)
   - [The Dual-Detection Engine](#the-dual-detection-engine)
   - [PWA Update Sequence (Mermaid Diagram)](#pwa-update-sequence-mermaid-diagram)
-  - [User Interface & Update Controls](#user-interface--update-controls)
   - [Hard Cache Reset & Recovery](#hard-cache-reset--recovery)
-  - [Release Workflow for Maintainers (Bumping Versions)](#release-workflow-for-maintainers-bumping-versions)
-- [Progressive Web App (PWA) & Offline Architecture](#progressive-web-app-pwa--offline-architecture)
-  - [Web App Manifest](#web-app-manifest)
-  - [Service Worker & Workbox Precaching](#service-worker--workbox-precaching)
-  - [Installing on Desktop, Android, and iOS](#installing-on-desktop-android-and-ios)
-- [Core Scholarly Modules](#core-scholarly-modules)
-  - [1. Synoptic Parallel Comparison Engine](#1-synoptic-parallel-comparison-engine)
-  - [2. Genesis 6, The Watchers & The Giants Study](#2-genesis-6-the-watchers--the-giants-study)
-  - [3. Great Deluge Comparative Matrix](#3-great-deluge-comparative-matrix)
-  - [4. 31 Scholarly Relationship Dossiers](#4-31-scholarly-relationship-dossiers)
-  - [5. Ethiopian Orthodox Canon & The 70 Books](#5-ethiopian-orthodox-canon--the-70-books)
-  - [6. Archaeological Cartography & Excavation Dossiers](#6-archaeological-cartography--excavation-dossiers)
-  - [7. Multilingual Architecture (EN, ES, PT)](#7-multilingual-architecture-en-es-pt)
-- [Hosting on GitHub Pages: Why "Deploy from a Branch" Fails](#hosting-on-github-pages-why-deploy-from-a-branch-fails)
-- [Architecture & Deployment Pipelines (Mermaid)](#architecture--deployment-pipelines-mermaid)
-- [How to Deploy to GitHub Pages (Step-by-Step)](#how-to-deploy-to-github-pages-step-by-step)
-  - [Method 1: GitHub Actions (Recommended & Included)](#method-1-github-actions-recommended--easiest)
-  - [Method 2: Deploying to a `gh-pages` Branch](#method-2-deploying-to-a-gh-pages-branch)
-  - [Method 3: Deploying via `/docs` Folder on `main`](#method-3-deploying-via-docs-folder-on-main)
-- [Troubleshooting Common Deployment Errors](#troubleshooting-common-deployment-errors)
-- [Local Development & Build Reference](#local-development--build-reference)
+  - [Release Workflow for Maintainers](#release-workflow-for-maintainers)
+- [5. Progressive Web App (PWA) & Offline Capabilities](#5-progressive-web-app-pwa--offline-capabilities)
+  - [Manifest Configuration](#manifest-configuration)
+  - [Service Worker & Runtime Precaching](#service-worker--runtime-precaching)
+  - [Desktop, Android, and iOS Installation](#desktop-android-and-ios-installation)
+- [6. GitHub Pages Deployment Master Guide](#6-github-pages-deployment-master-guide)
+  - [Why "Deploy from a branch" Directly Fails with Vite](#why-deploy-from-a-branch-directly-fails-with-vite)
+  - [Automated GitHub Actions Deployment (Recommended)](#automated-github-actions-deployment-recommended)
+  - [Relative Base Path Configuration](#relative-base-path-configuration)
+  - [SPA 404 Routing on GitHub Pages](#spa-404-routing-on-github-pages)
+- [7. Local Development & Build Reference](#7-local-development--build-reference)
+- [8. Academic Citation & Scholarly Ethics](#8-academic-citation--scholarly-ethics)
 
 ---
 
-## System Architecture & Capabilities
+## 1. Executive Overview & Scholarly Purpose
+
+The ancient Near East was not composed of isolated silos; rather, it constituted a vibrant, interconnected intellectual ecosystem spanning Mesopotamia, the Levant, Egypt, Anatolia, and the Greco-Roman Mediterranean. Literary motifs, theological debates, cosmological structures, and scribal techniques moved fluidly across linguistic and cultural boundaries.
+
+**Chronos & Canon** bridges these disparate corpora into a single, cohesive, high-performance research environment. It allows biblical scholars, assyriologists, classicists, students, and independent researchers to:
+
+1. **Conduct Synoptic Analysis**: Compare Hebrew Bible passages side-by-side with earlier cuneiform prototypes (e.g. *Atrahasis*, *Epic of Gilgamesh*, *Enûma Eliš*) and Ugaritic texts (e.g. *Baal Cycle*, *Rephaim Texts KTU 1.108*).
+2. **Track Genealogies of Tradition**: Trace how the enigmatic "sons of God" (*Bene ha-Elohim*) in Genesis 6 evolved through 1 Enoch's Book of the Watchers, the Dead Sea Scrolls Book of Giants, Mesopotamian Apkallu fish-sages, and the New Testament epistles of Jude and 2 Peter.
+3. **Examine the Limits of Canon**: Study the broader canon traditions such as the Ethiopian Orthodox 81-book canon (*Mets'hafe Berhan*) and the enigmatic "seventy hidden books" preserved for the wise according to 2 Esdras 14:44–48.
+4. **Anchor Literature in Archaeology**: Correlate texts with their physical discovery sites, excavation archives, and high-resolution manuscript facsimiles (Aleppo Codex, Great Isaiah Scroll 1QIsaª, British Museum tablets).
+
+---
+
+## 2. How Everything Works: Architectural Deep Dive
 
 ```mermaid
 graph TD
-    Client["Client PWA App<br>(React 19 + TypeScript + Vite)"]
-    SW["Service Worker<br>(Workbox Precache)"]
-    VerCtrl["Version Controller<br>(usePWAUpdate Hook)"]
-    RemoteVer["Remote version.json<br>(Cache-Busted HTTP Poll)"]
-    Modules["Scholarly Modules<br>• Genesis 6 Study<br>• Flood Matrix<br>• Synoptic Compare<br>• 70 Books Canon<br>• Archaeological Map"]
-    I18n["Localization Engine<br>EN • ES • PT"]
-    
-    Client --> SW
-    Client --> VerCtrl
-    VerCtrl -->|Registration Update| SW
-    VerCtrl -->|Fetch ?_t=now| RemoteVer
-    Client --> Modules
-    Client --> I18n
-    SW -->|Offline Cache Storage| Client
+    subgraph ClientApp["Client Single Page Application (React 19 + TypeScript + Vite)"]
+        Nav["Navigation & Header Toolbelt<br>• Adaptive Responsive Tabs<br>• Research Mode Popover<br>• Language Selector (EN·ES·PT)<br>• PWA Install & Version Pill"]
+        Router["URL State Sync & View Router<br>(?view=... & ?compare=...)"]
+        I18n["Trilingual i18n Engine<br>uiTranslations.ts + LanguageContext<br>Preserves Ancient Scripts Intact"]
+        Rigor["Evidentiary Rigor Engine<br>Scholarly • Comparative • Exploratory • Speculative"]
+        Views["13 Research Modules<br>Dashboard, Compare, Explore, Graph, Map, Library..."]
+    end
 
-    style Client fill:#1b1713,stroke:#c99738,color:#f5d77f
-    style VerCtrl fill:#251e16,stroke:#f5d77f,color:#fff
-    style SW fill:#16201b,stroke:#48bb78,color:#fff
-    style RemoteVer fill:#181411,stroke:#a48c68,color:#ded5c7
+    subgraph DataLayer["In-Memory Normalized Relational Store"]
+        Texts["texts.ts<br>(Passages, Polyglot Alignments)"]
+        Relations["relationships.ts<br>(48+ Documented Intertextual Links)"]
+        Sites["ancientSites.ts<br>(Geo-Coordinates, Excavation Dossiers)"]
+        Motifs["motifs.ts<br>(Comparative Archetypes)"]
+        Manuscripts["manuscripts.ts & publicTexts.ts<br>(Facsimiles & Digital Archives)"]
+    end
+
+    subgraph PWAEngine["Offline PWA & Dual Update Engine"]
+        SW["Service Worker<br>(Workbox Runtime Precache)"]
+        VerHook["usePWAUpdate Hook"]
+        RemoteVer["version.json<br>(Cache-Busted HTTP Poll)"]
+    end
+
+    Nav --> Router
+    Router --> Views
+    I18n --> Views
+    Rigor --> Views
+    Views --> DataLayer
+    ClientApp --> SW
+    VerHook --> SW
+    VerHook --> RemoteVer
+    SW -->|Offline Cache Storage| ClientApp
+
+    style ClientApp fill:#1b1713,stroke:#c99738,color:#f5d77f
+    style DataLayer fill:#251e17,stroke:#f5d77f,color:#ded5c7
+    style PWAEngine fill:#16201b,stroke:#48bb78,color:#fff
 ```
 
-| Dimension | Specification |
-| :--- | :--- |
-| **Framework** | React 19 SPA with TypeScript 5 & Vite 6 |
-| **PWA Engine** | `vite-plugin-pwa` with Workbox runtime precaching |
-| **Styling** | Tailwind CSS with ancient typographic palette & dark mode |
-| **Script Typography** | Polytonic Greek (*Gentium Book Plus*), Biblical Hebrew (*Noto Serif Hebrew*), Classical Ethiopic (*Noto Serif Ethiopic*), Devanagari |
-| **Languages** | Trilingual scholarly apparatus: English (`en`), Español (`es`), Português (`pt`) |
-| **Offline Mode** | 100% offline study support for texts, relationships, and studies |
-| **Version Control** | Automatic and on-demand client update detection with clean reload workflow |
+### 2.1 Data Architecture & Relational Typology
+
+All textual, geographical, and relationship records are statically compiled into immutable, strongly-typed TypeScript structures in `/src/data/`. This enables **instant zero-latency client queries**, **full offline execution**, and **zero external backend dependencies**.
+
+Every connection between two texts is classified by **Relationship Type** and assigned an **Evidentiary Rigor Level**:
+
+#### Relationship Types:
+- `DIRECT QUOTATION`: Verbatim or near-verbatim citation across languages (e.g. Jude 14–15 directly quoting 1 Enoch 1:9).
+- `TEXTUAL DEPENDENCE`: Clear literary borrowing, shared narrative sequencing, or lexical imitation (e.g. Genesis 6–9 and *Gilgamesh Tablet XI*).
+- `SHARED TRADITION`: Northwest Semitic or Levantine cultural idioms shared between Ugaritic poetry and Biblical Psalms/Prophets (e.g. Baal and Yahweh as "Rider on the Clouds" *Rōkeb ‘Arābōt*).
+- `POLEMICAL SUBVERSION`: Deliberate theological inversion or deconstruction of foreign myth (e.g. Genesis 1 creation account subverting the violent theomachy of *Enûma Eliš*).
+- `PARALLEL MOTIF`: Shared archetypal imagery occurring independently across broader cultures (e.g. universal catastrophic deluge myths in the *Popol Vuh* or *Shatapatha Brahmana*).
+
+#### Evidentiary Rigor Levels:
+- `DOCUMENTED`: Peer-reviewed consensus supported by direct epigraphic or manuscript witnesses.
+- `STRONG`: Robust literary, lexical, and thematic parallels widely recognized in academic literature.
+- `PROBABLE`: Historically plausible literary borrowing within a shared geographic or scribal corridor.
+- `HYPOTHETICAL`: Exploratory or reconstructive scholarly proposals.
 
 ---
 
-## Client-Side PWA Version Control & Update Controller
+### 2.2 The Evidentiary Rigor Engine
+
+Users can toggle the global research mode directly from the top navigation bar. When the mode is adjusted, all views, graphs, and parallel dossiers filter dynamically:
+
+| Mode | Visual Indicator | Inclusion Criteria |
+| :--- | :--- | :--- |
+| **Scholarly** | 🟢 Emerald | Restricts the interface strictly to primary epigraphic sources and peer-reviewed academic consensus (`DOCUMENTED` only). |
+| **Comparative** | 🟡 Amber | Default setting. Displays all documented textual parallels, structural borrowings, and Northwest Semitic shared traditions. |
+| **Exploratory** | 🟣 Purple | Broadens the scope to include cross-cultural archetypes, comparative folklore motifs, and structural typologies. |
+| **Speculative** | 🔴 Rose | Unlocks reconstructive hypotheses, reception history models, and proposed lost-text genealogies. |
+
+---
+
+### 2.3 Internationalization (i18n) & Sacred Script Preservation
+
+The archive features a comprehensive trilingual localization engine supporting **English (`en`)**, **Spanish (`es`)**, and **Portuguese (`pt`)**. 
+
+#### The Script Authenticity Rule:
+- **English/Spanish/Portuguese**: All UI labels, filters, tabs, educational summaries, exegetical disclaimers, and commentary dynamically translate according to user language selection.
+- **Ancient Sacred Scripts**: Original historical scripts are **never altered or replaced**. Biblical Hebrew (`נְפִילִים`), Biblical Aramaic (`עִירִין`), Classical Greek (`Τιτάνες`), Classical Ethiopic/Ge'ez (`ሄኖክ`), and transliterated Akkadian (*Ut-napištim*) remain authentically preserved in their native orthography with appropriate polytonic and pointed typography.
+
+---
+
+### 2.4 URL Routing & Shareable State Management
+
+Because Chronos & Canon is hosted statically on GitHub Pages, standard server-side URL rewriting is not available. To achieve bookmarkable, shareable deep links without causing 404 reload errors, the app utilizes **query-parameter state synchronization**:
+
+- **Module Deep Linking**: `?view=COMPARE`, `?view=GRAPH`, `?view=MAP`, etc.
+- **Direct Synoptic Comparisons**: `?compare=gen_6_1_4,1_enoch_6_1_6` immediately loads the comparison engine with the targeted passages aligned.
+- **Public 404 Catch-All (`public/404.html`)**: If a user accesses a sub-path directly, the custom `404.html` automatically extracts the URL path and query string, serializes it into a session parameter, and redirects to `./index.html` where the client router restores the intended view seamlessly.
+
+---
+
+### 2.5 Responsive Layout & Adaptive Typography
+
+On widescreen displays (laptops and desktop monitors), multilingual translations often cause UI elements to expand (Spanish and Portuguese text can be 25%–45% longer than English). The application employs **adaptive responsive layout rules**:
+
+1. **Adaptive Navigation Tabs (`Navigation.tsx`)**:
+   - On standard desktop screens (`xl:` 1280px–1535px), tabs display clean, concise labels (**Panel**, **Explorar**, **Biblioteca**, **Comparar**, **Grafo**, **Estudios**) to prevent crowding.
+   - On ultra-wide displays (`2xl:` 1536px+), tabs automatically expand to full descriptive labels (**Panel Principal**, **Explorar Textos**, **Biblioteca Digital**, **Comparar Textos**, **Grafo de Evidencias**, **Estudios y Herramientas**).
+2. **Fluid Typography Scaling**:
+   - Headers and hero banners use responsive clamp typography (`text-2xl sm:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-extrabold leading-[1.18]`) so 65-character Spanish titles break into balanced, magazine-grade lines without crowding.
+3. **Balanced 2-Column Desktop Grid**:
+   - View headers and dashboard banners feature a flexible 2-column layout on large screens, populating formerly empty space with interactive quick-jump chips and research pillars.
+
+---
+
+## 3. The 13 Core Research Modules
+
+### Module 1: Home Dashboard & Editorial Showcase (`HomeDashboardView`)
+- **Hero Banner**: Features an interactive 2-column layout with quick links, active evidentiary rigor pills, and fast-access research pillars.
+- **Featured Comparative Connections**: Curated scholarly spotlights on flagship intertextual parallels (Genesis 6 & 1 Enoch, Jude & Enoch, the Mesopotamian Flood, Ugaritic Rephaim).
+- **Interactive Corpus Directory**: Visual entry points into all 13 analytical modules with category tags and descriptions.
+
+### Module 2: Explore Texts & Synoptic Reader (`ExploreTextsView`)
+- **Reading Modes**:
+  - `Side-by-Side`: Displays original ancient scripts aligned verse-by-verse with modern scholarly translations.
+  - `Translation Only`: High-speed reading mode displaying English, Spanish, or Portuguese critical translations.
+  - `Original Script Only`: Pure philological mode for reading Hebrew, Greek, Aramaic, or Akkadian.
+- **Filter & Search Bar**: Filter by tradition (Mesopotamian, Ugaritic, Biblical Hebrew, Second Temple, Classical Greek), date range, or full-text query.
+
+### Module 3: Digital Library & Curated Editions (`DigitalLibraryView`)
+- **Curated Scholarly Editions**: Direct access to authoritative public digital editions (Aleppo Codex, Great Isaiah Scroll 1QIsaª, Enûma Eliš cuneiform plates, Gilgamesh Tablet XI).
+- **Public Archive Connectors**: One-click outbound links to global institutional repositories:
+  - *The Leon Levy Dead Sea Scrolls Digital Library* (Israel Antiquities Authority)
+  - *British Museum Collections Online* (Cuneiform tablet archives)
+  - *Perseus Digital Library* (Tufts University)
+  - *Sefaria Academic Library* & *STEP Bible* (Tyndale House Cambridge)
+- **In-App Jump Engine**: Compare any digitized edition directly against biblical witnesses with a single click.
+
+### Module 4: Synoptic Text Comparison Engine (`CompareView`)
+- **Dynamic Dual-Column Matrix**: Select any two passages from across the database to align them side-by-side.
+- **Flagship Quick Presets**:
+  - *Genesis 6:1–4 vs. 1 Enoch 6:1–6* (Descent of the Watchers)
+  - *Genesis 1:1–2 vs. Enûma Eliš Tablet I* (Primordial Watery Deep & Chaoskampf)
+  - *Psalm 29 vs. Ugaritic KTU 1.4* (Baal Thunder Theophany)
+  - *Jude 14–15 vs. 1 Enoch 1:9* (Direct Canonical Quotation)
+  - *Proverbs 22:17–24:22 vs. Instruction of Amenemope* (Egyptian Wisdom Borrowing)
+- **Key Terms Lexicon Modal**: Click on highlighted ancient terms (*Nephilim*, *Tehom*, *Yam*, *Apkallu*) to inspect morphological breakdowns and cross-textual usages.
+- **Shareable URL & Favorites**: Generate a persistent deep link for any comparison or bookmark it to local storage.
+
+### Module 5: Interactive Evidence Graph (`GraphView`)
+- **Force-Directed Physics Simulation**: Visualizes the entire ancient Near Eastern literary network as an interactive force-directed graph.
+- **Node Classification**: Color-coded by culture (Biblical Hebrew in blue, Mesopotamian in amber, Second Temple in purple, Ugaritic in green, Classical Greek in rose).
+- **Edge Weighting & Physics**: Line thickness corresponds to relationship strength (`DIRECT QUOTATION`, `TEXTUAL DEPENDENCE`, `SHARED TRADITION`).
+- **Inspection Drawer**: Click any node or relationship link to open a detailed scholarly drawer with citation sources and passage buttons.
+
+### Module 6: Multi-Millennial Chronological Timeline (`TimelineView`)
+- **Chronological Span**: Spans from the Early Bronze Age (3200 BCE) through Late Antiquity (500 CE).
+- **Era Filters**: Early Dynastic / Sumerian, Old Babylonian, Ugaritic Golden Age, Neo-Assyrian, Persian / Achaemenid, Hellenistic / Ptolemaic, Second Temple / Roman.
+- **Comparative Stratification**: Visualizes when texts were composed versus when their earliest extant physical manuscript copies were preserved.
+
+### Module 7: Archaeological Cartography & Excavations (`AncientMapView`)
+- **Interactive Coordinate Canvas**: Custom equirectangular map covering Mesopotamia, the Levant, Egypt, Anatolia, and Persia.
+- **Major Excavation Dossiers**:
+  - *Qumran Caves* (Dead Sea Scrolls discovery, Khirbet Qumran)
+  - *Ras Shamra* (Ancient Ugarit, discovery of the Baal Cycle and KTU tablets)
+  - *Nineveh / Kuyunjik* (Palace of Ashurbanipal and the Royal Library)
+  - *Warka* (Ancient Uruk, home of Gilgamesh)
+  - *Elephantine Island* (Aramaic Jewish military colony archives)
+  - *Amarna* (Akhetaten diplomatic cuneiform archives)
+- **Layer Overlays**: Toggle trade routes, political empire boundaries (Babylonian, Assyrian, Persian), and excavation find-spots.
+
+### Module 8: Cross-Cultural Thematic Motifs (`MotifHubView`)
+- **Thematic Index**:
+  - *Divine Council ('Adat 'El)*: Supreme deity presiding over sons of God.
+  - *Chaoskampf*: Storm god defeating the primordial sea serpent (*Lotan*, *Leviathan*, *Tiamat*).
+  - *Sacred Mountain*: Mount Zaphon, Mount Sinai, and Mount Hermon.
+  - *Underworld Descent*: Sheol, Mot's jaws, and Kur/Arallu.
+  - *Apkallu Fish-Sages*: Pre-flood wisdom guardians transformed into monstrous watchers.
+
+### Module 9: The Lost 70 Books & 2 Esdras 14 (`SeventyBooksView`)
+- **Exegesis of 2 Esdras 14**: Analysis of Ezra's divine dictate:
+  > *"The twenty-four books that you wrote first, make public for the worthy and the unworthy to read; but keep the seventy that were written last, to give them to the wise among your people."*
+- **Candidate Catalog**: Categorized directory of the apocryphal and pseudepigraphal candidates across Enochic, Mosaic, Testamentary, and Sapiential genres.
+- **Broader Canon Analysis**: Comparative breakdown of the Protestant 66-book canon, Catholic 73-book canon, Eastern Orthodox 77-book canon, and Ethiopian 81-book canon.
+
+### Module 10: Genesis 6, The Watchers & Giants Dossier (`Genesis6StudyView`)
+- **Four-Step Critical Walkthrough**:
+  1. *The Genesis 6 Fragment*: Lexical breakdown of *Bene ha-Elohim*, *Nephilim*, and *Gibborim*.
+  2. *The Enochic Elaboration*: 1 Enoch 6–11, Mount Hermon oath, and the 200 Watchers (*'Irin*).
+  3. *The Qumran Book of Giants*: 4Q530, 4Q531, dreams of 'Ohya and Hahya, and Gilgamesh as a giant.
+  4. *Mesopotamian Apkallu Parallels*: Cuneiform ritual tablets showing Apkallu sages mating with humans, causing the flood, and being banished to the underworld.
+
+### Module 11: Great Deluge Comparative Matrix (`FloodStudyView`)
+- **Multi-Tradition Matrix**:
+  - *Atrahasis Tablet III* (Akkadian, ca. 1640 BCE)
+  - *Epic of Gilgamesh Tablet XI* (Standard Babylonian version)
+  - *Genesis 6–9* (Priestly & Yahwistic accounts)
+  - *Berossus Babyloniaca* (Hellenistic Babylonian priest)
+  - *Shatapatha Brahmana* (Manu and the Matsya avatar)
+  - *Popol Vuh* (K'iche' Maya wooden people deluge)
+- **Structural Comparison**: Aligns boat blueprints, bitumen waterproofing, bird reconnaissance tests (dove, raven, swallow), mountain landings, and post-flood sacrifices.
+
+### Module 12: Manuscript Facsimiles & Cuneiform Tablets (`ManuscriptsView`)
+- **Paleographic Showcase**: High-resolution digital representations of physical artifacts.
+- **Physical Specifications**: Material (parchment, papyrus, clay), scribal hand, script classification, repository institution, and catalog accession numbers.
+
+### Module 13: Epigraphical Research Assistant (`ResearchAssistantView`)
+- **Scholarly Query Engine**: Built-in epigraphical research assistant with pre-configured research prompts.
+- **Academic Context**: Provides balanced historical-critical answers grounded in textual citations, manuscript dates, and primary source quotes.
+
+---
+
+## 4. Client-Side PWA Version Control & Update Controller
 
 ### The Challenge: Service Workers & Stale Cache in PWAs
-
-Progressive Web Apps utilize a Service Worker to intercept network requests and serve static assets directly from browser cache for instant loading and offline resilience. However, this introduces a classic distributed systems problem:
-
-1. **Stale Asset Retention**: When a new release is pushed to GitHub Pages or a web server, clients already running the app continue executing the older cached service worker and JavaScript bundle.
-2. **Chunk 404 Errors**: If an SPA dynamically imports route chunks and a user opens a new view while on an old release, the browser requests obsolete chunk hashes (e.g. `assets/CompareView-a1b2c3.js`), which no longer exist on the CDN, causing unhandled script crashes.
-3. **Silent Drift**: Without proactive update checking, users can remain on outdated versions for weeks without ever realizing textual corrections or new features have been published.
+When Progressive Web Apps cache assets for offline resilience, users often get stuck on stale releases because browsers serve previous service workers and bundles indefinitely. Furthermore, dynamically imported code chunks can fail with 404 errors if an old client requests chunks that were replaced during a new deployment.
 
 ### The Dual-Detection Engine
-
-Chronos & Canon resolves this with a **Dual-Detection Engine** implemented in `src/hooks/usePWAUpdate.ts` and `src/context/PWAUpdateContext.tsx`:
+Chronos & Canon resolves this with two simultaneous detection mechanisms (`src/hooks/usePWAUpdate.ts`):
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
@@ -94,51 +292,41 @@ Chronos & Canon resolves this with a **Dual-Detection Engine** implemented in `s
 │   CHANNEL A: SERVICE WORKER      │   CHANNEL B: HTTP VERSION POLLING   │
 ├──────────────────────────────────┼─────────────────────────────────────┤
 │ • Calls registration.update()    │ • Fetches ./version.json?_t=now     │
-│ • Detects new SW downloading and │ • Bypasses browser cache with       │
-│   entering "waiting" state       │   Cache-Control: no-cache, no-store │
-│ • Dispatches onNeedRefresh event │ • Compares semantic versioning:     │
-│ • Manages SKIP_WAITING lifecycle │   compareSemanticVersions(remote,   │
-│                                  │   local) > 0                        │
+│ • Detects new SW in WAITING state│ • Bypasses browser cache via        │
+│ • Listens for onNeedRefresh()    │   Cache-Control: no-cache, no-store │
+│ • Sends SKIP_WAITING message     │ • Compares semantic version numbers │
 └──────────────────────────────────┴─────────────────────────────────────┘
 ```
 
-Both channels operate simultaneously:
-- **On App Boot**: Checks 3 seconds after application startup.
-- **On Visibility Change**: Automatically re-checks when the user returns to the tab after > 15 minutes of inactivity.
-- **On Network Reconnect**: Re-checks as soon as the browser fires the `online` event.
-- **Background Interval**: Re-checks periodically every 30 minutes while open.
-- **Manual Trigger**: Available anytime via the **"Check for Updates"** button.
-
----
+- **Trigger Points**: 3 seconds after boot, on browser tab refocus (>15 min inactivity), on network reconnect, periodically every 30 minutes, or via manual button click.
 
 ### PWA Update Sequence (Mermaid Diagram)
 
 ```mermaid
 sequenceDiagram
     autonumber
-    actor User as Researcher / User
+    actor User as Researcher
     participant App as Client UI (React App)
-    participant Ctrl as PWA Update Controller (usePWAUpdate)
+    participant Ctrl as PWA Controller (usePWAUpdate)
     participant SW as Service Worker (Workbox)
-    participant CDN as Remote Server / GitHub Pages
+    participant CDN as GitHub Pages CDN
 
-    Note over App,CDN: Background or Manual Update Check
-    App->>Ctrl: Trigger checkForUpdates()
-    par Channel A: Service Worker
+    Note over App,CDN: Background or Manual Check Triggered
+    App->>Ctrl: checkForUpdates()
+    par Channel A: SW Registration
         Ctrl->>SW: registration.update()
-        SW->>CDN: Fetch sw.js (ETag / Byte-check)
+        SW->>CDN: Fetch sw.js (ETag byte-check)
         CDN-->>SW: New sw.js detected
         SW->>SW: Download assets & transition to WAITING state
         SW-->>Ctrl: Emit onNeedRefresh()
     and Channel B: Version JSON
         Ctrl->>CDN: Fetch ./version.json?_t=timestamp (no-store)
-        CDN-->>Ctrl: Returns { version: "1.2.0", buildDate: "..." }
-        Ctrl->>Ctrl: compareSemanticVersions(remote, current)
+        CDN-->>Ctrl: Returns { version: "1.2.1", buildDate: "..." }
+        Ctrl->>Ctrl: compareSemanticVersions(remote, local) > 0
     end
 
     Ctrl->>App: setIsUpdateAvailable(true)
-    App->>User: Displays Floating Banner & Glowing "Update Available" Badge
-    
+    App->>User: Displays Floating Banner & Glowing Badge
     User->>App: Clicks "Update Now & Reload"
     App->>Ctrl: applyUpdate()
     Ctrl->>SW: postMessage({ type: 'SKIP_WAITING' })
@@ -147,339 +335,64 @@ sequenceDiagram
     App-->>User: App refreshes instantly into the newest version!
 ```
 
----
-
-### User Interface & Update Controls
-
-The archive provides clear, non-intrusive UI elements for managing updates:
-
-1. **Floating Update Notification Banner (`UpdateNotificationBanner.tsx`)**:
-   - Appears at the bottom of the screen as soon as a new version is detected.
-   - Displays the target version number (e.g. `v1.2.0`), a summary of improvements, an **"Update Now"** button, a **"View What’s New"** link, and a dismiss button.
-
-2. **Navigation Bar Version Badge (`Navigation.tsx`)**:
-   - Located in the desktop header and mobile drawer.
-   - Shows the active version (e.g. `v1.2.0`).
-   - Displays a pulsing golden indicator when an update is waiting.
-   - Clicking opens the **Version & System Updates Modal**.
-
-3. **Version & Updates Modal (`VersionModal.tsx`)**:
-   - Displays installed version, latest remote release, build date, and codename.
-   - Shows runtime environment (`PWA Standalone App` vs `Web Browser`).
-   - Reports Service Worker and offline cache health.
-   - Features an interactive **"Check for Updates"** button with realistic progress spinner and timestamp.
-   - Includes a full **Changelog & Release History** tab with trilingual notes (EN, ES, PT).
-
-4. **Footer Status (`App.tsx`)**:
-   - Displays installed version with a quick **"Check for Updates"** link.
-
----
-
 ### Hard Cache Reset & Recovery
+If a client browser experiences corrupted cache states, the Version Modal provides an automated **Hard Cache Reset** that:
+1. Unregisters all active service workers via `navigator.serviceWorker.getRegistrations()`.
+2. Deletes all browser CacheStorage buckets via `caches.delete()`.
+3. Performs a clean page reload directly from the CDN.
 
-In the event of corrupted local storage, stale caching, or broken client states, the Version Modal provides a **"Hard Cache Reset"** utility:
-
-```typescript
-// Located in src/hooks/usePWAUpdate.ts
-export async function forceHardRefresh() {
-  // 1. Unregister all active Service Workers
-  if ('serviceWorker' in navigator) {
-    const registrations = await navigator.serviceWorker.getRegistrations();
-    for (const reg of registrations) {
-      await reg.unregister();
-    }
-  }
-
-  // 2. Clear all browser CacheStorage instances
-  if ('caches' in window) {
-    const cacheKeys = await caches.keys();
-    await Promise.all(cacheKeys.map(key => caches.delete(key)));
-  }
-
-  // 3. Perform a clean hard reload from the server
-  window.location.href = window.location.href.split('#')[0];
-}
-```
-
-This guarantees an immediate clean state without requiring users to navigate complex browser setting menus.
+### Release Workflow for Maintainers
+To publish a new version:
+1. Bump `"version"` in `package.json`.
+2. Update `public/version.json` with version, build date, and release highlights.
+3. Add a release entry in `src/version.ts`.
+4. Run `npm run build` and push to `main`. GitHub Actions deploys the release automatically!
 
 ---
 
-### Release Workflow for Maintainers (Bumping Versions)
+## 5. Progressive Web App (PWA) & Offline Capabilities
 
-When publishing a new release of Chronos & Canon, follow this 4-step checklist:
+### Manifest Configuration
+Configured via `vite-plugin-pwa` in `vite.config.ts`:
+- **`start_url`**: `'./'` (relative path compatible with GitHub Pages subdirectories)
+- **`display`**: `'standalone'` (full-screen native app feel without browser toolbars)
+- **`theme_color` / `background_color`**: `'#12100e'` (matches ancient papyrus dark aesthetic)
+- **Icons**: Standard 192x192 PNG, 512x512 splash PNG, and 512x512 maskable PNG for Android squircles.
 
-#### Step 1: Bump version in `package.json`
-```json
-{
-  "name": "chronos-canon",
-  "version": "1.2.1"
-}
-```
+### Service Worker & Runtime Precaching
+- Precaches all production JavaScript bundles, compiled Tailwind CSS, SVGs, and web fonts.
+- Google Fonts (`fonts.googleapis.com` and `fonts.gstatic.com`) are cached for 1 year with a `CacheFirst` strategy.
+- `version.json` uses a strict `NetworkOnly` strategy to ensure real-time update polling.
 
-#### Step 2: Update `public/version.json`
-```json
-{
-  "version": "1.2.1",
-  "buildDate": "2026-10-01T12:00:00Z",
-  "codename": "Babylon & Nippur Edition",
-  "releaseNotes": [
-    "Added new synoptic parallel for Atrahasis Tablet I",
-    "Enhanced polytonic Greek rendering on high-DPI displays"
-  ]
-}
-```
-
-#### Step 3: Register release in `src/version.ts`
-```typescript
-export const APP_VERSION = '1.2.1';
-export const BUILD_DATE = '2026-10-01';
-export const APP_CODENAME = 'Babylon & Nippur Edition';
-
-export const VERSION_HISTORY: VersionRelease[] = [
-  {
-    version: '1.2.1',
-    date: '2026-10-01',
-    codename: 'Babylon & Nippur Edition',
-    isLatest: true,
-    highlights: {
-      en: ['Added new synoptic parallel for Atrahasis Tablet I', 'Enhanced polytonic Greek rendering on high-DPI displays'],
-      es: ['Añadido nuevo paralelo sinóptico para Atrahasis Tablilla I', 'Mejorada la representación del griego politónico en pantallas de alta densidad'],
-      pt: ['Adicionado novo paralelo sinóptico para Atrahasis Tábua I', 'Renderização aprimorada de grego politônico em telas de alta densidade']
-    }
-  },
-  // Previous versions preserved below...
-];
-```
-
-#### Step 4: Build and Deploy
-```bash
-npm run build
-git add .
-git commit -m "release: v1.2.1 (Babylon & Nippur Edition)"
-git push origin main
-```
-Once deployed, all running client instances will detect the update within minutes and offer users a seamless single-click refresh!
-
----
-
-## Progressive Web App (PWA) & Offline Architecture
-
-### Web App Manifest
-
-Configured in `vite.config.ts` and injected automatically:
-- **`id`**: `'./'`
-- **`start_url`**: `'./'` (preserves compatibility with GitHub Pages subpaths)
-- **`display`**: `'standalone'` (hides browser chrome for native app experience)
-- **`theme_color`**: `'#12100e'` (matches ancient dark papyrus styling)
-- **`background_color`**: `'#12100e'`
-- **Icons**: Compliant PNG assets in `public/`:
-  - `pwa-192x192.png` (Standard mobile launcher icon)
-  - `pwa-512x512.png` (High-resolution splash screen icon)
-  - `pwa-maskable-512x512.png` (15% safe-zone margin for Android squircle cropping)
-  - `apple-touch-icon.png` (180x180 PNG for iOS home screen shortcuts)
-
-### Service Worker & Workbox Precaching
-
-- **Asset Precaching**: Pre-caches all production CSS, JS bundles, HTML, SVG, and web fonts.
-- **Runtime Caching for Google Fonts**:
-  - `https://fonts.googleapis.com` & `https://fonts.gstatic.com` cached with a 1-year `CacheFirst` policy.
-- **Network-First for Updates**:
-  - `version.json` configured with `NetworkOnly` to guarantee fresh version metadata on every poll.
-- **Update Mode**: Set to `registerType: 'prompt'` to avoid abrupt session interruption while users are actively studying.
-
-### Installing on Desktop, Android, and iOS
-
-- **Desktop (Chrome / Edge)**: Click the **"Install App"** button in the header or the address bar install icon.
-- **Android**: Tap the **"Install App"** button to trigger the native WebAPK installation banner.
-- **iOS Safari**: Tap the **"Install on iOS"** button for guided instructions:
+### Desktop, Android, and iOS Installation
+- **Desktop (Chrome/Edge/Brave)**: Click the **"Install App"** button in the header or the browser omnibox.
+- **Android**: Tap **"Install App"** to trigger the native WebAPK installer.
+- **iOS Safari**: Tap the **"Install on iOS"** button for a step-by-step modal guide:
   1. Tap the **Share** button in Safari's bottom toolbar.
   2. Select **"Add to Home Screen"**.
-  3. Launch Chronos & Canon as a standalone full-screen application.
+  3. Launch Chronos & Canon from your home screen as a native full-screen app.
 
 ---
 
-## Core Scholarly Modules
+## 6. GitHub Pages Deployment Master Guide
 
-### 1. Synoptic Parallel Comparison Engine
-- Dynamic dual-column comparison viewer for side-by-side text analysis.
-- Verse-by-verse alignment between biblical chapters and ancient Near Eastern epigraphic precursors.
-- Independent language selector per column allowing simultaneous comparative study (e.g. Column A in Hebrew/Greek, Column B in Spanish/English).
+### Why "Deploy from a branch" Directly Fails with Vite
+When users select **"Deploy from a branch"** (`main` -> `/ (root)`) in GitHub Pages settings, GitHub Pages attempts to serve the raw repository files as static HTML. 
 
-### 2. Genesis 6, The Watchers & The Giants Study
-- Four-step interactive historical-critical dossier on Genesis 6:1–4 (*Bene ha-Elohim*, *Nephilim*, *Gibborim*).
-- Comparative alignment with:
-  - 1 Enoch 6–11 (Book of the Watchers / Mount Hermon descent).
-  - Qumran Book of Giants (4Q530, 4Q531, Gilgamesh & Hobabish mentions).
-  - New Testament epistles (Jude 6, 14–15, 2 Peter 2:4 Tartarus traditions).
-  - Mesopotamian Apkallu fish-sage traditions (Eridu & Uruk flood-era wisdom).
-  - Classical Greek Titanomachy & Hesiodic parallels.
+This causes immediate failure because:
+1. **Uncompiled TypeScript/JSX**: Browsers cannot execute raw `.tsx` files (`<script type="module" src="/src/main.tsx">`).
+2. **Unresolved Bare Imports**: Imports like `import React from 'react'` require bundler resolution.
+3. **The `dist/` directory is gitignored** and not present on `main`.
+4. **Subdirectory Path Collisions**: GitHub Pages serves from `https://<username>.github.io/<repo-name>/`. Absolute paths (`/assets/...`) break unless configured with relative resolution.
 
-### 3. Great Deluge Comparative Matrix
-- Comprehensive multi-tradition flood comparison:
-  - *Atrahasis Tablet III* (Akkadian, ca. 1640 BCE).
-  - *Epic of Gilgamesh Tablet XI* (Standard Babylonian version).
-  - *Genesis 6–9* (Priestly & Yahwistic accounts).
-  - *Berossus Babyloniaca* (Hellenistic Babylonian priest).
-  - *Shatapatha Brahmana* (Manu and the Matsya avatar).
-  - *Popol Vuh* (K'iche' Maya wooden people deluge).
-- Structured comparative breakdown of vessel specifications, bird release reconnaissance tests, bitumen sealing methods, and post-flood sweet-savor sacrifices.
+### Automated GitHub Actions Deployment (Recommended)
+This repository includes a production-ready workflow at [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
 
-### 4. 31 Scholarly Relationship Dossiers
-- Rigorous typological tagging across all connections:
-  - `DIRECT QUOTATION` (Verbatim citation).
-  - `TEXTUAL DEPENDENCE` (Structural borrowing).
-  - `SHARED TRADITION` (Common Northwest Semitic or Levantine motif).
-  - `POLEMICAL SUBVERSION` (Intentional ideological inversion of foreign myth).
-  - `PARALLEL MOTIF` (Typological archetype).
-- Evidentiary confidence levels: `PRIMARY DIRECT`, `STRONG DOCUMENTED`, `HISTORICAL PROBABLE`, `SCHOLARLY HYPOTHESIS`.
-
-### 5. Ethiopian Orthodox Canon & The 70 Books
-- Dedicated explorer for the 81-book broader canon (*Mets'hafe Berhan*).
-- Interactive navigation across the *Bole* (Law), *Nebiyat* (Prophets), *Ketubim* (Writings), *Apocrypha*, *Pseudepigrapha*, and Ethiopian Unique Books (1 Enoch, Jubilees, 1-3 Meqabyan).
-
-### 6. Archaeological Cartography & Excavation Dossiers
-- Interactive equirectangular coordinate map of the ancient world.
-- Detailed dossiers for archaeological discovery sites:
-  - Qumran Caves (Dead Sea Scrolls).
-  - Ras Shamra (Ugaritic tablets, Baal Cycle).
-  - Kuyunjik / Nineveh (Library of Ashurbanipal).
-  - Warka / Uruk (Epic of Gilgamesh).
-  - Elephantine Island (Aramaic papyri).
-  - Amarna (Diplomatic cuneiform archive).
-
-### 7. Multilingual Architecture (EN, ES, PT)
-- Complete interface, study view, and primary passage translations:
-  - **English (EN)**: Scholarly English translations grounded in modern critical editions.
-  - **Español (ES)**: Comprehensive Latin American & Peninsular scholarly Spanish translations.
-  - **Português (PT)**: Fluent academic Portuguese apparatus.
-- Instant toggle from the navigation bar without page reloads.
-
----
-
-## Hosting on GitHub Pages: Why "Deploy from a Branch" Fails
-
-When you choose **"Deploy from a branch"** (e.g. `main` -> `/ (root)`) in GitHub Pages settings, GitHub Pages assumes your repository contains ready-to-serve, static, pre-compiled HTML, CSS, and vanilla JavaScript files.
-
-However, this repository is a modern **React + TypeScript + Vite Single Page Application (SPA)**. Here is why deploying directly from the raw `main` branch breaks:
-
-```mermaid
-flowchart TD
-    subgraph FAILED["❌ Why Deploying Directly from 'main' Fails"]
-        A[Git Push to 'main'] --> B[GitHub Pages serves files directly from / root]
-        B --> C[Browser fetches index.html]
-        C --> D["Browser encounters: &lt;script type='module' src='/src/main.tsx'&gt;"]
-        D --> E["Browser requests /src/main.tsx"]
-        E --> F["❌ HTTP 404 Not Found OR MIME Type Error:<br>Browsers cannot execute raw .tsx or resolve 'import React from react'"]
-        F --> G["Blank White Screen / Console Crashed"]
-    end
-
-    subgraph SUCCESS["✅ How GitHub Pages Must Work for Vite"]
-        H[Git Push to 'main'] --> I[GitHub Actions or Local Build Triggered]
-        I --> J["Run 'npm run build' (Vite Compiler)"]
-        J --> K["Transpiles TSX to Vanilla JS, compiles Tailwind CSS, generates /dist"]
-        K --> L[Upload compiled /dist bundle to GitHub Pages CDN]
-        L --> M[Browser executes optimized production bundle smoothly]
-    end
-
-    style FAILED fill:#2a1111,stroke:#e53e3e,stroke-width:2px,color:#fff
-    style SUCCESS fill:#112a19,stroke:#38a169,stroke-width:2px,color:#fff
-```
-
-### The 4 Culprits:
-1. **Uncompiled TypeScript/JSX**: Browsers only execute standard JavaScript (`.js`). Source files in `/src` use `.tsx` syntax with JSX expressions (`<Component />`) and TypeScript types, requiring the Vite build step (`npm run build`) to transpile into vanilla ECMAScript.
-2. **Unresolved Bare Module Imports**: In `/src/main.tsx`, imports like `import React from 'react'` and `import { LucideIcon } from 'lucide-react'` require Rollup to resolve node module packages into self-contained web bundles.
-3. **The `dist/` Directory Is Gitignored**: The compiled output folder (`dist/`) is intentionally not committed to `main` to prevent merge conflicts and repository bloat.
-4. **Subdirectory Base Path Mismatch**: Standard GitHub Pages URLs reside at `https://<username>.github.io/<repository-name>/`. Without `base: './'` in `vite.config.ts`, browsers request `/assets/...` from the root domain, resulting in 404 errors for all CSS and JavaScript.
-
----
-
-## Architecture & Deployment Pipelines (Mermaid)
-
-### 1. Build and Deployment Pipeline
-
-```mermaid
-flowchart LR
-    subgraph Developer["1. Source Code"]
-        SRC["/src/ (TSX, React 19)"]
-        PUB["/public/ (Assets, 404.html, version.json)"]
-        CFG["vite.config.ts (base: './')"]
-    end
-
-    subgraph Compiler["2. Vite Compilation Engine"]
-        BUILD["npm run build"]
-        ROLLUP["Rollup Bundler & PostCSS"]
-        DIST["/dist/ Folder<br>• index.html<br>• assets/*.js (ESM)<br>• assets/*.css<br>• version.json<br>• sw.js & manifest<br>• 404.html"]
-    end
-
-    subgraph GitHub["3. GitHub Pages Infrastructure"]
-        ACT["GitHub Actions Runner"]
-        ARTIFACT["pages-artifact.tar"]
-        CDN["GitHub Pages Global CDN"]
-    end
-
-    SRC --> BUILD
-    PUB --> BUILD
-    CFG --> BUILD
-    BUILD --> ROLLUP --> DIST
-    DIST --> ACT --> ARTIFACT --> CDN
-
-    style Developer fill:#1a1816,stroke:#8c7851,color:#e8e2d5
-    style Compiler fill:#1f1c18,stroke:#c99738,color:#fff
-    style GitHub fill:#16201b,stroke:#48bb78,color:#fff
-```
-
-### 2. GitHub Actions Deployment Sequence
-
-```mermaid
-sequenceDiagram
-    autonumber
-    actor Dev as Developer
-    participant GH as GitHub Repository (main)
-    participant Runner as GitHub Actions Runner
-    participant Pages as GitHub Pages CDN
-    actor User as End User (Browser)
-
-    Dev->>GH: git push origin main
-    GH->>Runner: Trigger .github/workflows/deploy.yml
-    activate Runner
-    Runner->>Runner: actions/checkout@v4
-    Runner->>Runner: actions/setup-node@v4 (Node 20)
-    Runner->>Runner: npm ci (clean install dependencies)
-    Runner->>Runner: npm run build (generates optimized ./dist)
-    Runner->>Pages: actions/upload-pages-artifact@v3 (./dist)
-    Runner->>Pages: actions/deploy-pages@v4
-    deactivate Runner
-    Pages-->>Dev: Deployment complete (https://<username>.github.io/<repo>/)
-
-    User->>Pages: Visits https://<username>.github.io/<repo>/
-    Pages-->>User: Delivers compiled index.html, JS chunks, and styles
-    User->>User: React executes seamlessly in browser
-```
-
----
-
-## How to Deploy to GitHub Pages (Step-by-Step)
-
-### Method 1: GitHub Actions (Recommended & Easiest)
-
-This repository **already includes** the required GitHub Actions workflow at [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) and the relative asset path configuration in `vite.config.ts`.
-
-#### Step 1: Push the Repository to GitHub
-Make sure all repository files (including the `.github` folder) are committed and pushed to your GitHub repository:
-```bash
-git add .
-git commit -m "feat: configure PWA version control and GitHub Actions deployment"
-git push origin main
-```
-
-#### Step 2: Enable GitHub Actions as the Pages Source
-1. Open your repository on GitHub (`https://github.com/<username>/<repo-name>`).
-2. Click on the **Settings** tab.
-3. In the left-hand navigation sidebar, click on **Pages** (under the "Code and automation" section).
-4. Under **Build and deployment**:
-   - Change **Source** from *"Deploy from a branch"* to **"GitHub Actions"**.
-5. Save settings.
+To activate:
+1. Push this repository to GitHub.
+2. Go to **Settings** -> **Pages**.
+3. Under **Build and deployment**, set **Source** to **"GitHub Actions"**.
+4. GitHub Actions will automatically compile the TypeScript, bundle all assets with Vite, generate the Service Worker, and deploy the `/dist` artifact to GitHub Pages.
 
 ```
 Settings
@@ -488,122 +401,56 @@ Settings
               └── Source: [ GitHub Actions ▼ ]  <-- Select this!
 ```
 
-#### Step 3: Verify the Deployment
-1. Click on the **Actions** tab in your repository.
-2. Observe the running workflow named **"Deploy Chronos & Canon to GitHub Pages"**.
-3. Once completed (usually 45–60 seconds), your live URL will appear in the deployment summary:
-   `https://<username>.github.io/<repo-name>/`
+Your live site will be accessible at:
+**`https://<username>.github.io/<repo-name>/`**  
+Production instance: **[https://cptnope.github.io/Chronos-and-Canon/](https://cptnope.github.io/Chronos-and-Canon/)**
 
----
-
-### Method 2: Deploying to a `gh-pages` Branch
-
-If your organization requires the classic **"Deploy from a branch"** option, deploy the *compiled `dist` folder* to an isolated branch named `gh-pages`:
-
-#### Step 1: Install `gh-pages`
-```bash
-npm install --save-dev gh-pages
+### Relative Base Path Configuration
+`vite.config.ts` is explicitly configured with:
+```typescript
+export default defineConfig({
+  base: './', // Ensures relative asset resolution on GitHub Pages subpaths
+  // ...
+});
 ```
 
-#### Step 2: Add deploy scripts to `package.json`
-```json
-"scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
-}
-```
-
-#### Step 3: Build and Deploy
-```bash
-npm run deploy
-```
-
-#### Step 4: Configure GitHub Pages
-1. Go to **Settings** -> **Pages**.
-2. Under **Build and deployment**:
-   - Source: **Deploy from a branch**.
-   - Branch: Select **`gh-pages`** and folder **`/ (root)`**.
-3. Click **Save**.
+### SPA 404 Routing on GitHub Pages
+GitHub Pages is a static host that returns a 404 error if a user navigates to `/compare` or refreshes a deep link. This repository resolves this with [`public/404.html`](public/404.html), which captures the intended route, transforms it into query parameters, and redirects to `index.html` where React restores the state without error.
 
 ---
 
-### Method 3: Deploying via `/docs` Folder on `main`
+## 7. Local Development & Build Reference
 
-If you must stay on the `main` branch with "Deploy from a branch":
-
-1. In `vite.config.ts`, set `build.outDir` to `'docs'`:
-   ```ts
-   export default defineConfig({
-     base: './',
-     build: {
-       outDir: 'docs',
-     },
-     // ...
-   });
-   ```
-2. Build the app locally:
-   ```bash
-   npm run build
-   ```
-3. Commit and push the generated `docs` directory:
-   ```bash
-   git add docs/
-   git commit -m "build: compile static production bundle to /docs"
-   git push origin main
-   ```
-4. In GitHub -> **Settings** -> **Pages**:
-   - Source: **Deploy from a branch**.
-   - Branch: **`main`**.
-   - Folder: Select **`/docs`**.
-5. Click **Save**.
-
----
-
-## Troubleshooting Common Deployment Errors
-
-### 1. "Failed to load module script: Expected a JavaScript-compatible script"
-- **Cause**: GitHub Pages is serving raw `.tsx` files directly from `main` without compilation.
-- **Fix**: Switch the Pages Source to **GitHub Actions** (Method 1) so Vite compiles your code into executable `.js` bundles first.
-
-### 2. Blank White Screen & 404 on CSS/JS Assets (`/assets/index-xxx.js 404 Not Found`)
-- **Cause**: Asset URLs are absolute (`/assets/...`) instead of relative (`./assets/...`). GitHub project pages reside at `https://<user>.github.io/<repo>/`, so absolute paths look for assets at the root domain (`https://<user>.github.io/assets/...`).
-- **Fix**: This project already has `base: './'` in `vite.config.ts`. If you ever change bundlers, ensure relative base paths are preserved.
-
-### 3. Page Reload / Direct Route 404s (SPA Routing)
-- **Cause**: GitHub Pages is a static file server. If a user navigates to `/compare` and refreshes, GitHub looks for a directory named `/compare/index.html` which does not exist.
-- **Fix**: This project includes [`public/404.html`](public/404.html), an automated client-side redirect script that forwards any 404 path back to `index.html` with route restoration parameters.
-
-### 4. GitHub Actions Workflow Permission Denied
-- **Cause**: Workflow lacks write permissions for Pages deployment.
-- **Fix**: The included `.github/workflows/deploy.yml` specifies:
-  ```yaml
-  permissions:
-    contents: read
-    pages: write
-    id-token: write
-  ```
-  Ensure under **Settings** -> **Actions** -> **General** -> **Workflow permissions**, "Read and write permissions" is checked.
-
-### 5. Stale Client Version After New Push
-- **Cause**: The client's Service Worker has cached the older assets.
-- **Fix**: The archive's PWA Version Controller will prompt the user with an "Update Available" banner within 3 seconds of connection or upon tab refocus. Alternatively, click the version button in the footer and select **"Check for Updates"** or **"Hard Cache Reset"**.
-
----
-
-## Local Development & Build Reference
+### Available Scripts
 
 | Command | Action | Description |
 | :--- | :--- | :--- |
-| `npm install` | Install Dependencies | Installs all React, Vite, Workbox, and UI dependencies |
-| `npm run dev` | Start Dev Server | Launches local development server at `http://localhost:3000` |
-| `npm run build` | Production Build | Compiles TypeScript, bundles assets, and generates PWA Service Worker in `/dist` |
-| `npm run build:gh-pages` | GitHub Pages Build | Explicitly builds with relative path resolution for static subpaths |
-| `npm run preview` | Preview Production | Serves the generated `/dist` folder locally for pre-flight testing |
-| `npm run lint` | TypeScript Validation | Executes `tsc --noEmit` to verify type safety across all files |
-| `npm run clean` | Clean Artifacts | Removes `/dist` and temporary build cache |
+| `npm install` | Install Dependencies | Installs React 19, TypeScript, Vite 6, Tailwind CSS, Lucide icons, and Workbox |
+| `npm run dev` | Development Server | Starts local development server at `http://localhost:3000` |
+| `npm run build` | Production Build | Transpiles TypeScript, compiles Tailwind, bundles JS, and generates PWA Service Worker in `/dist` |
+| `npm run build:gh-pages` | GitHub Pages Build | Builds with explicit relative base paths for static deployment |
+| `npm run preview` | Production Preview | Locally serves the compiled `/dist` directory for verification |
+| `npm run lint` | TypeScript Linting | Executes `tsc --noEmit` to validate strict type safety across all files |
+| `npm run clean` | Clean Artifacts | Deletes `/dist` and temporary build caches |
 
 ---
 
-## License & Scholarly Citation
+## 8. Academic Citation & Scholarly Ethics
 
-Chronos & Canon is an open scholarly research initiative. Textual selections and lexical apparatus are assembled from open-access academic editions, epigraphic publications, and public domain historical corpora.
+Chronos & Canon is an open-access scholarly initiative created for educational and academic research. Primary texts, transcriptions, and translations are derived from public domain publications, open-access scholarly databases, and critical epigraphic editions.
+
+When utilizing data or visual connections from Chronos & Canon in published academic work, please cite:
+
+```bibtex
+@online{chronos_canon_2026,
+  title = {Chronos & Canon: Ancient Text Comparative Archive},
+  author = {Chronos & Canon Research Project},
+  year = {2026},
+  url = {https://cptnope.github.io/Chronos-and-Canon/},
+  note = {Interactive Comparative Near Eastern and Biblical Textual Archive}
+}
+```
+
+---
+
+*Chronos & Canon — Preserving Epigraphic Heritage and Advancing Comparative Textual Scholarship.*

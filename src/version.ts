@@ -10,16 +10,47 @@ export interface VersionRelease {
   };
 }
 
-export const APP_VERSION = '1.2.0';
-export const BUILD_DATE = '2026-09-29';
-export const APP_CODENAME = 'Qumran & Uruk Edition';
+export const APP_VERSION = '1.3.0';
+export const BUILD_DATE = '2026-09-30';
+export const APP_CODENAME = 'Ugarit & Eridu Edition';
 
 export const VERSION_HISTORY: VersionRelease[] = [
+  {
+    version: '1.3.0',
+    date: '2026-09-30',
+    codename: 'Ugarit & Eridu Edition',
+    isLatest: true,
+    highlights: {
+      en: [
+        'Adaptive, uncrowded desktop navigation banner with responsive tab labeling across English, Spanish, and Portuguese.',
+        'Balanced 2-column editorial Hero Banner for wide screens with curated research dimension chips and fluid typography.',
+        'Full application-wide UI localization covering Digital Library, Map, Graph, Timeline, and Seventy Books views.',
+        'Strict preservation of ancient sacred scripts (Biblical Hebrew, Aramaic, Greek, Ethiopic, Akkadian) intact.',
+        'Bespoke Research Rigor popover in top navigation toolbelt replacing bulky native select controls.',
+        'Expanded architectural README documentation with official GitHub Pages live deployment link.'
+      ],
+      es: [
+        'Banner de navegación de escritorio adaptable y espacioso con etiquetas responsivas en inglés, español y portugués.',
+        'Banner Hero editorial equilibrado en 2 columnas para pantallas anchas con tarjetas de investigación y tipografía fluida.',
+        'Localización completa de la interfaz en Biblioteca Digital, Mapa, Grafo, Línea de Tiempo y Setenta Libros.',
+        'Preservación rigurosa de escrituras sagradas antiguas (hebreo, arameo, griego, etíope, acadio) auténticas e intactas.',
+        'Menú desplegable estilizado de Rigor de Investigación en la barra superior reemplazando controles nativos.',
+        'Documentación README arquitectónica ampliada con enlace directo al despliegue oficial de GitHub Pages.'
+      ],
+      pt: [
+        'Banner de navegação desktop adaptável e espaçoso com rótulos responsivos em inglês, espanhol e português.',
+        'Banner Hero editorial equilibrado em 2 colunas para telas amplas com cartões de pesquisa e tipografia fluida.',
+        'Localização completa da interface na Biblioteca Digital, Mapa, Grafo, Linha do Tempo e Setenta Livros.',
+        'Preservação rigorosa de escrituras sagradas antigas (hebraico, aramaico, grego, etíope, acadiano) autênticas e intactas.',
+        'Menu popover personalizado de Rigor de Pesquisa na barra superior substituindo seletores nativos.',
+        'Documentação README arquitetônica expandida com link direto para a implantação oficial no GitHub Pages.'
+      ]
+    }
+  },
   {
     version: '1.2.0',
     date: '2026-09-29',
     codename: 'Qumran & Uruk Edition',
-    isLatest: true,
     highlights: {
       en: [
         'Client-Side PWA Version Control & Update Controller with automatic and on-demand update detection.',

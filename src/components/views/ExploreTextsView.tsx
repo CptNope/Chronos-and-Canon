@@ -7,6 +7,7 @@ import { AncientTermModal } from '../common/AncientTermModal';
 import { getLanguageMeta } from '../../utils/scriptHelper';
 import { publicTextEditions } from '../../data/publicTexts';
 import { useLanguage } from '../../i18n/LanguageContext';
+import { getUiTranslations } from '../../i18n/uiTranslations';
 import { getPassageText } from '../../utils/passageTranslationHelper';
 import { BookOpen, Search, Calendar, FileText, ArrowRight, Sparkles, AlertCircle, ExternalLink, Library } from 'lucide-react';
 
@@ -20,6 +21,7 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
   onNavigateToDigitalLibrary
 }) => {
   const { t, language } = useLanguage();
+  const ui = getUiTranslations(language);
   const [selectedCategory, setSelectedCategory] = useState<string>('ALL');
   const [selectedCulture, setSelectedCulture] = useState<string>('ALL');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -68,21 +70,21 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
       {/* Header and Filter Bar */}
       <div className="p-6 rounded-2xl bg-[#151210] border border-[#a48c68]/20 shadow-xl">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[#2b241c]">
-          <div>
+          <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 text-xs font-semibold text-[#c99738] uppercase tracking-wider">
-              <BookOpen className="w-4 h-4" />
-              Primary Source Reader &amp; Textual Archive
+              <BookOpen className="w-4 h-4 flex-shrink-0" />
+              <span>{ui.explore.headerTag}</span>
             </div>
             <h1 className="text-2xl md:text-3xl font-bold font-display text-[#f5d77f] mt-1">
-              Explore Ancient Texts &amp; Canons
+              {ui.explore.headerTitle}
             </h1>
             <p className="text-sm text-[#b8ad9e] mt-1 max-w-3xl">
-              Browse primary ancient literature across Hebrew, Second Temple, Christian, Mesopotamian, Ugaritic, Classical, and Global traditions with tripartite chronological distinction.
+              {ui.explore.headerSubtitle}
             </p>
           </div>
 
           {/* Reading Mode Switcher */}
-          <div className="flex items-center p-1 rounded-lg bg-[#201a14] border border-[#3b3226] self-start md:self-auto">
+          <div className="flex items-center p-1 rounded-lg bg-[#201a14] border border-[#3b3226] self-start md:self-auto flex-shrink-0">
             <button
               onClick={() => setReadingMode('SIDE_BY_SIDE')}
               className={`px-3 py-1.5 rounded text-xs font-medium transition ${
@@ -91,7 +93,7 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
                   : 'text-[#a48c68] hover:text-[#e8e2d5]'
               }`}
             >
-              Side-by-Side
+              {ui.explore.readingModes.sideBySide}
             </button>
             <button
               onClick={() => setReadingMode('ENGLISH_ONLY')}
@@ -101,7 +103,7 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
                   : 'text-[#a48c68] hover:text-[#e8e2d5]'
               }`}
             >
-              English Only
+              {ui.explore.readingModes.translationOnly}
             </button>
             <button
               onClick={() => setReadingMode('ORIGINAL_ONLY')}
@@ -111,7 +113,7 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
                   : 'text-[#a48c68] hover:text-[#e8e2d5]'
               }`}
             >
-              Original Script
+              {ui.explore.readingModes.originalOnly}
             </button>
           </div>
         </div>
@@ -122,7 +124,7 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
             <Search className="absolute left-3 top-2.5 w-4 h-4 text-[#a48c68]" />
             <input
               type="text"
-              placeholder="Search ancient works, keywords, or alternate titles..."
+              placeholder={t.explore.searchPlaceholder}
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
               className="w-full pl-9 pr-4 py-2 rounded-lg bg-[#1a1714] border border-[#3b3226] text-sm text-[#e8e2d5] placeholder-[#7d6f5d] focus:outline-none focus:border-[#c99738]"
@@ -135,7 +137,7 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
               onChange={e => setSelectedCulture(e.target.value)}
               className="px-3 py-2 rounded-lg bg-[#1a1714] border border-[#3b3226] text-xs text-[#e8e2d5] focus:outline-none focus:border-[#c99738]"
             >
-              <option value="ALL">All Traditions</option>
+              <option value="ALL">{ui.explore.allTraditions}</option>
               {cultures.map(c => (
                 <option key={c.id} value={c.id}>{c.name}</option>
               ))}
@@ -155,7 +157,7 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
                   : 'bg-[#1e1a16] border border-[#322a20] text-[#a48c68] hover:border-[#63533e]'
               }`}
             >
-              {cat}
+              {ui.categories[cat] || cat}
             </button>
           ))}
         </div>
@@ -166,7 +168,7 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
         {/* Texts List (Left Column) */}
         <div className="lg:col-span-4 space-y-2 max-h-[750px] overflow-y-auto pr-1">
           <div className="text-xs uppercase tracking-wider text-[#a48c68] font-semibold px-2 mb-2">
-            Catalogued Works ({filteredTexts.length})
+            {ui.explore.cataloguedWorks(filteredTexts.length)}
           </div>
           {filteredTexts.map(text => {
             const isSelected = text.id === activeText.id;
@@ -182,7 +184,7 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
               >
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-semibold uppercase px-2 py-0.5 rounded bg-[#2b241c] text-[#c99738] border border-[#a48c68]/20">
-                    {text.category}
+                    {ui.categories[text.category] || text.category}
                   </span>
                   <span className="text-[11px] text-[#8e806e] font-mono">
                     {text.chronology.estimatedDateOfComposition.split('(')[0]}
@@ -197,7 +199,7 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
                 {text.isLostBookReference && (
                   <div className="mt-2 text-[10px] font-medium text-amber-400/90 flex items-center gap-1">
                     <AlertCircle className="w-3 h-3 flex-shrink-0" />
-                    <span>Ancient Lost Reference (Not later homonym)</span>
+                    <span>{ui.explore.lostBookTag}</span>
                   </div>
                 )}
               </div>
@@ -212,7 +214,7 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
             <div className="flex flex-wrap items-center justify-between gap-2">
               <div>
                 <span className="text-xs font-semibold px-2.5 py-0.5 rounded bg-[#2b241c] text-[#c99738] border border-[#c99738]/30 uppercase">
-                  {activeText.category}
+                  {ui.categories[activeText.category] || activeText.category}
                 </span>
                 <h2 className="text-2xl md:text-3xl font-bold font-display text-[#f5d77f] mt-1">
                   {activeText.title}
@@ -232,7 +234,7 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
               <div className="p-4 rounded-xl bg-amber-950/30 border border-amber-600/40 text-amber-200 text-xs leading-relaxed space-y-1.5">
                 <div className="flex items-center gap-1.5 font-bold uppercase tracking-wider text-amber-300">
                   <AlertCircle className="w-4 h-4 text-amber-400" />
-                  Textual &amp; Historical Integrity Notice
+                  {ui.explore.lostBookNotice}
                 </div>
                 <p>{activeText.lostBookAnalysis}</p>
               </div>
@@ -242,19 +244,19 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
             <div className="p-4 rounded-xl bg-[#1a1714] border border-[#3b3226] space-y-2">
               <div className="text-[11px] uppercase tracking-wider font-semibold text-[#c99738] flex items-center gap-1.5">
                 <Calendar className="w-3.5 h-3.5" />
-                Three-Tier Chronological Framework
+                {ui.explore.chronologyTitle}
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs pt-1">
                 <div className="p-2.5 rounded bg-[#221c17] border border-[#2e261d]">
-                  <span className="block text-[10px] text-[#8e806e] uppercase font-bold">1. Claimed Setting</span>
+                  <span className="block text-[10px] text-[#8e806e] uppercase font-bold">{ui.explore.settingLabel}</span>
                   <span className="font-medium text-[#e8e2d5] mt-0.5 block">{activeText.chronology.dateOfStorySetting}</span>
                 </div>
                 <div className="p-2.5 rounded bg-[#221c17] border border-[#2e261d]">
-                  <span className="block text-[10px] text-[#8e806e] uppercase font-bold">2. Estimated Composition</span>
+                  <span className="block text-[10px] text-[#8e806e] uppercase font-bold">{ui.explore.compositionLabel}</span>
                   <span className="font-medium text-[#e8e2d5] mt-0.5 block">{activeText.chronology.estimatedDateOfComposition}</span>
                 </div>
                 <div className="p-2.5 rounded bg-[#221c17] border border-[#2e261d]">
-                  <span className="block text-[10px] text-[#8e806e] uppercase font-bold">3. Earliest Surviving MS</span>
+                  <span className="block text-[10px] text-[#8e806e] uppercase font-bold">{ui.explore.earliestMsLabel}</span>
                   <span className="font-medium text-[#e8e2d5] mt-0.5 block">{activeText.chronology.dateOfEarliestSurvivingManuscript}</span>
                 </div>
               </div>
@@ -262,8 +264,8 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
 
             {/* Manuscript History & Witnesses */}
             <div className="text-xs text-[#a49989] space-y-1 border-t border-[#2d251d] pt-3">
-              <div><strong className="text-[#c99738]">Manuscript Witness Tradition:</strong> {activeText.manuscriptHistory}</div>
-              <div><strong className="text-[#c99738]">Key Physical Witnesses:</strong> {activeText.primaryManuscriptWitnesses.join(', ')}</div>
+              <div><strong className="text-[#c99738]">{ui.explore.witnessTradition}</strong> {activeText.manuscriptHistory}</div>
+              <div><strong className="text-[#c99738]">{ui.explore.keyWitnesses}</strong> {activeText.primaryManuscriptWitnesses.join(', ')}</div>
             </div>
 
             {/* PUBLICLY AVAILABLE EDITIONS & DIGITAL FACSIMILES */}
@@ -276,14 +278,14 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
                   <div className="flex items-center justify-between">
                     <div className="text-[11px] uppercase tracking-wider font-semibold text-[#f5d77f] flex items-center gap-1.5">
                       <Library className="w-3.5 h-3.5 text-[#c99738]" />
-                      Publicly Available Digital Editions &amp; Facsimiles ({linkedEditions.length})
+                      {ui.explore.digitalEditionsTitle(linkedEditions.length)}
                     </div>
                     {onNavigateToDigitalLibrary && (
                       <button
                         onClick={() => onNavigateToDigitalLibrary(activeText.id)}
                         className="text-[11px] text-[#c99738] hover:text-[#f5d77f] flex items-center gap-1 transition font-medium"
                       >
-                        <span>View All in Digital Library</span>
+                        <span>{ui.explore.viewAllDigitalLibrary}</span>
                         <ArrowRight className="w-3 h-3" />
                       </button>
                     )}
@@ -298,7 +300,7 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
                         <div className="space-y-1">
                           <div className="flex items-center justify-between gap-1">
                             <span className="text-[9px] uppercase font-bold px-1.5 py-0.2 rounded bg-[#251e18] text-[#c99738] border border-[#c99738]/30">
-                              {ed.editionType}
+                              {ui.library.editionTypes[ed.editionType] || ed.editionType}
                             </span>
                             <span className="text-[10px] text-[#8e806e] truncate max-w-[130px]">
                               {ed.institution}
@@ -320,7 +322,7 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
                             rel="noopener noreferrer"
                             className="px-2.5 py-1 rounded-lg bg-[#c99738]/20 hover:bg-[#c99738] hover:text-[#12100e] text-[#f5d77f] text-[11px] font-semibold transition border border-[#c99738]/40 flex items-center gap-1 shadow-sm"
                           >
-                            <span>Open Archive</span>
+                            <span>{ui.explore.openArchive}</span>
                             <ExternalLink className="w-3 h-3" />
                           </a>
                         </div>
@@ -337,13 +339,13 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-bold font-display text-[#f5d77f] flex items-center gap-2">
                 <FileText className="w-4 h-4 text-[#c99738]" />
-                Selected Key Passages &amp; Interlinears ({textPassages.length})
+                {ui.explore.passagesTitle(textPassages.length)}
               </h3>
             </div>
 
             {textPassages.length === 0 ? (
               <div className="p-8 text-center rounded-2xl bg-[#161311] border border-dashed border-[#362f27] text-[#8e806e] text-sm">
-                No individual sample passages recorded for this text entry yet. You can examine its relationship network in the Graph View or ask the AI Research Assistant.
+                {ui.explore.noPassages}
               </div>
             ) : (
               textPassages.map(passage => (
@@ -366,7 +368,7 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
                         onClick={() => onSelectPassageForCompare(passage.id)}
                         className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#201a14] hover:bg-[#2e261d] border border-[#a48c68]/30 text-xs font-semibold text-[#f5d77f] transition"
                       >
-                        <span>Compare in Viewer</span>
+                        <span>{ui.explore.compareInViewer}</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </button>
                     )}
@@ -377,7 +379,7 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
                     <div className="flex items-center gap-2 flex-wrap text-xs bg-[#1f1a14] p-2 rounded-lg border border-[#382f23]">
                       <span className="text-[#a48c68] font-semibold flex items-center gap-1 text-[11px]">
                         <Sparkles className="w-3.5 h-3.5 text-[#c99738]" />
-                        Clickable Linguistic Terms:
+                        {ui.explore.clickableTerms}
                       </span>
                       {passage.clickableTerms.map(termId => (
                         <button
@@ -428,7 +430,7 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
                       return (
                         <div className={`p-4 rounded-xl bg-[#1a1613] border border-[#2d251d] space-y-2 ${readingMode === 'ENGLISH_ONLY' ? 'md:col-span-2' : ''}`}>
                           <div className="flex items-center justify-between text-[11px] text-[#c99738] font-mono border-b border-[#2b241c] pb-1.5">
-                            <span>{t.compare.translation} ({localized.languageName})</span>
+                            <span>{ui.explore.translationLabel(localized.languageName)}</span>
                             <span className="text-[10px] text-[#8e806e]">{passage.translationAttribution.license}</span>
                           </div>
                           <p className="text-sm md:text-base leading-relaxed text-[#e8e2d5] font-serif">
@@ -447,14 +449,14 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
                   {/* Critical Apparatus / Translation Attribution */}
                   <div className="pt-3 border-t border-[#2b241c] text-xs text-[#8e806e] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <div>
-                      <span>Translator: <strong>{passage.translationAttribution.translator}</strong> ({passage.translationAttribution.year})</span>
+                      <span>{ui.explore.translator} <strong>{passage.translationAttribution.translator}</strong> ({passage.translationAttribution.year})</span>
                       <span className="mx-2">•</span>
                       <span>{passage.translationAttribution.attributionNotice}</span>
                     </div>
                   </div>
                   {passage.criticalApparatusNotes && (
                     <div className="text-xs bg-[#1a1613] p-2.5 rounded-lg border border-[#2e261e] text-[#b8ad9e]">
-                      <strong className="text-[#c99738]">Text-Critical Note:</strong> {passage.criticalApparatusNotes}
+                      <strong className="text-[#c99738]">{ui.explore.textCriticalNote}</strong> {passage.criticalApparatusNotes}
                     </div>
                   )}
                 </div>

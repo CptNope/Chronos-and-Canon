@@ -5,6 +5,7 @@ import { Passage, SupportedLanguage } from '../../types';
 import { AncientTermModal } from '../common/AncientTermModal';
 import { getLanguageMeta } from '../../utils/scriptHelper';
 import { useLanguage } from '../../i18n/LanguageContext';
+import { getUiTranslations } from '../../i18n/uiTranslations';
 import { getPassageText } from '../../utils/passageTranslationHelper';
 import { GitCompare, Plus, Trash2, Sparkles, Copy, Check, Share2, Bookmark, Globe } from 'lucide-react';
 
@@ -14,6 +15,7 @@ interface CompareViewProps {
 
 export const CompareView: React.FC<CompareViewProps> = ({ initialPassageIds = ['gen_6_1_4', '1_enoch_6_1_6'] }) => {
   const { t, language } = useLanguage();
+  const ui = getUiTranslations(language);
   const [selectedPassageIds, setSelectedPassageIds] = useState<string[]>(initialPassageIds);
   const [passageLanguages, setPassageLanguages] = useState<Record<string, SupportedLanguage>>({});
 
@@ -72,10 +74,10 @@ export const CompareView: React.FC<CompareViewProps> = ({ initialPassageIds = ['
       {/* Top Banner and Controls */}
       <div className="p-6 rounded-2xl bg-[#161311] border border-[#a48c68]/20 shadow-xl space-y-4">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div>
+          <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 text-xs font-semibold text-[#c99738] uppercase tracking-wider">
-              <GitCompare className="w-4 h-4" />
-              {t.compare.title}
+              <GitCompare className="w-4 h-4 flex-shrink-0" />
+              <span>{t.compare.title}</span>
             </div>
             <h1 className="text-2xl md:text-3xl font-bold font-display text-[#f5d77f] mt-1">
               {t.compare.title}
@@ -85,7 +87,7 @@ export const CompareView: React.FC<CompareViewProps> = ({ initialPassageIds = ['
             </p>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-shrink-0">
             <button
               onClick={handleToggleFavorite}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-medium transition ${
@@ -95,7 +97,7 @@ export const CompareView: React.FC<CompareViewProps> = ({ initialPassageIds = ['
               }`}
             >
               <Bookmark className="w-3.5 h-3.5" />
-              <span>{isSaved ? 'Bookmarked' : 'Bookmark'}</span>
+              <span>{isSaved ? ui.compare.bookmarked : ui.compare.bookmark}</span>
             </button>
             <button
               onClick={handleShare}
@@ -109,36 +111,36 @@ export const CompareView: React.FC<CompareViewProps> = ({ initialPassageIds = ['
 
         {/* Quick presets */}
         <div className="pt-3 border-t border-[#2a231b] flex items-center gap-2 flex-wrap text-xs">
-          <span className="text-[#a48c68] font-semibold">Flagship Presets:</span>
+          <span className="text-[#a48c68] font-semibold">{ui.compare.flagshipPresets}</span>
           <button
             onClick={() => setSelectedPassageIds(['gen_6_1_4', '1_enoch_6_1_6'])}
             className="px-2.5 py-1 rounded bg-[#201a14] hover:bg-[#2e261d] text-[#e8e2d5] border border-[#362f27]"
           >
-            Genesis 6 ↔ 1 Enoch 6
+            {ui.compare.presets.gen6Enoch}
           </button>
           <button
             onClick={() => setSelectedPassageIds(['jude_6_and_14_15', '1_enoch_1_9'])}
             className="px-2.5 py-1 rounded bg-[#201a14] hover:bg-[#2e261d] text-[#e8e2d5] border border-[#362f27]"
           >
-            Jude 14–15 ↔ 1 Enoch 1:9
+            {ui.compare.presets.judeEnoch}
           </button>
           <button
             onClick={() => setSelectedPassageIds(['deut_2_and_3', 'joshua_12_4', 'ugaritic_ktu_1_108'])}
             className="px-2.5 py-1 rounded bg-[#201a14] hover:bg-[#2e261d] text-[#e8e2d5] border border-[#362f27]"
           >
-            Og of Bashan ↔ Ugaritic Rapiu
+            {ui.compare.presets.ogRapiu}
           </button>
           <button
             onClick={() => setSelectedPassageIds(['gilgamesh_tablet_11_flood', 'atrahasis_tablet_3_flood', 'shatapatha_brahmana_flood'])}
             className="px-2.5 py-1 rounded bg-[#201a14] hover:bg-[#2e261d] text-[#e8e2d5] border border-[#362f27]"
           >
-            Gilgamesh ↔ Atrahasis ↔ Manu Flood
+            {ui.compare.presets.flood}
           </button>
           <button
             onClick={() => setSelectedPassageIds(['psalm_74_13_14', 'isaiah_27_1', 'baal_cycle_lotan'])}
             className="px-2.5 py-1 rounded bg-[#201a14] hover:bg-[#2e261d] text-[#e8e2d5] border border-[#362f27]"
           >
-            Isaiah 27 ↔ Psalm 74 ↔ Baal vs Lotan
+            {ui.compare.presets.chaoskampf}
           </button>
         </div>
 
@@ -146,7 +148,7 @@ export const CompareView: React.FC<CompareViewProps> = ({ initialPassageIds = ['
         {selectedPassageIds.length < 4 && (
           <div className="flex items-center gap-2 pt-2">
             <Plus className="w-4 h-4 text-[#c99738]" />
-            <span className="text-xs text-[#a48c68]">Add passage to compare (up to 4):</span>
+            <span className="text-xs text-[#a48c68]">{ui.compare.addPassageLabel}</span>
             <select
               onChange={e => {
                 if (e.target.value) handleAddPassage(e.target.value);
@@ -155,7 +157,7 @@ export const CompareView: React.FC<CompareViewProps> = ({ initialPassageIds = ['
               defaultValue=""
               className="px-3 py-1.5 rounded-lg bg-[#1a1714] border border-[#3b3226] text-xs text-[#e8e2d5] focus:outline-none focus:border-[#c99738]"
             >
-              <option value="" disabled>Select a passage to add...</option>
+              <option value="" disabled>{ui.compare.selectPassagePlaceholder}</option>
               {passages
                 .filter(p => !selectedPassageIds.includes(p.id))
                 .map(p => (
@@ -189,7 +191,7 @@ export const CompareView: React.FC<CompareViewProps> = ({ initialPassageIds = ['
                 <div className="flex items-start justify-between pb-3 border-b border-[#29221b]">
                   <div>
                     <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-[#201a14] text-[#c99738] border border-[#a48c68]/20 font-bold">
-                      Column {index + 1}: {passage.reference}
+                      {ui.compare.columnHeader(index + 1, passage.reference)}
                     </span>
                     <h3 className="text-base font-bold font-display text-[#f5d77f] mt-1">
                       {passage.title}
@@ -207,7 +209,7 @@ export const CompareView: React.FC<CompareViewProps> = ({ initialPassageIds = ['
                     <button
                       onClick={() => handleRemovePassage(passage.id)}
                       className="p-1 rounded text-[#8e806e] hover:text-red-400 hover:bg-[#251e18] transition"
-                      title="Remove column"
+                      title={ui.compare.removeColumnTitle}
                     >
                       <Trash2 className="w-4 h-4" />
                     </button>
@@ -216,17 +218,17 @@ export const CompareView: React.FC<CompareViewProps> = ({ initialPassageIds = ['
 
                 {/* 3-Tier Chronology */}
                 <div className="p-3 rounded-xl bg-[#1b1714] border border-[#2b241c] space-y-1.5 text-[11px]">
-                  <div className="text-[10px] uppercase font-bold text-[#c99738]">Chronological Witness:</div>
-                  <div><strong className="text-[#8e806e]">Setting:</strong> {passage.chronology.dateOfStorySetting}</div>
-                  <div><strong className="text-[#8e806e]">Composition:</strong> {passage.chronology.estimatedDateOfComposition}</div>
-                  <div><strong className="text-[#8e806e]">Earliest MS:</strong> {passage.chronology.dateOfEarliestSurvivingManuscript}</div>
+                  <div className="text-[10px] uppercase font-bold text-[#c99738]">{ui.compare.chronologicalWitness}</div>
+                  <div><strong className="text-[#8e806e]">{ui.compare.setting}</strong> {passage.chronology.dateOfStorySetting}</div>
+                  <div><strong className="text-[#8e806e]">{ui.compare.composition}</strong> {passage.chronology.estimatedDateOfComposition}</div>
+                  <div><strong className="text-[#8e806e]">{ui.compare.earliestMs}</strong> {passage.chronology.dateOfEarliestSurvivingManuscript}</div>
                 </div>
 
                 {/* Clickable Linguistic Terms */}
                 {passage.clickableTerms && passage.clickableTerms.length > 0 && (
                   <div className="flex flex-wrap gap-1 items-center text-xs">
                     <span className="text-[10px] uppercase text-[#a48c68] font-semibold flex items-center gap-1">
-                      <Sparkles className="w-3 h-3 text-[#c99738]" /> Key Terms:
+                      <Sparkles className="w-3 h-3 text-[#c99738]" /> {ui.compare.keyTerms}
                     </span>
                     {passage.clickableTerms.map(tId => (
                       <button
@@ -243,7 +245,7 @@ export const CompareView: React.FC<CompareViewProps> = ({ initialPassageIds = ['
                 {/* Original Language Excerpt with Dedicated Script Font */}
                 <div className="p-3.5 rounded-xl bg-[#100e0b] border border-[#262019] space-y-2">
                   <div className="flex items-center justify-between text-[10px] font-mono text-[#a48c68] uppercase font-semibold pb-1 border-b border-[#1c1813]">
-                    <span>Original Text ({passage.originalLanguage})</span>
+                    <span>{ui.compare.originalText(passage.originalLanguage)}</span>
                     <span className="text-[#7c6f5f] lowercase">{langMeta.isRtl ? 'RTL' : 'LTR'} &bull; {langMeta.scriptName}</span>
                   </div>
                   <div
@@ -307,7 +309,7 @@ export const CompareView: React.FC<CompareViewProps> = ({ initialPassageIds = ['
 
               {/* Attribution Footer */}
               <div className="pt-3 border-t border-[#261f18] text-[11px] text-[#8e806e] space-y-1">
-                <div>Source: <strong>{passage.translationAttribution.translator}</strong> ({passage.translationAttribution.year})</div>
+                <div>{ui.compare.source} <strong>{passage.translationAttribution.translator}</strong> ({passage.translationAttribution.year})</div>
                 <div className="text-[10px]">{passage.translationAttribution.attributionNotice}</div>
               </div>
             </div>

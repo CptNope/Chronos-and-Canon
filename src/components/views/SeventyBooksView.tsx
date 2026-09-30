@@ -48,7 +48,11 @@ export const SeventyBooksView: React.FC<SeventyBooksViewProps> = ({ onSelectCand
 
         {/* 2 Esdras 14 Exegesis Box */}
         <div className="p-4 rounded-xl bg-[#201a14] border border-[#3b3226] text-xs font-serif italic text-[#e8e2d5] leading-relaxed">
-          "{seventyBooksCollection.passageExegesis}"
+          {language === 'es'
+            ? '"Publica los veinticuatro libros que escribiste primero, para que los dignos y los indignos los lean; pero guarda los setenta que se escribieron al final, para entregarlos a los sabios de tu pueblo. Porque en ellos está la fuente del entendimiento, el manantial de la sabiduría y el río del conocimiento."'
+            : language === 'pt'
+            ? '"Publica os vinte e quatro livros que escreveste primeiro, para que os dignos e os indignos os leiam; mas guarda os setenta que foram escritos por último, para entregá-los aos sábios do teu povo. Porque neles está a fonte do entendimento, o manancial da sabedoria e o rio do conhecimento."'
+            : `"${seventyBooksCollection.passageExegesis}"`}
         </div>
 
         {/* Mandatory Explicit Disclaimer */}
@@ -62,12 +66,20 @@ export const SeventyBooksView: React.FC<SeventyBooksViewProps> = ({ onSelectCand
               : 'Scholarly Disclaimer: Historical Reconstruction & Exploratory Hypothesis'}
           </div>
           <p>
-            {seventyBooksCollection.scholarlyDisclaimer}
+            {language === 'es'
+              ? 'La tradición de los "setenta libros ocultos para los sabios" (2 Esdras 14:44–48) es un motivo literario e histórico que describe la literatura esotérica, sacerdotal y apocalíptica del Segundo Templo (como los rollos de Qumrán y los seudoepígrafos). No existe una lista canónica cerrada de 70 obras en la antigüedad; los candidatos recopilados aquí representan las obras no canónicas más significativas preservadas históricamente.'
+              : language === 'pt'
+              ? 'A tradição dos "setenta livros ocultos para os sábios" (2 Esdras 14:44–48) é um motivo literário e histórico que descreve a literatura esotérica, sacerdotal e apocalíptica do Segundo Templo (como os rolos de Qumran e os pseudoepígrafos). Não existe uma lista canônica fechada de 70 obras na antiguidade; os candidatos reunidos aqui representam as obras não canônicas mais significativas preservadas historicamente.'
+              : seventyBooksCollection.scholarlyDisclaimer}
           </p>
         </div>
 
         <p className="text-xs text-[#b8ad9e] leading-relaxed">
-          {seventyBooksCollection.publicCanonNote}
+          {language === 'es'
+            ? 'Los 24 libros publicados abiertamente corresponden al canon hebreo rabínico tradicional (Tanaj). Los 70 libros reservados reflejan la biblioteca preservada por los escribas de Qumrán y los círculos místicos del Segundo Templo.'
+            : language === 'pt'
+            ? 'Os 24 livros publicados abertamente correspondem ao cânone hebraico rabínico tradicional (Tanakh). Os 70 livros reservados refletem a biblioteca preservada pelos escribas de Qumran e círculos místicos do Segundo Templo.'
+            : seventyBooksCollection.publicCanonNote}
         </p>
 
         {/* Genre Filter Pills */}

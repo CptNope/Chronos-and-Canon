@@ -7,6 +7,7 @@ import { ancientTerms } from '../../data/terms';
 import { EvidenceLevel, ResearchMode, Relationship } from '../../types';
 import { EvidenceBadge } from '../common/EvidenceBadge';
 import { useLanguage } from '../../i18n/LanguageContext';
+import { getUiTranslations } from '../../i18n/uiTranslations';
 import { getLocalizedRelationship } from '../../utils/relationshipTranslationHelper';
 import { Network, Search, Filter, ZoomIn, ZoomOut, RotateCcw, Info, Sparkles, BookOpen } from 'lucide-react';
 
@@ -45,6 +46,7 @@ export const GraphView: React.FC<GraphViewProps> = ({
   onSelectPassage
 }) => {
   const { t, language } = useLanguage();
+  const ui = getUiTranslations(language);
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>('gen_6_1_4');
   const [selectedLinkId, setSelectedLinkId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -247,19 +249,19 @@ export const GraphView: React.FC<GraphViewProps> = ({
           <div>
             <div className="flex items-center gap-2 text-xs font-semibold text-[#c99738] uppercase tracking-wider">
               <Network className="w-4 h-4" />
-              Interactive Evidence Graph &amp; Dynamic Network
+              {ui.graph.headerTag}
             </div>
             <h1 className="text-2xl md:text-3xl font-bold font-display text-[#f5d77f] mt-1">
-              Cross-Cultural Relationship Matrix
+              {ui.graph.headerTitle}
             </h1>
             <p className="text-sm text-[#b8ad9e] mt-1">
-              Investigate evidence connections between texts, passages, and motifs. Adjust research modes to filter evidentiary rigor.
+              {ui.graph.headerSubtitle}
             </p>
           </div>
 
           {/* Research Mode Selector */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 bg-[#201a14] p-1.5 rounded-xl border border-[#3b3226]">
-            <span className="text-[11px] font-semibold text-[#a48c68] uppercase px-2">Research Mode:</span>
+            <span className="text-[11px] font-semibold text-[#a48c68] uppercase px-2">{ui.graph.modeLabel}</span>
             <div className="flex flex-wrap gap-1">
               {(['SCHOLARLY', 'COMPARATIVE', 'EXPLORATORY', 'SPECULATIVE'] as ResearchMode[]).map(mode => (
                 <button
@@ -290,7 +292,7 @@ export const GraphView: React.FC<GraphViewProps> = ({
             <Search className="absolute left-3 top-2.5 w-3.5 h-3.5 text-[#a48c68]" />
             <input
               type="text"
-              placeholder="Filter nodes by title, culture, or motif..."
+              placeholder={ui.graph.searchPlaceholder}
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
               className="w-full pl-8 pr-3 py-1.5 rounded-lg bg-[#1a1714] border border-[#362f27] text-xs text-[#e8e2d5] placeholder-[#7d6f5d] focus:outline-none focus:border-[#c99738]"
@@ -299,19 +301,19 @@ export const GraphView: React.FC<GraphViewProps> = ({
 
           <div className="flex items-center gap-3 flex-wrap text-[11px] text-[#a48c68]">
             <span className="flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#c99738]" /> Hebrew Bible
+              <span className="w-2.5 h-2.5 rounded-full bg-[#c99738]" /> {ui.graph.legendHebrew}
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#60a5fa]" /> Second Temple
+              <span className="w-2.5 h-2.5 rounded-full bg-[#60a5fa]" /> {ui.graph.legendSecondTemple}
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#34d399]" /> New Testament
+              <span className="w-2.5 h-2.5 rounded-full bg-[#34d399]" /> {ui.graph.legendNewTestament}
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#e879f9]" /> Mesopotamian
+              <span className="w-2.5 h-2.5 rounded-full bg-[#e879f9]" /> {ui.graph.legendMesopotamian}
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#f97316]" /> Ugaritic
+              <span className="w-2.5 h-2.5 rounded-full bg-[#f97316]" /> {ui.graph.legendUgaritic}
             </span>
           </div>
 
@@ -320,21 +322,21 @@ export const GraphView: React.FC<GraphViewProps> = ({
             <button
               onClick={() => setZoomLevel(prev => Math.min(prev + 0.15, 2.2))}
               className="p-1 text-[#a48c68] hover:text-[#e8e2d5] rounded"
-              title="Zoom in"
+              title={ui.graph.zoomIn}
             >
               <ZoomIn className="w-3.5 h-3.5" />
             </button>
             <button
               onClick={() => setZoomLevel(prev => Math.max(prev - 0.15, 0.5))}
               className="p-1 text-[#a48c68] hover:text-[#e8e2d5] rounded"
-              title="Zoom out"
+              title={ui.graph.zoomOut}
             >
               <ZoomOut className="w-3.5 h-3.5" />
             </button>
             <button
               onClick={() => { setZoomLevel(1); setPanOffset({ x: 0, y: 0 }); }}
               className="p-1 text-[#a48c68] hover:text-[#e8e2d5] rounded"
-              title="Reset view"
+              title={ui.graph.resetView}
             >
               <RotateCcw className="w-3.5 h-3.5" />
             </button>
@@ -501,7 +503,7 @@ export const GraphView: React.FC<GraphViewProps> = ({
 
           {/* Floating Instructions */}
           <div className="absolute bottom-3 left-3 px-3 py-1.5 rounded-lg bg-[#14120f]/80 backdrop-blur-sm border border-[#2d251d] text-[11px] text-[#a48c68] pointer-events-none">
-            {t.graph.clickNodeHint} &bull; Drag canvas to pan
+            {ui.graph.inspectHint} &bull; {ui.graph.dragToPan}
           </div>
         </div>
 
@@ -516,13 +518,13 @@ export const GraphView: React.FC<GraphViewProps> = ({
                   <div className="flex items-center justify-between pb-3 border-b border-[#2d251d]">
                     <div className="text-xs uppercase tracking-wider font-semibold text-[#c99738] flex items-center gap-1.5">
                       <Info className="w-3.5 h-3.5" />
-                      {t.graph.connectionDetails}
+                      {ui.graph.relationshipDetails}
                     </div>
                     <button
                       onClick={() => setSelectedLinkId(null)}
                       className="text-xs text-[#a48c68] hover:text-white"
                     >
-                      &larr; {language === 'es' ? 'Volver al Nodo' : language === 'pt' ? 'Voltar ao Nó' : 'Back to Node'}
+                      &larr; {ui.graph.backToNode}
                     </button>
                   </div>
 
@@ -540,7 +542,7 @@ export const GraphView: React.FC<GraphViewProps> = ({
                   {selectedLink.citations && selectedLink.citations.length > 0 && (
                     <div className="space-y-2">
                       <h4 className="text-xs uppercase tracking-wider font-semibold text-[#a48c68]">
-                        {t.graph.citations}
+                        {ui.graph.citationsHeading}
                       </h4>
                       <ul className="space-y-1 text-xs text-[#9c8e7e]">
                         {selectedLink.citations.map((cite, i) => (
@@ -573,24 +575,20 @@ export const GraphView: React.FC<GraphViewProps> = ({
                   className="w-full py-2 rounded-lg bg-[#25201a] hover:bg-[#342b22] border border-[#c99738]/40 text-xs font-semibold text-[#f5d77f] transition flex items-center justify-center gap-1.5"
                 >
                   <BookOpen className="w-3.5 h-3.5" />
-                  <span>{t.explore.viewInCompare}</span>
+                  <span>{ui.graph.compareSideBySide}</span>
                 </button>
               )}
 
               {/* Outgoing & Incoming Relationships */}
               <div className="space-y-2.5">
                 <div className="text-xs uppercase tracking-wider font-semibold text-[#a48c68] flex items-center justify-between">
-                  <span>{language === 'es' ? 'Conexiones Documentadas' : language === 'pt' ? 'Conexões Documentadas' : 'Documented Connections'} ({connectedLinks.length})</span>
+                  <span>{ui.graph.documentedConnections(connectedLinks.length)}</span>
                   <span className="text-[10px] text-[#c99738]">{researchMode} Mode</span>
                 </div>
 
                 {connectedLinks.length === 0 ? (
                   <p className="text-xs text-[#8e806e] italic">
-                    {language === 'es'
-                      ? `Ninguna conexión cumple con el umbral para el modo ${researchMode}. Intente cambiar a modo Comparativo o Exploratorio.`
-                      : language === 'pt'
-                      ? `Nenhuma conexão atinge o limiar para o modo ${researchMode}. Tente mudar para o modo Comparativo ou Exploratório.`
-                      : `No connections meet the threshold for ${researchMode} mode. Try switching to Comparative or Exploratory mode.`}
+                    {ui.graph.noThresholdMatch(researchMode)}
                   </p>
                 ) : (
                   <div className="space-y-2">
@@ -625,11 +623,7 @@ export const GraphView: React.FC<GraphViewProps> = ({
             </div>
           ) : (
             <div className="p-8 text-center text-sm text-[#8e806e]">
-              {language === 'es'
-                ? 'Seleccione cualquier nodo en la red para inspeccionar sus vínculos textuales antiguos y nivel de evidencia académica.'
-                : language === 'pt'
-                ? 'Selecione qualquer nó na rede para inspecionar seus vínculos textuais antigos e nível de evidência acadêmica.'
-                : 'Select any node in the network to inspect its ancient textual links and scholarly evidence level.'}
+              {ui.graph.selectNodeHint}
             </div>
           )}
         </div>

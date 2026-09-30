@@ -2,6 +2,9 @@ import React from 'react';
 import { AncientTerm } from '../../types';
 import { ancientTerms } from '../../data/terms';
 import { getLanguageMeta } from '../../utils/scriptHelper';
+import { useLanguage } from '../../i18n/LanguageContext';
+import { getUiTranslations } from '../../i18n/uiTranslations';
+import { getLocalizedTerm } from '../../utils/termLocalizationHelper';
 import { X, BookOpen, Layers, Sparkles } from 'lucide-react';
 
 interface AncientTermModalProps {
@@ -15,9 +18,14 @@ export const AncientTermModal: React.FC<AncientTermModalProps> = ({
   onClose,
   onSelectRelatedTerm
 }) => {
+  const { language } = useLanguage();
+  const ui = getUiTranslations(language);
+
   if (!termId) return null;
-  const term: AncientTerm | undefined = ancientTerms.find(t => t.id === termId);
-  if (!term) return null;
+  const rawTerm: AncientTerm | undefined = ancientTerms.find(t => t.id === termId);
+  if (!rawTerm) return null;
+
+  const term = getLocalizedTerm(rawTerm, language);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-fade-in">
@@ -65,7 +73,7 @@ export const AncientTermModal: React.FC<AncientTermModalProps> = ({
         <div className="mt-4 p-3 rounded-lg bg-[#201a14] border border-[#a48c68]/20">
           <div className="text-xs uppercase tracking-wider text-[#a48c68] font-semibold flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5 text-[#c99738]" />
-            Literal Definition
+            {ui.termModal.literalDefinition}
           </div>
           <p className="mt-1 text-sm font-medium text-[#f5d77f]">
             {term.literalMeaning}
@@ -75,7 +83,7 @@ export const AncientTermModal: React.FC<AncientTermModalProps> = ({
         {/* Etymology */}
         <div className="mt-4 space-y-1.5">
           <h4 className="text-xs uppercase tracking-wider text-[#a48c68] font-semibold">
-            Linguistic Etymology &amp; Morphology
+            {ui.termModal.etymology}
           </h4>
           <p className="text-sm text-[#c8beaf] leading-relaxed">
             {term.etymology}
@@ -86,7 +94,7 @@ export const AncientTermModal: React.FC<AncientTermModalProps> = ({
         <div className="mt-4 space-y-1.5">
           <h4 className="text-xs uppercase tracking-wider text-[#a48c68] font-semibold flex items-center gap-1.5">
             <BookOpen className="w-3.5 h-3.5 text-[#c99738]" />
-            Scholarly Exegesis &amp; Ancient Translations
+            {ui.termModal.scholarlyNotes}
           </h4>
           <div className="p-3.5 rounded-lg bg-[#141210] border border-[#2e2720] text-sm text-[#dfd7ca] leading-relaxed">
             {term.scholarlyNotes}
@@ -96,7 +104,7 @@ export const AncientTermModal: React.FC<AncientTermModalProps> = ({
         {/* Primary Occurrences */}
         <div className="mt-4 space-y-1.5">
           <h4 className="text-xs uppercase tracking-wider text-[#a48c68] font-semibold">
-            Key Textual Occurrences
+            {ui.termModal.occurrences}
           </h4>
           <div className="flex flex-wrap gap-1.5">
             {term.occurrences.map((occ, idx) => (
@@ -115,7 +123,7 @@ export const AncientTermModal: React.FC<AncientTermModalProps> = ({
           <div className="mt-5 pt-4 border-t border-[#362f27] space-y-2">
             <h4 className="text-xs uppercase tracking-wider text-[#a48c68] font-semibold flex items-center gap-1.5">
               <Layers className="w-3.5 h-3.5 text-[#c99738]" />
-              Related Ancient Terms
+              {ui.termModal.relatedTerms}
             </h4>
             <div className="flex flex-wrap gap-2">
               {term.relatedTerms.map(relId => {
@@ -141,7 +149,7 @@ export const AncientTermModal: React.FC<AncientTermModalProps> = ({
             onClick={onClose}
             className="px-4 py-1.5 rounded-lg bg-[#25201a] hover:bg-[#322a21] text-xs font-semibold text-[#d4c3aa] transition"
           >
-            Close Dictionary
+            {ui.termModal.close}
           </button>
         </div>
       </div>

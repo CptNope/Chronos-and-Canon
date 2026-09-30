@@ -31,7 +31,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
   onNavigate,
   onOpenCompare
 }) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const featuredConnections = [
     {
       id: 'feat_gen6_enoch',
@@ -164,8 +164,8 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
 
   return (
     <div className="space-y-10">
-      {/* Hero Section */}
-      <div className="relative p-8 md:p-12 rounded-3xl bg-gradient-to-b from-[#1c1713] via-[#16120f] to-[#100e0c] border border-[#a48c68]/30 shadow-2xl overflow-hidden text-left">
+      {/* Hero Section: Responsive, Uncrowded, and Balanced across all Screen Sizes & Languages */}
+      <div className="relative p-6 sm:p-8 lg:p-10 xl:p-12 rounded-3xl bg-gradient-to-b from-[#1c1713] via-[#16120f] to-[#100e0c] border border-[#a48c68]/30 shadow-2xl overflow-hidden text-left">
         {/* Background Subtle Astrolabe Accent */}
         <div className="absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none opacity-10 flex items-center justify-center">
           <svg className="w-[500px] h-[500px]" viewBox="0 0 100 100">
@@ -175,34 +175,119 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
           </svg>
         </div>
 
-        <div className="relative z-10 max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2a2219] border border-[#c99738]/40 text-xs font-semibold text-[#f5d77f] uppercase tracking-wider">
-            <Compass className="w-3.5 h-3.5 text-[#c99738]" />
-            {t.archiveBadge}
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-center">
+          {/* Main Hero Column: Title, Subtitle, and Primary Actions */}
+          <div className="lg:col-span-7 xl:col-span-8 space-y-4 lg:space-y-5">
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2a2219] border border-[#c99738]/40 text-xs font-semibold text-[#f5d77f] uppercase tracking-wider">
+                <Compass className="w-3.5 h-3.5 text-[#c99738]" />
+                {t.archiveBadge}
+              </div>
+              <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1e1813] border border-[#a48c68]/30 text-[11px] font-mono text-[#c99738]">
+                <span>
+                  {language === 'es'
+                    ? 'Mesopotamia · Ugarit · Mar Muerto · Biblia'
+                    : language === 'pt'
+                    ? 'Mesopotâmia · Ugarit · Mar Morto · Bíblia'
+                    : 'Mesopotamian · Ugaritic · Dead Sea Scrolls · Biblical'}
+                </span>
+              </span>
+            </div>
+
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-extrabold font-display text-[#f5d77f] tracking-tight leading-[1.18]">
+              {t.dashboard.heroTitle}
+            </h1>
+
+            <p className="text-sm sm:text-base lg:text-base xl:text-lg text-[#ded5c7] leading-relaxed font-serif max-w-2xl">
+              {t.dashboard.heroSubtitle}
+            </p>
+
+            <div className="pt-2 flex flex-wrap items-center gap-3">
+              <button
+                onClick={() => onNavigate('GENESIS_6')}
+                className="px-5 py-2.5 rounded-xl bg-[#c99738] hover:bg-[#dbab4c] text-[#12100e] text-xs sm:text-sm font-bold transition shadow-lg flex items-center gap-2 flex-shrink-0"
+              >
+                <span>{t.dashboard.exploreArchiveBtn}</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+              <button
+                onClick={() => onNavigate('GRAPH')}
+                className="px-4 sm:px-5 py-2.5 rounded-xl bg-[#201a14] hover:bg-[#2b241c] border border-[#a48c68]/40 text-[#f5d77f] text-xs sm:text-sm font-semibold transition flex items-center gap-2 flex-shrink-0"
+              >
+                <Network className="w-4 h-4 text-[#c99738]" />
+                <span>{t.dashboard.graphNetworkBtn}</span>
+              </button>
+              <button
+                onClick={() => onNavigate('DIGITAL_LIBRARY')}
+                className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#181410] hover:bg-[#221c17] border border-[#3b3226] text-[#ded5c7] hover:text-[#f5d77f] text-xs sm:text-sm font-medium transition flex-shrink-0"
+              >
+                <Library className="w-4 h-4 text-[#a48c68]" />
+                <span>{t.nav.digitalLibrary}</span>
+              </button>
+            </div>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold font-display text-[#f5d77f] tracking-tight leading-tight">
-            {t.dashboard.heroTitle}
-          </h1>
+          {/* Full-Screen Research Pillars Showcase (Fills empty right side on desktop) */}
+          <div className="hidden lg:flex lg:col-span-5 xl:col-span-4 flex-col gap-3">
+            <div className="p-5 rounded-2xl bg-[#181410]/90 backdrop-blur-md border border-[#c99738]/30 shadow-xl space-y-3.5">
+              <div className="flex items-center justify-between pb-2 border-b border-[#2d251e]">
+                <span className="text-[11px] uppercase tracking-wider font-bold text-[#c99738]">
+                  {language === 'es' ? 'Pilares de Investigación' : language === 'pt' ? 'Pilares de Pesquisa' : 'Research Dimensions'}
+                </span>
+                <Sparkles className="w-3.5 h-3.5 text-[#f5d77f]" />
+              </div>
 
-          <p className="text-base sm:text-lg text-[#ded5c7] leading-relaxed font-serif">
-            {t.dashboard.heroSubtitle}
-          </p>
+              {/* Research highlight 1: Mesopotamian & Ugaritic */}
+              <div
+                onClick={() => onNavigate('FLOOD')}
+                className="p-2.5 rounded-xl bg-[#201a14]/60 hover:bg-[#28211a] border border-[#3d3326] transition cursor-pointer group"
+              >
+                <div className="flex items-center justify-between text-xs font-semibold text-[#f5d77f] group-hover:text-[#ffea9f]">
+                  <div className="flex items-center gap-2">
+                    <Waves className="w-3.5 h-3.5 text-[#c99738]" />
+                    <span>{language === 'es' ? 'Mesopotamia y Ugarit' : language === 'pt' ? 'Mesopotâmia e Ugarit' : 'Mesopotamian & Ugaritic'}</span>
+                  </div>
+                  <ChevronRight className="w-3.5 h-3.5 text-[#8e806e] group-hover:translate-x-0.5 transition-transform" />
+                </div>
+                <p className="text-[11px] text-[#a48c68] font-mono mt-1">
+                  Gilgamesh XI · Atrahasis · KTU 1.108
+                </p>
+              </div>
 
-          <div className="pt-2 flex flex-wrap items-center gap-3">
-            <button
-              onClick={() => onNavigate('GENESIS_6')}
-              className="px-5 py-2.5 rounded-xl bg-[#c99738] hover:bg-[#dbab4c] text-[#12100e] text-xs sm:text-sm font-bold transition shadow-lg flex items-center gap-2"
-            >
-              <span>{t.dashboard.exploreArchiveBtn}</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => onNavigate('GRAPH')}
-              className="px-5 py-2.5 rounded-xl bg-[#201a14] hover:bg-[#2b241c] border border-[#a48c68]/40 text-[#f5d77f] text-xs sm:text-sm font-semibold transition"
-            >
-              {t.dashboard.graphNetworkBtn}
-            </button>
+              {/* Research highlight 2: Dead Sea Scrolls */}
+              <div
+                onClick={() => onNavigate('SEVENTY_BOOKS')}
+                className="p-2.5 rounded-xl bg-[#201a14]/60 hover:bg-[#28211a] border border-[#3d3326] transition cursor-pointer group"
+              >
+                <div className="flex items-center justify-between text-xs font-semibold text-[#f5d77f] group-hover:text-[#ffea9f]">
+                  <div className="flex items-center gap-2">
+                    <Scroll className="w-3.5 h-3.5 text-[#c99738]" />
+                    <span>{language === 'es' ? 'Mar Muerto y 2 Esdras 14' : language === 'pt' ? 'Mar Morto e 2 Esdras 14' : 'Dead Sea Scrolls & 2 Esdras'}</span>
+                  </div>
+                  <ChevronRight className="w-3.5 h-3.5 text-[#8e806e] group-hover:translate-x-0.5 transition-transform" />
+                </div>
+                <p className="text-[11px] text-[#a48c68] font-mono mt-1">
+                  1 Enoc · Libros Ocultos · Génesis Apócrifo
+                </p>
+              </div>
+
+              {/* Research highlight 3: Intertextual Graph */}
+              <div
+                onClick={() => onNavigate('GRAPH')}
+                className="p-2.5 rounded-xl bg-[#201a14]/60 hover:bg-[#28211a] border border-[#3d3326] transition cursor-pointer group"
+              >
+                <div className="flex items-center justify-between text-xs font-semibold text-[#f5d77f] group-hover:text-[#ffea9f]">
+                  <div className="flex items-center gap-2">
+                    <Network className="w-3.5 h-3.5 text-[#c99738]" />
+                    <span>{language === 'es' ? 'Red de Evidencias Cruzadas' : language === 'pt' ? 'Rede de Evidências Cruzadas' : 'Cross-Textual Evidence Graph'}</span>
+                  </div>
+                  <ChevronRight className="w-3.5 h-3.5 text-[#8e806e] group-hover:translate-x-0.5 transition-transform" />
+                </div>
+                <p className="text-[11px] text-[#a48c68] font-mono mt-1">
+                  {language === 'es' ? '48 Vínculos Epigráficos y Doctrinales' : language === 'pt' ? '48 Vínculos Epigráficos e Doutrinários' : '48 Documented Epigraphical Links'}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
