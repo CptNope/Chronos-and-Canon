@@ -9,6 +9,11 @@ import { publicTextEditions } from '../../data/publicTexts';
 import { useLanguage } from '../../i18n/LanguageContext';
 import { getUiTranslations } from '../../i18n/uiTranslations';
 import { getPassageText } from '../../utils/passageTranslationHelper';
+import {
+  getLocalizedTextDetails,
+  getLocalizedCultureName,
+  getLocalizedPassageTitle
+} from '../../utils/textTranslationHelper';
 import { BookOpen, Search, Calendar, FileText, ArrowRight, Sparkles, AlertCircle, ExternalLink, Library } from 'lucide-react';
 
 interface ExploreTextsViewProps {
@@ -46,16 +51,21 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
   ];
 
   const filteredTexts = texts.filter(text => {
+    const details = getLocalizedTextDetails(text, language);
     const matchesCategory = selectedCategory === 'ALL' || text.category === selectedCategory;
     const matchesCulture = selectedCulture === 'ALL' || text.cultureId === selectedCulture;
+    const q = searchQuery.toLowerCase();
     const matchesSearch =
-      text.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      text.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (text.alternateTitles && text.alternateTitles.some(t => t.toLowerCase().includes(searchQuery.toLowerCase())));
+      text.title.toLowerCase().includes(q) ||
+      details.title.toLowerCase().includes(q) ||
+      text.summary.toLowerCase().includes(q) ||
+      details.summary.toLowerCase().includes(q) ||
+      (text.alternateTitles && text.alternateTitles.some(t => t.toLowerCase().includes(q)));
     return matchesCategory && matchesCulture && matchesSearch;
   });
 
   const activeText = texts.find(t => t.id === activeTextId) || filteredTexts[0] || texts[0];
+  const activeDetails = getLocalizedTextDetails(activeText, language);
   const textPassages = passages.filter(p => p.textId === activeText.id);
 
   return (
@@ -139,7 +149,7 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
             >
               <option value="ALL">{ui.explore.allTraditions}</option>
               {cultures.map(c => (
-                <option key={c.id} value={c.id}>{c.name}</option>
+                <option key={c.id} value={c.id}>{getLocalizedCultureName(c, language)}</option>
               ))}
             </select>
           </div>
@@ -172,6 +182,7 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
           </div>
           {filteredTexts.map(text => {
             const isSelected = text.id === activeText.id;
+            const textDetails = getLocalizedTextDetails(text, language);
             return (
               <div
                 key={text.id}
@@ -187,14 +198,14 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
                     {ui.categories[text.category] || text.category}
                   </span>
                   <span className="text-[11px] text-[#8e806e] font-mono">
-                    {text.chronology.estimatedDateOfComposition.split('(')[0]}
+                    {textDetails.compositionDate.split('(')[0]}
                   </span>
                 </div>
                 <h3 className={`text-base font-semibold font-display mt-1.5 ${isSelected ? 'text-[#f5d77f]' : 'text-[#e8e2d5]'}`}>
-                  {text.title}
+                  {textDetails.title}
                 </h3>
                 <p className="text-xs text-[#a49989] line-clamp-2 mt-1 leading-relaxed">
-                  {text.summary}
+                  {textDetails.summary}
                 </p>
                 {text.isLostBookReference && (
                   <div className="mt-2 text-[10px] font-medium text-amber-400/90 flex items-center gap-1">
@@ -217,16 +228,16 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
                   {ui.categories[activeText.category] || activeText.category}
                 </span>
                 <h2 className="text-2xl md:text-3xl font-bold font-display text-[#f5d77f] mt-1">
-                  {activeText.title}
+                  {activeDetails.title}
                 </h2>
               </div>
               <span className="text-xs font-mono text-[#a48c68] px-3 py-1 rounded bg-[#201a14] border border-[#362f27]">
-                Original: {activeText.originalLanguage}
+                Original: {activeDetails.originalLanguageName}
               </span>
             </div>
 
             <p className="text-sm text-[#ded5c7] leading-relaxed">
-              {activeText.summary}
+              {activeDetails.summary}
             </p>
 
             {/* LOST BOOK CRITICAL ANALYSIS IF APPLICABLE */}
@@ -249,22 +260,22 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs pt-1">
                 <div className="p-2.5 rounded bg-[#221c17] border border-[#2e261d]">
                   <span className="block text-[10px] text-[#8e806e] uppercase font-bold">{ui.explore.settingLabel}</span>
-                  <span className="font-medium text-[#e8e2d5] mt-0.5 block">{activeText.chronology.dateOfStorySetting}</span>
+                  <span className="font-medium text-[#e8e2d5] mt-0.5 block">{activeDetails.chronologySetting}</span>
                 </div>
                 <div className="p-2.5 rounded bg-[#221c17] border border-[#2e261d]">
                   <span className="block text-[10px] text-[#8e806e] uppercase font-bold">{ui.explore.compositionLabel}</span>
-                  <span className="font-medium text-[#e8e2d5] mt-0.5 block">{activeText.chronology.estimatedDateOfComposition}</span>
+                  <span className="font-medium text-[#f5d77f] mt-0.5 block">{activeDetails.compositionDate}</span>
                 </div>
                 <div className="p-2.5 rounded bg-[#221c17] border border-[#2e261d]">
                   <span className="block text-[10px] text-[#8e806e] uppercase font-bold">{ui.explore.earliestMsLabel}</span>
-                  <span className="font-medium text-[#e8e2d5] mt-0.5 block">{activeText.chronology.dateOfEarliestSurvivingManuscript}</span>
+                  <span className="font-medium text-[#ded5c7] mt-0.5 block">{activeDetails.earliestManuscript}</span>
                 </div>
               </div>
             </div>
 
             {/* Manuscript History & Witnesses */}
             <div className="text-xs text-[#a49989] space-y-1 border-t border-[#2d251d] pt-3">
-              <div><strong className="text-[#c99738]">{ui.explore.witnessTradition}</strong> {activeText.manuscriptHistory}</div>
+              <div><strong className="text-[#c99738]">{ui.explore.witnessTradition}</strong> {activeDetails.manuscriptHistory || activeText.manuscriptHistory}</div>
               <div><strong className="text-[#c99738]">{ui.explore.keyWitnesses}</strong> {activeText.primaryManuscriptWitnesses.join(', ')}</div>
             </div>
 
@@ -359,7 +370,7 @@ export const ExploreTextsView: React.FC<ExploreTextsViewProps> = ({
                         {passage.reference}
                       </span>
                       <h4 className="text-lg font-bold font-display text-[#f5d77f]">
-                        {passage.title}
+                        {getLocalizedPassageTitle(passage, language)}
                       </h4>
                     </div>
 

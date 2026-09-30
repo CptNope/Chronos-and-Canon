@@ -10,16 +10,41 @@ export interface VersionRelease {
   };
 }
 
-export const APP_VERSION = '1.3.0';
+export const APP_VERSION = '1.3.1';
 export const BUILD_DATE = '2026-09-30';
-export const APP_CODENAME = 'Ugarit & Eridu Edition';
+export const APP_CODENAME = 'Byblos & Ugarit Edition';
 
 export const VERSION_HISTORY: VersionRelease[] = [
+  {
+    version: '1.3.1',
+    date: '2026-09-30',
+    codename: 'Byblos & Ugarit Edition',
+    isLatest: true,
+    highlights: {
+      en: [
+        'Fixed language selector button overlap bug when Portuguese is selected by anchoring the language pill to the far right with isolated z-index.',
+        'Redesigned mobile drawer header into a spacious 2-row layout preventing mode selection dropdowns from overlapping the language selector.',
+        'Fully localized Explore Texts module with scholarly translated book titles, summaries, traditions, chronology dates, and passage titles.',
+        'Enforced safe max-width truncation for active specialized study badges on wide desktop displays.'
+      ],
+      es: [
+        'Corregido error de superposición en el selector de idiomas cuando se selecciona portugués, anclando el selector al extremo derecho con z-index aislado.',
+        'Rediseñado el encabezado del menú móvil en 2 filas espaciosas evitando que el selector de modo se superponga al selector de idioma.',
+        'Localización completa del módulo Explorar Textos con títulos académicos traducidos, resúmenes, tradiciones, fechas y títulos de pasajes.',
+        'Truncado seguro de ancho máximo para insignias de módulos de estudio en pantallas de escritorio anchas.'
+      ],
+      pt: [
+        'Corrigido erro de sobreposição no seletor de idiomas quando português é selecionado, ancorando o seletor no extremo direito com z-index isolado.',
+        'Redesenhado o cabeçalho do menu móvel em 2 linhas espaçosas evitando que o seletor de modo se sobreponha ao seletor de idioma.',
+        'Localização completa do módulo Explorar Textos com títulos acadêmicos traduzidos, resumos, tradições, datas e títulos de passagens.',
+        'Truncamento seguro de largura máxima para crachás de módulos de estudo em telas amplas.'
+      ]
+    }
+  },
   {
     version: '1.3.0',
     date: '2026-09-30',
     codename: 'Ugarit & Eridu Edition',
-    isLatest: true,
     highlights: {
       en: [
         'Adaptive, uncrowded desktop navigation banner with responsive tab labeling across English, Spanish, and Portuguese.',

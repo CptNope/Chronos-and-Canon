@@ -1,13 +1,12 @@
 {
-  "version": "1.3.0",
-  "buildDate": "2026-09-30T12:15:00Z",
-  "codename": "Ugarit & Eridu Edition",
+  "version": "1.3.1",
+  "buildDate": "2026-09-30T12:40:00Z",
+  "codename": "Byblos & Ugarit Edition",
   "minSupportedVersion": "1.0.0",
   "releaseNotes": [
-    "Adaptive, uncrowded desktop navigation banner with responsive tab labeling across English, Spanish, and Portuguese",
-    "Balanced 2-column editorial Hero Banner for wide screens with curated research dimension chips",
-    "Full application-wide UI localization covering Digital Library, Map, Graph, Timeline, and Seventy Books views",
-    "Preserved original sacred scripts (Hebrew, Greek, Aramaic, Akkadian) intact and authentic",
-    "Expanded architectural README documentation with official GitHub Pages deployment links"
+    "Fixed language selector overlap bug when Portuguese is selected by anchoring language pill to the far right with isolated z-index",
+    "Restructured mobile drawer header into a spacious 2-row layout preventing mode select dropdowns from overflowing the language pill",
+    "Full localization of Explore Texts module with translated critical book titles, scholarly summaries, traditions, chronology dates, and passage headings",
+    "Protected desktop navbar flex spacing and truncated oversized active module badges on ultra-wide viewports"
   ]
 }

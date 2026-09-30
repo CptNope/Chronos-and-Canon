@@ -5,7 +5,7 @@
 [![Live Application](https://img.shields.io/badge/Live%20App-GitHub%20Pages-c99738?style=for-the-badge&logo=github)](https://cptnope.github.io/Chronos-and-Canon/)
 [![PWA Offline First](https://img.shields.io/badge/PWA-Offline%20First-2ea44f?style=for-the-badge&logo=pwa)](https://cptnope.github.io/Chronos-and-Canon/)
 [![Languages](https://img.shields.io/badge/Languages-EN%20%7C%20ES%20%7C%20PT-blue?style=for-the-badge)](https://cptnope.github.io/Chronos-and-Canon/)
-[![Version](https://img.shields.io/badge/Version-v1.3.0-8a2be2?style=for-the-badge)](https://cptnope.github.io/Chronos-and-Canon/)
+[![Version](https://img.shields.io/badge/Version-v1.3.1-8a2be2?style=for-the-badge)](https://cptnope.github.io/Chronos-and-Canon/)
 [![License](https://img.shields.io/badge/License-MIT%20%2F%20Scholarly%20Open%20Access-orange?style=for-the-badge)](https://cptnope.github.io/Chronos-and-Canon/)
 
 ---

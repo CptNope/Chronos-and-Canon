@@ -240,7 +240,7 @@ export const Navigation: React.FC<NavigationProps> = ({
                 {activeSpecialized ? (
                   <>
                     <activeSpecialized.icon className="w-3.5 h-3.5 text-[#c99738] flex-shrink-0" />
-                    <span className="max-w-[130px] 2xl:max-w-none truncate">{activeSpecialized.label}</span>
+                    <span className="max-w-[110px] xl:max-w-[120px] 2xl:max-w-[180px] truncate">{activeSpecialized.label}</span>
                   </>
                 ) : (
                   <>
@@ -300,27 +300,8 @@ export const Navigation: React.FC<NavigationProps> = ({
           </nav>
 
           {/* Right Header Controls (Compact, Harmonious, Language-Responsive) */}
-          <div className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
-            {/* Language Selector Pill (EN | ES | PT) */}
-            <div className="flex items-center rounded-lg bg-[#1a1512] border border-[#3d3224] p-0.5 text-[11px] font-semibold">
-              <Languages className="w-3.5 h-3.5 text-[#c99738] ml-1.5 mr-1 flex-shrink-0 hidden xs:inline" />
-              {languages.map(l => (
-                <button
-                  key={l.code}
-                  onClick={() => setLanguage(l.code)}
-                  className={`px-1.5 py-0.5 rounded transition ${
-                    language === l.code
-                      ? 'bg-[#c99738] text-[#12100e] font-bold shadow-xs'
-                      : 'text-[#a48c68] hover:text-[#f5d77f]'
-                  }`}
-                  title={`${l.label} (${l.flag})`}
-                >
-                  {l.flag}
-                </button>
-              ))}
-            </div>
-
-            {/* Research Rigor Popover Control (Replaces clunky native select, saves space) */}
+          <div className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0 z-30">
+            {/* Research Rigor Popover Control */}
             <div className="relative hidden sm:block">
               <button
                 onClick={() => {
@@ -337,7 +318,7 @@ export const Navigation: React.FC<NavigationProps> = ({
 
               {researchModeMenuOpen && (
                 <div
-                  className="absolute right-0 top-full mt-2 w-72 p-3 rounded-2xl bg-[#171310] border border-[#a48c68]/30 shadow-2xl space-y-2 z-50 animate-fade-in text-left"
+                  className="absolute left-0 sm:right-0 sm:left-auto top-full mt-2 w-72 p-3 rounded-2xl bg-[#171310] border border-[#a48c68]/30 shadow-2xl space-y-2 z-50 animate-fade-in text-left"
                   onMouseLeave={() => setResearchModeMenuOpen(false)}
                 >
                   <div className="px-2 pb-1.5 border-b border-[#2d251d]">
@@ -407,6 +388,25 @@ export const Navigation: React.FC<NavigationProps> = ({
               </button>
             )}
 
+            {/* Language Selector Pill (EN | ES | PT) - Anchored at far right with isolated z-30 */}
+            <div className="relative z-30 flex items-center rounded-lg bg-[#1a1512] border border-[#3d3224] p-0.5 text-[11px] font-semibold flex-shrink-0">
+              <Languages className="w-3.5 h-3.5 text-[#c99738] ml-1.5 mr-1 flex-shrink-0 hidden xs:inline" />
+              {languages.map(l => (
+                <button
+                  key={l.code}
+                  onClick={() => setLanguage(l.code)}
+                  className={`px-1.5 py-0.5 rounded transition ${
+                    language === l.code
+                      ? 'bg-[#c99738] text-[#12100e] font-bold shadow-xs'
+                      : 'text-[#a48c68] hover:text-[#f5d77f]'
+                  }`}
+                  title={`${l.label} (${l.flag})`}
+                >
+                  {l.flag}
+                </button>
+              ))}
+            </div>
+
             {/* Mobile Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -421,39 +421,41 @@ export const Navigation: React.FC<NavigationProps> = ({
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="xl:hidden bg-[#161310] border-b border-[#a48c68]/30 px-4 pt-3 pb-6 space-y-3 animate-fade-in shadow-2xl">
-          <div className="flex items-center justify-between pb-2 border-b border-[#2d251d]">
-            <span className="text-xs uppercase font-semibold text-[#a48c68]">{t.nav.selectModule}</span>
-            <div className="flex items-center gap-2">
+          {/* Top Control Bar in Mobile Menu (2-Row Layout guarantees zero overlapping) */}
+          <div className="space-y-2 pb-2.5 border-b border-[#2d251d]">
+            <div className="flex items-center justify-between">
+              <span className="text-xs uppercase font-semibold text-[#c99738] tracking-wider">{t.nav.selectModule}</span>
               {/* Mobile Language Selector */}
-              <div className="flex items-center rounded bg-[#201a14] border border-[#3b3226] p-0.5 text-xs font-semibold">
+              <div className="flex items-center rounded-lg bg-[#201a14] border border-[#3b3226] p-0.5 text-xs font-semibold z-20 shrink-0">
+                <Languages className="w-3.5 h-3.5 text-[#c99738] ml-1.5 mr-1" />
                 {languages.map(l => (
                   <button
                     key={l.code}
                     onClick={() => setLanguage(l.code)}
-                    className={`px-1.5 py-0.5 rounded transition ${
+                    className={`px-2 py-0.5 rounded transition ${
                       language === l.code
-                        ? 'bg-[#c99738] text-[#12100e] font-bold'
-                        : 'text-[#a48c68]'
+                        ? 'bg-[#c99738] text-[#12100e] font-bold shadow-xs'
+                        : 'text-[#a48c68] hover:text-[#f5d77f]'
                     }`}
                   >
                     {l.flag}
                   </button>
                 ))}
               </div>
+            </div>
 
-              <div className="flex items-center gap-1 text-xs">
-                <span className="text-[10px] text-[#8e806e]">{t.nav.modeLabel}</span>
-                <select
-                  value={researchMode}
-                  onChange={e => onSetResearchMode(e.target.value as ResearchMode)}
-                  className="px-2 py-0.5 rounded bg-[#201a14] border border-[#3b3226] text-xs text-[#f5d77f]"
-                >
-                  <option value="SCHOLARLY">{getShortModeLabel('SCHOLARLY')}</option>
-                  <option value="COMPARATIVE">{getShortModeLabel('COMPARATIVE')}</option>
-                  <option value="EXPLORATORY">{getShortModeLabel('EXPLORATORY')}</option>
-                  <option value="SPECULATIVE">{getShortModeLabel('SPECULATIVE')}</option>
-                </select>
-              </div>
+            <div className="flex items-center justify-between bg-[#191512] px-2.5 py-1.5 rounded-lg border border-[#2b231a]">
+              <span className="text-[11px] text-[#8e806e] font-mono">{t.nav.modeLabel}</span>
+              <select
+                value={researchMode}
+                onChange={e => onSetResearchMode(e.target.value as ResearchMode)}
+                className="px-2 py-0.5 rounded bg-[#221c16] border border-[#3d3224] text-xs text-[#f5d77f] font-medium focus:outline-none"
+              >
+                <option value="SCHOLARLY">{getShortModeLabel('SCHOLARLY')}</option>
+                <option value="COMPARATIVE">{getShortModeLabel('COMPARATIVE')}</option>
+                <option value="EXPLORATORY">{getShortModeLabel('EXPLORATORY')}</option>
+                <option value="SPECULATIVE">{getShortModeLabel('SPECULATIVE')}</option>
+              </select>
             </div>
           </div>
 
