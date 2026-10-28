@@ -454,3 +454,7 @@ When utilizing data or visual connections from Chronos & Canon in published acad
 ---
 
 *Chronos & Canon — Preserving Epigraphic Heritage and Advancing Comparative Textual Scholarship.*
+
+---
+
+Built by [Jeremy Anderson Tech](https://jeremyanderson.tech/), a web development and security practice in Shrewsbury, MA. Read more on the [project page](https://jeremyanderson.tech/project/chronos-canon/). [Services](https://jeremyanderson.tech/services/)
